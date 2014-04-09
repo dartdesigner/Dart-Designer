@@ -1,0 +1,16 @@
+#Contributing
+
+You will find in this document all the instructions necessary in order to contribute to this project.
+
+## Development Environment
+* Eclipse 4.3 Kepler SR2
+* Acceleo 3.4.2
+* EGit 3.2.0
+* EclEmma 2.3.0
+* EMF Compare 2.1.3
+* Sirius 1.0.0
+* EMF 2.9.2
+* EMF Xcore 1.1.1
+
+## Build
+To build the Dart Designer, go into releng\org.obeonetwork.dsl.dart.releng\launcher, install the latest version of maven and use "mvn clean verify". The Dart Designer binaries will be available in packaging\org.obeonetwork.dsl.dart.product\target\products.
