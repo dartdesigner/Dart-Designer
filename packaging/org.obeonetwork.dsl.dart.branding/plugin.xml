@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.core.runtime.products" id="product">
+    <product name="Dart Designer" application="org.eclipse.ui.ide.workbench">
+      <property name="windowImages" value="icons/logo_16.gif,icons/logo_32.gif,icons/logo_64.gif"/>
+      <property name="appName" value="Dart Designer"/>
+      <property name="aboutImage" value="icons/about.gif"/>
+      <property name="aboutText" value="Dart Designer &#x0A;&#x0A;Version  4.0.0&#x0A;&#x0A;&#x0A;(c) Copyright (c) 2014 Obeo. All Rights Reserved.&#x0A;Visit http://www.dartdesigner.github.io"/>
+      <property name="startupForegroundColor" value="000000"/>
+      <property name="startupMessageRect" value="3,300,495,15"/>
+      <property name="startupProgressRect" value="3,315,495,15"/>
+      <property name="preferenceCustomization" value="plugin_customization.ini"/>
+    </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <introProductBinding
+            introId="org.obeonetwork.dsl.dart.design.welcome.intro"
+            productId="org.obeonetwork.dsl.dart.branding.product">
+      </introProductBinding>
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            icon="icons/logo_16.gif"
+            id="org.obeonetwork.dsl.dart.design.welcome.intro">
+      </intro>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            content="intro/product_welcome_intro.xml"
+            id="org.obeonetwork.dsl.dart.design.welcome.config"
+            introId="org.obeonetwork.dsl.dart.design.welcome.intro">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
+</plugin>

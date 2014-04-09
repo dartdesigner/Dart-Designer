@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.obeonetwork.dsl.dart;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %Bundle-Vendor
+Bundle-Localization: bundle
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.obeonetwork.dsl.dart;version="1.0.0",
+ org.obeonetwork.dsl.dart.impl;version="1.0.0",
+ org.obeonetwork.dsl.dart.util;version="1.0.0"
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

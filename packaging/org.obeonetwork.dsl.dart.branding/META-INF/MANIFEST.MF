@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.obeonetwork.dsl.dart.branding;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: %Bundle-Vendor
+Require-Bundle: org.eclipse.equinox.app,
+ org.eclipse.ui,
+ org.eclipse.ui.intro
+Bundle-Localization: bundle

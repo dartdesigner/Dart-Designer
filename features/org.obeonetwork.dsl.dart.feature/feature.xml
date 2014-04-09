@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.obeonetwork.dsl.dart.feature"
+      label="%Feature-Name"
+      version="0.1.0.qualifier"
+      provider-name="%Feature-Vendor">
+
+   <description url="http://dartdesigner.github.io">
+      %Feature-Description
+   </description>
+
+   <copyright url="http://dartdesigner.github.io">
+      %Feature-Copyright
+   </copyright>
+
+   <license url="http://dartdesigner.github.io">
+      %Feature-License
+   </license>
+   
+   <requires>
+      <import feature="org.eclipse.gmf.runtime.notation" version="0.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime" version="0.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.acceleo" version="0.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.ide.eef" version="0.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.ide.ui" version="0.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.sirius.runtime.ide.ui.acceleo" version="0.0.0" match="greaterOrEqual"/>
+   </requires>
+   
+   <plugin
+         id="org.obeonetwork.dsl.dart"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.obeonetwork.dsl.dart.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.obeonetwork.dsl.dart.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.obeonetwork.dsl.dart.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

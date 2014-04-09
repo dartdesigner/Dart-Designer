@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Dart Designer" uid="org.obeonetwork.dsl.dart.branding.product" id="org.obeonetwork.dsl.dart.branding.product" application="org.eclipse.ui.ide.workbench" version="0.1.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="icons/about.gif"/>
+      <text>
+         Dart Designer
+
+Version  0.1.0
+
+
+Copyright (c) 2014 Obeo. All Rights Reserved.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>--launcher.XXMaxPermSize
+256m</programArgs>
+      <vmArgs>-Xms256m
+-Xmx1024m
+-XX:MaxPermSize=256m</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="icons/logo_16.png" i32="icons/logo_32.png" i48="icons/logo_48.png" i64="icons/logo_64.png" i128="icons/logo_128.png"/>
+
+   <splash
+      location="org.obeonetwork.dsl.dart.branding"
+      startupProgressRect="0,328,458,18"
+      startupMessageRect="7,308,458,18"
+      startupForegroundColor="000000" />
+   <launcher name="dartdesigner">
+      <linux icon="/icons/logo_64.xpm"/>
+      <macosx icon="/icons/Obeo_Designer.icns"/>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <intro introId="org.obeonetwork.dsl.dart.design.welcome.intro"/>
+
+   <vm>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</linux>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</macos>
+      <solaris include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</solaris>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7</windows>
+   </vm>
+
+   <license>
+        <url>www.dartdesigner.github.io</url>
+        <text>
+   Copyright (c) 2014 Obeo.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License
+v1.0 which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+         </text>
+   </license>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.epp.mpc"/>
+      <feature id="org.obeonetwork.dsl.dart.feature" version="0.1.0.qualifier"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="3" />
+   </configurations>
+
+</product>
