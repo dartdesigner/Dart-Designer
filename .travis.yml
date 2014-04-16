@@ -1,0 +1,4 @@
+language: java
+before_script: cd releng/org.obeonetwork.dsl.dart.releng/launcher
+script: mvn clean verify
+jdk: oraclejdk7
