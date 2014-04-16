@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension point="org.eclipse.core.runtime.products" id="product">
-    <product name="Dart Designer" application="org.eclipse.ui.ide.workbench">
-      <property name="windowImages" value="icons/logo_16.gif,icons/logo_32.gif,icons/logo_64.gif"/>
-      <property name="appName" value="Dart Designer"/>
-      <property name="aboutImage" value="icons/about.gif"/>
-      <property name="aboutText" value="Dart Designer &#x0A;&#x0A;Version  4.0.0&#x0A;&#x0A;&#x0A;(c) Copyright (c) 2014 Obeo. All Rights Reserved.&#x0A;Visit http://www.dartdesigner.github.io"/>
-      <property name="startupForegroundColor" value="000000"/>
-      <property name="startupMessageRect" value="3,300,495,15"/>
-      <property name="startupProgressRect" value="3,315,495,15"/>
-      <property name="preferenceCustomization" value="plugin_customization.ini"/>
-    </product>
-   </extension>
    <extension
          point="org.eclipse.ui.intro">
       <introProductBinding
@@ -21,7 +9,7 @@
       </introProductBinding>
       <intro
             class="org.eclipse.ui.intro.config.CustomizableIntroPart"
-            icon="icons/logo_16.gif"
+            icon="icons/logo_16x16.png"
             id="org.obeonetwork.dsl.dart.design.welcome.intro">
       </intro>
    </extension>
@@ -39,5 +27,37 @@
             </implementation>
          </presentation>
       </config>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="Dart Designer">
+         <property
+               name="windowImages"
+               value="icons/logo_16x16.png,icons/logo_32x32.png,icons/logo_48x48.png,icons/logo_64x64.png,icons/logo_128x128.png,icons/logo_256x256.png,icons/launcher/logo.ico">
+         </property>
+         <property
+               name="aboutText"
+               value="Dart Designer v0.1&#x0A;&#x0A;A development workbench for Dart developers powered by Sirius.&#x0A;&#x0A;&#x0A;For more information, visit http://dartdesigner.github.io and http://www.twitter.com/dartdesigner&#x0A;&#x0A;&#x0A;Copyright (c) 2014 Obeo. All Rights Reserved.">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/about.png">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="111111">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="15,307,470,13">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="220,250,290,30">
+         </property>
+      </product>
    </extension>
 </plugin>

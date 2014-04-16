@@ -4,12 +4,13 @@
 <product name="Dart Designer" uid="org.obeonetwork.dsl.dart.branding.product" id="org.obeonetwork.dsl.dart.branding.product" application="org.eclipse.ui.ide.workbench" version="0.1.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="icons/about.gif"/>
+      <image path="icons/about.png"/>
       <text>
-         Dart Designer
+         Dart Designer v0.1
 
-Version  0.1.0
+A development workbench for Dart developers powered by Sirius.
 
+For more information, visit http://dartdesigner.github.io and http://www.twitter.com/dartdesigner
 
 Copyright (c) 2014 Obeo. All Rights Reserved.
       </text>
@@ -27,28 +28,34 @@ Copyright (c) 2014 Obeo. All Rights Reserved.
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="icons/logo_16.png" i32="icons/logo_32.png" i48="icons/logo_48.png" i64="icons/logo_64.png" i128="icons/logo_128.png"/>
+   <windowImages i16="icons/logo_16x16.png" i32="icons/logo_32x32.png" i48="icons/logo_48x48.png" i64="icons/logo_64x64.png" i128="icons/logo_128x128.png"/>
 
    <splash
       location="org.obeonetwork.dsl.dart.branding"
-      startupProgressRect="0,328,458,18"
-      startupMessageRect="7,308,458,18"
-      startupForegroundColor="000000" />
+      startupProgressRect="15,307,470,13" />
    <launcher name="dartdesigner">
-      <linux icon="/icons/logo_64.xpm"/>
-      <macosx icon="/icons/Obeo_Designer.icns"/>
+      <linux icon="/icons/launcher/logo_256x256-png.xpm"/>
+      <macosx icon="/icons/launcher/logo.icns"/>
       <solaris/>
-      <win useIco="false">
-         <bmp/>
+      <win useIco="true">
+         <ico path="/icons/launcher/logo.ico"/>
+         <bmp
+            winSmallHigh="icons/launcher/logo_16x16_32bits.bmp"
+            winSmallLow="icons/launcher/logo_16x16_8bits.bmp"
+            winMediumHigh="icons/launcher/logo_32x32_32bits.bmp"
+            winMediumLow="icons/launcher/logo_32x32_8bits.bmp"
+            winLargeHigh="icons/launcher/logo_48x48_32bits.bmp"
+            winLargeLow="icons/launcher/logo_48x48_8bits.bmp"
+            winExtraLargeHigh="icons/launcher/logo_256x256_32bits.bmp"/>
       </win>
    </launcher>
 
    <intro introId="org.obeonetwork.dsl.dart.design.welcome.intro"/>
 
    <vm>
-      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</linux>
-      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</macos>
-      <solaris include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</solaris>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7</linux>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7</macos>
+      <solaris include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7</solaris>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7</windows>
    </vm>
 

@@ -16,7 +16,7 @@
    <license url="http://dartdesigner.github.io">
       %Feature-License
    </license>
-   
+
    <requires>
       <import feature="org.eclipse.gmf.runtime.notation" version="0.0.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.sirius.runtime" version="0.0.0" match="greaterOrEqual"/>
@@ -25,7 +25,7 @@
       <import feature="org.eclipse.sirius.runtime.ide.ui" version="0.0.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.sirius.runtime.ide.ui.acceleo" version="0.0.0" match="greaterOrEqual"/>
    </requires>
-   
+
    <plugin
          id="org.obeonetwork.dsl.dart"
          download-size="0"
@@ -53,5 +53,11 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="org.obeonetwork.dsl.dart.branding"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>
