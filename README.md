@@ -1,6 +1,8 @@
 # Dart Designer
 Dart Designer provides a complete workbench to build Dart applications.
 
+[![Build Status](https://travis-ci.org/dartdesigner/Dart-Designer.svg?branch=master)](https://travis-ci.org/dartdesigner/Dart-Designer)
+
 ## License
 The Dart Designer is available under the Eclipse Public License v1.0. It includes components from the Eclipse Foundation, the Apache Foundation and components from the Dart Editor.
 
