@@ -1,0 +1,7 @@
+{
+  "name": "dartdesignerdocumentation",
+  "version": "0.1.0",
+  "dependencies": {
+    "documentation": "https://github.com/dartdesigner/documentation.git#gh-pages"
+  }
+}

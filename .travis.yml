@@ -1,4 +1,8 @@
 language: java
-before_script: cd releng/org.obeonetwork.dsl.dart.releng/launcher
+before_script: 
+- cd bundles/org.obeonetwork.dsl.dart.documentation
+- npm install -g bower
+- bower install
+- cd ../../releng/org.obeonetwork.dsl.dart.releng/launcher
 script: mvn clean verify
 jdk: oraclejdk7
