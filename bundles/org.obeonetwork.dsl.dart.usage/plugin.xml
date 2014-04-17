@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.obeonetwork.dsl.dart.usage.internal.analytics.UsageStartup">
+      </startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.sirius.ui.page"
+            class="org.obeonetwork.dsl.dart.usage.internal.preferences.UsagePreferencesPage"
+            id="org.obeonetwork.dsl.dart.usage.preferences.UsageAnalyticsPreferencePage"
+            name="%Usage_Preferences_Page_Name">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.obeonetwork.dsl.dart.usage.internal.preferences.UsagePreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>

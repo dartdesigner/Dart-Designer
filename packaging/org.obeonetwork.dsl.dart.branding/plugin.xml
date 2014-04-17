@@ -40,7 +40,7 @@
          </property>
          <property
                name="aboutText"
-               value="Dart Designer v0.1&#x0A;&#x0A;A development workbench for Dart developers powered by Sirius.&#x0A;&#x0A;&#x0A;For more information, visit http://dartdesigner.github.io and http://www.twitter.com/dartdesigner&#x0A;&#x0A;&#x0A;Copyright (c) 2014 Obeo. All Rights Reserved.">
+               value="Dart Designer v0.1&#x0A;&#x0A;A development workbench for Dart developers powered by Sirius.&#x0A;&#x0A;For more information, visit http://dartdesigner.github.io and http://www.twitter.com/dartdesigner&#x0A;&#x0A;Copyright (c) 2014 Obeo. All Rights Reserved.">
          </property>
          <property
                name="aboutImage"
@@ -56,7 +56,7 @@
          </property>
          <property
                name="startupMessageRect"
-               value="220,250,290,30">
+               value="200,270,290,30">
          </property>
       </product>
    </extension>

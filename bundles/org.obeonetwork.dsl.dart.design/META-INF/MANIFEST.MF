@@ -13,4 +13,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: bundle
-Export-Package: org.obeonetwork.dsl.dart.design.internal;version="1.0.0";x-internal:=true
+Export-Package: org.obeonetwork.dsl.dart.design.internal;version="1.0.0";x-friends:="org.obeonetwork.dsl.dart.usage"

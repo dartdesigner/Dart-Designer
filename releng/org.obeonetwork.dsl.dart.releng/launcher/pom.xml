@@ -31,6 +31,7 @@ Contributors:
     <module>${root-path}/bundles/org.obeonetwork.dsl.dart.edit</module>
     <module>${root-path}/bundles/org.obeonetwork.dsl.dart.editor</module>
     <module>${root-path}/bundles/org.obeonetwork.dsl.dart.design</module>
+    <module>${root-path}/bundles/org.obeonetwork.dsl.dart.usage</module>
     <module>${root-path}/packaging/org.obeonetwork.dsl.dart.branding</module>
 
     <!-- Build features -->
