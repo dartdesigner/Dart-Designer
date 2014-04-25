@@ -1,8 +1,17 @@
 language: java
-before_script: 
+env:
+  global:
+    secure: "VuUSCILvDdyOy3gBYdI21mSQxKCyc3WabSbfCMrEPgJv52bXD0MJO5KblUZoyHiq+tOs5Uc1INjmmV5h69tcCqqiQzkp/77Kde5I/3QpObqxv6vjKtJ8pgJevAqzc4ZdZjSu87rMsSs8heBp7PEikuKeOFAyhUgzHqIQipzflKg="
+before_script:
 - cd bundles/org.obeonetwork.dsl.dart.documentation
 - npm install -g bower
 - bower install
 - cd ../../releng/org.obeonetwork.dsl.dart.releng/launcher
 script: mvn clean verify
+after_script:
+- pwd
+- cd ../../../
+- ls
+- chmod a+x travis-promote.sh
+- ./travis-promote.sh
 jdk: oraclejdk7
