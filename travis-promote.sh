@@ -21,10 +21,10 @@ then
 	git config user.email "stephane.begaudeau@gmail.com"
     git config user.name "Stéphane Bégaudeau"
 	git remote rm origin
-	git remote add origin https://dartdesigner:$GITHUB_TOKEN@github.com/dartdesigner/p2.git  --quiet &>/dev/null
+	git remote add origin https://dartdesigner:$GITHUB_TOKEN@github.com/dartdesigner/p2.git
 	git add -A
 	git commit -m "Promoting a new nightly build for https://github.com/dartdesigner/Dart-Designer/commit/$TRAVIS_COMMIT [$TRAVIS_BRANCH]"
-	git push origin gh-pages > /dev/null
+	git push origin gh-pages --quiet &>/dev/null
 	echo "Build promoted."
 else
     if [ $TRAVIS_PULL_REQUEST == 'false' ]
@@ -47,10 +47,10 @@ else
 		git config user.email "stephane.begaudeau@gmail.com"
 		git config user.name "Stéphane Bégaudeau"
 		git remote rm origin
-		git remote add origin https://dartdesigner:$GITHUB_TOKEN@github.com/dartdesigner/p2.git  --quiet &>/dev/null
+		git remote add origin https://dartdesigner:$GITHUB_TOKEN@github.com/dartdesigner/p2.git
 		git add -A
 		git commit -m "Promoting a new nightly build for https://github.com/dartdesigner/Dart-Designer/commit/$TRAVIS_COMMIT [$TRAVIS_BRANCH]"
-		git push origin gh-pages > /dev/null
+		git push origin gh-pages --quiet &>/dev/null
 		echo "Build promoted."
     fi
 fi
