@@ -21,7 +21,7 @@ then
 	git config user.email "stephane.begaudeau@gmail.com"
     git config user.name "Stéphane Bégaudeau"
 	git remote rm origin
-	git remote add origin https://dartdesigner:$GITHUB_TOKEN@github.com/dartdesigner/p2.git > /dev/null
+	git remote add origin https://dartdesigner:$GITHUB_TOKEN@github.com/dartdesigner/p2.git  --quiet &>/dev/null
 	git add -A
 	git commit -m "Promoting a new nightly build for https://github.com/dartdesigner/Dart-Designer/commit/$TRAVIS_COMMIT [$TRAVIS_BRANCH]"
 	git push origin gh-pages > /dev/null
@@ -47,7 +47,7 @@ else
 		git config user.email "stephane.begaudeau@gmail.com"
 		git config user.name "Stéphane Bégaudeau"
 		git remote rm origin
-		git remote add origin https://dartdesigner:$GITHUB_TOKEN@github.com/dartdesigner/p2.git > /dev/null
+		git remote add origin https://dartdesigner:$GITHUB_TOKEN@github.com/dartdesigner/p2.git  --quiet &>/dev/null
 		git add -A
 		git commit -m "Promoting a new nightly build for https://github.com/dartdesigner/Dart-Designer/commit/$TRAVIS_COMMIT [$TRAVIS_BRANCH]"
 		git push origin gh-pages > /dev/null

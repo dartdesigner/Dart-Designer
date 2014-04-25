@@ -1,7 +1,7 @@
 language: java
 env:
   global:
-    secure: "VuUSCILvDdyOy3gBYdI21mSQxKCyc3WabSbfCMrEPgJv52bXD0MJO5KblUZoyHiq+tOs5Uc1INjmmV5h69tcCqqiQzkp/77Kde5I/3QpObqxv6vjKtJ8pgJevAqzc4ZdZjSu87rMsSs8heBp7PEikuKeOFAyhUgzHqIQipzflKg="
+    secure: "bEagBH1ChkGMxsPCHLA+FBmRZEwqntkrz1Wipy7STA9xqpoIqpjKxy2hfLJdtD5vf0ambHog68TtlC+Y2S0gXExm4ahHA7/IPFQGNgZUnpjm+vjfm35LJH8sdHPxxo7PP8RgQp1deTVimAIr6hcenEYWuIVbUJM0ENCe+SdJ04A="
 before_script:
 - cd bundles/org.obeonetwork.dsl.dart.documentation
 - npm install -g bower
