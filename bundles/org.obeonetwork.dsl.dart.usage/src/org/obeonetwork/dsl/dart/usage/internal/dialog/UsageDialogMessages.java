@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -14,14 +14,14 @@ import org.eclipse.osgi.util.NLS;
 
 /**
  * Messages used in usage enablement dialog.
- * 
+ *
  * @author Melanie Bats <a href="mailto:melanie.bats@obeo.fr">melanie.bats@obeo.fr</a>
  */
 public final class UsageDialogMessages extends NLS {
 	/**
 	 * The name of the bundle.
 	 */
-	private static final String BUNDLE_NAME = "org.obeonetwork.dsl.dart.usage.dialog.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.obeonetwork.dsl.dart.usage.internal.dialog.messages"; //$NON-NLS-1$
 
 	// CHECKSTYLE:OFF documentation is _still_ required!
 
