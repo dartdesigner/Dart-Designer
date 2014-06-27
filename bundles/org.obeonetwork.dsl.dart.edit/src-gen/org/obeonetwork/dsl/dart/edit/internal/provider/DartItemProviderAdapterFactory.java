@@ -85,6 +85,213 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Project} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ProjectItemProvider projectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Project}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createProjectAdapter() {
+		if (projectItemProvider == null) {
+			projectItemProvider = new ProjectItemProvider(this);
+		}
+
+		return projectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Folder} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected FolderItemProvider folderItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Folder}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createFolderAdapter() {
+		if (folderItemProvider == null) {
+			folderItemProvider = new FolderItemProvider(this);
+		}
+
+		return folderItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Package} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected PackageItemProvider packageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Package}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createPackageAdapter() {
+		if (packageItemProvider == null) {
+			packageItemProvider = new PackageItemProvider(this);
+		}
+
+		return packageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Import} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ImportItemProvider importItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Import}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createImportAdapter() {
+		if (importItemProvider == null) {
+			importItemProvider = new ImportItemProvider(this);
+		}
+
+		return importItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Export} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ExportItemProvider exportItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Export}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createExportAdapter() {
+		if (exportItemProvider == null) {
+			exportItemProvider = new ExportItemProvider(this);
+		}
+
+		return exportItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Typedef} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected TypedefItemProvider typedefItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Typedef}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createTypedefAdapter() {
+		if (typedefItemProvider == null) {
+			typedefItemProvider = new TypedefItemProvider(this);
+		}
+
+		return typedefItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Application}
+	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ApplicationItemProvider applicationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Application}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createApplicationAdapter() {
+		if (applicationItemProvider == null) {
+			applicationItemProvider = new ApplicationItemProvider(this);
+		}
+
+		return applicationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Library} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected LibraryItemProvider libraryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Library}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createLibraryAdapter() {
+		if (libraryItemProvider == null) {
+			libraryItemProvider = new LibraryItemProvider(this);
+		}
+
+		return libraryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Metadata} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected MetadataItemProvider metadataItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Metadata}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createMetadataAdapter() {
+		if (metadataItemProvider == null) {
+			metadataItemProvider = new MetadataItemProvider(this);
+		}
+
+		return metadataItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Class} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -105,6 +312,75 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 		}
 
 		return classItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Field} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected FieldItemProvider fieldItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Field}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createFieldAdapter() {
+		if (fieldItemProvider == null) {
+			fieldItemProvider = new FieldItemProvider(this);
+		}
+
+		return fieldItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Method} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected MethodItemProvider methodItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Method}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createMethodAdapter() {
+		if (methodItemProvider == null) {
+			methodItemProvider = new MethodItemProvider(this);
+		}
+
+		return methodItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Parameter} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ParameterItemProvider parameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Parameter}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterAdapter() {
+		if (parameterItemProvider == null) {
+			parameterItemProvider = new ParameterItemProvider(this);
+		}
+
+		return parameterItemProvider;
 	}
 
 	/**
@@ -204,8 +480,32 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 	 * @generated
 	 */
 	public void dispose() {
+		if (projectItemProvider != null)
+			projectItemProvider.dispose();
+		if (folderItemProvider != null)
+			folderItemProvider.dispose();
+		if (packageItemProvider != null)
+			packageItemProvider.dispose();
+		if (importItemProvider != null)
+			importItemProvider.dispose();
+		if (exportItemProvider != null)
+			exportItemProvider.dispose();
+		if (typedefItemProvider != null)
+			typedefItemProvider.dispose();
+		if (applicationItemProvider != null)
+			applicationItemProvider.dispose();
+		if (libraryItemProvider != null)
+			libraryItemProvider.dispose();
+		if (metadataItemProvider != null)
+			metadataItemProvider.dispose();
 		if (classItemProvider != null)
 			classItemProvider.dispose();
+		if (fieldItemProvider != null)
+			fieldItemProvider.dispose();
+		if (methodItemProvider != null)
+			methodItemProvider.dispose();
+		if (parameterItemProvider != null)
+			parameterItemProvider.dispose();
 	}
 
 }

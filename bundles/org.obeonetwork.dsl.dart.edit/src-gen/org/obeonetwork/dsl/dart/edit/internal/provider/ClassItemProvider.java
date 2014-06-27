@@ -12,19 +12,15 @@ package org.obeonetwork.dsl.dart.edit.internal.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.obeonetwork.dsl.dart.DartFactory;
+import org.obeonetwork.dsl.dart.DartPackage;
 
 /**
  * This is the item provider adapter for a {@link org.obeonetwork.dsl.dart.Class} object. <!-- begin-user-doc
@@ -32,7 +28,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * 
  * @generated
  */
-public class ClassItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ClassItemProvider extends ClassifierItemProvider {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -61,8 +57,86 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAbstractPropertyDescriptor(object);
+			addExtendsPropertyDescriptor(object);
+			addImplementsPropertyDescriptor(object);
+			addMixinsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Abstract feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addAbstractPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Class_abstract_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Class_abstract_feature",
+						"_UI_Class_type"), DartPackage.Literals.CLASS__ABSTRACT, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Extends feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addExtendsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+						getString("_UI_Class_extends_feature"), getString(
+								"_UI_PropertyDescriptor_description", "_UI_Class_extends_feature",
+								"_UI_Class_type"), DartPackage.Literals.CLASS__EXTENDS, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Implements feature. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	protected void addImplementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Class_implements_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Class_implements_feature",
+						"_UI_Class_type"), DartPackage.Literals.CLASS__IMPLEMENTS, true, false, true, null,
+				null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Mixins feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addMixinsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+						getString("_UI_Class_mixins_feature"), getString(
+								"_UI_PropertyDescriptor_description", "_UI_Class_mixins_feature",
+								"_UI_Class_type"), DartPackage.Literals.CLASS__MIXINS, true, false, true,
+						null, null, null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for
+	 * an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand}
+	 * or {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(DartPackage.Literals.CLASS__METHODS);
+		}
+		return childrenFeatures;
 	}
 
 	/**
@@ -71,8 +145,11 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	@Override
-	public boolean hasChildren(Object object) {
-		return hasChildren(object, true);
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -92,7 +169,9 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Class_type");
+		String label = ((org.obeonetwork.dsl.dart.Class)object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Class_type")
+				: getString("_UI_Class_type") + " " + label;
 	}
 
 	/**
@@ -105,6 +184,17 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(org.obeonetwork.dsl.dart.Class.class)) {
+			case DartPackage.CLASS__ABSTRACT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false,
+						true));
+				return;
+			case DartPackage.CLASS__METHODS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true,
+						false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -117,17 +207,9 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
 
-	/**
-	 * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return DartEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(DartPackage.Literals.CLASS__METHODS,
+				DartFactory.eINSTANCE.createMethod()));
 	}
 
 }

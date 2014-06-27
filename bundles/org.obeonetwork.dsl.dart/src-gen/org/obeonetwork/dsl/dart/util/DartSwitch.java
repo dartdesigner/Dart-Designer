@@ -15,7 +15,23 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.obeonetwork.dsl.dart.Application;
+import org.obeonetwork.dsl.dart.Asset;
+import org.obeonetwork.dsl.dart.Classifier;
+import org.obeonetwork.dsl.dart.Container;
 import org.obeonetwork.dsl.dart.DartPackage;
+import org.obeonetwork.dsl.dart.DartResource;
+import org.obeonetwork.dsl.dart.Export;
+import org.obeonetwork.dsl.dart.Field;
+import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Import;
+import org.obeonetwork.dsl.dart.Library;
+import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Method;
+import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Type;
+import org.obeonetwork.dsl.dart.Typedef;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance hierarchy. It supports the call
@@ -74,9 +90,164 @@ public class DartSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case DartPackage.PROJECT: {
+				Project project = (Project)theEObject;
+				T result = caseProject(project);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.ASSET: {
+				Asset asset = (Asset)theEObject;
+				T result = caseAsset(asset);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.CONTAINER: {
+				Container container = (Container)theEObject;
+				T result = caseContainer(container);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.FOLDER: {
+				Folder folder = (Folder)theEObject;
+				T result = caseFolder(folder);
+				if (result == null)
+					result = caseContainer(folder);
+				if (result == null)
+					result = caseAsset(folder);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.PACKAGE: {
+				org.obeonetwork.dsl.dart.Package package_ = (org.obeonetwork.dsl.dart.Package)theEObject;
+				T result = casePackage(package_);
+				if (result == null)
+					result = caseContainer(package_);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.DART_RESOURCE: {
+				DartResource dartResource = (DartResource)theEObject;
+				T result = caseDartResource(dartResource);
+				if (result == null)
+					result = caseAsset(dartResource);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.IMPORT: {
+				Import import_ = (Import)theEObject;
+				T result = caseImport(import_);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.EXPORT: {
+				Export export = (Export)theEObject;
+				T result = caseExport(export);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.TYPEDEF: {
+				Typedef typedef = (Typedef)theEObject;
+				T result = caseTypedef(typedef);
+				if (result == null)
+					result = caseType(typedef);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.TYPE: {
+				Type type = (Type)theEObject;
+				T result = caseType(type);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.APPLICATION: {
+				Application application = (Application)theEObject;
+				T result = caseApplication(application);
+				if (result == null)
+					result = caseDartResource(application);
+				if (result == null)
+					result = caseAsset(application);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.LIBRARY: {
+				Library library = (Library)theEObject;
+				T result = caseLibrary(library);
+				if (result == null)
+					result = caseDartResource(library);
+				if (result == null)
+					result = caseAsset(library);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.CLASSIFIER: {
+				Classifier classifier = (Classifier)theEObject;
+				T result = caseClassifier(classifier);
+				if (result == null)
+					result = caseDartResource(classifier);
+				if (result == null)
+					result = caseAsset(classifier);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.METADATA: {
+				Metadata metadata = (Metadata)theEObject;
+				T result = caseMetadata(metadata);
+				if (result == null)
+					result = caseClassifier(metadata);
+				if (result == null)
+					result = caseDartResource(metadata);
+				if (result == null)
+					result = caseAsset(metadata);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
 			case DartPackage.CLASS: {
 				org.obeonetwork.dsl.dart.Class class_ = (org.obeonetwork.dsl.dart.Class)theEObject;
 				T result = caseClass(class_);
+				if (result == null)
+					result = caseClassifier(class_);
+				if (result == null)
+					result = caseType(class_);
+				if (result == null)
+					result = caseDartResource(class_);
+				if (result == null)
+					result = caseAsset(class_);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.FIELD: {
+				Field field = (Field)theEObject;
+				T result = caseField(field);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.METHOD: {
+				Method method = (Method)theEObject;
+				T result = caseMethod(method);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.PARAMETER: {
+				Parameter parameter = (Parameter)theEObject;
+				T result = caseParameter(parameter);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -84,6 +255,216 @@ public class DartSwitch<T> extends Switch<T> {
 			default:
 				return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Project</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Project</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProject(Project object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Asset</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Asset</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAsset(Asset object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Container</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContainer(Container object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Folder</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Folder</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFolder(Folder object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePackage(org.obeonetwork.dsl.dart.Package object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDartResource(DartResource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Import</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Import</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImport(Import object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Export</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Export</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExport(Export object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Typedef</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Typedef</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypedef(Typedef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Type</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseType(Type object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Application</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Application</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseApplication(Application object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Library</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Library</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLibrary(Library object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Classifier</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Classifier</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClassifier(Classifier object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Metadata</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Metadata</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMetadata(Metadata object) {
+		return null;
 	}
 
 	/**
@@ -98,6 +479,51 @@ public class DartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseClass(org.obeonetwork.dsl.dart.Class object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Field</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseField(Field object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Method</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Method</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMethod(Method object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameter(Parameter object) {
 		return null;
 	}
 

@@ -35,12 +35,108 @@ public interface DartFactory extends EFactory {
 	DartFactory eINSTANCE = org.obeonetwork.dsl.dart.impl.DartFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Project</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Project</em>'.
+	 * @generated
+	 */
+	Project createProject();
+
+	/**
+	 * Returns a new object of class '<em>Folder</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Folder</em>'.
+	 * @generated
+	 */
+	Folder createFolder();
+
+	/**
+	 * Returns a new object of class '<em>Package</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Package</em>'.
+	 * @generated
+	 */
+	Package createPackage();
+
+	/**
+	 * Returns a new object of class '<em>Import</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Import</em>'.
+	 * @generated
+	 */
+	Import createImport();
+
+	/**
+	 * Returns a new object of class '<em>Export</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Export</em>'.
+	 * @generated
+	 */
+	Export createExport();
+
+	/**
+	 * Returns a new object of class '<em>Typedef</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Typedef</em>'.
+	 * @generated
+	 */
+	Typedef createTypedef();
+
+	/**
+	 * Returns a new object of class '<em>Application</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Application</em>'.
+	 * @generated
+	 */
+	Application createApplication();
+
+	/**
+	 * Returns a new object of class '<em>Library</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Library</em>'.
+	 * @generated
+	 */
+	Library createLibrary();
+
+	/**
+	 * Returns a new object of class '<em>Metadata</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Metadata</em>'.
+	 * @generated
+	 */
+	Metadata createMetadata();
+
+	/**
 	 * Returns a new object of class '<em>Class</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Class</em>'.
 	 * @generated
 	 */
 	Class createClass();
+
+	/**
+	 * Returns a new object of class '<em>Field</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Field</em>'.
+	 * @generated
+	 */
+	Field createField();
+
+	/**
+	 * Returns a new object of class '<em>Method</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Method</em>'.
+	 * @generated
+	 */
+	Method createMethod();
+
+	/**
+	 * Returns a new object of class '<em>Parameter</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Parameter</em>'.
+	 * @generated
+	 */
+	Parameter createParameter();
 
 	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->

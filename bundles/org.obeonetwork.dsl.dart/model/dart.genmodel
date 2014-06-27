@@ -1,18 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    copyrightText=" Copyright (c) 2014 Obeo.&#xD;&#xA; All rights reserved. This program and the accompanying materials&#xD;&#xA; are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA; which accompanies this distribution, and is available at&#xD;&#xA; http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA; &#xD;&#xA; Contributors:&#xD;&#xA;     Obeo - initial API and implementation"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=" Copyright (c) 2014 Obeo.&#xD;&#xA; All rights reserved. This program and the accompanying materials&#xD;&#xA; are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA; which accompanies this distribution, and is available at&#xD;&#xA; http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA; &#xD;&#xA; Contributors:&#xD;&#xA;     Obeo - initial API and implementation"
     modelDirectory="/org.obeonetwork.dsl.dart/src-gen" editDirectory="/org.obeonetwork.dsl.dart.edit/src-gen"
     editorDirectory="/org.obeonetwork.dsl.dart.editor/src-gen" modelPluginID="org.obeonetwork.dsl.dart"
     modelName="Dart" editPluginClass="org.obeonetwork.dsl.dart.edit.internal.provider.DartEditPlugin"
     editorPluginClass="org.obeonetwork.dsl.dart.editor.internal.presentation.DartEditorPlugin"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     commentFormatting="true" testsDirectory="/org.obeonetwork.dsl.dart.tests/src-gen"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" optimizedHasChildren="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" optimizedHasChildren="true"
     language="" operationReflection="true" importOrganizing="true">
   <foreignModel>dart.ecore</foreignModel>
   <genPackages prefix="Dart" basePackage="org.obeonetwork.dsl" disposableProviderFactory="true"
       providerPackageSuffix="edit.internal.provider" presentationPackageSuffix="editor.internal.presentation"
       fileExtensions="dartspec" ecorePackage="dart.ecore#/">
-    <genClasses ecoreClass="dart.ecore#//Class"/>
+    <genClasses ecoreClass="dart.ecore#//Project">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Project/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Project/packages"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dart.ecore#//Asset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Asset/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dart.ecore#//Container">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Container/assets"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Folder"/>
+    <genClasses ecoreClass="dart.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Package/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Package/license"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Package/dependencies"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dart.ecore#//DartResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//DartResource/documentation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//DartResource/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//DartResource/exports"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Import">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Import/dartResources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Import/as"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Import/show"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Import/hide"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Import/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Export">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Export/dartResources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Export/show"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Export/hide"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Export/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Typedef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Typedef/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Typedef/documentation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Typedef/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Typedef/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Typedef/metadata"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dart.ecore#//Type"/>
+    <genClasses ecoreClass="dart.ecore#//Application">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Application/typedefs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Application/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Library">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Library/parts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Library/typedefs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Library/metadata"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dart.ecore#//Classifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Classifier/fields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Classifier/metadata"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Classifier/partof"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Metadata"/>
+    <genClasses ecoreClass="dart.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Class/abstract"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Class/extends"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Class/implements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Class/mixins"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Class/methods"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Field/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Field/documentation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Field/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Field/static"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Field/constant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Field/final"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Field/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Method/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Method/documentation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Method/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Method/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Method/static"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Method/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Method/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Parameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Parameter/defaultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Parameter/optional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Parameter/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Parameter/metadata"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

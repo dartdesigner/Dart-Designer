@@ -6,7 +6,7 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: bundle
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.obeonetwork.dsl.dart;version="1.0.0",
  org.obeonetwork.dsl.dart.impl;version="1.0.0",
  org.obeonetwork.dsl.dart.util;version="1.0.0"

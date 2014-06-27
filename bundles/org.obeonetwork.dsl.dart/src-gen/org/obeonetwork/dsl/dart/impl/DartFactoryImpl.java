@@ -18,8 +18,19 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.obeonetwork.dsl.dart.Application;
 import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.DartPackage;
+import org.obeonetwork.dsl.dart.Export;
+import org.obeonetwork.dsl.dart.Field;
+import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Import;
+import org.obeonetwork.dsl.dart.Library;
+import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Method;
+import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Typedef;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
@@ -69,8 +80,32 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case DartPackage.PROJECT:
+				return createProject();
+			case DartPackage.FOLDER:
+				return createFolder();
+			case DartPackage.PACKAGE:
+				return createPackage();
+			case DartPackage.IMPORT:
+				return createImport();
+			case DartPackage.EXPORT:
+				return createExport();
+			case DartPackage.TYPEDEF:
+				return createTypedef();
+			case DartPackage.APPLICATION:
+				return createApplication();
+			case DartPackage.LIBRARY:
+				return createLibrary();
+			case DartPackage.METADATA:
+				return createMetadata();
 			case DartPackage.CLASS:
 				return createClass();
+			case DartPackage.FIELD:
+				return createField();
+			case DartPackage.METHOD:
+				return createMethod();
+			case DartPackage.PARAMETER:
+				return createParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName()
 						+ "' is not a valid classifier");
@@ -82,9 +117,129 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 	 * 
 	 * @generated
 	 */
+	public Project createProject() {
+		ProjectImpl project = new ProjectImpl();
+		return project;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Folder createFolder() {
+		FolderImpl folder = new FolderImpl();
+		return folder;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public org.obeonetwork.dsl.dart.Package createPackage() {
+		PackageImpl package_ = new PackageImpl();
+		return package_;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Import createImport() {
+		ImportImpl import_ = new ImportImpl();
+		return import_;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Export createExport() {
+		ExportImpl export = new ExportImpl();
+		return export;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Typedef createTypedef() {
+		TypedefImpl typedef = new TypedefImpl();
+		return typedef;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Application createApplication() {
+		ApplicationImpl application = new ApplicationImpl();
+		return application;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Library createLibrary() {
+		LibraryImpl library = new LibraryImpl();
+		return library;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Metadata createMetadata() {
+		MetadataImpl metadata = new MetadataImpl();
+		return metadata;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public org.obeonetwork.dsl.dart.Class createClass() {
 		ClassImpl class_ = new ClassImpl();
 		return class_;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Field createField() {
+		FieldImpl field = new FieldImpl();
+		return field;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Method createMethod() {
+		MethodImpl method = new MethodImpl();
+		return method;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
 	}
 
 	/**
