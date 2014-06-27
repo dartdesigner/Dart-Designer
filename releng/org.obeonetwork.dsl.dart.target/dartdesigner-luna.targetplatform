@@ -1,0 +1,13 @@
+target "DartDesigner-luna"
+
+with source, requirements
+
+location "http://download.eclipse.org/releases/luna" {
+	org.eclipse.platform.feature.group
+	org.eclipse.sdk.feature.group
+	org.eclipse.epp.mpc.feature.group
+	org.eclipse.equinox.executable.feature.group
+	org.eclipse.sirius.runtime.feature.group
+	org.eclipse.sirius.runtime.ide.eef.feature.group
+	org.eclipse.sirius.runtime.ide.ui.feature.group
+}
