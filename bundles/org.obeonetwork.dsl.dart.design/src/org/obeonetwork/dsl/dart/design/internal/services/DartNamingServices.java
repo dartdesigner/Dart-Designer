@@ -126,6 +126,20 @@ public class DartNamingServices {
 	}
 
 	/**
+	 * Returns the name of the new abstract class.
+	 *
+	 * @param eObject
+	 *            The class
+	 * @return The name of the new abstract class
+	 */
+	public String getNewAbstractClassDefaultName(EObject eObject) {
+		if (eObject instanceof Class) {
+			return "Abstract" + I18n.getString(I18nKeys.NEW_CLASS_NAME); //$NON-NLS-1$
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
 	 * Returns the name of the new application.
 	 *
 	 * @param eObject

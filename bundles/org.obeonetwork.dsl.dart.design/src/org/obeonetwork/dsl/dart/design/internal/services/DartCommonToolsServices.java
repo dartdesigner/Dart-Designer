@@ -1,5 +1,7 @@
 package org.obeonetwork.dsl.dart.design.internal.services;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * This class will hold utility operations for the common tools.
  *
@@ -24,7 +26,7 @@ public class DartCommonToolsServices {
 	 *            The current context
 	 * @return <code>true</code>
 	 */
-	public boolean active(Object object) {
+	public boolean active(EObject object) {
 		return true;
 	}
 }
