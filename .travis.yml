@@ -17,6 +17,7 @@ after_script:
 jdk: oraclejdk7
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: N6mBRX0Yh0pbMX1DshRSOiRRh119w2hO4dX9LxSeSXqCZfxcQIuOKhUHzNLHl/UGZpYTPr1cbjrsVED/tOs610vOm96C8SbL6ZlruAYl2UspxstXkbv7+qd2tt3NtjZLspJA9/WC4CMX9KPfJpYHxPoM4MJreS3sqJ9KUEr8jBc=
   file:
@@ -26,4 +27,5 @@ deploy:
     - $TRAVIS_BUILD_DIR/packaging/org.obeonetwork.dsl.dart.product/target/products/DartDesigner-win32.win32.x86.zip
     - $TRAVIS_BUILD_DIR/packaging/org.obeonetwork.dsl.dart.product/target/products/DartDesigner-win32.win32.x86_64.zip
   on:
+    tags: true
     repo: dartdesigner/Dart-Designer

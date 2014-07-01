@@ -3,7 +3,7 @@
    <description url="http://www.obeo.fr">
       Viewpoint
    </description>
-   <feature url="features/org.obeonetwork.dsl.dart.feature_0.1.0.qualifier.jar" id="org.obeonetwork.dsl.dart.feature" version="0.1.0.qualifier">
+   <feature url="features/org.obeonetwork.dsl.dart.feature_0.2.0.qualifier.jar" id="org.obeonetwork.dsl.dart.feature" version="0.2.0.qualifier">
       <category name="org.obeonetwork.dsl.dart.product"/>
    </feature>
    <category-def name="org.obeonetwork.dsl.dart.product" label="Dart Designer">
