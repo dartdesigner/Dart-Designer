@@ -1,7 +1,7 @@
 language: java
 env:
   global:
-    secure: "bEagBH1ChkGMxsPCHLA+FBmRZEwqntkrz1Wipy7STA9xqpoIqpjKxy2hfLJdtD5vf0ambHog68TtlC+Y2S0gXExm4ahHA7/IPFQGNgZUnpjm+vjfm35LJH8sdHPxxo7PP8RgQp1deTVimAIr6hcenEYWuIVbUJM0ENCe+SdJ04A="
+    secure: bEagBH1ChkGMxsPCHLA+FBmRZEwqntkrz1Wipy7STA9xqpoIqpjKxy2hfLJdtD5vf0ambHog68TtlC+Y2S0gXExm4ahHA7/IPFQGNgZUnpjm+vjfm35LJH8sdHPxxo7PP8RgQp1deTVimAIr6hcenEYWuIVbUJM0ENCe+SdJ04A=
 before_script:
 - cd bundles/org.obeonetwork.dsl.dart.documentation
 - npm install -g bower
@@ -15,3 +15,15 @@ after_script:
 - chmod a+x travis-promote.sh
 - ./travis-promote.sh
 jdk: oraclejdk7
+deploy:
+  provider: releases
+  api_key:
+    secure: N6mBRX0Yh0pbMX1DshRSOiRRh119w2hO4dX9LxSeSXqCZfxcQIuOKhUHzNLHl/UGZpYTPr1cbjrsVED/tOs610vOm96C8SbL6ZlruAYl2UspxstXkbv7+qd2tt3NtjZLspJA9/WC4CMX9KPfJpYHxPoM4MJreS3sqJ9KUEr8jBc=
+  file:
+    - $TRAVIS_BUILD_DIR/packaging/org.obeonetwork.dsl.dart.product/target/products/DartDesigner-linux.gtk.x86.zip
+    - $TRAVIS_BUILD_DIR/packaging/org.obeonetwork.dsl.dart.product/target/products/DartDesigner-linux.gtk.x86_64.zip
+    - $TRAVIS_BUILD_DIR/packaging/org.obeonetwork.dsl.dart.product/target/products/DartDesigner-macosx.cocoa.x86_64.zip
+    - $TRAVIS_BUILD_DIR/packaging/org.obeonetwork.dsl.dart.product/target/products/DartDesigner-win32.win32.x86.zip
+    - $TRAVIS_BUILD_DIR/packaging/org.obeonetwork.dsl.dart.product/target/products/DartDesigner-win32.win32.x86_64.zip
+  on:
+    repo: dartdesigner/Dart-Designer
