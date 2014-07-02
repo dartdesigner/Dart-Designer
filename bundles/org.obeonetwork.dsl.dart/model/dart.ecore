@@ -28,19 +28,17 @@
         eType="#//Export" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Import">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dartResources" upperBound="-1"
-        eType="#//DartResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dartResource" eType="#//DartResource"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="as" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="show" upperBound="-1" eType="#//Class"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hide" upperBound="-1" eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="show" upperBound="-1" eType="#//DartResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hide" upperBound="-1" eType="#//DartResource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" upperBound="-1"
         eType="#//Metadata"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Export">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dartResources" upperBound="-1"
-        eType="#//DartResource"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="show" upperBound="-1" eType="#//Class"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hide" eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dartResource" eType="#//DartResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="show" upperBound="-1" eType="#//DartResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hide" upperBound="-1" eType="#//DartResource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" upperBound="-1"
         eType="#//Metadata"/>
   </eClassifiers>
@@ -112,7 +110,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" upperBound="-1"
         eType="#//Metadata"/>
   </eClassifiers>

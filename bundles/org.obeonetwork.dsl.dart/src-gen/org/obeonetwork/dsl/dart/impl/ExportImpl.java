@@ -53,14 +53,14 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export {
 	public static final String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
 
 	/**
-	 * The cached value of the '{@link #getDartResources() <em>Dart Resources</em>}' reference list. <!--
+	 * The cached value of the '{@link #getDartResource() <em>Dart Resource</em>}' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getDartResources()
+	 * @see #getDartResource()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DartResource> dartResources;
+	protected DartResource dartResource;
 
 	/**
 	 * The cached value of the '{@link #getShow() <em>Show</em>}' reference list. <!-- begin-user-doc --> <!--
@@ -70,17 +70,17 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<org.obeonetwork.dsl.dart.Class> show;
+	protected EList<DartResource> show;
 
 	/**
-	 * The cached value of the '{@link #getHide() <em>Hide</em>}' reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getHide() <em>Hide</em>}' reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @see #getHide()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.obeonetwork.dsl.dart.Class hide;
+	protected EList<DartResource> hide;
 
 	/**
 	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' reference list. <!-- begin-user-doc
@@ -116,12 +116,17 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export {
 	 * 
 	 * @generated
 	 */
-	public EList<DartResource> getDartResources() {
-		if (dartResources == null) {
-			dartResources = new EObjectResolvingEList<DartResource>(DartResource.class, this,
-					DartPackage.EXPORT__DART_RESOURCES);
+	public DartResource getDartResource() {
+		if (dartResource != null && dartResource.eIsProxy()) {
+			InternalEObject oldDartResource = (InternalEObject)dartResource;
+			dartResource = (DartResource)eResolveProxy(oldDartResource);
+			if (dartResource != oldDartResource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DartPackage.EXPORT__DART_RESOURCE, oldDartResource, dartResource));
+			}
 		}
-		return dartResources;
+		return dartResource;
 	}
 
 	/**
@@ -129,10 +134,31 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export {
 	 * 
 	 * @generated
 	 */
-	public EList<org.obeonetwork.dsl.dart.Class> getShow() {
+	public DartResource basicGetDartResource() {
+		return dartResource;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setDartResource(DartResource newDartResource) {
+		DartResource oldDartResource = dartResource;
+		dartResource = newDartResource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.EXPORT__DART_RESOURCE,
+					oldDartResource, dartResource));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<DartResource> getShow() {
 		if (show == null) {
-			show = new EObjectResolvingEList<org.obeonetwork.dsl.dart.Class>(
-					org.obeonetwork.dsl.dart.Class.class, this, DartPackage.EXPORT__SHOW);
+			show = new EObjectResolvingEList<DartResource>(DartResource.class, this, DartPackage.EXPORT__SHOW);
 		}
 		return show;
 	}
@@ -142,38 +168,11 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export {
 	 * 
 	 * @generated
 	 */
-	public org.obeonetwork.dsl.dart.Class getHide() {
-		if (hide != null && hide.eIsProxy()) {
-			InternalEObject oldHide = (InternalEObject)hide;
-			hide = (org.obeonetwork.dsl.dart.Class)eResolveProxy(oldHide);
-			if (hide != oldHide) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DartPackage.EXPORT__HIDE,
-							oldHide, hide));
-			}
+	public EList<DartResource> getHide() {
+		if (hide == null) {
+			hide = new EObjectResolvingEList<DartResource>(DartResource.class, this, DartPackage.EXPORT__HIDE);
 		}
 		return hide;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public org.obeonetwork.dsl.dart.Class basicGetHide() {
-		return hide;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setHide(org.obeonetwork.dsl.dart.Class newHide) {
-		org.obeonetwork.dsl.dart.Class oldHide = hide;
-		hide = newHide;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.EXPORT__HIDE, oldHide, hide));
 	}
 
 	/**
@@ -196,14 +195,14 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DartPackage.EXPORT__DART_RESOURCES:
-				return getDartResources();
+			case DartPackage.EXPORT__DART_RESOURCE:
+				if (resolve)
+					return getDartResource();
+				return basicGetDartResource();
 			case DartPackage.EXPORT__SHOW:
 				return getShow();
 			case DartPackage.EXPORT__HIDE:
-				if (resolve)
-					return getHide();
-				return basicGetHide();
+				return getHide();
 			case DartPackage.EXPORT__METADATA:
 				return getMetadata();
 		}
@@ -219,16 +218,16 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DartPackage.EXPORT__DART_RESOURCES:
-				getDartResources().clear();
-				getDartResources().addAll((Collection<? extends DartResource>)newValue);
+			case DartPackage.EXPORT__DART_RESOURCE:
+				setDartResource((DartResource)newValue);
 				return;
 			case DartPackage.EXPORT__SHOW:
 				getShow().clear();
-				getShow().addAll((Collection<? extends org.obeonetwork.dsl.dart.Class>)newValue);
+				getShow().addAll((Collection<? extends DartResource>)newValue);
 				return;
 			case DartPackage.EXPORT__HIDE:
-				setHide((org.obeonetwork.dsl.dart.Class)newValue);
+				getHide().clear();
+				getHide().addAll((Collection<? extends DartResource>)newValue);
 				return;
 			case DartPackage.EXPORT__METADATA:
 				getMetadata().clear();
@@ -246,14 +245,14 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DartPackage.EXPORT__DART_RESOURCES:
-				getDartResources().clear();
+			case DartPackage.EXPORT__DART_RESOURCE:
+				setDartResource((DartResource)null);
 				return;
 			case DartPackage.EXPORT__SHOW:
 				getShow().clear();
 				return;
 			case DartPackage.EXPORT__HIDE:
-				setHide((org.obeonetwork.dsl.dart.Class)null);
+				getHide().clear();
 				return;
 			case DartPackage.EXPORT__METADATA:
 				getMetadata().clear();
@@ -270,12 +269,12 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DartPackage.EXPORT__DART_RESOURCES:
-				return dartResources != null && !dartResources.isEmpty();
+			case DartPackage.EXPORT__DART_RESOURCE:
+				return dartResource != null;
 			case DartPackage.EXPORT__SHOW:
 				return show != null && !show.isEmpty();
 			case DartPackage.EXPORT__HIDE:
-				return hide != null;
+				return hide != null && !hide.isEmpty();
 			case DartPackage.EXPORT__METADATA:
 				return metadata != null && !metadata.isEmpty();
 		}

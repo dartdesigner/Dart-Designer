@@ -41,20 +41,31 @@ public interface Import extends EObject {
 	String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
 
 	/**
-	 * Returns the value of the '<em><b>Dart Resources</b></em>' reference list. The list contents are of type
-	 * {@link org.obeonetwork.dsl.dart.DartResource}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dart Resources</em>' reference list isn't clear, there really should be more
-	 * of a description here...
+	 * If the meaning of the '<em>Dart Resource</em>' reference isn't clear, there really should be more of a
+	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return the value of the '<em>Dart Resources</em>' reference list.
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getImport_DartResources()
+	 * @return the value of the '<em>Dart Resource</em>' reference.
+	 * @see #setDartResource(DartResource)
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getImport_DartResource()
 	 * @model
 	 * @generated
 	 */
-	EList<DartResource> getDartResources();
+	DartResource getDartResource();
+
+	/**
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Import#getDartResource <em>Dart Resource</em>}'
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Dart Resource</em>' reference.
+	 * @see #getDartResource()
+	 * @generated
+	 */
+	void setDartResource(DartResource value);
 
 	/**
 	 * Returns the value of the '<em><b>As</b></em>' attribute. <!-- begin-user-doc -->
@@ -85,7 +96,7 @@ public interface Import extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Show</b></em>' reference list. The list contents are of type
-	 * {@link org.obeonetwork.dsl.dart.Class}. <!-- begin-user-doc -->
+	 * {@link org.obeonetwork.dsl.dart.DartResource}. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Show</em>' reference list isn't clear, there really should be more of a
 	 * description here...
@@ -97,11 +108,11 @@ public interface Import extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<org.obeonetwork.dsl.dart.Class> getShow();
+	EList<DartResource> getShow();
 
 	/**
 	 * Returns the value of the '<em><b>Hide</b></em>' reference list. The list contents are of type
-	 * {@link org.obeonetwork.dsl.dart.Class}. <!-- begin-user-doc -->
+	 * {@link org.obeonetwork.dsl.dart.DartResource}. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Hide</em>' reference list isn't clear, there really should be more of a
 	 * description here...
@@ -113,7 +124,7 @@ public interface Import extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EList<org.obeonetwork.dsl.dart.Class> getHide();
+	EList<DartResource> getHide();
 
 	/**
 	 * Returns the value of the '<em><b>Metadata</b></em>' reference list. The list contents are of type

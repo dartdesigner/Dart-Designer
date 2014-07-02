@@ -130,12 +130,12 @@ public interface Parameter extends EObject {
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(org.obeonetwork.dsl.dart.Class)
+	 * @see #setType(Type)
 	 * @see org.obeonetwork.dsl.dart.DartPackage#getParameter_Type()
 	 * @model
 	 * @generated
 	 */
-	org.obeonetwork.dsl.dart.Class getType();
+	Type getType();
 
 	/**
 	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Parameter#getType <em>Type</em>}' reference.
@@ -146,7 +146,7 @@ public interface Parameter extends EObject {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(org.obeonetwork.dsl.dart.Class value);
+	void setType(Type value);
 
 	/**
 	 * Returns the value of the '<em><b>Metadata</b></em>' reference list. The list contents are of type

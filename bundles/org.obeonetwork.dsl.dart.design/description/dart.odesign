@@ -12,8 +12,8 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="PD Package" detailDescriptions="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Create%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@subSections[name='Class%20Diagram']/@ownedTools[name='Create%20Class%20Diagram%20from%20Container']" navigationDescriptions="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Open%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@subSections[name='Class%20Diagram']/@ownedTools[name='Open%20Class%20Diagram%20from%20Container']" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="feature:packages" createElements="false" domainClass="dart.Package" childrenPresentation="List">
-          <subNodeMappings name="PD Library" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name%20With%20CamelCase']" semanticCandidatesExpression="feature:eAllContents" domainClass="dart.Library">
+        <containerMappings name="PD Package" detailDescriptions="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Create%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Class%20Diagram']/@ownedTools[name='Create%20Class%20Diagram%20from%20Container']" navigationDescriptions="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Open%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Class%20Diagram']/@ownedTools[name='Open%20Class%20Diagram%20from%20Container']" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="feature:packages" createElements="false" domainClass="dart.Package" childrenPresentation="List">
+          <subNodeMappings name="PD Library" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" semanticCandidatesExpression="feature:eAllContents" domainClass="dart.Library">
             <style xsi:type="style:BundledImageDescription" labelAlignment="LEFT" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -68,31 +68,31 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Explorer Diagram" titleExpression="service:newExplorerDiagramName" domainClass="dart.Container" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Explorer Diagram">
-        <nodeMappings name="ED Folder" detailDescriptions="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Create%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@subSections[name='Class%20Diagram']/@ownedTools[name='Create%20Class%20Diagram%20from%20Container']" navigationDescriptions="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Open%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@subSections[name='Class%20Diagram']/@ownedTools[name='Open%20Class%20Diagram%20from%20Container']" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name']" createElements="false" domainClass="dart.Folder">
+        <nodeMappings name="ED Folder" detailDescriptions="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Create%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Class%20Diagram']/@ownedTools[name='Create%20Class%20Diagram%20from%20Container']" navigationDescriptions="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Open%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Class%20Diagram']/@ownedTools[name='Open%20Class%20Diagram%20from%20Container']" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name']" createElements="false" domainClass="dart.Folder">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/folder_512x512.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ED Application" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Application">
+        <nodeMappings name="ED Application" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Application">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/dart_application_512x512.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ED Library" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Library">
+        <nodeMappings name="ED Library" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Library">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/dart_library_512x512.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ED Class" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Class">
+        <nodeMappings name="ED Class" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Class">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/dart_class_512x512.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ED Metadata" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Metadata%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Metadata">
+        <nodeMappings name="ED Metadata" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Metadata%20Name']" createElements="false" domainClass="dart.Metadata">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/dart_metadata_512x512.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -189,7 +189,7 @@
         <edgeMappings name="CD Class Extends" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:extends">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
+            <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;extend>">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -197,7 +197,7 @@
         <edgeMappings name="CD Class Implements" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:implements">
           <style lineStyle="dash" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
+            <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;implement>">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -205,21 +205,45 @@
         <edgeMappings name="CD Class Mixins" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:mixins">
           <style lineStyle="dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;mixin>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CD Class Composition" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="service:getFieldTypes">
+          <style sourceArrow="FillDiamond" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="CD Class" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Class" childrenPresentation="List">
-          <subNodeMappings name="CD Class Field" semanticCandidatesExpression="feature:fields" synchronizationLock="true" domainClass="dart.Field">
-            <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+        <edgeMappings name="CD Dart Resource Import" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Application']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Application'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library']" targetFinderExpression="service:getImportedResources">
+          <style sourceArrow="Diamond" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;import>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CD Dart Resource Export" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Application'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Application'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" targetFinderExpression="service:getExportedResources">
+          <style sourceArrow="Diamond" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;export>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="CD Class" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Class" childrenPresentation="List">
+          <subNodeMappings name="CD Class Field" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Field']" semanticCandidatesExpression="feature:fields" domainClass="dart.Field">
+            <style xsi:type="style:SquareDescription" labelExpression="service:getFieldLabel" labelAlignment="LEFT" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <subNodeMappings name="CD Class Method" semanticCandidatesExpression="feature:methods" synchronizationLock="true" domainClass="dart.Method">
-            <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+          <subNodeMappings name="CD Class Method" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Method']" semanticCandidatesExpression="feature:methods" domainClass="dart.Method">
+            <style xsi:type="style:SquareDescription" labelExpression="service:getMethodLabel" labelAlignment="LEFT" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -237,9 +261,9 @@
             </style>
           </conditionnalStyles>
         </containerMappings>
-        <containerMappings name="CD Metadata" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Metadata%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Metadata" childrenPresentation="List">
-          <subNodeMappings name="CD Metadata Field" semanticCandidatesExpression="feature:fields" synchronizationLock="true" domainClass="dart.Field">
-            <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+        <containerMappings name="CD Metadata" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Metadata%20Name']" createElements="false" domainClass="dart.Metadata" childrenPresentation="List">
+          <subNodeMappings name="CD Metadata Field" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Field']" semanticCandidatesExpression="feature:fields" synchronizationLock="true" domainClass="dart.Field">
+            <style xsi:type="style:SquareDescription" labelExpression="service:getFieldLabel" labelAlignment="LEFT" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -250,13 +274,13 @@
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
-        <containerMappings name="CD Library" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Library" childrenPresentation="List">
+        <containerMappings name="CD Library" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Library" childrenPresentation="List">
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Charcoal']" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Library']">
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
-        <containerMappings name="CD Application" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Application" childrenPresentation="List">
+        <containerMappings name="CD Application" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Application" childrenPresentation="List">
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Charcoal']" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Application']">
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -361,6 +385,26 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <toolSections name="Features">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="CD Class Field Creation" label="New Field" nodeMappings="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']/@subNodeMappings[name='CD%20Class%20Field'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']/@subNodeMappings[name='CD%20Metadata%20Field']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="dart.Field" referenceName="fields">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:getNewFieldDefaultName"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="CD Class Method Creation" label="New Method" nodeMappings="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']/@subNodeMappings[name='CD%20Class%20Method']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="dart.Method" referenceName="methods">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:getNewMethodDefaultName"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
         <toolSections name="CD Relationships" label="Relationships">
           <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="CD Class Extends Creation" label="Extends" edgeMappings="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD%20Class%20Extends']">
             <sourceVariable name="source"/>
@@ -395,6 +439,46 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="CD Class Composition Creation" label="Composition" edgeMappings="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD%20Class%20Composition']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="dart.Field" referenceName="fields">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="type" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:getNewClassFieldDefaultName"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="CD Dart Resource Import Creation" label="Import" edgeMappings="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD%20Dart%20Resource%20Import']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="dart.Import" referenceName="imports">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="dartResource" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="CD Dart Resource Export Creation" label="Export" edgeMappings="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD%20Dart%20Resource%20Export']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="dart.Export" referenceName="exports">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="dartResource" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
@@ -411,6 +495,8 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+        </toolSections>
+        <toolSections name="Direct Edit Tools">
           <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Name">
             <mask mask="{0}"/>
             <initialOperation>
@@ -423,10 +509,22 @@
               <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:toCamelCase(arg0)"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Metadata Name With CamelCase">
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Metadata Name">
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:toMetadataName(arg0)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Field">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:editField(arg0)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Method">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:editMethod(arg0)"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

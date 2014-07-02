@@ -363,13 +363,13 @@ public interface DartPackage extends EPackage {
 	int IMPORT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Dart Resources</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int IMPORT__DART_RESOURCES = 0;
+	int IMPORT__DART_RESOURCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>As</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -434,13 +434,13 @@ public interface DartPackage extends EPackage {
 	int EXPORT = 7;
 
 	/**
-	 * The feature id for the '<em><b>Dart Resources</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int EXPORT__DART_RESOURCES = 0;
+	int EXPORT__DART_RESOURCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Show</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc
@@ -452,7 +452,8 @@ public interface DartPackage extends EPackage {
 	int EXPORT__SHOW = 1;
 
 	/**
-	 * The feature id for the '<em><b>Hide</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Hide</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
 	 * @generated
 	 * @ordered
@@ -1499,16 +1500,15 @@ public interface DartPackage extends EPackage {
 	EClass getImport();
 
 	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.obeonetwork.dsl.dart.Import#getDartResources <em>Dart Resources</em>}'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Import#getDartResource
+	 * <em>Dart Resource</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the reference list '<em>Dart Resources</em>'.
-	 * @see org.obeonetwork.dsl.dart.Import#getDartResources()
+	 * @return the meta object for the reference '<em>Dart Resource</em>'.
+	 * @see org.obeonetwork.dsl.dart.Import#getDartResource()
 	 * @see #getImport()
 	 * @generated
 	 */
-	EReference getImport_DartResources();
+	EReference getImport_DartResource();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Import#getAs <em>As</em>}'.
@@ -1565,16 +1565,15 @@ public interface DartPackage extends EPackage {
 	EClass getExport();
 
 	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.obeonetwork.dsl.dart.Export#getDartResources <em>Dart Resources</em>}'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Export#getDartResource
+	 * <em>Dart Resource</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the reference list '<em>Dart Resources</em>'.
-	 * @see org.obeonetwork.dsl.dart.Export#getDartResources()
+	 * @return the meta object for the reference '<em>Dart Resource</em>'.
+	 * @see org.obeonetwork.dsl.dart.Export#getDartResource()
 	 * @see #getExport()
 	 * @generated
 	 */
-	EReference getExport_DartResources();
+	EReference getExport_DartResource();
 
 	/**
 	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.dart.Export#getShow
@@ -1588,10 +1587,10 @@ public interface DartPackage extends EPackage {
 	EReference getExport_Show();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Export#getHide
+	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.dart.Export#getHide
 	 * <em>Hide</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the reference '<em>Hide</em>'.
+	 * @return the meta object for the reference list '<em>Hide</em>'.
 	 * @see org.obeonetwork.dsl.dart.Export#getHide()
 	 * @see #getExport()
 	 * @generated
@@ -2297,12 +2296,12 @@ public interface DartPackage extends EPackage {
 		EClass IMPORT = eINSTANCE.getImport();
 
 		/**
-		 * The meta object literal for the '<em><b>Dart Resources</b></em>' reference list feature. <!--
+		 * The meta object literal for the '<em><b>Dart Resource</b></em>' reference feature. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EReference IMPORT__DART_RESOURCES = eINSTANCE.getImport_DartResources();
+		EReference IMPORT__DART_RESOURCE = eINSTANCE.getImport_DartResource();
 
 		/**
 		 * The meta object literal for the '<em><b>As</b></em>' attribute feature. <!-- begin-user-doc -->
@@ -2347,12 +2346,12 @@ public interface DartPackage extends EPackage {
 		EClass EXPORT = eINSTANCE.getExport();
 
 		/**
-		 * The meta object literal for the '<em><b>Dart Resources</b></em>' reference list feature. <!--
+		 * The meta object literal for the '<em><b>Dart Resource</b></em>' reference feature. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EReference EXPORT__DART_RESOURCES = eINSTANCE.getExport_DartResources();
+		EReference EXPORT__DART_RESOURCE = eINSTANCE.getExport_DartResource();
 
 		/**
 		 * The meta object literal for the '<em><b>Show</b></em>' reference list feature. <!-- begin-user-doc
@@ -2363,8 +2362,8 @@ public interface DartPackage extends EPackage {
 		EReference EXPORT__SHOW = eINSTANCE.getExport_Show();
 
 		/**
-		 * The meta object literal for the '<em><b>Hide</b></em>' reference feature. <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Hide</b></em>' reference list feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */

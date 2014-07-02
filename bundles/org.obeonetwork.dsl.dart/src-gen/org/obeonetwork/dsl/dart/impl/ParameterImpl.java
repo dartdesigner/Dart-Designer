@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Type;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Parameter</b></em>'. <!--
@@ -120,7 +121,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * @generated
 	 * @ordered
 	 */
-	protected org.obeonetwork.dsl.dart.Class type;
+	protected Type type;
 
 	/**
 	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' reference list. <!-- begin-user-doc
@@ -221,10 +222,10 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * 
 	 * @generated
 	 */
-	public org.obeonetwork.dsl.dart.Class getType() {
+	public Type getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (org.obeonetwork.dsl.dart.Class)eResolveProxy(oldType);
+			type = (Type)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DartPackage.PARAMETER__TYPE,
@@ -239,7 +240,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * 
 	 * @generated
 	 */
-	public org.obeonetwork.dsl.dart.Class basicGetType() {
+	public Type basicGetType() {
 		return type;
 	}
 
@@ -248,8 +249,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * 
 	 * @generated
 	 */
-	public void setType(org.obeonetwork.dsl.dart.Class newType) {
-		org.obeonetwork.dsl.dart.Class oldType = type;
+	public void setType(Type newType) {
+		Type oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.PARAMETER__TYPE, oldType, type));
@@ -311,7 +312,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				setOptional((Boolean)newValue);
 				return;
 			case DartPackage.PARAMETER__TYPE:
-				setType((org.obeonetwork.dsl.dart.Class)newValue);
+				setType((Type)newValue);
 				return;
 			case DartPackage.PARAMETER__METADATA:
 				getMetadata().clear();
@@ -339,7 +340,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				setOptional(OPTIONAL_EDEFAULT);
 				return;
 			case DartPackage.PARAMETER__TYPE:
-				setType((org.obeonetwork.dsl.dart.Class)null);
+				setType((Type)null);
 				return;
 			case DartPackage.PARAMETER__METADATA:
 				getMetadata().clear();

@@ -23,10 +23,17 @@ import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.dsl.dart.Application;
 import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.Container;
+import org.obeonetwork.dsl.dart.DartResource;
+import org.obeonetwork.dsl.dart.Export;
+import org.obeonetwork.dsl.dart.Field;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Method;
 import org.obeonetwork.dsl.dart.Package;
+import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
 
@@ -36,6 +43,11 @@ import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  */
 public class DartClassDiagramServices {
+	/**
+	 * The type of an element with a null type.
+	 */
+	private static final String VOID = "void"; //$NON-NLS-1$
+
 	/**
 	 * Returns the name of the newly created class diagram for the given container.
 	 *
@@ -87,5 +99,160 @@ public class DartClassDiagramServices {
 			}
 		}
 		return result;
+	}
+
+	/**
+	 * Returns the label of the field.
+	 *
+	 * @param eObject
+	 *            The field
+	 * @return The label of the field
+	 */
+	public String getFieldLabel(EObject eObject) {
+		if (eObject instanceof Field) {
+			Field field = (Field)eObject;
+
+			StringBuilder builder = new StringBuilder();
+			if (field.getName() != null) {
+				builder.append(field.getName());
+			}
+			builder.append(':');
+			if (field.getType() == null) {
+				builder.append(VOID);
+			} else {
+				Type type = field.getType();
+				if (type instanceof Class) {
+					Class aClass = (Class)type;
+					builder.append(aClass.getName());
+				}
+			}
+			return builder.toString();
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the label of the method.
+	 *
+	 * @param eObject
+	 *            The method
+	 * @return The label of the method
+	 */
+	public String getMethodLabel(EObject eObject) {
+		if (eObject instanceof Method) {
+			Method method = (Method)eObject;
+
+			StringBuilder builder = new StringBuilder();
+			if (method.getName() != null) {
+				builder.append(method.getName());
+			}
+
+			builder.append('(');
+			int count = 0;
+			final int size = method.getParameters().size();
+			for (Parameter parameter : method.getParameters()) {
+				builder.append(parameter.getName());
+				builder.append(':');
+
+				if (parameter.getType() == null) {
+					builder.append(VOID);
+				} else {
+					Type type = parameter.getType();
+					if (type instanceof Class) {
+						Class aClass = (Class)type;
+						builder.append(aClass.getName());
+					}
+				}
+
+				if (count + 1 < size) {
+					builder.append(", "); //$NON-NLS-1$
+				}
+				count++;
+			}
+			builder.append(')');
+
+			builder.append(':');
+			if (method.getType() == null) {
+				builder.append(VOID);
+			} else {
+				Type type = method.getType();
+				if (type instanceof Class) {
+					Class aClass = (Class)type;
+					builder.append(aClass.getName());
+				}
+			}
+			return builder.toString();
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the types of all the fields.
+	 *
+	 * @param eObject
+	 *            The class
+	 * @return The types of all the fields
+	 */
+	public List<EObject> getFieldTypes(EObject eObject) {
+		List<EObject> types = new ArrayList<EObject>();
+		if (eObject instanceof Class) {
+			Class aClass = (Class)eObject;
+			List<Field> fields = aClass.getFields();
+			for (Field field : fields) {
+				Type type = field.getType();
+				if (type != null) {
+					types.add(type);
+				}
+			}
+		}
+		return types;
+	}
+
+	/**
+	 * Returns the list of Dart resources imported by another Dart resource.
+	 *
+	 * @param eObject
+	 *            The Dart resource
+	 * @return The list of Dart resources imported by another Dart resource
+	 */
+	public List<DartResource> getImportedResources(EObject eObject) {
+		List<DartResource> importedResources = new ArrayList<DartResource>();
+		if (eObject instanceof DartResource) {
+			DartResource dartResource = (DartResource)eObject;
+			List<Import> imports = dartResource.getImports();
+			for (Import anImport : imports) {
+				DartResource importedDartResource = anImport.getDartResource();
+				if (importedDartResource != null && !anImport.getHide().contains(importedDartResource)
+						&& (anImport.getShow().size() == 0 || anImport.getShow().contains(anImport))) {
+					importedResources.add(importedDartResource);
+				}
+			}
+
+		}
+		return importedResources;
+	}
+
+	/**
+	 * Returns the list of Dart resources exported by another Dart resource.
+	 *
+	 * @param eObject
+	 *            The Dart resource
+	 * @return The list of Dart resources exported by another Dart resource
+	 */
+	public List<DartResource> getExportedResources(EObject eObject) {
+		List<DartResource> exportedResources = new ArrayList<DartResource>();
+		if (eObject instanceof DartResource) {
+			DartResource dartResource = (DartResource)eObject;
+			List<Export> exports = dartResource.getExports();
+			for (Export anExport : exports) {
+				DartResource exportedDartResource = anExport.getDartResource();
+				if (exportedDartResource != null && !anExport.getHide().contains(exportedDartResource)
+						&& (anExport.getShow().size() == 0 || anExport.getShow().contains(anExport))) {
+					exportedResources.add(exportedDartResource);
+				}
+			}
+
+		}
+		return exportedResources;
 	}
 }

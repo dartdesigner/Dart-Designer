@@ -64,7 +64,7 @@ public class ExportItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDartResourcesPropertyDescriptor(object);
+			addDartResourcePropertyDescriptor(object);
 			addShowPropertyDescriptor(object);
 			addHidePropertyDescriptor(object);
 			addMetadataPropertyDescriptor(object);
@@ -73,17 +73,16 @@ public class ExportItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Dart Resources feature. <!-- begin-user-doc --> <!--
+	 * This adds a property descriptor for the Dart Resource feature. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addDartResourcesPropertyDescriptor(Object object) {
+	protected void addDartResourcePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Export_dartResources_feature"), getString(
-						"_UI_PropertyDescriptor_description", "_UI_Export_dartResources_feature",
-						"_UI_Export_type"), DartPackage.Literals.EXPORT__DART_RESOURCES, true, false, true,
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Export_dartResource_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Export_dartResource_feature",
+						"_UI_Export_type"), DartPackage.Literals.EXPORT__DART_RESOURCE, true, false, true,
 				null, null, null));
 	}
 

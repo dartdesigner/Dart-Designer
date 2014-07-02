@@ -394,7 +394,7 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * 
 	 * @generated
 	 */
-	public EReference getImport_DartResources() {
+	public EReference getImport_DartResource() {
 		return (EReference)importEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -448,7 +448,7 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * 
 	 * @generated
 	 */
-	public EReference getExport_DartResources() {
+	public EReference getExport_DartResource() {
 		return (EReference)exportEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -953,14 +953,14 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		createEReference(dartResourceEClass, DART_RESOURCE__EXPORTS);
 
 		importEClass = createEClass(IMPORT);
-		createEReference(importEClass, IMPORT__DART_RESOURCES);
+		createEReference(importEClass, IMPORT__DART_RESOURCE);
 		createEAttribute(importEClass, IMPORT__AS);
 		createEReference(importEClass, IMPORT__SHOW);
 		createEReference(importEClass, IMPORT__HIDE);
 		createEReference(importEClass, IMPORT__METADATA);
 
 		exportEClass = createEClass(EXPORT);
-		createEReference(exportEClass, EXPORT__DART_RESOURCES);
+		createEReference(exportEClass, EXPORT__DART_RESOURCE);
 		createEReference(exportEClass, EXPORT__SHOW);
 		createEReference(exportEClass, EXPORT__HIDE);
 		createEReference(exportEClass, EXPORT__METADATA);
@@ -1113,16 +1113,16 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getImport_DartResources(), this.getDartResource(), null, "dartResources", null, 0, -1,
+		initEReference(getImport_DartResource(), this.getDartResource(), null, "dartResource", null, 0, 1,
 				Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImport_As(), ecorePackage.getEString(), "as", null, 0, 1, Import.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getImport_Show(), this.getClass_(), null, "show", null, 0, -1, Import.class,
+		initEReference(getImport_Show(), this.getDartResource(), null, "show", null, 0, -1, Import.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImport_Hide(), this.getClass_(), null, "hide", null, 0, -1, Import.class,
+		initEReference(getImport_Hide(), this.getDartResource(), null, "hide", null, 0, -1, Import.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImport_Metadata(), this.getMetadata(), null, "metadata", null, 0, -1, Import.class,
@@ -1131,13 +1131,13 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 
 		initEClass(exportEClass, Export.class, "Export", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExport_DartResources(), this.getDartResource(), null, "dartResources", null, 0, -1,
+		initEReference(getExport_DartResource(), this.getDartResource(), null, "dartResource", null, 0, 1,
 				Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExport_Show(), this.getClass_(), null, "show", null, 0, -1, Export.class,
+		initEReference(getExport_Show(), this.getDartResource(), null, "show", null, 0, -1, Export.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExport_Hide(), this.getClass_(), null, "hide", null, 0, 1, Export.class,
+		initEReference(getExport_Hide(), this.getDartResource(), null, "hide", null, 0, -1, Export.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExport_Metadata(), this.getMetadata(), null, "metadata", null, 0, -1, Export.class,
@@ -1277,7 +1277,7 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		initEAttribute(getParameter_Optional(), ecorePackage.getEBoolean(), "optional", null, 0, 1,
 				Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParameter_Type(), this.getClass_(), null, "type", null, 0, 1, Parameter.class,
+		initEReference(getParameter_Type(), this.getType(), null, "type", null, 0, 1, Parameter.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParameter_Metadata(), this.getMetadata(), null, "metadata", null, 0, -1,

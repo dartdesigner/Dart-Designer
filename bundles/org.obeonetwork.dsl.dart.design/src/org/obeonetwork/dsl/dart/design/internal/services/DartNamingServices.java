@@ -17,20 +17,25 @@ import com.google.common.base.Splitter;
 import org.eclipse.emf.ecore.EObject;
 import org.obeonetwork.dsl.dart.Application;
 import org.obeonetwork.dsl.dart.Class;
+import org.obeonetwork.dsl.dart.Field;
 import org.obeonetwork.dsl.dart.Folder;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Method;
 import org.obeonetwork.dsl.dart.Package;
+import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
 
 /**
+ * Utility class containing the naming services.
+ *
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  */
 public class DartNamingServices {
 
 	/**
-	 * Convert the given name to the name of a metadata
+	 * Convert the given name to the name of a metadata.
 	 *
 	 * @param any
 	 *            The current EObject
@@ -177,6 +182,48 @@ public class DartNamingServices {
 	public String getNewLibraryDefaultName(EObject eObject) {
 		if (eObject instanceof Library) {
 			return I18n.getString(I18nKeys.NEW_LIBRARY_NAME);
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the name of the new field.
+	 *
+	 * @param eObject
+	 *            The class
+	 * @return The name of the new field
+	 */
+	public String getNewFieldDefaultName(EObject eObject) {
+		if (eObject instanceof Field) {
+			return I18n.getString(I18nKeys.NEW_FIELD_NAME);
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the name of the new method.
+	 *
+	 * @param eObject
+	 *            The class
+	 * @return The name of the new method
+	 */
+	public String getNewMethodDefaultName(EObject eObject) {
+		if (eObject instanceof Method) {
+			return I18n.getString(I18nKeys.NEW_METHOD_NAME);
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the name of the new parameter.
+	 *
+	 * @param eObject
+	 *            The class
+	 * @return The name of the new parameter
+	 */
+	public String getNewParameterDefaultName(EObject eObject) {
+		if (eObject instanceof Parameter) {
+			return I18n.getString(I18nKeys.NEW_PARAMETER_NAME);
 		}
 		return ""; //$NON-NLS-1$
 	}

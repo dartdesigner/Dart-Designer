@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -53,14 +54,14 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	public static final String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
 
 	/**
-	 * The cached value of the '{@link #getDartResources() <em>Dart Resources</em>}' reference list. <!--
+	 * The cached value of the '{@link #getDartResource() <em>Dart Resource</em>}' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getDartResources()
+	 * @see #getDartResource()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DartResource> dartResources;
+	protected DartResource dartResource;
 
 	/**
 	 * The default value of the '{@link #getAs() <em>As</em>}' attribute. <!-- begin-user-doc --> <!--
@@ -90,7 +91,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<org.obeonetwork.dsl.dart.Class> show;
+	protected EList<DartResource> show;
 
 	/**
 	 * The cached value of the '{@link #getHide() <em>Hide</em>}' reference list. <!-- begin-user-doc --> <!--
@@ -100,7 +101,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<org.obeonetwork.dsl.dart.Class> hide;
+	protected EList<DartResource> hide;
 
 	/**
 	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' reference list. <!-- begin-user-doc
@@ -136,12 +137,39 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	 * 
 	 * @generated
 	 */
-	public EList<DartResource> getDartResources() {
-		if (dartResources == null) {
-			dartResources = new EObjectResolvingEList<DartResource>(DartResource.class, this,
-					DartPackage.IMPORT__DART_RESOURCES);
+	public DartResource getDartResource() {
+		if (dartResource != null && dartResource.eIsProxy()) {
+			InternalEObject oldDartResource = (InternalEObject)dartResource;
+			dartResource = (DartResource)eResolveProxy(oldDartResource);
+			if (dartResource != oldDartResource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DartPackage.IMPORT__DART_RESOURCE, oldDartResource, dartResource));
+			}
 		}
-		return dartResources;
+		return dartResource;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public DartResource basicGetDartResource() {
+		return dartResource;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setDartResource(DartResource newDartResource) {
+		DartResource oldDartResource = dartResource;
+		dartResource = newDartResource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.IMPORT__DART_RESOURCE,
+					oldDartResource, dartResource));
 	}
 
 	/**
@@ -170,10 +198,9 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	 * 
 	 * @generated
 	 */
-	public EList<org.obeonetwork.dsl.dart.Class> getShow() {
+	public EList<DartResource> getShow() {
 		if (show == null) {
-			show = new EObjectResolvingEList<org.obeonetwork.dsl.dart.Class>(
-					org.obeonetwork.dsl.dart.Class.class, this, DartPackage.IMPORT__SHOW);
+			show = new EObjectResolvingEList<DartResource>(DartResource.class, this, DartPackage.IMPORT__SHOW);
 		}
 		return show;
 	}
@@ -183,10 +210,9 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	 * 
 	 * @generated
 	 */
-	public EList<org.obeonetwork.dsl.dart.Class> getHide() {
+	public EList<DartResource> getHide() {
 		if (hide == null) {
-			hide = new EObjectResolvingEList<org.obeonetwork.dsl.dart.Class>(
-					org.obeonetwork.dsl.dart.Class.class, this, DartPackage.IMPORT__HIDE);
+			hide = new EObjectResolvingEList<DartResource>(DartResource.class, this, DartPackage.IMPORT__HIDE);
 		}
 		return hide;
 	}
@@ -211,8 +237,10 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DartPackage.IMPORT__DART_RESOURCES:
-				return getDartResources();
+			case DartPackage.IMPORT__DART_RESOURCE:
+				if (resolve)
+					return getDartResource();
+				return basicGetDartResource();
 			case DartPackage.IMPORT__AS:
 				return getAs();
 			case DartPackage.IMPORT__SHOW:
@@ -234,20 +262,19 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DartPackage.IMPORT__DART_RESOURCES:
-				getDartResources().clear();
-				getDartResources().addAll((Collection<? extends DartResource>)newValue);
+			case DartPackage.IMPORT__DART_RESOURCE:
+				setDartResource((DartResource)newValue);
 				return;
 			case DartPackage.IMPORT__AS:
 				setAs((String)newValue);
 				return;
 			case DartPackage.IMPORT__SHOW:
 				getShow().clear();
-				getShow().addAll((Collection<? extends org.obeonetwork.dsl.dart.Class>)newValue);
+				getShow().addAll((Collection<? extends DartResource>)newValue);
 				return;
 			case DartPackage.IMPORT__HIDE:
 				getHide().clear();
-				getHide().addAll((Collection<? extends org.obeonetwork.dsl.dart.Class>)newValue);
+				getHide().addAll((Collection<? extends DartResource>)newValue);
 				return;
 			case DartPackage.IMPORT__METADATA:
 				getMetadata().clear();
@@ -265,8 +292,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DartPackage.IMPORT__DART_RESOURCES:
-				getDartResources().clear();
+			case DartPackage.IMPORT__DART_RESOURCE:
+				setDartResource((DartResource)null);
 				return;
 			case DartPackage.IMPORT__AS:
 				setAs(AS_EDEFAULT);
@@ -292,8 +319,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DartPackage.IMPORT__DART_RESOURCES:
-				return dartResources != null && !dartResources.isEmpty();
+			case DartPackage.IMPORT__DART_RESOURCE:
+				return dartResource != null;
 			case DartPackage.IMPORT__AS:
 				return AS_EDEFAULT == null ? as != null : !AS_EDEFAULT.equals(as);
 			case DartPackage.IMPORT__SHOW:

@@ -60,4 +60,19 @@ public interface I18nKeys {
 	 * NewMetadata.
 	 */
 	String NEW_METADATA_NAME = "Metadata.NewName"; //$NON-NLS-1$
+
+	/**
+	 * newField.
+	 */
+	String NEW_FIELD_NAME = "Field.NewName"; //$NON-NLS-1$
+
+	/**
+	 * newMethod.
+	 */
+	String NEW_METHOD_NAME = "Method.NewName"; //$NON-NLS-1$
+
+	/**
+	 * newParameter.
+	 */
+	String NEW_PARAMETER_NAME = "Parameter.NewName"; //$NON-NLS-1$
 }
