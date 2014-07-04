@@ -15,27 +15,27 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated dart -->
+      <!-- @generated not dart -->
       <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            id="org.obeonetwork.dsl.dart.category"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.obeonetwork.dsl.dart.editor.internal.presentation.DartModelWizardID"
-            name="%_UI_DartModelWizard_label"
+            category="org.obeonetwork.dsl.dart.category"
             class="org.obeonetwork.dsl.dart.editor.internal.presentation.DartModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/DartModelFile.gif">
+            icon="icons/full/etool16/NewDartSpecification.png"
+            id="org.obeonetwork.dsl.dart.editor.internal.presentation.DartModelWizardID"
+            name="%_UI_DartModelWizard_label">
          <description>%_UI_DartModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated dart -->
+      <!-- @generated not dart -->
       <editor
             id="org.obeonetwork.dsl.dart.editor.internal.presentation.DartEditorID"
             name="%_UI_DartEditor_label"
-            icon="icons/full/obj16/DartModelFile.gif"
+            icon="icons/full/obj16/DartSpecificationFile.png"
             extensions="dartspec"
             class="org.obeonetwork.dsl.dart.editor.internal.presentation.DartEditor"
             contributorClass="org.obeonetwork.dsl.dart.editor.internal.presentation.DartActionBarContributor">

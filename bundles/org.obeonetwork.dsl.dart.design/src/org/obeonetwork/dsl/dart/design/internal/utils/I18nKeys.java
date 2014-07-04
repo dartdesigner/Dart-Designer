@@ -75,4 +75,64 @@ public interface I18nKeys {
 	 * newParameter.
 	 */
 	String NEW_PARAMETER_NAME = "Parameter.NewName"; //$NON-NLS-1$
+
+	/**
+	 * Dart Designer Project.
+	 */
+	String DART_DESIGNER_PROJECT_WIZARD_NAME = "DartDesignerProjectWizard.WizardName"; //$NON-NLS-1$
+
+	/**
+	 * Dart Designer Project.
+	 */
+	String DART_DESIGNER_PROJECT_WIZARD_PAGE_NAME = "DartDesignerProjectWizard.ProjectPageName"; //$NON-NLS-1$
+
+	/**
+	 * Create a new Dart Designer project.
+	 */
+	String DART_DESIGNER_PROJECT_WIZARD_PAGE_TITLE = "DartDesignerProjectWizard.ProjectPageTitle"; //$NON-NLS-1$
+
+	/**
+	 * Enter the name of the Dart Designer project to create.
+	 */
+	String DART_DESIGNER_PROJECT_WIZARD_PAGE_DESCRIPTION = "DartDesignerProjectWizard.ProjectPageDescription"; //$NON-NLS-1$
+
+	/**
+	 * Dart Designer Project.
+	 */
+	String DART_DESIGNER_MODEL_WIZARD_PAGE_NAME = "DartDesignerProjectWizard.ModelPageName"; //$NON-NLS-1$
+
+	/**
+	 * Create a new Dart Designer project.
+	 */
+	String DART_DESIGNER_MODEL_WIZARD_PAGE_TITLE = "DartDesignerProjectWizard.ModelPageTitle"; //$NON-NLS-1$
+
+	/**
+	 * Enter the name of the Dart Designer specification to create.
+	 */
+	String DART_DESIGNER_MODEL_WIZARD_PAGE_DESCRIPTION = "DartDesignerProjectWizard.ModelPageDescription"; //$NON-NLS-1$
+
+	/**
+	 * Dart Designer Project.
+	 */
+	String DART_DESIGNER_VIEWPOINT_WIZARD_PAGE_NAME = "DartDesignerProjectWizard.ViewpointPageName"; //$NON-NLS-1$
+
+	/**
+	 * Create a new Dart Designer project.
+	 */
+	String DART_DESIGNER_VIEWPOINT_WIZARD_PAGE_TITLE = "DartDesignerProjectWizard.ViewpointPageTitle"; //$NON-NLS-1$
+
+	/**
+	 * Enter the name of the Dart Designer specification to create.
+	 */
+	String DART_DESIGNER_VIEWPOINT_WIZARD_PAGE_DESCRIPTION = "DartDesignerProjectWizard.ViewpointPageDescription"; //$NON-NLS-1$
+
+	/**
+	 * Prepare the Dart Designer project.
+	 */
+	String DART_DESIGNER_PROJECT_CREATION_PREPARE_DART_DESIGNER_PROJECT = "DartDesignerProjectCreation.PrepareDartDesignerProject"; //$NON-NLS-1$
+
+	/**
+	 * Link the specification...
+	 */
+	String DART_DESIGNER_PROJECT_CREATION_LINK_THE_SPECIFICATION = "DartDesignerProjectCreation.LinkTheSpecification"; //$NON-NLS-1$
 }

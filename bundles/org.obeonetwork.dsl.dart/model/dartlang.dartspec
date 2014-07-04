@@ -15,7 +15,7 @@
           xsi:type="dart:Library"
           name="collection.dart">
         <imports
-            dartResources="//@packages.0/@assets.3/@assets.0"/>
+            dartResource="//@packages.0/@assets.3/@assets.0"/>
       </assets>
     </assets>
     <assets
@@ -33,11 +33,11 @@
           name="core.dart"
           parts="//@packages.0/@assets.2/@assets.1 //@packages.0/@assets.2/@assets.7 //@packages.0/@assets.2/@assets.4 //@packages.0/@assets.2/@assets.5 //@packages.0/@assets.2/@assets.6 //@packages.0/@assets.2/@assets.2 //@packages.0/@assets.2/@assets.8">
         <imports
-            dartResources="//@packages.0/@assets.0/@assets.0"/>
+            dartResource="//@packages.0/@assets.0/@assets.0"/>
         <imports
-            dartResources="//@packages.0/@assets.1/@assets.0"/>
+            dartResource="//@packages.0/@assets.1/@assets.0"/>
         <imports
-            dartResources="//@packages.0/@assets.3/@assets.0"/>
+            dartResource="//@packages.0/@assets.3/@assets.0"/>
       </assets>
       <assets
           xsi:type="dart:Class"

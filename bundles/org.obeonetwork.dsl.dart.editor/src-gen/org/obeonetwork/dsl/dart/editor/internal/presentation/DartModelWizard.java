@@ -4,7 +4,7 @@
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *      Obeo - initial API and implementation
  */
@@ -20,92 +20,68 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
-import org.eclipse.emf.common.CommonPlugin;
-
-import org.eclipse.emf.common.util.URI;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.emf.ecore.xmi.XMLResource;
-
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
-
 import org.eclipse.core.runtime.IProgressMonitor;
-
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.CommonPlugin;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.dialogs.MessageDialog;
-
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
-
 import org.eclipse.swt.SWT;
-
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.ModifyEvent;
-
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-
-import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
-import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-
-import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.part.ISetSelectionTarget;
-
-import org.obeonetwork.dsl.dart.DartFactory;
-import org.obeonetwork.dsl.dart.DartPackage;
-import org.obeonetwork.dsl.dart.edit.internal.provider.DartEditPlugin;
-
-import org.eclipse.core.runtime.Path;
-
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.ui.part.ISetSelectionTarget;
+import org.obeonetwork.dsl.dart.DartFactory;
+import org.obeonetwork.dsl.dart.DartPackage;
+import org.obeonetwork.dsl.dart.edit.internal.provider.DartEditPlugin;
 
 /**
  * This is a simple wizard for creating a new model file. <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
 
 	/**
 	 * The supported extensions for created files. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays
@@ -115,7 +91,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * A formatted list of supported file extensions, suitable for display. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS = DartEditorPlugin.INSTANCE.getString(
@@ -123,28 +99,28 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * This caches an instance of the model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DartPackage dartPackage = DartPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DartFactory dartFactory = dartPackage.getDartFactory();
 
 	/**
 	 * This is the file creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DartModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DartModelWizardInitialObjectCreationPage initialObjectCreationPage;
@@ -152,14 +128,14 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Remember the selection during initialization for populating the default container. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IStructuredSelection selection;
 
 	/**
 	 * Remember the workbench during initialization. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IWorkbench workbench;
@@ -167,28 +143,28 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Caches the names of the types that can be created as the root object. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected List<String> initialObjectNames;
 
 	/**
 	 * This just records the information. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 *
+	 * @generated not
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(DartEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
 		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE
-				.getImageDescriptor(DartEditorPlugin.INSTANCE.getImage("full/wizban/NewDart")));
+				.getImageDescriptor(DartEditorPlugin.INSTANCE.getImage("full/wizban/DartSpecification.png")));
 	}
 
 	/**
 	 * Returns the names of the types that can be created as the root object. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<String> getInitialObjectNames() {
@@ -209,7 +185,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Create a new model. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
@@ -220,7 +196,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Do the work after everything is specified. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,13 +280,13 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * This is the one page of the wizard. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public class DartModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public DartModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
@@ -320,7 +296,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 		/**
 		 * The framework calls this to see if the file is correct. <!-- begin-user-doc --> <!-- end-user-doc
 		 * -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
@@ -341,7 +317,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public IFile getModelFile() {
@@ -353,13 +329,13 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This is the page where the type of object to create is selected. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public class DartModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected Combo initialObjectField;
@@ -371,14 +347,14 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected Combo encodingField;
 
 		/**
 		 * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public DartModelWizardInitialObjectCreationPage(String pageId) {
@@ -387,7 +363,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
@@ -460,7 +436,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected ModifyListener validator = new ModifyListener() {
@@ -471,7 +447,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected boolean validatePage() {
@@ -480,7 +456,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
@@ -499,7 +475,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public String getInitialObjectName() {
@@ -515,7 +491,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public String getEncoding() {
@@ -524,7 +500,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * Returns the label for the specified type name. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected String getLabel(String typeName) {
@@ -538,7 +514,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected Collection<String> getEncodings() {
@@ -556,7 +532,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The framework calls this to create the contents of the wizard. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -615,7 +591,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Get the file from the page. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IFile getModelFile() {

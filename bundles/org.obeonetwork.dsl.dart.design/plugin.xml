@@ -7,4 +7,20 @@
 	       name="dart">
     </component>
   </extension>
+  <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            canFinishEarly="false"
+            category="org.obeonetwork.dsl.dart.category"
+            class="org.obeonetwork.dsl.dart.design.internal.wizards.DartDesignerProjectWizard"
+            finalPerspective="org.eclipse.sirius.ui.tools.perspective.modeling"
+            hasPages="true"
+            icon="icons/full/etool16/NewDartDesignerProject.png"
+            id="org.obeonetwork.dsl.dart.editor.internal.wizards.DartDesignerProjectWizardID"
+            name="%_UI_DartDesignerProjectWizard_label"
+            project="true">
+         <description>
+            %_UI_DartDesignerProjectWizard_description
+         </description>
+      </wizard>
+   </extension>
 </plugin>

@@ -9,11 +9,16 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.105.0",
  org.eclipse.sirius;bundle-version="1.0.0",
  org.obeonetwork.dsl.dart;bundle-version="0.2.0",
  org.eclipse.core.resources;bundle-version="3.9.0",
- com.google.guava
+ com.google.guava;bundle-version="[15.0.0,16.0.0)",
+ org.eclipse.ui.ide;bundle-version="3.10.0",
+ org.eclipse.sirius.ui;bundle-version="1.0.0",
+ org.eclipse.sirius.ext.base;bundle-version="1.0.0",
+ org.eclipse.emf.transaction;bundle-version="1.8.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: bundle
-Export-Package: org.obeonetwork.dsl.dart.design.internal;version="1.0.0";x-friends:="org.obeonetwork.dsl.dart.usage",
- org.obeonetwork.dsl.dart.design.internal.services;version="1.0.0";x-internal:=true,
- org.obeonetwork.dsl.dart.design.internal.utils;version="1.0.0";x-internal:=true
+Export-Package: org.obeonetwork.dsl.dart.design.internal;version="0.1.0";x-friends:="org.obeonetwork.dsl.dart.usage",
+ org.obeonetwork.dsl.dart.design.internal.services;version="0.2.0";x-internal:=true,
+ org.obeonetwork.dsl.dart.design.internal.utils;version="0.2.0";x-internal:=true,
+ org.obeonetwork.dsl.dart.design.internal.wizards;version="0.2.0";x-internal:=true
