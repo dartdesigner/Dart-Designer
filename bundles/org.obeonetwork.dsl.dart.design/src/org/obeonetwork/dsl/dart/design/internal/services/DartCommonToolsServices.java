@@ -162,16 +162,38 @@ public class DartCommonToolsServices {
 			Variable field = (Variable)eObject;
 
 			int indexOfTypeSeparator = label.indexOf(':');
-			if (indexOfTypeSeparator != -1) {
-				String name = label.substring(0, indexOfTypeSeparator);
+			int indexOfValueSeparator = label.indexOf('=');
+
+			int firstSeparator = label.length();
+			if (indexOfTypeSeparator != -1 && indexOfTypeSeparator < firstSeparator) {
+				firstSeparator = indexOfTypeSeparator;
+			}
+			if (indexOfValueSeparator != -1 && indexOfValueSeparator < firstSeparator) {
+				firstSeparator = indexOfValueSeparator;
+			}
+
+			if (firstSeparator != -1) {
+				String name = label.substring(0, firstSeparator);
 				if (name.length() > 0) {
 					field.setName(name);
 				}
 
-				String typeName = label.substring(indexOfTypeSeparator + 1);
-				Type type = this.findTypeByName(this.allRoots(field), typeName);
-				if (type != null) {
+				if (indexOfValueSeparator == -1 || indexOfValueSeparator < indexOfTypeSeparator) {
+					String typeName = label.substring(indexOfTypeSeparator + 1);
+					Type type = this.findTypeByName(this.allRoots(field), typeName);
 					field.setType(type);
+				} else if (indexOfValueSeparator > indexOfTypeSeparator) {
+					String typeName = label.substring(indexOfTypeSeparator + 1, indexOfValueSeparator);
+					Type type = this.findTypeByName(this.allRoots(field), typeName);
+					field.setType(type);
+				}
+
+				if (indexOfTypeSeparator == -1 || indexOfTypeSeparator < indexOfValueSeparator) {
+					String value = label.substring(indexOfValueSeparator + 1);
+					field.setValue(value);
+				} else if (indexOfTypeSeparator > indexOfValueSeparator) {
+					String value = label.substring(indexOfValueSeparator + 1, indexOfTypeSeparator);
+					field.setValue(value);
 				}
 			} else if (label.length() > 0) {
 				field.setName(label);

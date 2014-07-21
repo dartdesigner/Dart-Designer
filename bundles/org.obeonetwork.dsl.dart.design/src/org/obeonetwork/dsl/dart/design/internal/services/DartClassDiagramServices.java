@@ -124,6 +124,12 @@ public class DartClassDiagramServices {
 					builder.append(aClass.getName());
 				}
 			}
+
+			if (field.getValue() != null && field.getValue().length() > 0) {
+				builder.append('=');
+				builder.append(field.getValue());
+			}
+
 			return builder.toString();
 		}
 		return ""; //$NON-NLS-1$
@@ -160,6 +166,11 @@ public class DartClassDiagramServices {
 						Class aClass = (Class)type;
 						builder.append(aClass.getName());
 					}
+				}
+
+				if (parameter.getValue() != null && parameter.getValue().length() > 0) {
+					builder.append(':');
+					builder.append(parameter.getValue());
 				}
 
 				if (count + 1 < size) {
