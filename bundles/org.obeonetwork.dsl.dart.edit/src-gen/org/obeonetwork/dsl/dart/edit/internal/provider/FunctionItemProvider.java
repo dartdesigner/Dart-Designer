@@ -33,15 +33,15 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.DartPackage;
-import org.obeonetwork.dsl.dart.Method;
+import org.obeonetwork.dsl.dart.Function;
 
 /**
- * This is the item provider adapter for a {@link org.obeonetwork.dsl.dart.Method} object. <!-- begin-user-doc
- * --> <!-- end-user-doc -->
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.dart.Function} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class MethodItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class FunctionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -55,7 +55,7 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	 * 
 	 * @generated
 	 */
-	public MethodItemProvider(AdapterFactory adapterFactory) {
+	public FunctionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -75,6 +75,7 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 			addTypePropertyDescriptor(object);
 			addAbstractPropertyDescriptor(object);
 			addStaticPropertyDescriptor(object);
+			addBodyPropertyDescriptor(object);
 			addMetadataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -86,12 +87,11 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Method_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Method_name_feature",
-								"_UI_Method_type"), DartPackage.Literals.METHOD__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Function_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Function_name_feature",
+						"_UI_Function_type"), DartPackage.Literals.FUNCTION__NAME, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -103,10 +103,10 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	protected void addDocumentationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
 				.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Method_documentation_feature"), getString(
-						"_UI_PropertyDescriptor_description", "_UI_Method_documentation_feature",
-						"_UI_Method_type"), DartPackage.Literals.METHOD__DOCUMENTATION, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+				getString("_UI_Function_documentation_feature"), getString(
+						"_UI_PropertyDescriptor_description", "_UI_Function_documentation_feature",
+						"_UI_Function_type"), DartPackage.Literals.FUNCTION__DOCUMENTATION, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -115,12 +115,11 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Method_type_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Method_type_feature",
-								"_UI_Method_type"), DartPackage.Literals.METHOD__TYPE, true, false, true,
-						null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Function_type_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Function_type_feature",
+						"_UI_Function_type"), DartPackage.Literals.FUNCTION__TYPE, true, false, true, null,
+				null, null));
 	}
 
 	/**
@@ -130,9 +129,9 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	protected void addAbstractPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Method_abstract_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Method_abstract_feature",
-						"_UI_Method_type"), DartPackage.Literals.METHOD__ABSTRACT, true, false, false,
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Function_abstract_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Function_abstract_feature",
+						"_UI_Function_type"), DartPackage.Literals.FUNCTION__ABSTRACT, true, false, false,
 				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -143,10 +142,23 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	protected void addStaticPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Method_static_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Method_static_feature",
-						"_UI_Method_type"), DartPackage.Literals.METHOD__STATIC, true, false, false,
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Function_static_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Function_static_feature",
+						"_UI_Function_type"), DartPackage.Literals.FUNCTION__STATIC, true, false, false,
 				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Body feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addBodyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Function_body_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Function_body_feature",
+						"_UI_Function_type"), DartPackage.Literals.FUNCTION__BODY, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -156,10 +168,10 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	protected void addMetadataPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Method_metadata_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Method_metadata_feature",
-						"_UI_Method_type"), DartPackage.Literals.METHOD__METADATA, true, false, true, null,
-				null, null));
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Function_metadata_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Function_metadata_feature",
+						"_UI_Function_type"), DartPackage.Literals.FUNCTION__METADATA, true, false, true,
+				null, null, null));
 	}
 
 	/**
@@ -174,7 +186,7 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DartPackage.Literals.METHOD__PARAMETERS);
+			childrenFeatures.add(DartPackage.Literals.FUNCTION__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -203,13 +215,13 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This returns Method.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns Function.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Method"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Function"));
 	}
 
 	/**
@@ -219,9 +231,9 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Method)object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Method_type")
-				: getString("_UI_Method_type") + " " + label;
+		String label = ((Function)object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Function_type")
+				: getString("_UI_Function_type") + " " + label;
 	}
 
 	/**
@@ -235,15 +247,16 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Method.class)) {
-			case DartPackage.METHOD__NAME:
-			case DartPackage.METHOD__DOCUMENTATION:
-			case DartPackage.METHOD__ABSTRACT:
-			case DartPackage.METHOD__STATIC:
+		switch (notification.getFeatureID(Function.class)) {
+			case DartPackage.FUNCTION__NAME:
+			case DartPackage.FUNCTION__DOCUMENTATION:
+			case DartPackage.FUNCTION__ABSTRACT:
+			case DartPackage.FUNCTION__STATIC:
+			case DartPackage.FUNCTION__BODY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false,
 						true));
 				return;
-			case DartPackage.METHOD__PARAMETERS:
+			case DartPackage.FUNCTION__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true,
 						false));
 				return;
@@ -261,7 +274,7 @@ public class MethodItemProvider extends ItemProviderAdapter implements IEditingD
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(DartPackage.Literals.METHOD__PARAMETERS,
+		newChildDescriptors.add(createChildParameter(DartPackage.Literals.FUNCTION__PARAMETERS,
 				DartFactory.eINSTANCE.createParameter()));
 	}
 

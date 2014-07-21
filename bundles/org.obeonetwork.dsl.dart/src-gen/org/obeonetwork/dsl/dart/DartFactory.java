@@ -83,14 +83,6 @@ public interface DartFactory extends EFactory {
 	Typedef createTypedef();
 
 	/**
-	 * Returns a new object of class '<em>Application</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return a new object of class '<em>Application</em>'.
-	 * @generated
-	 */
-	Application createApplication();
-
-	/**
 	 * Returns a new object of class '<em>Library</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Library</em>'.
@@ -115,20 +107,28 @@ public interface DartFactory extends EFactory {
 	Class createClass();
 
 	/**
-	 * Returns a new object of class '<em>Field</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns a new object of class '<em>Variable</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return a new object of class '<em>Field</em>'.
+	 * @return a new object of class '<em>Variable</em>'.
 	 * @generated
 	 */
-	Field createField();
+	Variable createVariable();
 
 	/**
-	 * Returns a new object of class '<em>Method</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns a new object of class '<em>Constructor</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return a new object of class '<em>Method</em>'.
+	 * @return a new object of class '<em>Constructor</em>'.
 	 * @generated
 	 */
-	Method createMethod();
+	Constructor createConstructor();
+
+	/**
+	 * Returns a new object of class '<em>Function</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Function</em>'.
+	 * @generated
+	 */
+	Function createFunction();
 
 	/**
 	 * Returns a new object of class '<em>Parameter</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->

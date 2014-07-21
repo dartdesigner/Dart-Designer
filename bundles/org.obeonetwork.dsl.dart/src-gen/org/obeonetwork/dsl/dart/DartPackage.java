@@ -494,7 +494,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 9;
+	int TYPE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Type</em>' class. <!-- begin-user-doc --> <!--
@@ -521,148 +521,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getTypedef()
 	 * @generated
 	 */
-	int TYPEDEF = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int TYPEDEF__NAME = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int TYPEDEF__DOCUMENTATION = TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int TYPEDEF__TYPE = TYPE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int TYPEDEF__PARAMETERS = TYPE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Metadata</b></em>' reference list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int TYPEDEF__METADATA = TYPE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Typedef</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int TYPEDEF_FEATURE_COUNT = TYPE_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Typedef</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int TYPEDEF_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ApplicationImpl <em>Application</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see org.obeonetwork.dsl.dart.impl.ApplicationImpl
-	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getApplication()
-	 * @generated
-	 */
-	int APPLICATION = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION__NAME = DART_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION__DOCUMENTATION = DART_RESOURCE__DOCUMENTATION;
-
-	/**
-	 * The feature id for the '<em><b>Imports</b></em>' containment reference list. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION__IMPORTS = DART_RESOURCE__IMPORTS;
-
-	/**
-	 * The feature id for the '<em><b>Exports</b></em>' containment reference list. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION__EXPORTS = DART_RESOURCE__EXPORTS;
-
-	/**
-	 * The feature id for the '<em><b>Typedefs</b></em>' containment reference list. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION__TYPEDEFS = DART_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Metadata</b></em>' reference list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION__METADATA = DART_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Application</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION_FEATURE_COUNT = DART_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Application</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int APPLICATION_OPERATION_COUNT = DART_RESOURCE_OPERATION_COUNT + 0;
+	int TYPEDEF = 17;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.LibraryImpl <em>Library</em>}' class.
@@ -672,7 +531,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getLibrary()
 	 * @generated
 	 */
-	int LIBRARY = 11;
+	int LIBRARY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -737,13 +596,31 @@ public interface DartPackage extends EPackage {
 	int LIBRARY__METADATA = DART_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Variables</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LIBRARY__VARIABLES = DART_RESOURCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Functions</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LIBRARY__FUNCTIONS = DART_RESOURCE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Library</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int LIBRARY_FEATURE_COUNT = DART_RESOURCE_FEATURE_COUNT + 3;
+	int LIBRARY_FEATURE_COUNT = DART_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Library</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -761,7 +638,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getClassifier()
 	 * @generated
 	 */
-	int CLASSIFIER = 12;
+	int CLASSIFIER = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -851,7 +728,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getMetadata()
 	 * @generated
 	 */
-	int METADATA = 13;
+	int METADATA = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -941,7 +818,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 14;
+	int CLASS = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1042,13 +919,22 @@ public interface DartPackage extends EPackage {
 	int CLASS__MIXINS = CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Constructors</b></em>' containment reference list. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__CONSTRUCTORS = CLASSIFIER_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__METHODS = CLASSIFIER_FEATURE_COUNT + 4;
+	int CLASS__METHODS = CLASSIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Class</em>' class. <!-- begin-user-doc --> <!--
@@ -1057,7 +943,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 5;
+	int CLASS_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Class</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1068,14 +954,14 @@ public interface DartPackage extends EPackage {
 	int CLASS_OPERATION_COUNT = CLASSIFIER_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.FieldImpl <em>Field</em>}' class. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.VariableImpl <em>Variable</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see org.obeonetwork.dsl.dart.impl.FieldImpl
-	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getField()
+	 * @see org.obeonetwork.dsl.dart.impl.VariableImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getVariable()
 	 * @generated
 	 */
-	int FIELD = 15;
+	int VARIABLE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1083,7 +969,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__NAME = 0;
+	int VARIABLE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -1092,7 +978,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__DOCUMENTATION = 1;
+	int VARIABLE__DOCUMENTATION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1100,7 +986,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__TYPE = 2;
+	int VARIABLE__TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Static</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1109,7 +995,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__STATIC = 3;
+	int VARIABLE__STATIC = 3;
 
 	/**
 	 * The feature id for the '<em><b>Constant</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1118,7 +1004,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__CONSTANT = 4;
+	int VARIABLE__CONSTANT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Final</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1126,7 +1012,15 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__FINAL = 5;
+	int VARIABLE__FINAL = 5;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__VALUE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Metadata</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -1135,34 +1029,89 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__METADATA = 6;
+	int VARIABLE__METADATA = 7;
 
 	/**
-	 * The number of structural features of the '<em>Field</em>' class. <!-- begin-user-doc --> <!--
+	 * The number of structural features of the '<em>Variable</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = 7;
+	int VARIABLE_FEATURE_COUNT = 8;
 
 	/**
-	 * The number of operations of the '<em>Field</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The number of operations of the '<em>Variable</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_OPERATION_COUNT = 0;
+	int VARIABLE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.MethodImpl <em>Method</em>}' class.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ConstructorImpl <em>Constructor</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see org.obeonetwork.dsl.dart.impl.MethodImpl
-	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getMethod()
+	 * @see org.obeonetwork.dsl.dart.impl.ConstructorImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getConstructor()
 	 * @generated
 	 */
-	int METHOD = 16;
+	int CONSTRUCTOR = 14;
+
+	/**
+	 * The feature id for the '<em><b>Constant</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR__CONSTANT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR__BODY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Metadata</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR__METADATA = 2;
+
+	/**
+	 * The number of structural features of the '<em>Constructor</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Constructor</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.FunctionImpl <em>Function</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.FunctionImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getFunction()
+	 * @generated
+	 */
+	int FUNCTION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1170,7 +1119,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__NAME = 0;
+	int FUNCTION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -1179,7 +1128,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__DOCUMENTATION = 1;
+	int FUNCTION__DOCUMENTATION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1187,7 +1136,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__TYPE = 2;
+	int FUNCTION__TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Abstract</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1196,7 +1145,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__ABSTRACT = 3;
+	int FUNCTION__ABSTRACT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Static</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1205,7 +1154,15 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__STATIC = 4;
+	int FUNCTION__STATIC = 4;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__BODY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -1214,7 +1171,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__PARAMETERS = 5;
+	int FUNCTION__PARAMETERS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Metadata</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -1223,24 +1180,25 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__METADATA = 6;
+	int FUNCTION__METADATA = 7;
 
 	/**
-	 * The number of structural features of the '<em>Method</em>' class. <!-- begin-user-doc --> <!--
+	 * The number of structural features of the '<em>Function</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_FEATURE_COUNT = 7;
+	int FUNCTION_FEATURE_COUNT = 8;
 
 	/**
-	 * The number of operations of the '<em>Method</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The number of operations of the '<em>Function</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_OPERATION_COUNT = 0;
+	int FUNCTION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ParameterImpl <em>Parameter</em>}'
@@ -1250,7 +1208,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 17;
+	int PARAMETER = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1261,13 +1219,12 @@ public interface DartPackage extends EPackage {
 	int PARAMETER__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Default Value</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The feature id for the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__DEFAULT_VALUE = 1;
+	int PARAMETER__VALUE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1312,6 +1269,66 @@ public interface DartPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TYPEDEF__DOCUMENTATION = TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TYPEDEF__NAME = TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TYPEDEF__TYPE = TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TYPEDEF__PARAMETERS = TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Metadata</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TYPEDEF__METADATA = TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Typedef</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TYPEDEF_FEATURE_COUNT = TYPE_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Typedef</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int TYPEDEF_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Project <em>Project</em>}'. <!--
@@ -1685,40 +1702,6 @@ public interface DartPackage extends EPackage {
 	EClass getType();
 
 	/**
-	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Application <em>Application</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for class '<em>Application</em>'.
-	 * @see org.obeonetwork.dsl.dart.Application
-	 * @generated
-	 */
-	EClass getApplication();
-
-	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.obeonetwork.dsl.dart.Application#getTypedefs <em>Typedefs</em>}'. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the containment reference list '<em>Typedefs</em>'.
-	 * @see org.obeonetwork.dsl.dart.Application#getTypedefs()
-	 * @see #getApplication()
-	 * @generated
-	 */
-	EReference getApplication_Typedefs();
-
-	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.obeonetwork.dsl.dart.Application#getMetadata <em>Metadata</em>}'. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference list '<em>Metadata</em>'.
-	 * @see org.obeonetwork.dsl.dart.Application#getMetadata()
-	 * @see #getApplication()
-	 * @generated
-	 */
-	EReference getApplication_Metadata();
-
-	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Library <em>Library</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1761,6 +1744,30 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLibrary_Metadata();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.obeonetwork.dsl.dart.Library#getVariables <em>Variables</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Variables</em>'.
+	 * @see org.obeonetwork.dsl.dart.Library#getVariables()
+	 * @see #getLibrary()
+	 * @generated
+	 */
+	EReference getLibrary_Variables();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.obeonetwork.dsl.dart.Library#getFunctions <em>Functions</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Functions</em>'.
+	 * @see org.obeonetwork.dsl.dart.Library#getFunctions()
+	 * @see #getLibrary()
+	 * @generated
+	 */
+	EReference getLibrary_Functions();
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Classifier <em>Classifier</em>}'.
@@ -1872,6 +1879,18 @@ public interface DartPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the containment reference list '
+	 * {@link org.obeonetwork.dsl.dart.Class#getConstructors <em>Constructors</em>}'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Constructors</em>'.
+	 * @see org.obeonetwork.dsl.dart.Class#getConstructors()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_Constructors();
+
+	/**
+	 * Returns the meta object for the containment reference list '
 	 * {@link org.obeonetwork.dsl.dart.Class#getMethods <em>Methods</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -1883,179 +1902,245 @@ public interface DartPackage extends EPackage {
 	EReference getClass_Methods();
 
 	/**
-	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Field <em>Field</em>}'. <!--
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Variable <em>Variable</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for class '<em>Field</em>'.
-	 * @see org.obeonetwork.dsl.dart.Field
+	 * @return the meta object for class '<em>Variable</em>'.
+	 * @see org.obeonetwork.dsl.dart.Variable
 	 * @generated
 	 */
-	EClass getField();
+	EClass getVariable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Field#getName <em>Name</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.obeonetwork.dsl.dart.Field#getName()
-	 * @see #getField()
-	 * @generated
-	 */
-	EAttribute getField_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Field#getDocumentation
-	 * <em>Documentation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Documentation</em>'.
-	 * @see org.obeonetwork.dsl.dart.Field#getDocumentation()
-	 * @see #getField()
-	 * @generated
-	 */
-	EAttribute getField_Documentation();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Field#getType <em>Type</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.obeonetwork.dsl.dart.Field#getType()
-	 * @see #getField()
-	 * @generated
-	 */
-	EReference getField_Type();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Field#isStatic
-	 * <em>Static</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Static</em>'.
-	 * @see org.obeonetwork.dsl.dart.Field#isStatic()
-	 * @see #getField()
-	 * @generated
-	 */
-	EAttribute getField_Static();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Field#isConstant
-	 * <em>Constant</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Constant</em>'.
-	 * @see org.obeonetwork.dsl.dart.Field#isConstant()
-	 * @see #getField()
-	 * @generated
-	 */
-	EAttribute getField_Constant();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Field#isFinal
-	 * <em>Final</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Final</em>'.
-	 * @see org.obeonetwork.dsl.dart.Field#isFinal()
-	 * @see #getField()
-	 * @generated
-	 */
-	EAttribute getField_Final();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.dart.Field#getMetadata
-	 * <em>Metadata</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference list '<em>Metadata</em>'.
-	 * @see org.obeonetwork.dsl.dart.Field#getMetadata()
-	 * @see #getField()
-	 * @generated
-	 */
-	EReference getField_Metadata();
-
-	/**
-	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Method <em>Method</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for class '<em>Method</em>'.
-	 * @see org.obeonetwork.dsl.dart.Method
-	 * @generated
-	 */
-	EClass getMethod();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Method#getName
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Variable#getName
 	 * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.obeonetwork.dsl.dart.Method#getName()
-	 * @see #getMethod()
+	 * @see org.obeonetwork.dsl.dart.Variable#getName()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EAttribute getMethod_Name();
+	EAttribute getVariable_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Method#getDocumentation
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Variable#getDocumentation
 	 * <em>Documentation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Documentation</em>'.
-	 * @see org.obeonetwork.dsl.dart.Method#getDocumentation()
-	 * @see #getMethod()
+	 * @see org.obeonetwork.dsl.dart.Variable#getDocumentation()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EAttribute getMethod_Documentation();
+	EAttribute getVariable_Documentation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Method#getType
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Variable#getType
 	 * <em>Type</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.obeonetwork.dsl.dart.Method#getType()
-	 * @see #getMethod()
+	 * @see org.obeonetwork.dsl.dart.Variable#getType()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EReference getMethod_Type();
+	EReference getVariable_Type();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Method#isAbstract
-	 * <em>Abstract</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Abstract</em>'.
-	 * @see org.obeonetwork.dsl.dart.Method#isAbstract()
-	 * @see #getMethod()
-	 * @generated
-	 */
-	EAttribute getMethod_Abstract();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Method#isStatic
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Variable#isStatic
 	 * <em>Static</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Static</em>'.
-	 * @see org.obeonetwork.dsl.dart.Method#isStatic()
-	 * @see #getMethod()
+	 * @see org.obeonetwork.dsl.dart.Variable#isStatic()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EAttribute getMethod_Static();
+	EAttribute getVariable_Static();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.obeonetwork.dsl.dart.Method#getParameters <em>Parameters</em>}'. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Variable#isConstant
+	 * <em>Constant</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see org.obeonetwork.dsl.dart.Method#getParameters()
-	 * @see #getMethod()
+	 * @return the meta object for the attribute '<em>Constant</em>'.
+	 * @see org.obeonetwork.dsl.dart.Variable#isConstant()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EReference getMethod_Parameters();
+	EAttribute getVariable_Constant();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.dart.Method#getMetadata
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Variable#isFinal
+	 * <em>Final</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Final</em>'.
+	 * @see org.obeonetwork.dsl.dart.Variable#isFinal()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EAttribute getVariable_Final();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Variable#getValue
+	 * <em>Value</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.obeonetwork.dsl.dart.Variable#getValue()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EAttribute getVariable_Value();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.dart.Variable#getMetadata
 	 * <em>Metadata</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the reference list '<em>Metadata</em>'.
-	 * @see org.obeonetwork.dsl.dart.Method#getMetadata()
-	 * @see #getMethod()
+	 * @see org.obeonetwork.dsl.dart.Variable#getMetadata()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EReference getMethod_Metadata();
+	EReference getVariable_Metadata();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Constructor <em>Constructor</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Constructor</em>'.
+	 * @see org.obeonetwork.dsl.dart.Constructor
+	 * @generated
+	 */
+	EClass getConstructor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Constructor#isConstant
+	 * <em>Constant</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Constant</em>'.
+	 * @see org.obeonetwork.dsl.dart.Constructor#isConstant()
+	 * @see #getConstructor()
+	 * @generated
+	 */
+	EAttribute getConstructor_Constant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Constructor#getBody
+	 * <em>Body</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Body</em>'.
+	 * @see org.obeonetwork.dsl.dart.Constructor#getBody()
+	 * @see #getConstructor()
+	 * @generated
+	 */
+	EAttribute getConstructor_Body();
+
+	/**
+	 * Returns the meta object for the reference list '
+	 * {@link org.obeonetwork.dsl.dart.Constructor#getMetadata <em>Metadata</em>}'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference list '<em>Metadata</em>'.
+	 * @see org.obeonetwork.dsl.dart.Constructor#getMetadata()
+	 * @see #getConstructor()
+	 * @generated
+	 */
+	EReference getConstructor_Metadata();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Function <em>Function</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Function</em>'.
+	 * @see org.obeonetwork.dsl.dart.Function
+	 * @generated
+	 */
+	EClass getFunction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Function#getName
+	 * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.obeonetwork.dsl.dart.Function#getName()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EAttribute getFunction_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Function#getDocumentation
+	 * <em>Documentation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Documentation</em>'.
+	 * @see org.obeonetwork.dsl.dart.Function#getDocumentation()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EAttribute getFunction_Documentation();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Function#getType
+	 * <em>Type</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see org.obeonetwork.dsl.dart.Function#getType()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EReference getFunction_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Function#isAbstract
+	 * <em>Abstract</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Abstract</em>'.
+	 * @see org.obeonetwork.dsl.dart.Function#isAbstract()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EAttribute getFunction_Abstract();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Function#isStatic
+	 * <em>Static</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Static</em>'.
+	 * @see org.obeonetwork.dsl.dart.Function#isStatic()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EAttribute getFunction_Static();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Function#getBody
+	 * <em>Body</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Body</em>'.
+	 * @see org.obeonetwork.dsl.dart.Function#getBody()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EAttribute getFunction_Body();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.obeonetwork.dsl.dart.Function#getParameters <em>Parameters</em>}'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see org.obeonetwork.dsl.dart.Function#getParameters()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EReference getFunction_Parameters();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.dart.Function#getMetadata
+	 * <em>Metadata</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference list '<em>Metadata</em>'.
+	 * @see org.obeonetwork.dsl.dart.Function#getMetadata()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EReference getFunction_Metadata();
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Parameter <em>Parameter</em>}'. <!--
@@ -2079,15 +2164,15 @@ public interface DartPackage extends EPackage {
 	EAttribute getParameter_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Parameter#getDefaultValue
-	 * <em>Default Value</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Parameter#getValue
+	 * <em>Value</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the attribute '<em>Default Value</em>'.
-	 * @see org.obeonetwork.dsl.dart.Parameter#getDefaultValue()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.obeonetwork.dsl.dart.Parameter#getValue()
 	 * @see #getParameter()
 	 * @generated
 	 */
-	EAttribute getParameter_DefaultValue();
+	EAttribute getParameter_Value();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Parameter#isOptional
@@ -2438,32 +2523,6 @@ public interface DartPackage extends EPackage {
 		EClass TYPE = eINSTANCE.getType();
 
 		/**
-		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ApplicationImpl
-		 * <em>Application</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @see org.obeonetwork.dsl.dart.impl.ApplicationImpl
-		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getApplication()
-		 * @generated
-		 */
-		EClass APPLICATION = eINSTANCE.getApplication();
-
-		/**
-		 * The meta object literal for the '<em><b>Typedefs</b></em>' containment reference list feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference APPLICATION__TYPEDEFS = eINSTANCE.getApplication_Typedefs();
-
-		/**
-		 * The meta object literal for the '<em><b>Metadata</b></em>' reference list feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference APPLICATION__METADATA = eINSTANCE.getApplication_Metadata();
-
-		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.LibraryImpl <em>Library</em>}
 		 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -2496,6 +2555,22 @@ public interface DartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LIBRARY__METADATA = eINSTANCE.getLibrary_Metadata();
+
+		/**
+		 * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference LIBRARY__VARIABLES = eINSTANCE.getLibrary_Variables();
+
+		/**
+		 * The meta object literal for the '<em><b>Functions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference LIBRARY__FUNCTIONS = eINSTANCE.getLibrary_Functions();
 
 		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ClassifierImpl
@@ -2584,6 +2659,14 @@ public interface DartPackage extends EPackage {
 		EReference CLASS__MIXINS = eINSTANCE.getClass_Mixins();
 
 		/**
+		 * The meta object literal for the '<em><b>Constructors</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CLASS__CONSTRUCTORS = eINSTANCE.getClass_Constructors();
+
+		/**
 		 * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -2592,14 +2675,14 @@ public interface DartPackage extends EPackage {
 		EReference CLASS__METHODS = eINSTANCE.getClass_Methods();
 
 		/**
-		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.FieldImpl <em>Field</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.VariableImpl
+		 * <em>Variable</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
-		 * @see org.obeonetwork.dsl.dart.impl.FieldImpl
-		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getField()
+		 * @see org.obeonetwork.dsl.dart.impl.VariableImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getVariable()
 		 * @generated
 		 */
-		EClass FIELD = eINSTANCE.getField();
+		EClass VARIABLE = eINSTANCE.getVariable();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc -->
@@ -2607,7 +2690,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute FIELD__NAME = eINSTANCE.getField_Name();
+		EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature. <!--
@@ -2615,7 +2698,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute FIELD__DOCUMENTATION = eINSTANCE.getField_Documentation();
+		EAttribute VARIABLE__DOCUMENTATION = eINSTANCE.getVariable_Documentation();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature. <!-- begin-user-doc -->
@@ -2623,7 +2706,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference FIELD__TYPE = eINSTANCE.getField_Type();
+		EReference VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Static</b></em>' attribute feature. <!-- begin-user-doc -->
@@ -2631,7 +2714,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute FIELD__STATIC = eINSTANCE.getField_Static();
+		EAttribute VARIABLE__STATIC = eINSTANCE.getVariable_Static();
 
 		/**
 		 * The meta object literal for the '<em><b>Constant</b></em>' attribute feature. <!-- begin-user-doc
@@ -2639,7 +2722,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute FIELD__CONSTANT = eINSTANCE.getField_Constant();
+		EAttribute VARIABLE__CONSTANT = eINSTANCE.getVariable_Constant();
 
 		/**
 		 * The meta object literal for the '<em><b>Final</b></em>' attribute feature. <!-- begin-user-doc -->
@@ -2647,7 +2730,15 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute FIELD__FINAL = eINSTANCE.getField_Final();
+		EAttribute VARIABLE__FINAL = eINSTANCE.getVariable_Final();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute VARIABLE__VALUE = eINSTANCE.getVariable_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Metadata</b></em>' reference list feature. <!--
@@ -2655,17 +2746,51 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference FIELD__METADATA = eINSTANCE.getField_Metadata();
+		EReference VARIABLE__METADATA = eINSTANCE.getVariable_Metadata();
 
 		/**
-		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.MethodImpl <em>Method</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ConstructorImpl
+		 * <em>Constructor</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
-		 * @see org.obeonetwork.dsl.dart.impl.MethodImpl
-		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getMethod()
+		 * @see org.obeonetwork.dsl.dart.impl.ConstructorImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getConstructor()
 		 * @generated
 		 */
-		EClass METHOD = eINSTANCE.getMethod();
+		EClass CONSTRUCTOR = eINSTANCE.getConstructor();
+
+		/**
+		 * The meta object literal for the '<em><b>Constant</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute CONSTRUCTOR__CONSTANT = eINSTANCE.getConstructor_Constant();
+
+		/**
+		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute CONSTRUCTOR__BODY = eINSTANCE.getConstructor_Body();
+
+		/**
+		 * The meta object literal for the '<em><b>Metadata</b></em>' reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CONSTRUCTOR__METADATA = eINSTANCE.getConstructor_Metadata();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.FunctionImpl
+		 * <em>Function</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.FunctionImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getFunction()
+		 * @generated
+		 */
+		EClass FUNCTION = eINSTANCE.getFunction();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc -->
@@ -2673,7 +2798,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute METHOD__NAME = eINSTANCE.getMethod_Name();
+		EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature. <!--
@@ -2681,7 +2806,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute METHOD__DOCUMENTATION = eINSTANCE.getMethod_Documentation();
+		EAttribute FUNCTION__DOCUMENTATION = eINSTANCE.getFunction_Documentation();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature. <!-- begin-user-doc -->
@@ -2689,7 +2814,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference METHOD__TYPE = eINSTANCE.getMethod_Type();
+		EReference FUNCTION__TYPE = eINSTANCE.getFunction_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature. <!-- begin-user-doc
@@ -2697,7 +2822,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute METHOD__ABSTRACT = eINSTANCE.getMethod_Abstract();
+		EAttribute FUNCTION__ABSTRACT = eINSTANCE.getFunction_Abstract();
 
 		/**
 		 * The meta object literal for the '<em><b>Static</b></em>' attribute feature. <!-- begin-user-doc -->
@@ -2705,7 +2830,15 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute METHOD__STATIC = eINSTANCE.getMethod_Static();
+		EAttribute FUNCTION__STATIC = eINSTANCE.getFunction_Static();
+
+		/**
+		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute FUNCTION__BODY = eINSTANCE.getFunction_Body();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
@@ -2713,7 +2846,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference METHOD__PARAMETERS = eINSTANCE.getMethod_Parameters();
+		EReference FUNCTION__PARAMETERS = eINSTANCE.getFunction_Parameters();
 
 		/**
 		 * The meta object literal for the '<em><b>Metadata</b></em>' reference list feature. <!--
@@ -2721,7 +2854,7 @@ public interface DartPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference METHOD__METADATA = eINSTANCE.getMethod_Metadata();
+		EReference FUNCTION__METADATA = eINSTANCE.getFunction_Metadata();
 
 		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ParameterImpl
@@ -2742,12 +2875,12 @@ public interface DartPackage extends EPackage {
 		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EAttribute PARAMETER__DEFAULT_VALUE = eINSTANCE.getParameter_DefaultValue();
+		EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature. <!-- begin-user-doc

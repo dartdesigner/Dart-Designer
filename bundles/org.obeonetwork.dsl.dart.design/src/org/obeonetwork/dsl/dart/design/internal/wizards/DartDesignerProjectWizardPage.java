@@ -19,7 +19,7 @@ import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
-import org.obeonetwork.dsl.dart.design.internal.utils.IDartDesignerEditorConstants;
+import org.obeonetwork.dsl.dart.design.internal.utils.IDartDesignerConstants;
 import org.obeonetwork.dsl.dart.design.internal.utils.IDartDesignerIcons;
 
 /**
@@ -52,7 +52,7 @@ public class DartDesignerProjectWizardPage extends WizardNewProjectCreationPage 
 		this.setTitle(I18n.getString(I18nKeys.DART_DESIGNER_PROJECT_WIZARD_PAGE_TITLE));
 		this.setDescription(I18n.getString(I18nKeys.DART_DESIGNER_PROJECT_WIZARD_PAGE_DESCRIPTION));
 		this.setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(
-				IDartDesignerEditorConstants.PLUGIN_ID, IDartDesignerIcons.ICONS
+				IDartDesignerConstants.PLUGIN_ID, IDartDesignerIcons.ICONS
 						+ IDartDesignerIcons.DART_DESIGNER_PROJECT_WIZARD_BANNER));
 	}
 

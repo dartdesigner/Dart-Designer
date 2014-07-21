@@ -166,7 +166,7 @@ public class ClassifierItemProvider extends DartResourceItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(DartPackage.Literals.CLASSIFIER__FIELDS,
-				DartFactory.eINSTANCE.createField()));
+				DartFactory.eINSTANCE.createVariable()));
 	}
 
 }

@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.obeonetwork.dsl.dart.Class#getExtends <em>Extends</em>}</li>
  * <li>{@link org.obeonetwork.dsl.dart.Class#getImplements <em>Implements</em>}</li>
  * <li>{@link org.obeonetwork.dsl.dart.Class#getMixins <em>Mixins</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Class#getConstructors <em>Constructors</em>}</li>
  * <li>{@link org.obeonetwork.dsl.dart.Class#getMethods <em>Methods</em>}</li>
  * </ul>
  * </p>
@@ -124,8 +125,24 @@ public interface Class extends Classifier, Type {
 	EList<Class> getMixins();
 
 	/**
+	 * Returns the value of the '<em><b>Constructors</b></em>' containment reference list. The list contents
+	 * are of type {@link org.obeonetwork.dsl.dart.Constructor}. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Constructors</em>' containment reference list isn't clear, there really
+	 * should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Constructors</em>' containment reference list.
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getClass_Constructors()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Constructor> getConstructors();
+
+	/**
 	 * Returns the value of the '<em><b>Methods</b></em>' containment reference list. The list contents are of
-	 * type {@link org.obeonetwork.dsl.dart.Method}. <!-- begin-user-doc -->
+	 * type {@link org.obeonetwork.dsl.dart.Function}. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Methods</em>' containment reference list isn't clear, there really should be
 	 * more of a description here...
@@ -137,6 +154,6 @@ public interface Class extends Classifier, Type {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Method> getMethods();
+	EList<Function> getMethods();
 
 } // Class

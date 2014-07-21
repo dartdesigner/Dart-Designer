@@ -20,7 +20,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
-import org.obeonetwork.dsl.dart.design.internal.utils.IDartDesignerEditorConstants;
+import org.obeonetwork.dsl.dart.design.internal.utils.IDartDesignerConstants;
 import org.obeonetwork.dsl.dart.design.internal.utils.IDartDesignerIcons;
 
 /**
@@ -51,7 +51,7 @@ public class DartDesignerProjectWizard extends BasicNewProjectResourceWizard {
 	public DartDesignerProjectWizard() {
 		this.setWindowTitle(I18n.getString(I18nKeys.DART_DESIGNER_PROJECT_WIZARD_NAME));
 		this.setDefaultPageImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(
-				IDartDesignerEditorConstants.PLUGIN_ID, IDartDesignerIcons.DART_SPECIFICATION_WIZARD_BANNER));
+				IDartDesignerConstants.PLUGIN_ID, IDartDesignerIcons.DART_SPECIFICATION_WIZARD_BANNER));
 		this.setNeedsProgressMonitor(true);
 	}
 

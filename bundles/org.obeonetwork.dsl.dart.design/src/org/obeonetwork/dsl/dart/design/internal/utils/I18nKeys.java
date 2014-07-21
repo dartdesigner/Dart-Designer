@@ -47,11 +47,6 @@ public interface I18nKeys {
 	String NEW_CLASS_NAME = "Class.NewName"; //$NON-NLS-1$
 
 	/**
-	 * NewApplication.
-	 */
-	String NEW_APPLICATION_NAME = "Application.NewName"; //$NON-NLS-1$
-
-	/**
 	 * NewLibrary.
 	 */
 	String NEW_LIBRARY_NAME = "Library.NewName"; //$NON-NLS-1$

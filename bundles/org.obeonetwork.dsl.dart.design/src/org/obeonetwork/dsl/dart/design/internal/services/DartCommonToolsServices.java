@@ -10,11 +10,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.DartFactory;
-import org.obeonetwork.dsl.dart.Field;
-import org.obeonetwork.dsl.dart.Method;
+import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
+import org.obeonetwork.dsl.dart.Variable;
 
 /**
  * This class will hold utility operations for the common tools.
@@ -54,8 +54,8 @@ public class DartCommonToolsServices {
 	 * @return The edited method
 	 */
 	public EObject editMethod(EObject eObject, String label) {
-		if (eObject instanceof Method) {
-			Method method = (Method)eObject;
+		if (eObject instanceof Function) {
+			Function method = (Function)eObject;
 
 			int indexOfParameterStart = label.indexOf('(');
 			int indexOfParameterStop = label.indexOf(')');
@@ -105,7 +105,7 @@ public class DartCommonToolsServices {
 	 * @param parameters
 	 *            The string representing the parameters
 	 */
-	private void editParameters(Method method, String parameters) {
+	private void editParameters(Function method, String parameters) {
 		int counter = 0;
 		StringTokenizer stringTokenizer = new StringTokenizer(parameters, ","); //$NON-NLS-1$
 
@@ -158,8 +158,8 @@ public class DartCommonToolsServices {
 	 * @return The edited field
 	 */
 	public EObject editField(EObject eObject, String label) {
-		if (eObject instanceof Field) {
-			Field field = (Field)eObject;
+		if (eObject instanceof Variable) {
+			Variable field = (Variable)eObject;
 
 			int indexOfTypeSeparator = label.indexOf(':');
 			if (indexOfTypeSeparator != -1) {

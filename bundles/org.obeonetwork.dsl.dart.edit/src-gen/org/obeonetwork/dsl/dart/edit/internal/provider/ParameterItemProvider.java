@@ -68,7 +68,7 @@ public class ParameterItemProvider extends ItemProviderAdapter implements IEditi
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addDefaultValuePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 			addOptionalPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addMetadataPropertyDescriptor(object);
@@ -90,18 +90,16 @@ public class ParameterItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Value feature. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * This adds a property descriptor for the Value feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addDefaultValuePropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Parameter_defaultValue_feature"), getString(
-						"_UI_PropertyDescriptor_description", "_UI_Parameter_defaultValue_feature",
-						"_UI_Parameter_type"), DartPackage.Literals.PARAMETER__DEFAULT_VALUE, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Parameter_value_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Parameter_value_feature",
+						"_UI_Parameter_type"), DartPackage.Literals.PARAMETER__VALUE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -188,7 +186,7 @@ public class ParameterItemProvider extends ItemProviderAdapter implements IEditi
 
 		switch (notification.getFeatureID(Parameter.class)) {
 			case DartPackage.PARAMETER__NAME:
-			case DartPackage.PARAMETER__DEFAULT_VALUE:
+			case DartPackage.PARAMETER__VALUE:
 			case DartPackage.PARAMETER__OPTIONAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false,
 						true));

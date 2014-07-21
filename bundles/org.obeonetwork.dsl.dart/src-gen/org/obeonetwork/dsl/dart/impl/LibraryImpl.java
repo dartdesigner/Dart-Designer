@@ -26,9 +26,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.obeonetwork.dsl.dart.Classifier;
 import org.obeonetwork.dsl.dart.DartPackage;
+import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Typedef;
+import org.obeonetwork.dsl.dart.Variable;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Library</b></em>'. <!-- end-user-doc
@@ -81,6 +83,26 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 	 * @ordered
 	 */
 	protected EList<Metadata> metadata;
+
+	/**
+	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Variable> variables;
+
+	/**
+	 * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getFunctions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Function> functions;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -145,6 +167,32 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 	 * 
 	 * @generated
 	 */
+	public EList<Variable> getVariables() {
+		if (variables == null) {
+			variables = new EObjectContainmentEList<Variable>(Variable.class, this,
+					DartPackage.LIBRARY__VARIABLES);
+		}
+		return variables;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<Function> getFunctions() {
+		if (functions == null) {
+			functions = new EObjectContainmentEList<Function>(Function.class, this,
+					DartPackage.LIBRARY__FUNCTIONS);
+		}
+		return functions;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -168,6 +216,10 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
 			case DartPackage.LIBRARY__TYPEDEFS:
 				return ((InternalEList<?>)getTypedefs()).basicRemove(otherEnd, msgs);
+			case DartPackage.LIBRARY__VARIABLES:
+				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+			case DartPackage.LIBRARY__FUNCTIONS:
+				return ((InternalEList<?>)getFunctions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -186,6 +238,10 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 				return getTypedefs();
 			case DartPackage.LIBRARY__METADATA:
 				return getMetadata();
+			case DartPackage.LIBRARY__VARIABLES:
+				return getVariables();
+			case DartPackage.LIBRARY__FUNCTIONS:
+				return getFunctions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,6 +267,14 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 				getMetadata().clear();
 				getMetadata().addAll((Collection<? extends Metadata>)newValue);
 				return;
+			case DartPackage.LIBRARY__VARIABLES:
+				getVariables().clear();
+				getVariables().addAll((Collection<? extends Variable>)newValue);
+				return;
+			case DartPackage.LIBRARY__FUNCTIONS:
+				getFunctions().clear();
+				getFunctions().addAll((Collection<? extends Function>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,6 +296,12 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 			case DartPackage.LIBRARY__METADATA:
 				getMetadata().clear();
 				return;
+			case DartPackage.LIBRARY__VARIABLES:
+				getVariables().clear();
+				return;
+			case DartPackage.LIBRARY__FUNCTIONS:
+				getFunctions().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -250,6 +320,10 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 				return typedefs != null && !typedefs.isEmpty();
 			case DartPackage.LIBRARY__METADATA:
 				return metadata != null && !metadata.isEmpty();
+			case DartPackage.LIBRARY__VARIABLES:
+				return variables != null && !variables.isEmpty();
+			case DartPackage.LIBRARY__FUNCTIONS:
+				return functions != null && !functions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

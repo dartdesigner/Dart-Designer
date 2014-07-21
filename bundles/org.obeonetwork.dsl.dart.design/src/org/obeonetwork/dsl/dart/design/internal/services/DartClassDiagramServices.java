@@ -21,20 +21,19 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
-import org.obeonetwork.dsl.dart.Application;
 import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.Container;
 import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Export;
-import org.obeonetwork.dsl.dart.Field;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
-import org.obeonetwork.dsl.dart.Method;
 import org.obeonetwork.dsl.dart.Package;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Type;
+import org.obeonetwork.dsl.dart.Variable;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
 
@@ -92,8 +91,6 @@ public class DartClassDiagramServices {
 							result.add(containedEObject);
 						} else if (containedEObject instanceof Library) {
 							result.add(containedEObject);
-						} else if (containedEObject instanceof Application) {
-							result.add(containedEObject);
 						}
 					}
 				}
@@ -110,8 +107,8 @@ public class DartClassDiagramServices {
 	 * @return The label of the field
 	 */
 	public String getFieldLabel(EObject eObject) {
-		if (eObject instanceof Field) {
-			Field field = (Field)eObject;
+		if (eObject instanceof Variable) {
+			Variable field = (Variable)eObject;
 
 			StringBuilder builder = new StringBuilder();
 			if (field.getName() != null) {
@@ -140,8 +137,8 @@ public class DartClassDiagramServices {
 	 * @return The label of the method
 	 */
 	public String getMethodLabel(EObject eObject) {
-		if (eObject instanceof Method) {
-			Method method = (Method)eObject;
+		if (eObject instanceof Function) {
+			Function method = (Function)eObject;
 
 			StringBuilder builder = new StringBuilder();
 			if (method.getName() != null) {
@@ -198,8 +195,8 @@ public class DartClassDiagramServices {
 		List<EObject> types = new ArrayList<EObject>();
 		if (eObject instanceof Class) {
 			Class aClass = (Class)eObject;
-			List<Field> fields = aClass.getFields();
-			for (Field field : fields) {
+			List<Variable> fields = aClass.getFields();
+			for (Variable field : fields) {
 				Type type = field.getType();
 				if (type != null) {
 					types.add(type);

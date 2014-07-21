@@ -29,16 +29,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.obeonetwork.dsl.dart.Constructor;
 import org.obeonetwork.dsl.dart.DartPackage;
-import org.obeonetwork.dsl.dart.Field;
 
 /**
- * This is the item provider adapter for a {@link org.obeonetwork.dsl.dart.Field} object. <!-- begin-user-doc
- * --> <!-- end-user-doc -->
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.dart.Constructor} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class FieldItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ConstructorItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -52,7 +52,7 @@ public class FieldItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * 
 	 * @generated
 	 */
-	public FieldItemProvider(AdapterFactory adapterFactory) {
+	public ConstructorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -67,69 +67,11 @@ public class FieldItemProvider extends ItemProviderAdapter implements IEditingDo
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addDocumentationPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
-			addStaticPropertyDescriptor(object);
 			addConstantPropertyDescriptor(object);
-			addFinalPropertyDescriptor(object);
+			addBodyPropertyDescriptor(object);
 			addMetadataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Field_name_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Field_name_feature", "_UI_Field_type"),
-				DartPackage.Literals.FIELD__NAME, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Documentation feature. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addDocumentationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Field_documentation_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Field_documentation_feature",
-						"_UI_Field_type"), DartPackage.Literals.FIELD__DOCUMENTATION, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Field_type_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Field_type_feature", "_UI_Field_type"),
-				DartPackage.Literals.FIELD__TYPE, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Static feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addStaticPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-						getString("_UI_Field_static_feature"), getString(
-								"_UI_PropertyDescriptor_description", "_UI_Field_static_feature",
-								"_UI_Field_type"), DartPackage.Literals.FIELD__STATIC, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -139,23 +81,24 @@ public class FieldItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	protected void addConstantPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Field_constant_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Field_constant_feature",
-						"_UI_Field_type"), DartPackage.Literals.FIELD__CONSTANT, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+				.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Constructor_constant_feature"), getString(
+						"_UI_PropertyDescriptor_description", "_UI_Constructor_constant_feature",
+						"_UI_Constructor_type"), DartPackage.Literals.CONSTRUCTOR__CONSTANT, true, false,
+				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Final feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Body feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addFinalPropertyDescriptor(Object object) {
+	protected void addBodyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Field_final_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Field_final_feature", "_UI_Field_type"),
-				DartPackage.Literals.FIELD__FINAL, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Constructor_body_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Constructor_body_feature",
+						"_UI_Constructor_type"), DartPackage.Literals.CONSTRUCTOR__BODY, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -165,10 +108,11 @@ public class FieldItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	protected void addMetadataPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Field_metadata_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Field_metadata_feature",
-						"_UI_Field_type"), DartPackage.Literals.FIELD__METADATA, true, false, true, null,
-				null, null));
+				.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Constructor_metadata_feature"), getString(
+						"_UI_PropertyDescriptor_description", "_UI_Constructor_metadata_feature",
+						"_UI_Constructor_type"), DartPackage.Literals.CONSTRUCTOR__METADATA, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -182,13 +126,13 @@ public class FieldItemProvider extends ItemProviderAdapter implements IEditingDo
 	}
 
 	/**
-	 * This returns Field.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns Constructor.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Field"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Constructor"));
 	}
 
 	/**
@@ -198,9 +142,8 @@ public class FieldItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Field)object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Field_type")
-				: getString("_UI_Field_type") + " " + label;
+		Constructor constructor = (Constructor)object;
+		return getString("_UI_Constructor_type") + " " + constructor.isConstant();
 	}
 
 	/**
@@ -214,12 +157,9 @@ public class FieldItemProvider extends ItemProviderAdapter implements IEditingDo
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Field.class)) {
-			case DartPackage.FIELD__NAME:
-			case DartPackage.FIELD__DOCUMENTATION:
-			case DartPackage.FIELD__STATIC:
-			case DartPackage.FIELD__CONSTANT:
-			case DartPackage.FIELD__FINAL:
+		switch (notification.getFeatureID(Constructor.class)) {
+			case DartPackage.CONSTRUCTOR__CONSTANT:
+			case DartPackage.CONSTRUCTOR__BODY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false,
 						true));
 				return;

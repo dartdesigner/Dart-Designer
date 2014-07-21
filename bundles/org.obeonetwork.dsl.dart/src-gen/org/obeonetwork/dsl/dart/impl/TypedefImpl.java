@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
 
 /**
@@ -57,26 +58,6 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	public static final String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -97,6 +78,26 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	protected String documentation = DOCUMENTATION_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -104,7 +105,7 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	 * @generated
 	 * @ordered
 	 */
-	protected org.obeonetwork.dsl.dart.Class type;
+	protected Type type;
 
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list. <!--
@@ -193,10 +194,10 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	 * 
 	 * @generated
 	 */
-	public org.obeonetwork.dsl.dart.Class getType() {
+	public Type getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (org.obeonetwork.dsl.dart.Class)eResolveProxy(oldType);
+			type = (Type)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DartPackage.TYPEDEF__TYPE,
@@ -211,7 +212,7 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	 * 
 	 * @generated
 	 */
-	public org.obeonetwork.dsl.dart.Class basicGetType() {
+	public Type basicGetType() {
 		return type;
 	}
 
@@ -220,8 +221,8 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	 * 
 	 * @generated
 	 */
-	public void setType(org.obeonetwork.dsl.dart.Class newType) {
-		org.obeonetwork.dsl.dart.Class oldType = type;
+	public void setType(Type newType) {
+		Type oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.TYPEDEF__TYPE, oldType, type));
@@ -275,10 +276,10 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DartPackage.TYPEDEF__NAME:
-				return getName();
 			case DartPackage.TYPEDEF__DOCUMENTATION:
 				return getDocumentation();
+			case DartPackage.TYPEDEF__NAME:
+				return getName();
 			case DartPackage.TYPEDEF__TYPE:
 				if (resolve)
 					return getType();
@@ -300,14 +301,14 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DartPackage.TYPEDEF__NAME:
-				setName((String)newValue);
-				return;
 			case DartPackage.TYPEDEF__DOCUMENTATION:
 				setDocumentation((String)newValue);
 				return;
+			case DartPackage.TYPEDEF__NAME:
+				setName((String)newValue);
+				return;
 			case DartPackage.TYPEDEF__TYPE:
-				setType((org.obeonetwork.dsl.dart.Class)newValue);
+				setType((Type)newValue);
 				return;
 			case DartPackage.TYPEDEF__PARAMETERS:
 				getParameters().clear();
@@ -329,14 +330,14 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DartPackage.TYPEDEF__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case DartPackage.TYPEDEF__DOCUMENTATION:
 				setDocumentation(DOCUMENTATION_EDEFAULT);
 				return;
+			case DartPackage.TYPEDEF__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case DartPackage.TYPEDEF__TYPE:
-				setType((org.obeonetwork.dsl.dart.Class)null);
+				setType((Type)null);
 				return;
 			case DartPackage.TYPEDEF__PARAMETERS:
 				getParameters().clear();
@@ -356,11 +357,11 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DartPackage.TYPEDEF__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DartPackage.TYPEDEF__DOCUMENTATION:
 				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT
 						.equals(documentation);
+			case DartPackage.TYPEDEF__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DartPackage.TYPEDEF__TYPE:
 				return type != null;
 			case DartPackage.TYPEDEF__PARAMETERS:
@@ -382,10 +383,10 @@ public class TypedefImpl extends MinimalEObjectImpl.Container implements Typedef
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", documentation: ");
+		result.append(" (documentation: ");
 		result.append(documentation);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

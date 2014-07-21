@@ -15,9 +15,9 @@ package org.obeonetwork.dsl.dart.design.internal.utils;
  *
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  */
-public interface IDartDesignerEditorConstants {
+public interface IDartDesignerConstants {
 	/**
 	 * The identifier of the plugin.
 	 */
-	String PLUGIN_ID = "org.obeonetwork.dsl.dart.editor"; //$NON-NLS-1$
+	String PLUGIN_ID = "org.obeonetwork.dsl.dart.design"; //$NON-NLS-1$
 }

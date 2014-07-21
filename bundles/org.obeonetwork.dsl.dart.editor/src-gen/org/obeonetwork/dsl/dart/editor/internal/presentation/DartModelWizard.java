@@ -68,20 +68,20 @@ import org.obeonetwork.dsl.dart.edit.internal.provider.DartEditPlugin;
 
 /**
  * This is a simple wizard for creating a new model file. <!-- begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
 
 	/**
 	 * The supported extensions for created files. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays
@@ -91,7 +91,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * A formatted list of supported file extensions, suitable for display. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS = DartEditorPlugin.INSTANCE.getString(
@@ -99,28 +99,28 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * This caches an instance of the model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DartPackage dartPackage = DartPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DartFactory dartFactory = dartPackage.getDartFactory();
 
 	/**
 	 * This is the file creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DartModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected DartModelWizardInitialObjectCreationPage initialObjectCreationPage;
@@ -128,14 +128,14 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Remember the selection during initialization for populating the default container. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IStructuredSelection selection;
 
 	/**
 	 * Remember the workbench during initialization. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected IWorkbench workbench;
@@ -143,7 +143,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Caches the names of the types that can be created as the root object. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected List<String> initialObjectNames;
@@ -164,7 +164,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Returns the names of the types that can be created as the root object. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Collection<String> getInitialObjectNames() {
@@ -185,7 +185,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Create a new model. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
@@ -196,7 +196,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Do the work after everything is specified. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -280,13 +280,13 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * This is the one page of the wizard. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public class DartModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public DartModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
@@ -317,7 +317,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public IFile getModelFile() {
@@ -329,13 +329,13 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This is the page where the type of object to create is selected. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public class DartModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected Combo initialObjectField;
@@ -347,14 +347,14 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected Combo encodingField;
 
 		/**
 		 * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public DartModelWizardInitialObjectCreationPage(String pageId) {
@@ -363,7 +363,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
@@ -436,7 +436,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected ModifyListener validator = new ModifyListener() {
@@ -447,7 +447,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected boolean validatePage() {
@@ -456,7 +456,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		@Override
@@ -475,7 +475,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public String getInitialObjectName() {
@@ -491,7 +491,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		public String getEncoding() {
@@ -500,7 +500,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * Returns the label for the specified type name. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected String getLabel(String typeName) {
@@ -514,7 +514,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 		/**
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * 
 		 * @generated
 		 */
 		protected Collection<String> getEncodings() {
@@ -532,7 +532,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The framework calls this to create the contents of the wizard. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -591,7 +591,7 @@ public class DartModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Get the file from the page. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public IFile getModelFile() {

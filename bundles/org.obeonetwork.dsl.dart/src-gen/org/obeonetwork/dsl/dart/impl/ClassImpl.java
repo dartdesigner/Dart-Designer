@@ -11,23 +11,18 @@
 package org.obeonetwork.dsl.dart.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.obeonetwork.dsl.dart.Constructor;
 import org.obeonetwork.dsl.dart.DartPackage;
-import org.obeonetwork.dsl.dart.Method;
+import org.obeonetwork.dsl.dart.Function;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Class</b></em>'. <!-- end-user-doc
@@ -104,6 +99,16 @@ public class ClassImpl extends ClassifierImpl implements org.obeonetwork.dsl.dar
 	protected EList<org.obeonetwork.dsl.dart.Class> mixins;
 
 	/**
+	 * The cached value of the '{@link #getConstructors() <em>Constructors</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getConstructors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Constructor> constructors;
+
+	/**
 	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -111,7 +116,7 @@ public class ClassImpl extends ClassifierImpl implements org.obeonetwork.dsl.dar
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Method> methods;
+	protected EList<Function> methods;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -225,9 +230,22 @@ public class ClassImpl extends ClassifierImpl implements org.obeonetwork.dsl.dar
 	 * 
 	 * @generated
 	 */
-	public EList<Method> getMethods() {
+	public EList<Constructor> getConstructors() {
+		if (constructors == null) {
+			constructors = new EObjectContainmentEList<Constructor>(Constructor.class, this,
+					DartPackage.CLASS__CONSTRUCTORS);
+		}
+		return constructors;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<Function> getMethods() {
 		if (methods == null) {
-			methods = new EObjectContainmentEList<Method>(Method.class, this, DartPackage.CLASS__METHODS);
+			methods = new EObjectContainmentEList<Function>(Function.class, this, DartPackage.CLASS__METHODS);
 		}
 		return methods;
 	}
@@ -240,6 +258,8 @@ public class ClassImpl extends ClassifierImpl implements org.obeonetwork.dsl.dar
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DartPackage.CLASS__CONSTRUCTORS:
+				return ((InternalEList<?>)getConstructors()).basicRemove(otherEnd, msgs);
 			case DartPackage.CLASS__METHODS:
 				return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
 		}
@@ -264,6 +284,8 @@ public class ClassImpl extends ClassifierImpl implements org.obeonetwork.dsl.dar
 				return getImplements();
 			case DartPackage.CLASS__MIXINS:
 				return getMixins();
+			case DartPackage.CLASS__CONSTRUCTORS:
+				return getConstructors();
 			case DartPackage.CLASS__METHODS:
 				return getMethods();
 		}
@@ -293,9 +315,13 @@ public class ClassImpl extends ClassifierImpl implements org.obeonetwork.dsl.dar
 				getMixins().clear();
 				getMixins().addAll((Collection<? extends org.obeonetwork.dsl.dart.Class>)newValue);
 				return;
+			case DartPackage.CLASS__CONSTRUCTORS:
+				getConstructors().clear();
+				getConstructors().addAll((Collection<? extends Constructor>)newValue);
+				return;
 			case DartPackage.CLASS__METHODS:
 				getMethods().clear();
-				getMethods().addAll((Collection<? extends Method>)newValue);
+				getMethods().addAll((Collection<? extends Function>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -321,6 +347,9 @@ public class ClassImpl extends ClassifierImpl implements org.obeonetwork.dsl.dar
 			case DartPackage.CLASS__MIXINS:
 				getMixins().clear();
 				return;
+			case DartPackage.CLASS__CONSTRUCTORS:
+				getConstructors().clear();
+				return;
 			case DartPackage.CLASS__METHODS:
 				getMethods().clear();
 				return;
@@ -344,6 +373,8 @@ public class ClassImpl extends ClassifierImpl implements org.obeonetwork.dsl.dar
 				return implements_ != null && !implements_.isEmpty();
 			case DartPackage.CLASS__MIXINS:
 				return mixins != null && !mixins.isEmpty();
+			case DartPackage.CLASS__CONSTRUCTORS:
+				return constructors != null && !constructors.isEmpty();
 			case DartPackage.CLASS__METHODS:
 				return methods != null && !methods.isEmpty();
 		}

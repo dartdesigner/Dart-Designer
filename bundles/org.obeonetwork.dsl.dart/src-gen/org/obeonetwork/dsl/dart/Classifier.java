@@ -38,7 +38,7 @@ public interface Classifier extends DartResource {
 
 	/**
 	 * Returns the value of the '<em><b>Fields</b></em>' containment reference list. The list contents are of
-	 * type {@link org.obeonetwork.dsl.dart.Field}. <!-- begin-user-doc -->
+	 * type {@link org.obeonetwork.dsl.dart.Variable}. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fields</em>' containment reference list isn't clear, there really should be
 	 * more of a description here...
@@ -50,7 +50,7 @@ public interface Classifier extends DartResource {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Field> getFields();
+	EList<Variable> getFields();
 
 	/**
 	 * Returns the value of the '<em><b>Metadata</b></em>' reference list. The list contents are of type

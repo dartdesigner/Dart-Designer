@@ -13,24 +13,21 @@ package org.obeonetwork.dsl.dart.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.obeonetwork.dsl.dart.Application;
+import org.obeonetwork.dsl.dart.Constructor;
 import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.Export;
-import org.obeonetwork.dsl.dart.Field;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
-import org.obeonetwork.dsl.dart.Method;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Project;
 import org.obeonetwork.dsl.dart.Typedef;
+import org.obeonetwork.dsl.dart.Variable;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
@@ -90,22 +87,22 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 				return createImport();
 			case DartPackage.EXPORT:
 				return createExport();
-			case DartPackage.TYPEDEF:
-				return createTypedef();
-			case DartPackage.APPLICATION:
-				return createApplication();
 			case DartPackage.LIBRARY:
 				return createLibrary();
 			case DartPackage.METADATA:
 				return createMetadata();
 			case DartPackage.CLASS:
 				return createClass();
-			case DartPackage.FIELD:
-				return createField();
-			case DartPackage.METHOD:
-				return createMethod();
+			case DartPackage.VARIABLE:
+				return createVariable();
+			case DartPackage.CONSTRUCTOR:
+				return createConstructor();
+			case DartPackage.FUNCTION:
+				return createFunction();
 			case DartPackage.PARAMETER:
 				return createParameter();
+			case DartPackage.TYPEDEF:
+				return createTypedef();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName()
 						+ "' is not a valid classifier");
@@ -177,16 +174,6 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 	 * 
 	 * @generated
 	 */
-	public Application createApplication() {
-		ApplicationImpl application = new ApplicationImpl();
-		return application;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public Library createLibrary() {
 		LibraryImpl library = new LibraryImpl();
 		return library;
@@ -217,9 +204,9 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 	 * 
 	 * @generated
 	 */
-	public Field createField() {
-		FieldImpl field = new FieldImpl();
-		return field;
+	public Variable createVariable() {
+		VariableImpl variable = new VariableImpl();
+		return variable;
 	}
 
 	/**
@@ -227,9 +214,19 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 	 * 
 	 * @generated
 	 */
-	public Method createMethod() {
-		MethodImpl method = new MethodImpl();
-		return method;
+	public Constructor createConstructor() {
+		ConstructorImpl constructor = new ConstructorImpl();
+		return constructor;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Function createFunction() {
+		FunctionImpl function = new FunctionImpl();
+		return function;
 	}
 
 	/**

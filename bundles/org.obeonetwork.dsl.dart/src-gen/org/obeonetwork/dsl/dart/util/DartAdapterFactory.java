@@ -12,28 +12,25 @@ package org.obeonetwork.dsl.dart.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.obeonetwork.dsl.dart.Application;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Classifier;
+import org.obeonetwork.dsl.dart.Constructor;
 import org.obeonetwork.dsl.dart.Container;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Export;
-import org.obeonetwork.dsl.dart.Field;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
-import org.obeonetwork.dsl.dart.Method;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Project;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
+import org.obeonetwork.dsl.dart.Variable;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
@@ -135,18 +132,8 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTypedef(Typedef object) {
-			return createTypedefAdapter();
-		}
-
-		@Override
 		public Adapter caseType(Type object) {
 			return createTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseApplication(Application object) {
-			return createApplicationAdapter();
 		}
 
 		@Override
@@ -170,18 +157,28 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseField(Field object) {
-			return createFieldAdapter();
+		public Adapter caseVariable(Variable object) {
+			return createVariableAdapter();
 		}
 
 		@Override
-		public Adapter caseMethod(Method object) {
-			return createMethodAdapter();
+		public Adapter caseConstructor(Constructor object) {
+			return createConstructorAdapter();
+		}
+
+		@Override
+		public Adapter caseFunction(Function object) {
+			return createFunctionAdapter();
 		}
 
 		@Override
 		public Adapter caseParameter(Parameter object) {
 			return createParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseTypedef(Typedef object) {
+			return createTypedefAdapter();
 		}
 
 		@Override
@@ -336,20 +333,6 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Application
-	 * <em>Application</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the new adapter.
-	 * @see org.obeonetwork.dsl.dart.Application
-	 * @generated
-	 */
-	public Adapter createApplicationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Library <em>Library</em>}
 	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
@@ -404,28 +387,44 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Field <em>Field</em>}'.
-	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Variable
+	 * <em>Variable</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.obeonetwork.dsl.dart.Field
+	 * @see org.obeonetwork.dsl.dart.Variable
 	 * @generated
 	 */
-	public Adapter createFieldAdapter() {
+	public Adapter createVariableAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Method <em>Method</em>}'.
-	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Constructor
+	 * <em>Constructor</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.obeonetwork.dsl.dart.Method
+	 * @see org.obeonetwork.dsl.dart.Constructor
 	 * @generated
 	 */
-	public Adapter createMethodAdapter() {
+	public Adapter createConstructorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Function
+	 * <em>Function</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Function
+	 * @generated
+	 */
+	public Adapter createFunctionAdapter() {
 		return null;
 	}
 

@@ -11,26 +11,20 @@
 package org.obeonetwork.dsl.dart.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.obeonetwork.dsl.dart.Classifier;
 import org.obeonetwork.dsl.dart.DartPackage;
-import org.obeonetwork.dsl.dart.Field;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Variable;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Classifier</b></em>'. <!--
@@ -62,7 +56,7 @@ public abstract class ClassifierImpl extends DartResourceImpl implements Classif
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Field> fields;
+	protected EList<Variable> fields;
 
 	/**
 	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' reference list. <!-- begin-user-doc
@@ -108,9 +102,10 @@ public abstract class ClassifierImpl extends DartResourceImpl implements Classif
 	 * 
 	 * @generated
 	 */
-	public EList<Field> getFields() {
+	public EList<Variable> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<Field>(Field.class, this, DartPackage.CLASSIFIER__FIELDS);
+			fields = new EObjectContainmentEList<Variable>(Variable.class, this,
+					DartPackage.CLASSIFIER__FIELDS);
 		}
 		return fields;
 	}
@@ -260,7 +255,7 @@ public abstract class ClassifierImpl extends DartResourceImpl implements Classif
 		switch (featureID) {
 			case DartPackage.CLASSIFIER__FIELDS:
 				getFields().clear();
-				getFields().addAll((Collection<? extends Field>)newValue);
+				getFields().addAll((Collection<? extends Variable>)newValue);
 				return;
 			case DartPackage.CLASSIFIER__METADATA:
 				getMetadata().clear();

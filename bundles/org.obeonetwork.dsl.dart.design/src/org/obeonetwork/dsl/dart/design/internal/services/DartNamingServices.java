@@ -15,15 +15,14 @@ import com.google.common.base.CharMatcher;
 import com.google.common.base.Splitter;
 
 import org.eclipse.emf.ecore.EObject;
-import org.obeonetwork.dsl.dart.Application;
 import org.obeonetwork.dsl.dart.Class;
-import org.obeonetwork.dsl.dart.Field;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
-import org.obeonetwork.dsl.dart.Method;
 import org.obeonetwork.dsl.dart.Package;
 import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Variable;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
 
@@ -145,20 +144,6 @@ public class DartNamingServices {
 	}
 
 	/**
-	 * Returns the name of the new application.
-	 *
-	 * @param eObject
-	 *            The application
-	 * @return The name of the new application
-	 */
-	public String getNewApplicationDefaultName(EObject eObject) {
-		if (eObject instanceof Application) {
-			return I18n.getString(I18nKeys.NEW_APPLICATION_NAME);
-		}
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
 	 * Returns the name of the new metadata.
 	 *
 	 * @param eObject
@@ -194,7 +179,7 @@ public class DartNamingServices {
 	 * @return The name of the new field
 	 */
 	public String getNewFieldDefaultName(EObject eObject) {
-		if (eObject instanceof Field) {
+		if (eObject instanceof Variable) {
 			return I18n.getString(I18nKeys.NEW_FIELD_NAME);
 		}
 		return ""; //$NON-NLS-1$
@@ -208,7 +193,7 @@ public class DartNamingServices {
 	 * @return The name of the new method
 	 */
 	public String getNewMethodDefaultName(EObject eObject) {
-		if (eObject instanceof Method) {
+		if (eObject instanceof Function) {
 			return I18n.getString(I18nKeys.NEW_METHOD_NAME);
 		}
 		return ""; //$NON-NLS-1$

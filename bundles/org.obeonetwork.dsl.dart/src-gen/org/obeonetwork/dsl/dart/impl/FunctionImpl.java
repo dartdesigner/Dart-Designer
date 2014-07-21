@@ -13,6 +13,7 @@ package org.obeonetwork.dsl.dart.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -22,32 +23,36 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.obeonetwork.dsl.dart.DartPackage;
-import org.obeonetwork.dsl.dart.Field;
+import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Type;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Field</b></em>'. <!-- end-user-doc
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Function</b></em>'. <!-- end-user-doc
  * -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.obeonetwork.dsl.dart.impl.FieldImpl#getName <em>Name</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.FieldImpl#getDocumentation <em>Documentation</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.FieldImpl#getType <em>Type</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.FieldImpl#isStatic <em>Static</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.FieldImpl#isConstant <em>Constant</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.FieldImpl#isFinal <em>Final</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.FieldImpl#getMetadata <em>Metadata</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.FunctionImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.FunctionImpl#getDocumentation <em>Documentation</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.FunctionImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.FunctionImpl#isAbstract <em>Abstract</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.FunctionImpl#isStatic <em>Static</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.FunctionImpl#getBody <em>Body</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.FunctionImpl#getParameters <em>Parameters</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.FunctionImpl#getMetadata <em>Metadata</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
+public class FunctionImpl extends MinimalEObjectImpl.Container implements Function {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -106,6 +111,26 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	protected Type type;
 
 	/**
+	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #isAbstract()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ABSTRACT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #isAbstract()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean abstract_ = ABSTRACT_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #isStatic() <em>Static</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -126,44 +151,34 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	protected boolean static_ = STATIC_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isConstant() <em>Constant</em>}' attribute. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #isConstant()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean CONSTANT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isConstant() <em>Constant</em>}' attribute. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #isConstant()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean constant = CONSTANT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @see #isFinal()
+	 * @see #getBody()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean FINAL_EDEFAULT = false;
+	protected static final String BODY_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @see #isFinal()
+	 * @see #getBody()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean final_ = FINAL_EDEFAULT;
+	protected String body = BODY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> parameters;
 
 	/**
 	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' reference list. <!-- begin-user-doc
@@ -180,7 +195,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * 
 	 * @generated
 	 */
-	protected FieldImpl() {
+	protected FunctionImpl() {
 		super();
 	}
 
@@ -191,7 +206,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DartPackage.Literals.FIELD;
+		return DartPackage.Literals.FUNCTION;
 	}
 
 	/**
@@ -212,7 +227,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FIELD__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FUNCTION__NAME, oldName, name));
 	}
 
 	/**
@@ -233,7 +248,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		String oldDocumentation = documentation;
 		documentation = newDocumentation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FIELD__DOCUMENTATION,
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FUNCTION__DOCUMENTATION,
 					oldDocumentation, documentation));
 	}
 
@@ -248,7 +263,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			type = (Type)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DartPackage.FIELD__TYPE,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DartPackage.FUNCTION__TYPE,
 							oldType, type));
 			}
 		}
@@ -273,7 +288,29 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		Type oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FIELD__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FUNCTION__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isAbstract() {
+		return abstract_;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setAbstract(boolean newAbstract) {
+		boolean oldAbstract = abstract_;
+		abstract_ = newAbstract;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FUNCTION__ABSTRACT,
+					oldAbstract, abstract_));
 	}
 
 	/**
@@ -294,7 +331,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		boolean oldStatic = static_;
 		static_ = newStatic;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FIELD__STATIC, oldStatic,
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FUNCTION__STATIC, oldStatic,
 					static_));
 	}
 
@@ -303,8 +340,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * 
 	 * @generated
 	 */
-	public boolean isConstant() {
-		return constant;
+	public String getBody() {
+		return body;
 	}
 
 	/**
@@ -312,12 +349,11 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * 
 	 * @generated
 	 */
-	public void setConstant(boolean newConstant) {
-		boolean oldConstant = constant;
-		constant = newConstant;
+	public void setBody(String newBody) {
+		String oldBody = body;
+		body = newBody;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FIELD__CONSTANT, oldConstant,
-					constant));
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FUNCTION__BODY, oldBody, body));
 	}
 
 	/**
@@ -325,20 +361,12 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * 
 	 * @generated
 	 */
-	public boolean isFinal() {
-		return final_;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setFinal(boolean newFinal) {
-		boolean oldFinal = final_;
-		final_ = newFinal;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FIELD__FINAL, oldFinal, final_));
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this,
+					DartPackage.FUNCTION__PARAMETERS);
+		}
+		return parameters;
 	}
 
 	/**
@@ -348,7 +376,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 */
 	public EList<Metadata> getMetadata() {
 		if (metadata == null) {
-			metadata = new EObjectResolvingEList<Metadata>(Metadata.class, this, DartPackage.FIELD__METADATA);
+			metadata = new EObjectResolvingEList<Metadata>(Metadata.class, this,
+					DartPackage.FUNCTION__METADATA);
 		}
 		return metadata;
 	}
@@ -359,23 +388,39 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DartPackage.FUNCTION__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DartPackage.FIELD__NAME:
+			case DartPackage.FUNCTION__NAME:
 				return getName();
-			case DartPackage.FIELD__DOCUMENTATION:
+			case DartPackage.FUNCTION__DOCUMENTATION:
 				return getDocumentation();
-			case DartPackage.FIELD__TYPE:
+			case DartPackage.FUNCTION__TYPE:
 				if (resolve)
 					return getType();
 				return basicGetType();
-			case DartPackage.FIELD__STATIC:
+			case DartPackage.FUNCTION__ABSTRACT:
+				return isAbstract();
+			case DartPackage.FUNCTION__STATIC:
 				return isStatic();
-			case DartPackage.FIELD__CONSTANT:
-				return isConstant();
-			case DartPackage.FIELD__FINAL:
-				return isFinal();
-			case DartPackage.FIELD__METADATA:
+			case DartPackage.FUNCTION__BODY:
+				return getBody();
+			case DartPackage.FUNCTION__PARAMETERS:
+				return getParameters();
+			case DartPackage.FUNCTION__METADATA:
 				return getMetadata();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -390,25 +435,29 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DartPackage.FIELD__NAME:
+			case DartPackage.FUNCTION__NAME:
 				setName((String)newValue);
 				return;
-			case DartPackage.FIELD__DOCUMENTATION:
+			case DartPackage.FUNCTION__DOCUMENTATION:
 				setDocumentation((String)newValue);
 				return;
-			case DartPackage.FIELD__TYPE:
+			case DartPackage.FUNCTION__TYPE:
 				setType((Type)newValue);
 				return;
-			case DartPackage.FIELD__STATIC:
+			case DartPackage.FUNCTION__ABSTRACT:
+				setAbstract((Boolean)newValue);
+				return;
+			case DartPackage.FUNCTION__STATIC:
 				setStatic((Boolean)newValue);
 				return;
-			case DartPackage.FIELD__CONSTANT:
-				setConstant((Boolean)newValue);
+			case DartPackage.FUNCTION__BODY:
+				setBody((String)newValue);
 				return;
-			case DartPackage.FIELD__FINAL:
-				setFinal((Boolean)newValue);
+			case DartPackage.FUNCTION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
-			case DartPackage.FIELD__METADATA:
+			case DartPackage.FUNCTION__METADATA:
 				getMetadata().clear();
 				getMetadata().addAll((Collection<? extends Metadata>)newValue);
 				return;
@@ -424,25 +473,28 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DartPackage.FIELD__NAME:
+			case DartPackage.FUNCTION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DartPackage.FIELD__DOCUMENTATION:
+			case DartPackage.FUNCTION__DOCUMENTATION:
 				setDocumentation(DOCUMENTATION_EDEFAULT);
 				return;
-			case DartPackage.FIELD__TYPE:
+			case DartPackage.FUNCTION__TYPE:
 				setType((Type)null);
 				return;
-			case DartPackage.FIELD__STATIC:
+			case DartPackage.FUNCTION__ABSTRACT:
+				setAbstract(ABSTRACT_EDEFAULT);
+				return;
+			case DartPackage.FUNCTION__STATIC:
 				setStatic(STATIC_EDEFAULT);
 				return;
-			case DartPackage.FIELD__CONSTANT:
-				setConstant(CONSTANT_EDEFAULT);
+			case DartPackage.FUNCTION__BODY:
+				setBody(BODY_EDEFAULT);
 				return;
-			case DartPackage.FIELD__FINAL:
-				setFinal(FINAL_EDEFAULT);
+			case DartPackage.FUNCTION__PARAMETERS:
+				getParameters().clear();
 				return;
-			case DartPackage.FIELD__METADATA:
+			case DartPackage.FUNCTION__METADATA:
 				getMetadata().clear();
 				return;
 		}
@@ -457,20 +509,22 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DartPackage.FIELD__NAME:
+			case DartPackage.FUNCTION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DartPackage.FIELD__DOCUMENTATION:
+			case DartPackage.FUNCTION__DOCUMENTATION:
 				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT
 						.equals(documentation);
-			case DartPackage.FIELD__TYPE:
+			case DartPackage.FUNCTION__TYPE:
 				return type != null;
-			case DartPackage.FIELD__STATIC:
+			case DartPackage.FUNCTION__ABSTRACT:
+				return abstract_ != ABSTRACT_EDEFAULT;
+			case DartPackage.FUNCTION__STATIC:
 				return static_ != STATIC_EDEFAULT;
-			case DartPackage.FIELD__CONSTANT:
-				return constant != CONSTANT_EDEFAULT;
-			case DartPackage.FIELD__FINAL:
-				return final_ != FINAL_EDEFAULT;
-			case DartPackage.FIELD__METADATA:
+			case DartPackage.FUNCTION__BODY:
+				return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
+			case DartPackage.FUNCTION__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
+			case DartPackage.FUNCTION__METADATA:
 				return metadata != null && !metadata.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -491,14 +545,14 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		result.append(name);
 		result.append(", documentation: ");
 		result.append(documentation);
+		result.append(", abstract: ");
+		result.append(abstract_);
 		result.append(", static: ");
 		result.append(static_);
-		result.append(", constant: ");
-		result.append(constant);
-		result.append(", final: ");
-		result.append(final_);
+		result.append(", body: ");
+		result.append(body);
 		result.append(')');
 		return result.toString();
 	}
 
-} // FieldImpl
+} // FunctionImpl

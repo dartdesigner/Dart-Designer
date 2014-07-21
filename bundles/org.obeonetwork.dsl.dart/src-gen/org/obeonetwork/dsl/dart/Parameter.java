@@ -68,31 +68,31 @@ public interface Parameter extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Default Value</b></em>' attribute. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Value</b></em>' attribute. <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Default Value</em>' attribute isn't clear, there really should be more of a
+	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return the value of the '<em>Default Value</em>' attribute.
-	 * @see #setDefaultValue(String)
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getParameter_DefaultValue()
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getParameter_Value()
 	 * @model
 	 * @generated
 	 */
-	String getDefaultValue();
+	String getValue();
 
 	/**
-	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Parameter#getDefaultValue
-	 * <em>Default Value</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Parameter#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
-	 *            the new value of the '<em>Default Value</em>' attribute.
-	 * @see #getDefaultValue()
+	 *            the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
 	 * @generated
 	 */
-	void setDefaultValue(String value);
+	void setValue(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Optional</b></em>' attribute. <!-- begin-user-doc -->

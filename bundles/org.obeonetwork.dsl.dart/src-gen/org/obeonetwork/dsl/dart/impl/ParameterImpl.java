@@ -36,7 +36,7 @@ import org.obeonetwork.dsl.dart.Type;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.obeonetwork.dsl.dart.impl.ParameterImpl#getName <em>Name</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.ParameterImpl#getDefaultValue <em>Default Value</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.ParameterImpl#getValue <em>Value</em>}</li>
  * <li>{@link org.obeonetwork.dsl.dart.impl.ParameterImpl#isOptional <em>Optional</em>}</li>
  * <li>{@link org.obeonetwork.dsl.dart.impl.ParameterImpl#getType <em>Type</em>}</li>
  * <li>{@link org.obeonetwork.dsl.dart.impl.ParameterImpl#getMetadata <em>Metadata</em>}</li>
@@ -74,24 +74,24 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
-	 * @see #getDefaultValue()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DEFAULT_VALUE_EDEFAULT = null;
+	protected static final String VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
-	 * @see #getDefaultValue()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOptional() <em>Optional</em>}' attribute. <!-- begin-user-doc -->
@@ -178,8 +178,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * 
 	 * @generated
 	 */
-	public String getDefaultValue() {
-		return defaultValue;
+	public String getValue() {
+		return value;
 	}
 
 	/**
@@ -187,12 +187,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * 
 	 * @generated
 	 */
-	public void setDefaultValue(String newDefaultValue) {
-		String oldDefaultValue = defaultValue;
-		defaultValue = newDefaultValue;
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.PARAMETER__DEFAULT_VALUE,
-					oldDefaultValue, defaultValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.PARAMETER__VALUE, oldValue,
+					value));
 	}
 
 	/**
@@ -279,8 +279,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		switch (featureID) {
 			case DartPackage.PARAMETER__NAME:
 				return getName();
-			case DartPackage.PARAMETER__DEFAULT_VALUE:
-				return getDefaultValue();
+			case DartPackage.PARAMETER__VALUE:
+				return getValue();
 			case DartPackage.PARAMETER__OPTIONAL:
 				return isOptional();
 			case DartPackage.PARAMETER__TYPE:
@@ -305,8 +305,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			case DartPackage.PARAMETER__NAME:
 				setName((String)newValue);
 				return;
-			case DartPackage.PARAMETER__DEFAULT_VALUE:
-				setDefaultValue((String)newValue);
+			case DartPackage.PARAMETER__VALUE:
+				setValue((String)newValue);
 				return;
 			case DartPackage.PARAMETER__OPTIONAL:
 				setOptional((Boolean)newValue);
@@ -333,8 +333,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			case DartPackage.PARAMETER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DartPackage.PARAMETER__DEFAULT_VALUE:
-				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
+			case DartPackage.PARAMETER__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 			case DartPackage.PARAMETER__OPTIONAL:
 				setOptional(OPTIONAL_EDEFAULT);
@@ -359,9 +359,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		switch (featureID) {
 			case DartPackage.PARAMETER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DartPackage.PARAMETER__DEFAULT_VALUE:
-				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT
-						.equals(defaultValue);
+			case DartPackage.PARAMETER__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case DartPackage.PARAMETER__OPTIONAL:
 				return optional != OPTIONAL_EDEFAULT;
 			case DartPackage.PARAMETER__TYPE:
@@ -385,8 +384,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", defaultValue: ");
-		result.append(defaultValue);
+		result.append(", value: ");
+		result.append(value);
 		result.append(", optional: ");
 		result.append(optional);
 		result.append(')');

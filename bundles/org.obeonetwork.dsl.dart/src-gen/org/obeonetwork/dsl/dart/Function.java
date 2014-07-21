@@ -15,26 +15,27 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Method</b></em>'. <!-- end-user-doc
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Function</b></em>'. <!-- end-user-doc
  * -->
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.obeonetwork.dsl.dart.Method#getName <em>Name</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.Method#getDocumentation <em>Documentation</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.Method#getType <em>Type</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.Method#isAbstract <em>Abstract</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.Method#isStatic <em>Static</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.Method#getParameters <em>Parameters</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.Method#getMetadata <em>Metadata</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Function#getName <em>Name</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Function#getDocumentation <em>Documentation</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Function#getType <em>Type</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Function#isAbstract <em>Abstract</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Function#isStatic <em>Static</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Function#getBody <em>Body</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Function#getParameters <em>Parameters</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Function#getMetadata <em>Metadata</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.obeonetwork.dsl.dart.DartPackage#getMethod()
+ * @see org.obeonetwork.dsl.dart.DartPackage#getFunction()
  * @model
  * @generated
  */
-public interface Method extends EObject {
+public interface Function extends EObject {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -52,14 +53,14 @@ public interface Method extends EObject {
 	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getMethod_Name()
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getFunction_Name()
 	 * @model
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Method#getName <em>Name</em>}' attribute. <!--
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Function#getName <em>Name</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
@@ -79,15 +80,15 @@ public interface Method extends EObject {
 	 * 
 	 * @return the value of the '<em>Documentation</em>' attribute.
 	 * @see #setDocumentation(String)
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getMethod_Documentation()
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getFunction_Documentation()
 	 * @model
 	 * @generated
 	 */
 	String getDocumentation();
 
 	/**
-	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Method#getDocumentation <em>Documentation</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Function#getDocumentation
+	 * <em>Documentation</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Documentation</em>' attribute.
@@ -106,14 +107,14 @@ public interface Method extends EObject {
 	 * 
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(Type)
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getMethod_Type()
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getFunction_Type()
 	 * @model
 	 * @generated
 	 */
 	Type getType();
 
 	/**
-	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Method#getType <em>Type</em>}' reference. <!--
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Function#getType <em>Type</em>}' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
@@ -133,15 +134,15 @@ public interface Method extends EObject {
 	 * 
 	 * @return the value of the '<em>Abstract</em>' attribute.
 	 * @see #setAbstract(boolean)
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getMethod_Abstract()
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getFunction_Abstract()
 	 * @model
 	 * @generated
 	 */
 	boolean isAbstract();
 
 	/**
-	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Method#isAbstract <em>Abstract</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Function#isAbstract <em>Abstract</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
 	 *            the new value of the '<em>Abstract</em>' attribute.
@@ -160,14 +161,14 @@ public interface Method extends EObject {
 	 * 
 	 * @return the value of the '<em>Static</em>' attribute.
 	 * @see #setStatic(boolean)
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getMethod_Static()
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getFunction_Static()
 	 * @model
 	 * @generated
 	 */
 	boolean isStatic();
 
 	/**
-	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Method#isStatic <em>Static</em>}' attribute.
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Function#isStatic <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @param value
@@ -176,6 +177,33 @@ public interface Method extends EObject {
 	 * @generated
 	 */
 	void setStatic(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Body</b></em>' attribute. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Body</em>' attribute isn't clear, there really should be more of a
+	 * description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Body</em>' attribute.
+	 * @see #setBody(String)
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getFunction_Body()
+	 * @model
+	 * @generated
+	 */
+	String getBody();
+
+	/**
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Function#getBody <em>Body</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Body</em>' attribute.
+	 * @see #getBody()
+	 * @generated
+	 */
+	void setBody(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list. The list contents are
@@ -187,7 +215,7 @@ public interface Method extends EObject {
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getMethod_Parameters()
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getFunction_Parameters()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -203,10 +231,10 @@ public interface Method extends EObject {
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the value of the '<em>Metadata</em>' reference list.
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getMethod_Metadata()
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getFunction_Metadata()
 	 * @model
 	 * @generated
 	 */
 	EList<Metadata> getMetadata();
 
-} // Method
+} // Function

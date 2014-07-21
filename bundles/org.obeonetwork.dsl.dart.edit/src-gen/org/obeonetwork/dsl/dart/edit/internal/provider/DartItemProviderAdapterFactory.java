@@ -223,29 +223,6 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Application}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected ApplicationItemProvider applicationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Application}. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createApplicationAdapter() {
-		if (applicationItemProvider == null) {
-			applicationItemProvider = new ApplicationItemProvider(this);
-		}
-
-		return applicationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Library} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -315,49 +292,72 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Field} instances. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected FieldItemProvider fieldItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Field}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createFieldAdapter() {
-		if (fieldItemProvider == null) {
-			fieldItemProvider = new FieldItemProvider(this);
-		}
-
-		return fieldItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Method} instances.
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Variable} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected MethodItemProvider methodItemProvider;
+	protected VariableItemProvider variableItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Method}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Variable}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
-	public Adapter createMethodAdapter() {
-		if (methodItemProvider == null) {
-			methodItemProvider = new MethodItemProvider(this);
+	public Adapter createVariableAdapter() {
+		if (variableItemProvider == null) {
+			variableItemProvider = new VariableItemProvider(this);
 		}
 
-		return methodItemProvider;
+		return variableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Constructor}
+	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ConstructorItemProvider constructorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Constructor}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createConstructorAdapter() {
+		if (constructorItemProvider == null) {
+			constructorItemProvider = new ConstructorItemProvider(this);
+		}
+
+		return constructorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Function} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected FunctionItemProvider functionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Function}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createFunctionAdapter() {
+		if (functionItemProvider == null) {
+			functionItemProvider = new FunctionItemProvider(this);
+		}
+
+		return functionItemProvider;
 	}
 
 	/**
@@ -490,22 +490,22 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 			importItemProvider.dispose();
 		if (exportItemProvider != null)
 			exportItemProvider.dispose();
-		if (typedefItemProvider != null)
-			typedefItemProvider.dispose();
-		if (applicationItemProvider != null)
-			applicationItemProvider.dispose();
 		if (libraryItemProvider != null)
 			libraryItemProvider.dispose();
 		if (metadataItemProvider != null)
 			metadataItemProvider.dispose();
 		if (classItemProvider != null)
 			classItemProvider.dispose();
-		if (fieldItemProvider != null)
-			fieldItemProvider.dispose();
-		if (methodItemProvider != null)
-			methodItemProvider.dispose();
+		if (variableItemProvider != null)
+			variableItemProvider.dispose();
+		if (constructorItemProvider != null)
+			constructorItemProvider.dispose();
+		if (functionItemProvider != null)
+			functionItemProvider.dispose();
 		if (parameterItemProvider != null)
 			parameterItemProvider.dispose();
+		if (typedefItemProvider != null)
+			typedefItemProvider.dispose();
 	}
 
 }

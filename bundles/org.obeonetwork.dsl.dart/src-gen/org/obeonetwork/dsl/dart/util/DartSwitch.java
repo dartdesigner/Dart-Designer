@@ -12,26 +12,24 @@ package org.obeonetwork.dsl.dart.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.obeonetwork.dsl.dart.Application;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Classifier;
+import org.obeonetwork.dsl.dart.Constructor;
 import org.obeonetwork.dsl.dart.Container;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Export;
-import org.obeonetwork.dsl.dart.Field;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
-import org.obeonetwork.dsl.dart.Method;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Project;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
+import org.obeonetwork.dsl.dart.Variable;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance hierarchy. It supports the call
@@ -154,29 +152,9 @@ public class DartSwitch<T> extends Switch<T> {
 					result = defaultCase(theEObject);
 				return result;
 			}
-			case DartPackage.TYPEDEF: {
-				Typedef typedef = (Typedef)theEObject;
-				T result = caseTypedef(typedef);
-				if (result == null)
-					result = caseType(typedef);
-				if (result == null)
-					result = defaultCase(theEObject);
-				return result;
-			}
 			case DartPackage.TYPE: {
 				Type type = (Type)theEObject;
 				T result = caseType(type);
-				if (result == null)
-					result = defaultCase(theEObject);
-				return result;
-			}
-			case DartPackage.APPLICATION: {
-				Application application = (Application)theEObject;
-				T result = caseApplication(application);
-				if (result == null)
-					result = caseDartResource(application);
-				if (result == null)
-					result = caseAsset(application);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -231,16 +209,23 @@ public class DartSwitch<T> extends Switch<T> {
 					result = defaultCase(theEObject);
 				return result;
 			}
-			case DartPackage.FIELD: {
-				Field field = (Field)theEObject;
-				T result = caseField(field);
+			case DartPackage.VARIABLE: {
+				Variable variable = (Variable)theEObject;
+				T result = caseVariable(variable);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
 			}
-			case DartPackage.METHOD: {
-				Method method = (Method)theEObject;
-				T result = caseMethod(method);
+			case DartPackage.CONSTRUCTOR: {
+				Constructor constructor = (Constructor)theEObject;
+				T result = caseConstructor(constructor);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.FUNCTION: {
+				Function function = (Function)theEObject;
+				T result = caseFunction(function);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -248,6 +233,15 @@ public class DartSwitch<T> extends Switch<T> {
 			case DartPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.TYPEDEF: {
+				Typedef typedef = (Typedef)theEObject;
+				T result = caseTypedef(typedef);
+				if (result == null)
+					result = caseType(typedef);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -408,21 +402,6 @@ public class DartSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Application</em>'. <!--
-	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
-	 * switch. <!-- end-user-doc -->
-	 * 
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Application</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseApplication(Application object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Library</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
@@ -483,32 +462,47 @@ public class DartSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Field</em>'. <!-- begin-user-doc
-	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
 	 * 
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseField(Field object) {
+	public T caseVariable(Variable object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Method</em>'. <!-- begin-user-doc
-	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>Constructor</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
 	 * 
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Method</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Constructor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMethod(Method object) {
+	public T caseConstructor(Constructor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunction(Function object) {
 		return null;
 	}
 

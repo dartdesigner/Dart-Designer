@@ -11,7 +11,6 @@
 package org.obeonetwork.dsl.dart.design.internal.services;
 
 import org.eclipse.emf.ecore.EObject;
-import org.obeonetwork.dsl.dart.Application;
 import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.Container;
 import org.obeonetwork.dsl.dart.Folder;
@@ -56,17 +55,6 @@ public class DartTypeServices {
 	 */
 	public boolean isContainer(EObject eObject) {
 		return eObject instanceof Container;
-	}
-
-	/**
-	 * Returns <code>true</code> if the EObject is a Dart application.
-	 *
-	 * @param eObject
-	 *            The EObject
-	 * @return <code>true</code> if the EObject is a Dart application
-	 */
-	public boolean isApplication(EObject eObject) {
-		return eObject instanceof Application;
 	}
 
 	/**

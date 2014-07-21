@@ -78,7 +78,7 @@ public class DartDesignerProjectCreationOperation extends WorkspaceModifyOperati
 	 */
 	@Override
 	protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException,
-	InterruptedException {
+			InterruptedException {
 		project.create(new NullProgressMonitor());
 		project.open(monitor);
 
@@ -100,7 +100,7 @@ public class DartDesignerProjectCreationOperation extends WorkspaceModifyOperati
 		Project dartProject = DartFactory.eINSTANCE.createProject();
 		dartProject.setName(project.getName());
 		Package dartPackage = DartFactory.eINSTANCE.createPackage();
-		dartPackage.setName("New Dart Package");
+		dartPackage.setName("Dart Package");
 		dartProject.getPackages().add(dartPackage);
 
 		Resource dartlangResource = resourceSet.getResource(URI

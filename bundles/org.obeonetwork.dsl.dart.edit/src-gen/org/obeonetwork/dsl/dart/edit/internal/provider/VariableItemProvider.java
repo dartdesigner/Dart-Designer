@@ -18,8 +18,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -31,17 +29,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.DartPackage;
-import org.obeonetwork.dsl.dart.Typedef;
+import org.obeonetwork.dsl.dart.Variable;
 
 /**
- * This is the item provider adapter for a {@link org.obeonetwork.dsl.dart.Typedef} object. <!--
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.dart.Variable} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class TypedefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class VariableItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -55,7 +52,7 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 	 * 
 	 * @generated
 	 */
-	public TypedefItemProvider(AdapterFactory adapterFactory) {
+	public VariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,9 +67,13 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDocumentationPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addDocumentationPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addStaticPropertyDescriptor(object);
+			addConstantPropertyDescriptor(object);
+			addFinalPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 			addMetadataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -85,9 +86,9 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Typedef_name_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Typedef_name_feature",
-						"_UI_Typedef_type"), DartPackage.Literals.TYPEDEF__NAME, true, false, false,
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Variable_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Variable_name_feature",
+						"_UI_Variable_type"), DartPackage.Literals.VARIABLE__NAME, true, false, false,
 				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -100,10 +101,10 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 	protected void addDocumentationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
 				.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Typedef_documentation_feature"), getString(
-						"_UI_PropertyDescriptor_description", "_UI_Typedef_documentation_feature",
-						"_UI_Typedef_type"), DartPackage.Literals.TYPEDEF__DOCUMENTATION, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+				getString("_UI_Variable_documentation_feature"), getString(
+						"_UI_PropertyDescriptor_description", "_UI_Variable_documentation_feature",
+						"_UI_Variable_type"), DartPackage.Literals.VARIABLE__DOCUMENTATION, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -113,10 +114,62 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Typedef_type_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Typedef_type_feature",
-						"_UI_Typedef_type"), DartPackage.Literals.TYPEDEF__TYPE, true, false, true, null,
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Variable_type_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Variable_type_feature",
+						"_UI_Variable_type"), DartPackage.Literals.VARIABLE__TYPE, true, false, true, null,
 				null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Static feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addStaticPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Variable_static_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Variable_static_feature",
+						"_UI_Variable_type"), DartPackage.Literals.VARIABLE__STATIC, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Constant feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addConstantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Variable_constant_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Variable_constant_feature",
+						"_UI_Variable_type"), DartPackage.Literals.VARIABLE__CONSTANT, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Final feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addFinalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Variable_final_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Variable_final_feature",
+						"_UI_Variable_type"), DartPackage.Literals.VARIABLE__FINAL, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Variable_value_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Variable_value_feature",
+						"_UI_Variable_type"), DartPackage.Literals.VARIABLE__VALUE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -126,40 +179,10 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	protected void addMetadataPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Typedef_metadata_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Typedef_metadata_feature",
-						"_UI_Typedef_type"), DartPackage.Literals.TYPEDEF__METADATA, true, false, true, null,
-				null, null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for
-	 * an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand}
-	 * or {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(DartPackage.Literals.TYPEDEF__PARAMETERS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Variable_metadata_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Variable_metadata_feature",
+						"_UI_Variable_type"), DartPackage.Literals.VARIABLE__METADATA, true, false, true,
+				null, null, null));
 	}
 
 	/**
@@ -173,13 +196,13 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
-	 * This returns Typedef.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns Variable.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Typedef"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Variable"));
 	}
 
 	/**
@@ -189,9 +212,9 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Typedef)object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Typedef_type")
-				: getString("_UI_Typedef_type") + " " + label;
+		String label = ((Variable)object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Variable_type")
+				: getString("_UI_Variable_type") + " " + label;
 	}
 
 	/**
@@ -205,15 +228,15 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Typedef.class)) {
-			case DartPackage.TYPEDEF__DOCUMENTATION:
-			case DartPackage.TYPEDEF__NAME:
+		switch (notification.getFeatureID(Variable.class)) {
+			case DartPackage.VARIABLE__NAME:
+			case DartPackage.VARIABLE__DOCUMENTATION:
+			case DartPackage.VARIABLE__STATIC:
+			case DartPackage.VARIABLE__CONSTANT:
+			case DartPackage.VARIABLE__FINAL:
+			case DartPackage.VARIABLE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false,
 						true));
-				return;
-			case DartPackage.TYPEDEF__PARAMETERS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true,
-						false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -228,9 +251,6 @@ public class TypedefItemProvider extends ItemProviderAdapter implements IEditing
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(DartPackage.Literals.TYPEDEF__PARAMETERS,
-				DartFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

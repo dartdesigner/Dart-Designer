@@ -106,6 +106,8 @@ public class LibraryItemProvider extends DartResourceItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DartPackage.Literals.LIBRARY__TYPEDEFS);
+			childrenFeatures.add(DartPackage.Literals.LIBRARY__VARIABLES);
+			childrenFeatures.add(DartPackage.Literals.LIBRARY__FUNCTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -158,6 +160,8 @@ public class LibraryItemProvider extends DartResourceItemProvider {
 
 		switch (notification.getFeatureID(Library.class)) {
 			case DartPackage.LIBRARY__TYPEDEFS:
+			case DartPackage.LIBRARY__VARIABLES:
+			case DartPackage.LIBRARY__FUNCTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true,
 						false));
 				return;
@@ -177,6 +181,12 @@ public class LibraryItemProvider extends DartResourceItemProvider {
 
 		newChildDescriptors.add(createChildParameter(DartPackage.Literals.LIBRARY__TYPEDEFS,
 				DartFactory.eINSTANCE.createTypedef()));
+
+		newChildDescriptors.add(createChildParameter(DartPackage.Literals.LIBRARY__VARIABLES,
+				DartFactory.eINSTANCE.createVariable()));
+
+		newChildDescriptors.add(createChildParameter(DartPackage.Literals.LIBRARY__FUNCTIONS,
+				DartFactory.eINSTANCE.createFunction()));
 	}
 
 }

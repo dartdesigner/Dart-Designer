@@ -134,6 +134,7 @@ public class ClassItemProvider extends ClassifierItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(DartPackage.Literals.CLASS__CONSTRUCTORS);
 			childrenFeatures.add(DartPackage.Literals.CLASS__METHODS);
 		}
 		return childrenFeatures;
@@ -190,6 +191,7 @@ public class ClassItemProvider extends ClassifierItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false,
 						true));
 				return;
+			case DartPackage.CLASS__CONSTRUCTORS:
 			case DartPackage.CLASS__METHODS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true,
 						false));
@@ -208,8 +210,11 @@ public class ClassItemProvider extends ClassifierItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
+		newChildDescriptors.add(createChildParameter(DartPackage.Literals.CLASS__CONSTRUCTORS,
+				DartFactory.eINSTANCE.createConstructor()));
+
 		newChildDescriptors.add(createChildParameter(DartPackage.Literals.CLASS__METHODS,
-				DartFactory.eINSTANCE.createMethod()));
+				DartFactory.eINSTANCE.createFunction()));
 	}
 
 }

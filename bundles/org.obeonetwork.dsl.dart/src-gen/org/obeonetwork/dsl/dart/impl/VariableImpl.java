@@ -13,7 +13,6 @@ package org.obeonetwork.dsl.dart.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -23,35 +22,33 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.Metadata;
-import org.obeonetwork.dsl.dart.Method;
-import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Type;
+import org.obeonetwork.dsl.dart.Variable;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Method</b></em>'. <!-- end-user-doc
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Variable</b></em>'. <!-- end-user-doc
  * -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.obeonetwork.dsl.dart.impl.MethodImpl#getName <em>Name</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.MethodImpl#getDocumentation <em>Documentation</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.MethodImpl#getType <em>Type</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.MethodImpl#isAbstract <em>Abstract</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.MethodImpl#isStatic <em>Static</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.MethodImpl#getParameters <em>Parameters</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.impl.MethodImpl#getMetadata <em>Metadata</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.VariableImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.VariableImpl#getDocumentation <em>Documentation</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.VariableImpl#getType <em>Type</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.VariableImpl#isStatic <em>Static</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.VariableImpl#isConstant <em>Constant</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.VariableImpl#isFinal <em>Final</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.VariableImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.VariableImpl#getMetadata <em>Metadata</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
+public class VariableImpl extends MinimalEObjectImpl.Container implements Variable {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -110,26 +107,6 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	protected Type type;
 
 	/**
-	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #isAbstract()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ABSTRACT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @see #isAbstract()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean abstract_ = ABSTRACT_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isStatic() <em>Static</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -150,14 +127,64 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	protected boolean static_ = STATIC_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #isConstant() <em>Constant</em>}' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
-	 * @see #getParameters()
+	 * @see #isConstant()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Parameter> parameters;
+	protected static final boolean CONSTANT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isConstant() <em>Constant</em>}' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #isConstant()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean constant = CONSTANT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #isFinal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean FINAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #isFinal()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean final_ = FINAL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' reference list. <!-- begin-user-doc
@@ -174,7 +201,7 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	 * 
 	 * @generated
 	 */
-	protected MethodImpl() {
+	protected VariableImpl() {
 		super();
 	}
 
@@ -185,7 +212,7 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DartPackage.Literals.METHOD;
+		return DartPackage.Literals.VARIABLE;
 	}
 
 	/**
@@ -206,7 +233,7 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.METHOD__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.VARIABLE__NAME, oldName, name));
 	}
 
 	/**
@@ -227,7 +254,7 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 		String oldDocumentation = documentation;
 		documentation = newDocumentation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.METHOD__DOCUMENTATION,
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.VARIABLE__DOCUMENTATION,
 					oldDocumentation, documentation));
 	}
 
@@ -242,7 +269,7 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 			type = (Type)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DartPackage.METHOD__TYPE,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DartPackage.VARIABLE__TYPE,
 							oldType, type));
 			}
 		}
@@ -267,29 +294,7 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 		Type oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.METHOD__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public boolean isAbstract() {
-		return abstract_;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setAbstract(boolean newAbstract) {
-		boolean oldAbstract = abstract_;
-		abstract_ = newAbstract;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.METHOD__ABSTRACT, oldAbstract,
-					abstract_));
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.VARIABLE__TYPE, oldType, type));
 	}
 
 	/**
@@ -310,7 +315,7 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 		boolean oldStatic = static_;
 		static_ = newStatic;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.METHOD__STATIC, oldStatic,
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.VARIABLE__STATIC, oldStatic,
 					static_));
 	}
 
@@ -319,12 +324,65 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	 * 
 	 * @generated
 	 */
-	public EList<Parameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this,
-					DartPackage.METHOD__PARAMETERS);
-		}
-		return parameters;
+	public boolean isConstant() {
+		return constant;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setConstant(boolean newConstant) {
+		boolean oldConstant = constant;
+		constant = newConstant;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.VARIABLE__CONSTANT,
+					oldConstant, constant));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isFinal() {
+		return final_;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setFinal(boolean newFinal) {
+		boolean oldFinal = final_;
+		final_ = newFinal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.VARIABLE__FINAL, oldFinal,
+					final_));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.VARIABLE__VALUE, oldValue,
+					value));
 	}
 
 	/**
@@ -334,7 +392,8 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	 */
 	public EList<Metadata> getMetadata() {
 		if (metadata == null) {
-			metadata = new EObjectResolvingEList<Metadata>(Metadata.class, this, DartPackage.METHOD__METADATA);
+			metadata = new EObjectResolvingEList<Metadata>(Metadata.class, this,
+					DartPackage.VARIABLE__METADATA);
 		}
 		return metadata;
 	}
@@ -345,37 +404,25 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case DartPackage.METHOD__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DartPackage.METHOD__NAME:
+			case DartPackage.VARIABLE__NAME:
 				return getName();
-			case DartPackage.METHOD__DOCUMENTATION:
+			case DartPackage.VARIABLE__DOCUMENTATION:
 				return getDocumentation();
-			case DartPackage.METHOD__TYPE:
+			case DartPackage.VARIABLE__TYPE:
 				if (resolve)
 					return getType();
 				return basicGetType();
-			case DartPackage.METHOD__ABSTRACT:
-				return isAbstract();
-			case DartPackage.METHOD__STATIC:
+			case DartPackage.VARIABLE__STATIC:
 				return isStatic();
-			case DartPackage.METHOD__PARAMETERS:
-				return getParameters();
-			case DartPackage.METHOD__METADATA:
+			case DartPackage.VARIABLE__CONSTANT:
+				return isConstant();
+			case DartPackage.VARIABLE__FINAL:
+				return isFinal();
+			case DartPackage.VARIABLE__VALUE:
+				return getValue();
+			case DartPackage.VARIABLE__METADATA:
 				return getMetadata();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -390,26 +437,28 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DartPackage.METHOD__NAME:
+			case DartPackage.VARIABLE__NAME:
 				setName((String)newValue);
 				return;
-			case DartPackage.METHOD__DOCUMENTATION:
+			case DartPackage.VARIABLE__DOCUMENTATION:
 				setDocumentation((String)newValue);
 				return;
-			case DartPackage.METHOD__TYPE:
+			case DartPackage.VARIABLE__TYPE:
 				setType((Type)newValue);
 				return;
-			case DartPackage.METHOD__ABSTRACT:
-				setAbstract((Boolean)newValue);
-				return;
-			case DartPackage.METHOD__STATIC:
+			case DartPackage.VARIABLE__STATIC:
 				setStatic((Boolean)newValue);
 				return;
-			case DartPackage.METHOD__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
+			case DartPackage.VARIABLE__CONSTANT:
+				setConstant((Boolean)newValue);
 				return;
-			case DartPackage.METHOD__METADATA:
+			case DartPackage.VARIABLE__FINAL:
+				setFinal((Boolean)newValue);
+				return;
+			case DartPackage.VARIABLE__VALUE:
+				setValue((String)newValue);
+				return;
+			case DartPackage.VARIABLE__METADATA:
 				getMetadata().clear();
 				getMetadata().addAll((Collection<? extends Metadata>)newValue);
 				return;
@@ -425,25 +474,28 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DartPackage.METHOD__NAME:
+			case DartPackage.VARIABLE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DartPackage.METHOD__DOCUMENTATION:
+			case DartPackage.VARIABLE__DOCUMENTATION:
 				setDocumentation(DOCUMENTATION_EDEFAULT);
 				return;
-			case DartPackage.METHOD__TYPE:
+			case DartPackage.VARIABLE__TYPE:
 				setType((Type)null);
 				return;
-			case DartPackage.METHOD__ABSTRACT:
-				setAbstract(ABSTRACT_EDEFAULT);
-				return;
-			case DartPackage.METHOD__STATIC:
+			case DartPackage.VARIABLE__STATIC:
 				setStatic(STATIC_EDEFAULT);
 				return;
-			case DartPackage.METHOD__PARAMETERS:
-				getParameters().clear();
+			case DartPackage.VARIABLE__CONSTANT:
+				setConstant(CONSTANT_EDEFAULT);
 				return;
-			case DartPackage.METHOD__METADATA:
+			case DartPackage.VARIABLE__FINAL:
+				setFinal(FINAL_EDEFAULT);
+				return;
+			case DartPackage.VARIABLE__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
+			case DartPackage.VARIABLE__METADATA:
 				getMetadata().clear();
 				return;
 		}
@@ -458,20 +510,22 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DartPackage.METHOD__NAME:
+			case DartPackage.VARIABLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DartPackage.METHOD__DOCUMENTATION:
+			case DartPackage.VARIABLE__DOCUMENTATION:
 				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT
 						.equals(documentation);
-			case DartPackage.METHOD__TYPE:
+			case DartPackage.VARIABLE__TYPE:
 				return type != null;
-			case DartPackage.METHOD__ABSTRACT:
-				return abstract_ != ABSTRACT_EDEFAULT;
-			case DartPackage.METHOD__STATIC:
+			case DartPackage.VARIABLE__STATIC:
 				return static_ != STATIC_EDEFAULT;
-			case DartPackage.METHOD__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
-			case DartPackage.METHOD__METADATA:
+			case DartPackage.VARIABLE__CONSTANT:
+				return constant != CONSTANT_EDEFAULT;
+			case DartPackage.VARIABLE__FINAL:
+				return final_ != FINAL_EDEFAULT;
+			case DartPackage.VARIABLE__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case DartPackage.VARIABLE__METADATA:
 				return metadata != null && !metadata.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -492,12 +546,16 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 		result.append(name);
 		result.append(", documentation: ");
 		result.append(documentation);
-		result.append(", abstract: ");
-		result.append(abstract_);
 		result.append(", static: ");
 		result.append(static_);
+		result.append(", constant: ");
+		result.append(constant);
+		result.append(", final: ");
+		result.append(final_);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} // MethodImpl
+} // VariableImpl
