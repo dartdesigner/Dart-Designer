@@ -186,7 +186,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Class Diagram" titleExpression="service:newClassDiagramName" domainClass="dart.Container" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Class Diagram">
-        <edgeMappings name="CD Class Extends" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:extends">
+        <edgeMappings name="CD Class Extends" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:extends" reconnections="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CD%20Class%20Extends%20Reconnect']">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;extend>">
@@ -194,7 +194,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="CD Class Implements" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:implements">
+        <edgeMappings name="CD Class Implements" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:implements" reconnections="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CD%20Class%20Implements%20Reconnect']">
           <style lineStyle="dash" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;implement>">
@@ -202,7 +202,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="CD Class Mixins" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:mixins">
+        <edgeMappings name="CD Class Mixins" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:mixins" reconnections="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CD%20Class%20Mixins%20Reconnect']">
           <style lineStyle="dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;mixin>">
@@ -478,6 +478,47 @@
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="CD Reconnect" label="Reconnect">
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="CD Class Extends Reconnect" reconnectionKind="RECONNECT_BOTH">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:reconnectExtends(edgeView)"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="CD Class Implements Reconnect" reconnectionKind="RECONNECT_BOTH">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:reconnectImplements(edgeView)"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="CD Class Mixins Reconnect" reconnectionKind="RECONNECT_BOTH">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:reconnectMixins(edgeView)"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
           </ownedTools>
         </toolSections>
       </defaultLayer>

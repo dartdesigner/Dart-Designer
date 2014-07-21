@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.dsl.dart.Application;
 import org.obeonetwork.dsl.dart.Class;
@@ -254,5 +255,82 @@ public class DartClassDiagramServices {
 
 		}
 		return exportedResources;
+	}
+
+	/**
+	 * Reconnect the "extends" link between two classes.
+	 *
+	 * @param element
+	 *            The manipulated element (source or target class)
+	 * @param edgeAfterReconnect
+	 *            The edge after the reconnection
+	 */
+	public void reconnectExtends(EObject element, DEdge edgeAfterReconnect) {
+		if (edgeAfterReconnect.getSourceNode() instanceof DSemanticDecorator
+				&& edgeAfterReconnect.getTargetNode() instanceof DSemanticDecorator) {
+
+			EObject newSource = ((DSemanticDecorator)edgeAfterReconnect.getSourceNode()).getTarget();
+			EObject newTarget = ((DSemanticDecorator)edgeAfterReconnect.getTargetNode()).getTarget();
+			if (element instanceof Class && newSource instanceof Class && newTarget instanceof Class) {
+				Class aClass = (Class)element;
+				Class srcClass = (Class)newSource;
+				Class targetClass = (Class)newTarget;
+
+				aClass.setExtends(null);
+				srcClass.setExtends(targetClass);
+			}
+		}
+	}
+
+	/**
+	 * Reconnect the "implements" link between two classes.
+	 *
+	 * @param element
+	 *            The manipulated element (source or target class)
+	 * @param edgeAfterReconnect
+	 *            The edge after the reconnection
+	 */
+	public void reconnectImplements(EObject element, DEdge edgeAfterReconnect) {
+		if (edgeAfterReconnect.getSourceNode() instanceof DSemanticDecorator
+				&& edgeAfterReconnect.getTargetNode() instanceof DSemanticDecorator) {
+
+			EObject newSource = ((DSemanticDecorator)edgeAfterReconnect.getSourceNode()).getTarget();
+			EObject newTarget = ((DSemanticDecorator)edgeAfterReconnect.getTargetNode()).getTarget();
+			if (element instanceof Class && newSource instanceof Class && newTarget instanceof Class) {
+				Class aClass = (Class)element;
+				Class srcClass = (Class)newSource;
+				Class targetClass = (Class)newTarget;
+
+				aClass.getImplements().remove(targetClass);
+				srcClass.getImplements().remove(aClass);
+				srcClass.getImplements().add(targetClass);
+			}
+		}
+	}
+
+	/**
+	 * Reconnect the "mixins" link between two classes.
+	 *
+	 * @param element
+	 *            The manipulated element (source or target class)
+	 * @param edgeAfterReconnect
+	 *            The edge after the reconnection
+	 */
+	public void reconnectMixins(EObject element, DEdge edgeAfterReconnect) {
+		if (edgeAfterReconnect.getSourceNode() instanceof DSemanticDecorator
+				&& edgeAfterReconnect.getTargetNode() instanceof DSemanticDecorator) {
+
+			EObject newSource = ((DSemanticDecorator)edgeAfterReconnect.getSourceNode()).getTarget();
+			EObject newTarget = ((DSemanticDecorator)edgeAfterReconnect.getTargetNode()).getTarget();
+			if (element instanceof Class && newSource instanceof Class && newTarget instanceof Class) {
+				Class aClass = (Class)element;
+				Class srcClass = (Class)newSource;
+				Class targetClass = (Class)newTarget;
+
+				aClass.getMixins().remove(targetClass);
+				srcClass.getMixins().remove(aClass);
+				srcClass.getMixins().add(targetClass);
+			}
+		}
 	}
 }
