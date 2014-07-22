@@ -30,4 +30,9 @@ public interface IDartSpecificationConstants {
 	 * The Dart specification extension.
 	 */
 	String EXTENSION = "dartspec"; //$NON-NLS-1$
+
+	/**
+	 * The extension of dart files.
+	 */
+	String DART_FILE_EXTENSION = ".dart"; //$NON-NLS-1$
 }

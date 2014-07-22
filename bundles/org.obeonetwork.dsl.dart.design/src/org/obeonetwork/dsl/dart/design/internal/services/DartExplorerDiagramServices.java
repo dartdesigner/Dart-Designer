@@ -17,7 +17,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Container;
+import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.IDartSpecificationConstants;
 import org.obeonetwork.dsl.dart.Package;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
@@ -63,5 +65,50 @@ public class DartExplorerDiagramServices {
 		}
 
 		return result;
+	}
+
+	/**
+	 * Indicates if the given folder is empty.
+	 *
+	 * @param eObject
+	 *            The folder
+	 * @return <code>true</code> if the folder is empty, <code>false</code> otherwise
+	 */
+	public boolean isEmpty(EObject eObject) {
+		if (eObject instanceof Folder && ((Folder)eObject).getAssets().size() == 0) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Indicates if the given folder is not empty.
+	 *
+	 * @param eObject
+	 *            The folder
+	 * @return <code>true</code> if the folder is not empty, <code>false</code> otherwise
+	 */
+	public boolean isNotEmpty(EObject eObject) {
+		if (eObject instanceof Folder && ((Folder)eObject).getAssets().size() >= 0) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Return the name of the dart file for the given dart resource.
+	 *
+	 * @param eObject
+	 *            The dart resource
+	 * @return The name of the file
+	 */
+	public String getDartResourceFileName(EObject eObject) {
+		if (eObject instanceof DartResource) {
+			String name = ((DartResource)eObject).getName();
+			if (name != null) {
+				return name + IDartSpecificationConstants.DART_FILE_EXTENSION;
+			}
+		}
+		return ""; //$NON-NLS-1$
 	}
 }
