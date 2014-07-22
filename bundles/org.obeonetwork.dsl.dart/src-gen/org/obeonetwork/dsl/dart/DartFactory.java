@@ -43,6 +43,14 @@ public interface DartFactory extends EFactory {
 	Project createProject();
 
 	/**
+	 * Returns a new object of class '<em>Asset</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Asset</em>'.
+	 * @generated
+	 */
+	Asset createAsset();
+
+	/**
 	 * Returns a new object of class '<em>Folder</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Folder</em>'.
@@ -81,6 +89,22 @@ public interface DartFactory extends EFactory {
 	 * @generated
 	 */
 	Typedef createTypedef();
+
+	/**
+	 * Returns a new object of class '<em>HTML</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>HTML</em>'.
+	 * @generated
+	 */
+	HTML createHTML();
+
+	/**
+	 * Returns a new object of class '<em>Stylesheet</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Stylesheet</em>'.
+	 * @generated
+	 */
+	Stylesheet createStylesheet();
 
 	/**
 	 * Returns a new object of class '<em>Library</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->

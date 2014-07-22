@@ -23,11 +23,13 @@ import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Folder;
 import org.obeonetwork.dsl.dart.Function;
+import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
 import org.obeonetwork.dsl.dart.Variable;
@@ -182,6 +184,16 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseHTML(HTML object) {
+			return createHTMLAdapter();
+		}
+
+		@Override
+		public Adapter caseStylesheet(Stylesheet object) {
+			return createStylesheetAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -316,6 +328,33 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypedefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.HTML <em>HTML</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.HTML
+	 * @generated
+	 */
+	public Adapter createHTMLAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Stylesheet
+	 * <em>Stylesheet</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Stylesheet
+	 * @generated
+	 */
+	public Adapter createStylesheetAdapter() {
 		return null;
 	}
 

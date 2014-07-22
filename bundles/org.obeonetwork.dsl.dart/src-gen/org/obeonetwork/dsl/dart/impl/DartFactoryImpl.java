@@ -15,17 +15,20 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Constructor;
 import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Folder;
 import org.obeonetwork.dsl.dart.Function;
+import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.Typedef;
 import org.obeonetwork.dsl.dart.Variable;
 
@@ -79,6 +82,8 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 		switch (eClass.getClassifierID()) {
 			case DartPackage.PROJECT:
 				return createProject();
+			case DartPackage.ASSET:
+				return createAsset();
 			case DartPackage.FOLDER:
 				return createFolder();
 			case DartPackage.PACKAGE:
@@ -103,6 +108,10 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 				return createParameter();
 			case DartPackage.TYPEDEF:
 				return createTypedef();
+			case DartPackage.HTML:
+				return createHTML();
+			case DartPackage.STYLESHEET:
+				return createStylesheet();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName()
 						+ "' is not a valid classifier");
@@ -117,6 +126,16 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 	public Project createProject() {
 		ProjectImpl project = new ProjectImpl();
 		return project;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Asset createAsset() {
+		AssetImpl asset = new AssetImpl();
+		return asset;
 	}
 
 	/**
@@ -167,6 +186,26 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 	public Typedef createTypedef() {
 		TypedefImpl typedef = new TypedefImpl();
 		return typedef;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public HTML createHTML() {
+		HTMLImpl html = new HTMLImpl();
+		return html;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Stylesheet createStylesheet() {
+		StylesheetImpl stylesheet = new StylesheetImpl();
+		return stylesheet;
 	}
 
 	/**

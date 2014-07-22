@@ -1331,6 +1331,104 @@ public interface DartPackage extends EPackage {
 	int TYPEDEF_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.HTMLImpl <em>HTML</em>}' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.HTMLImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getHTML()
+	 * @generated
+	 */
+	int HTML = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int HTML__NAME = ASSET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Uses</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int HTML__USES = ASSET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>HTML</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int HTML_FEATURE_COUNT = ASSET_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>HTML</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int HTML_OPERATION_COUNT = ASSET_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.StylesheetImpl <em>Stylesheet</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.StylesheetImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getStylesheet()
+	 * @generated
+	 */
+	int STYLESHEET = 19;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int STYLESHEET__NAME = ASSET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int STYLESHEET__IMPORTS = ASSET_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Partial</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int STYLESHEET__PARTIAL = ASSET_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Stylesheet</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int STYLESHEET_FEATURE_COUNT = ASSET_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Stylesheet</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int STYLESHEET_OPERATION_COUNT = ASSET_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Project <em>Project</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1690,6 +1788,59 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTypedef_Metadata();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.HTML <em>HTML</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>HTML</em>'.
+	 * @see org.obeonetwork.dsl.dart.HTML
+	 * @generated
+	 */
+	EClass getHTML();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.dart.HTML#getUses
+	 * <em>Uses</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference list '<em>Uses</em>'.
+	 * @see org.obeonetwork.dsl.dart.HTML#getUses()
+	 * @see #getHTML()
+	 * @generated
+	 */
+	EReference getHTML_Uses();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Stylesheet <em>Stylesheet</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Stylesheet</em>'.
+	 * @see org.obeonetwork.dsl.dart.Stylesheet
+	 * @generated
+	 */
+	EClass getStylesheet();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.dart.Stylesheet#getImports
+	 * <em>Imports</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference list '<em>Imports</em>'.
+	 * @see org.obeonetwork.dsl.dart.Stylesheet#getImports()
+	 * @see #getStylesheet()
+	 * @generated
+	 */
+	EReference getStylesheet_Imports();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Stylesheet#isPartial
+	 * <em>Partial</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Partial</em>'.
+	 * @see org.obeonetwork.dsl.dart.Stylesheet#isPartial()
+	 * @see #getStylesheet()
+	 * @generated
+	 */
+	EAttribute getStylesheet_Partial();
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Type <em>Type</em>}'. <!--
@@ -2511,6 +2662,50 @@ public interface DartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TYPEDEF__METADATA = eINSTANCE.getTypedef_Metadata();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.HTMLImpl <em>HTML</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.HTMLImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getHTML()
+		 * @generated
+		 */
+		EClass HTML = eINSTANCE.getHTML();
+
+		/**
+		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference HTML__USES = eINSTANCE.getHTML_Uses();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.StylesheetImpl
+		 * <em>Stylesheet</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.StylesheetImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getStylesheet()
+		 * @generated
+		 */
+		EClass STYLESHEET = eINSTANCE.getStylesheet();
+
+		/**
+		 * The meta object literal for the '<em><b>Imports</b></em>' reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference STYLESHEET__IMPORTS = eINSTANCE.getStylesheet_Imports();
+
+		/**
+		 * The meta object literal for the '<em><b>Partial</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute STYLESHEET__PARTIAL = eINSTANCE.getStylesheet_Partial();
 
 		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.Type <em>Type</em>}' class. <!--

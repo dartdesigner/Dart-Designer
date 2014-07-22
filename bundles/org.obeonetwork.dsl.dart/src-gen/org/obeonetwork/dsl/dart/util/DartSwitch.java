@@ -22,11 +22,13 @@ import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Folder;
 import org.obeonetwork.dsl.dart.Function;
+import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
 import org.obeonetwork.dsl.dart.Variable;
@@ -246,6 +248,24 @@ public class DartSwitch<T> extends Switch<T> {
 					result = defaultCase(theEObject);
 				return result;
 			}
+			case DartPackage.HTML: {
+				HTML html = (HTML)theEObject;
+				T result = caseHTML(html);
+				if (result == null)
+					result = caseAsset(html);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.STYLESHEET: {
+				Stylesheet stylesheet = (Stylesheet)theEObject;
+				T result = caseStylesheet(stylesheet);
+				if (result == null)
+					result = caseAsset(stylesheet);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
 			default:
 				return defaultCase(theEObject);
 		}
@@ -383,6 +403,36 @@ public class DartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTypedef(Typedef object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>HTML</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>HTML</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHTML(HTML object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stylesheet</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stylesheet</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStylesheet(Stylesheet object) {
 		return null;
 	}
 

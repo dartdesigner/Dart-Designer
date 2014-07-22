@@ -108,6 +108,29 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Asset} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected AssetItemProvider assetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Asset}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssetAdapter() {
+		if (assetItemProvider == null) {
+			assetItemProvider = new AssetItemProvider(this);
+		}
+
+		return assetItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Folder} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -220,6 +243,52 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 		}
 
 		return typedefItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.HTML} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected HTMLItemProvider htmlItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.HTML}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createHTMLAdapter() {
+		if (htmlItemProvider == null) {
+			htmlItemProvider = new HTMLItemProvider(this);
+		}
+
+		return htmlItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Stylesheet} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected StylesheetItemProvider stylesheetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Stylesheet}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createStylesheetAdapter() {
+		if (stylesheetItemProvider == null) {
+			stylesheetItemProvider = new StylesheetItemProvider(this);
+		}
+
+		return stylesheetItemProvider;
 	}
 
 	/**
@@ -482,6 +551,8 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 	public void dispose() {
 		if (projectItemProvider != null)
 			projectItemProvider.dispose();
+		if (assetItemProvider != null)
+			assetItemProvider.dispose();
 		if (folderItemProvider != null)
 			folderItemProvider.dispose();
 		if (packageItemProvider != null)
@@ -506,6 +577,10 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 			parameterItemProvider.dispose();
 		if (typedefItemProvider != null)
 			typedefItemProvider.dispose();
+		if (htmlItemProvider != null)
+			htmlItemProvider.dispose();
+		if (stylesheetItemProvider != null)
+			stylesheetItemProvider.dispose();
 	}
 
 }

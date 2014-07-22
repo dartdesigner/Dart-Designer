@@ -6,7 +6,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
         eType="#//Package" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Asset" abstract="true" interface="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Asset">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container" abstract="true">
@@ -121,5 +121,14 @@
         eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" upperBound="-1"
         eType="#//Metadata"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HTML" eSuperTypes="#//Asset">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Asset"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stylesheet" eSuperTypes="#//Asset">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Stylesheet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="partial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" unsettable="true" derived="true"/>
   </eClassifiers>
 </ecore:EPackage>

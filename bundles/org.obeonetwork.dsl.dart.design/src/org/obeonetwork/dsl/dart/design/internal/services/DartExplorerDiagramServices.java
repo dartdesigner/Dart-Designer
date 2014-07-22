@@ -111,4 +111,96 @@ public class DartExplorerDiagramServices {
 		}
 		return ""; //$NON-NLS-1$
 	}
+
+	/**
+	 * Indicates if the name of the eObject matches a gif file.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @return <code>true</code> if it matches, <code>false</code> otherwise
+	 */
+	public boolean isGif(EObject eObject) {
+		return this.hasExtension(eObject, ".gif"); //$NON-NLS-1$
+	}
+
+	/**
+	 * Indicates if the name of the eObject matches a png file.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @return <code>true</code> if it matches, <code>false</code> otherwise
+	 */
+	public boolean isPng(EObject eObject) {
+		return this.hasExtension(eObject, ".png"); //$NON-NLS-1$
+	}
+
+	/**
+	 * Indicates if the name of the eObject matches a jpg file.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @return <code>true</code> if it matches, <code>false</code> otherwise
+	 */
+	public boolean isJpeg(EObject eObject) {
+		return this.hasExtension(eObject, ".jpeg") || this.hasExtension(eObject, ".jpg"); //$NON-NLS-1$ //$NON-NLS-2$
+	}
+
+	/**
+	 * Indicates if the name of the eObject matches a mp4 file.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @return <code>true</code> if it matches, <code>false</code> otherwise
+	 */
+	public boolean isMp4(EObject eObject) {
+		return this.hasExtension(eObject, ".mp4"); //$NON-NLS-1$
+	}
+
+	/**
+	 * Indicates if the name of the eObject matches a sass file.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @return <code>true</code> if it matches, <code>false</code> otherwise
+	 */
+	public boolean isSass(EObject eObject) {
+		return this.hasExtension(eObject, ".scss") || this.hasExtension(eObject, ".sass"); //$NON-NLS-1$ //$NON-NLS-2$
+	}
+
+	/**
+	 * Indicates if the name of the eObject matches a less file.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @return <code>true</code> if it matches, <code>false</code> otherwise
+	 */
+	public boolean isLess(EObject eObject) {
+		return this.hasExtension(eObject, ".less"); //$NON-NLS-1$
+	}
+
+	/**
+	 * Indicates if the name of the eObject matches a css file.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @return <code>true</code> if it matches, <code>false</code> otherwise
+	 */
+	public boolean isCss(EObject eObject) {
+		return this.hasExtension(eObject, ".css"); //$NON-NLS-1$
+	}
+
+	/**
+	 * Indicates if the given eObject is an asset with a name ending by the given extension.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @param extension
+	 *            The extension
+	 * @return <code>true</code> if the name of the asset is ended by the given extension, <code>false</code>
+	 *         otherwise
+	 */
+	private boolean hasExtension(EObject eObject, String extension) {
+		return eObject instanceof Asset && ((Asset)eObject).getName() != null
+				&& ((Asset)eObject).getName().endsWith(extension);
+	}
 }

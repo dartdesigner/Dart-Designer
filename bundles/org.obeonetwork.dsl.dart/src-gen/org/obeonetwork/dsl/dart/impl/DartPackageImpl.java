@@ -29,6 +29,7 @@ import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
 import org.obeonetwork.dsl.dart.Variable;
@@ -108,6 +109,20 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * @generated
 	 */
 	private EClass typedefEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass htmlEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass stylesheetEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -529,6 +544,51 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 */
 	public EReference getTypedef_Metadata() {
 		return (EReference)typedefEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getHTML() {
+		return htmlEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getHTML_Uses() {
+		return (EReference)htmlEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getStylesheet() {
+		return stylesheetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getStylesheet_Imports() {
+		return (EReference)stylesheetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getStylesheet_Partial() {
+		return (EAttribute)stylesheetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1079,6 +1139,13 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		createEReference(typedefEClass, TYPEDEF__TYPE);
 		createEReference(typedefEClass, TYPEDEF__PARAMETERS);
 		createEReference(typedefEClass, TYPEDEF__METADATA);
+
+		htmlEClass = createEClass(HTML);
+		createEReference(htmlEClass, HTML__USES);
+
+		stylesheetEClass = createEClass(STYLESHEET);
+		createEReference(stylesheetEClass, STYLESHEET__IMPORTS);
+		createEAttribute(stylesheetEClass, STYLESHEET__PARTIAL);
 	}
 
 	/**
@@ -1119,6 +1186,8 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		classEClass.getESuperTypes().add(this.getClassifier());
 		classEClass.getESuperTypes().add(this.getType());
 		typedefEClass.getESuperTypes().add(this.getType());
+		htmlEClass.getESuperTypes().add(this.getAsset());
+		stylesheetEClass.getESuperTypes().add(this.getAsset());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1130,7 +1199,8 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 				Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(assetEClass, Asset.class, "Asset", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(assetEClass, Asset.class, "Asset", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAsset_Name(), ecorePackage.getEString(), "name", null, 0, 1, Asset.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -1358,6 +1428,21 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		initEReference(getTypedef_Metadata(), this.getMetadata(), null, "metadata", null, 0, -1,
 				Typedef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(htmlEClass, org.obeonetwork.dsl.dart.HTML.class, "HTML", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHTML_Uses(), this.getAsset(), null, "uses", null, 0, -1,
+				org.obeonetwork.dsl.dart.HTML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stylesheetEClass, Stylesheet.class, "Stylesheet", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStylesheet_Imports(), this.getStylesheet(), null, "imports", null, 0, -1,
+				Stylesheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStylesheet_Partial(), ecorePackage.getEBoolean(), "partial", null, 0, 1,
+				Stylesheet.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

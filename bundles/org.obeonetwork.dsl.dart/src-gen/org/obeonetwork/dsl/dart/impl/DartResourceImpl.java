@@ -11,21 +11,14 @@
 package org.obeonetwork.dsl.dart.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Export;
@@ -46,33 +39,13 @@ import org.obeonetwork.dsl.dart.Import;
  *
  * @generated
  */
-public abstract class DartResourceImpl extends MinimalEObjectImpl.Container implements DartResource {
+public abstract class DartResourceImpl extends AssetImpl implements DartResource {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	public static final String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute. <!--
@@ -131,28 +104,6 @@ public abstract class DartResourceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	protected EClass eStaticClass() {
 		return DartPackage.Literals.DART_RESOURCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.DART_RESOURCE__NAME, oldName,
-					name));
 	}
 
 	/**
@@ -227,8 +178,6 @@ public abstract class DartResourceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DartPackage.DART_RESOURCE__NAME:
-				return getName();
 			case DartPackage.DART_RESOURCE__DOCUMENTATION:
 				return getDocumentation();
 			case DartPackage.DART_RESOURCE__IMPORTS:
@@ -248,9 +197,6 @@ public abstract class DartResourceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DartPackage.DART_RESOURCE__NAME:
-				setName((String)newValue);
-				return;
 			case DartPackage.DART_RESOURCE__DOCUMENTATION:
 				setDocumentation((String)newValue);
 				return;
@@ -274,9 +220,6 @@ public abstract class DartResourceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DartPackage.DART_RESOURCE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case DartPackage.DART_RESOURCE__DOCUMENTATION:
 				setDocumentation(DOCUMENTATION_EDEFAULT);
 				return;
@@ -298,8 +241,6 @@ public abstract class DartResourceImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DartPackage.DART_RESOURCE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DartPackage.DART_RESOURCE__DOCUMENTATION:
 				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT
 						.equals(documentation);
@@ -322,9 +263,7 @@ public abstract class DartResourceImpl extends MinimalEObjectImpl.Container impl
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", documentation: ");
+		result.append(" (documentation: ");
 		result.append(documentation);
 		result.append(')');
 		return result.toString();
