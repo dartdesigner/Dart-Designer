@@ -178,20 +178,22 @@ public class DartCommonToolsServices {
 					field.setName(name);
 				}
 
-				if (indexOfValueSeparator == -1 || indexOfValueSeparator < indexOfTypeSeparator) {
+				if (indexOfTypeSeparator != -1
+						&& (indexOfValueSeparator == -1 || indexOfValueSeparator < indexOfTypeSeparator)) {
 					String typeName = label.substring(indexOfTypeSeparator + 1);
 					Type type = this.findTypeByName(this.allRoots(field), typeName);
 					field.setType(type);
-				} else if (indexOfValueSeparator > indexOfTypeSeparator) {
+				} else if (indexOfTypeSeparator != -1 && indexOfValueSeparator > indexOfTypeSeparator) {
 					String typeName = label.substring(indexOfTypeSeparator + 1, indexOfValueSeparator);
 					Type type = this.findTypeByName(this.allRoots(field), typeName);
 					field.setType(type);
 				}
 
-				if (indexOfTypeSeparator == -1 || indexOfTypeSeparator < indexOfValueSeparator) {
+				if (indexOfValueSeparator != -1
+						&& (indexOfTypeSeparator == -1 || indexOfTypeSeparator < indexOfValueSeparator)) {
 					String value = label.substring(indexOfValueSeparator + 1);
 					field.setValue(value);
-				} else if (indexOfTypeSeparator > indexOfValueSeparator) {
+				} else if (indexOfValueSeparator != -1 && indexOfTypeSeparator > indexOfValueSeparator) {
 					String value = label.substring(indexOfValueSeparator + 1, indexOfTypeSeparator);
 					field.setValue(value);
 				}
