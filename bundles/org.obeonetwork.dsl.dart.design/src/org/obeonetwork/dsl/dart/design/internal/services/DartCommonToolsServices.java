@@ -1,13 +1,20 @@
 package org.obeonetwork.dsl.dart.design.internal.services;
 
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Sets;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.Function;
@@ -264,5 +271,25 @@ public class DartCommonToolsServices {
 			}
 		}
 		return type;
+	}
+
+	/**
+	 * Returns the list of related elements.
+	 *
+	 * @param firstView
+	 *            The view
+	 * @param allSelectedViews
+	 *            All the selected views
+	 * @param diag
+	 *            The diagram
+	 * @return The list of related elements
+	 */
+	public Collection<EObject> getRelatedElements(EObject firstView, List<EObject> allSelectedViews,
+			DDiagram diag) {
+		Set<EObject> relateds = Sets.newLinkedHashSet();
+		for (DSemanticDecorator decorator : Iterables.filter(allSelectedViews, DSemanticDecorator.class)) {
+			relateds.addAll(new RelatedElementsSwitch().getRelatedElements(decorator.getTarget()));
+		}
+		return relateds;
 	}
 }

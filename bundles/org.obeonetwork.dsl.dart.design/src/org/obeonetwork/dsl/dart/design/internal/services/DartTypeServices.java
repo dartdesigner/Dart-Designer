@@ -11,11 +11,14 @@
 package org.obeonetwork.dsl.dart.design.internal.services;
 
 import org.eclipse.emf.ecore.EObject;
+import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.Container;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Stylesheet;
 
 /**
  * Utility services to identify the type of an EObject.
@@ -77,6 +80,50 @@ public class DartTypeServices {
 	 */
 	public boolean isMetadata(EObject eObject) {
 		return eObject instanceof Metadata;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart asset.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart asset
+	 */
+	public boolean isAsset(EObject eObject) {
+		return eObject instanceof Asset;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart asset.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart asset
+	 */
+	public boolean isStrictlyAsset(EObject eObject) {
+		return eObject instanceof Asset && !(eObject instanceof HTML) && !(eObject instanceof Stylesheet);
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart HTML.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart HTML
+	 */
+	public boolean isHtml(EObject eObject) {
+		return eObject instanceof HTML;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart stylesheet.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart stylesheet
+	 */
+	public boolean isStylesheet(EObject eObject) {
+		return eObject instanceof Stylesheet;
 	}
 
 }

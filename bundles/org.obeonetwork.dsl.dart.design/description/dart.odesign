@@ -160,6 +160,66 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
+        <nodeMappings name="ED Imported Asset" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name']" createElements="false" domainClass="dart.Asset">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/asset_512x512.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="service:isGif">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/gif_512x512.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="service:isJpeg">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/jpeg_512x512.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="service:isPng">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/png_512x512.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="service:isMp4">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/mp4_512x512.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="ED Imported HTML" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name']" createElements="false" domainClass="dart.HTML">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/html_512x512.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ED Imported Stylesheet" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name']" createElements="false" domainClass="dart.Stylesheet">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/asset_512x512.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="service:isCss">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/css_512x512.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="service:isSass">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/sass_512x512.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="service:isLess">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getRelatedPath(view)" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/less_512x512.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
         <toolSections name="ED Existing Elements" label="Existing Elements" reusedTools="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Remove%20Existing%20Elements']">
           <ownedTools xsi:type="tool:SelectionWizardDescription" name="ED Add Existing Elements" label="Add" forceRefresh="true" candidatesExpression="service:getAddableExplorerDiagramElements(containerView)" multiple="true" iconPath="" windowTitle="Select the existing elements to add">
             <element name="element"/>
@@ -178,6 +238,24 @@
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isMetadata">
                   <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Metadata']" containerViewExpression="var:containerView"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:OperationAction" name="ED Add Related Elements" label="Add Related Elements">
+            <view name="views">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="selected" candidatesExpression="service:getRelatedElements(views,diagram)" multiple="true"/>
+            </view>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:selected">
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isStrictlyAsset">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Asset']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isHtml">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20HTML']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isStylesheet">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Stylesheet']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -288,7 +366,7 @@
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Explorer Diagram - Relationships" label="Relationships">
-        <edgeMappings name="ED HTML Uses" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Asset'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Class'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Folder'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Library'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Metadata'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet']" targetFinderExpression="feature:uses">
+        <edgeMappings name="ED HTML Uses" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20HTML']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Asset'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Class'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Folder'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Library'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Metadata'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Asset'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20HTML'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Stylesheet']" targetFinderExpression="feature:uses">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;uses>">
@@ -296,7 +374,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ED Stylesheet Import" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet']" targetFinderExpression="feature:imports">
+        <edgeMappings name="ED Stylesheet Import" sourceMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Stylesheet']" targetMapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet'] //@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Stylesheet']" targetFinderExpression="feature:imports">
           <style lineStyle="dot" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;import>">

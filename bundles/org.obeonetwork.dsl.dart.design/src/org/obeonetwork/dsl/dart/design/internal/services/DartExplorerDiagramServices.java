@@ -10,10 +10,17 @@
  *******************************************************************************/
 package org.obeonetwork.dsl.dart.design.internal.services;
 
+import com.google.common.collect.Lists;
+
+import java.io.File;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.diagram.DDiagramElement;
+import org.eclipse.sirius.diagram.DNode;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Container;
@@ -202,5 +209,74 @@ public class DartExplorerDiagramServices {
 	private boolean hasExtension(EObject eObject, String extension) {
 		return eObject instanceof Asset && ((Asset)eObject).getName() != null
 				&& ((Asset)eObject).getName().endsWith(extension);
+	}
+
+	/**
+	 * Returns the related path of the given asset for the given view.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @param view
+	 *            The view in which the asset is displayed
+	 * @return The related path of the given asset for the given view
+	 */
+	public String getRelatedPath(EObject eObject, DDiagramElement view) {
+		String assetFullPath = ""; //$NON-NLS-1$
+
+		if (eObject instanceof Asset) {
+			Asset asset = (Asset)eObject;
+			EObject eContainer = asset.eContainer();
+			if (eContainer instanceof Container) {
+				String containerFullPath = this.getFullPath((Container)eContainer);
+				assetFullPath = containerFullPath + asset.getName();
+			}
+		}
+
+		if (view instanceof DNode) {
+			DNode dNode = (DNode)view;
+			EObject eContainer = dNode.eContainer();
+			if (eContainer instanceof DSemanticDiagram) {
+				DSemanticDiagram dSemanticDiagram = (DSemanticDiagram)eContainer;
+				EObject target = dSemanticDiagram.getTarget();
+				if (target instanceof Container) {
+					Container container = (Container)target;
+					String containerFullPath = this.getFullPath(container);
+
+					URI baseURI = new File(containerFullPath).toURI();
+					URI assetURI = new File(assetFullPath).toURI();
+					String relatedPath = "./" + baseURI.relativize(assetURI).getPath(); //$NON-NLS-1$
+
+					return relatedPath;
+				}
+			}
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the full path of the given container.
+	 *
+	 * @param container
+	 *            The container
+	 * @return The full path of the given container
+	 */
+	private String getFullPath(Container container) {
+		EObject eContainer = container;
+
+		List<String> segments = Lists.newArrayList();
+		while (eContainer instanceof Folder) {
+			segments.add(((Folder)eContainer).getName());
+			eContainer = eContainer.eContainer();
+		}
+
+		segments = Lists.reverse(segments);
+
+		StringBuilder builder = new StringBuilder();
+		for (String segment : segments) {
+			builder.append(segment);
+			builder.append('/');
+		}
+
+		return builder.toString();
 	}
 }

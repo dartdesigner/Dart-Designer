@@ -129,6 +129,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//Stylesheet"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="partial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        changeable="false" volatile="true" unsettable="true" derived="true"/>
+        volatile="true" unsettable="true" derived="true"/>
   </eClassifiers>
 </ecore:EPackage>

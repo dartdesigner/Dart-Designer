@@ -61,18 +61,46 @@ public interface Stylesheet extends Asset {
 	 * 
 	 * @return the value of the '<em>Partial</em>' attribute.
 	 * @see #isSetPartial()
+	 * @see #unsetPartial()
+	 * @see #setPartial(boolean)
 	 * @see org.obeonetwork.dsl.dart.DartPackage#getStylesheet_Partial()
-	 * @model unsettable="true" changeable="false" volatile="true" derived="true"
+	 * @model unsettable="true" volatile="true" derived="true"
 	 * @generated
 	 */
 	boolean isPartial();
+
+	/**
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Stylesheet#isPartial <em>Partial</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Partial</em>' attribute.
+	 * @see #isSetPartial()
+	 * @see #unsetPartial()
+	 * @see #isPartial()
+	 * @generated
+	 */
+	void setPartial(boolean value);
+
+	/**
+	 * Unsets the value of the '{@link org.obeonetwork.dsl.dart.Stylesheet#isPartial <em>Partial</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #isSetPartial()
+	 * @see #isPartial()
+	 * @see #setPartial(boolean)
+	 * @generated
+	 */
+	void unsetPartial();
 
 	/**
 	 * Returns whether the value of the '{@link org.obeonetwork.dsl.dart.Stylesheet#isPartial
 	 * <em>Partial</em>}' attribute is set. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return whether the value of the '<em>Partial</em>' attribute is set.
+	 * @see #unsetPartial()
 	 * @see #isPartial()
+	 * @see #setPartial(boolean)
 	 * @generated
 	 */
 	boolean isSetPartial();
