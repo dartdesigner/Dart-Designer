@@ -279,4 +279,20 @@ public class DartExplorerDiagramServices {
 
 		return builder.toString();
 	}
+
+	/**
+	 * Return the name of the Dart resource.
+	 *
+	 * @param eObject
+	 *            The Dart resource
+	 * @param label
+	 *            The new name
+	 * @return The name of the Dart resource
+	 */
+	public String toDartResourceName(EObject eObject, String label) {
+		if (label.endsWith(".dart")) { //$NON-NLS-1$
+			return label.substring(0, label.length() - ".dart".length()); //$NON-NLS-1$
+		}
+		return label;
+	}
 }

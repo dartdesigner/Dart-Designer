@@ -82,19 +82,19 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="ED Library" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Library">
+        <nodeMappings name="ED Library" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@toolSections.5/@ownedTools[name='Edit%20Dart%20Resource%20Name']" createElements="false" domainClass="dart.Library">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getDartResourceFileName" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/dart_512x512.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ED Class" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Class">
+        <nodeMappings name="ED Class" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@toolSections.5/@ownedTools[name='Edit%20Dart%20Resource%20Name']" createElements="false" domainClass="dart.Class">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getDartResourceFileName" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/dart_512x512.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="ED Metadata" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Metadata%20Name']" createElements="false" domainClass="dart.Metadata">
+        <nodeMappings name="ED Metadata" labelDirectEdit="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@toolSections.5/@ownedTools[name='Edit%20Dart%20Resource%20Name']" createElements="false" domainClass="dart.Metadata">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getDartResourceFileName" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/dart_512x512.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -361,6 +361,14 @@
             <elementView name="elementView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="ED Direct Edit" label="Direct Edit">
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Dart Resource Name">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:toDartResourceName(arg0)"/>
             </initialOperation>
           </ownedTools>
         </toolSections>
