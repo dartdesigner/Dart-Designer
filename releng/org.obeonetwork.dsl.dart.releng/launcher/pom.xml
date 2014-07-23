@@ -34,6 +34,9 @@ Contributors:
     <module>${root-path}/bundles/org.obeonetwork.dsl.dart.usage</module>
     <module>${root-path}/bundles/org.obeonetwork.dsl.dart.documentation</module>
     <module>${root-path}/packaging/org.obeonetwork.dsl.dart.branding</module>
+    
+    <!-- Build tests -->
+    <module>${root-path}/tests/org.obeonetwork.dsl.dart.design.tests</module>
 
     <!-- Build features -->
     <module>${root-path}/features/org.obeonetwork.dsl.dart.feature</module>

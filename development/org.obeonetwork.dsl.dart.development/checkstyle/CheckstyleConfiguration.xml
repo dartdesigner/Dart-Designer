@@ -10,6 +10,7 @@
 -->
 <module name="Checker">
   <property name="severity" value="warning"/>
+  <module name="SuppressWarningsFilter" />
   <module name="TreeWalker">
     <property name="cacheFile" value="$\{cachefile\}"/>
     <module name="FileContentsHolder"/>
@@ -331,6 +332,7 @@
       <property name="severity" value="error"/>
       <property name="format" value="^Abstract.*$"/>
     </module>
+    <module name="SuppressWarningsHolder"/>
   </module>
   <module name="FileLength">
     <property name="severity" value="error"/>

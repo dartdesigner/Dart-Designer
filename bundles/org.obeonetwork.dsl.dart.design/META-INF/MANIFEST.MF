@@ -20,6 +20,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: bundle
 Export-Package: org.obeonetwork.dsl.dart.design.internal;version="0.1.0";x-friends:="org.obeonetwork.dsl.dart.usage",
- org.obeonetwork.dsl.dart.design.internal.services;version="0.2.0";x-internal:=true,
+ org.obeonetwork.dsl.dart.design.internal.services;version="0.2.0";x-friends:="org.obeonetwork.dsl.dart.design.tests",
  org.obeonetwork.dsl.dart.design.internal.utils;version="0.2.0";x-internal:=true,
  org.obeonetwork.dsl.dart.design.internal.wizards;version="0.2.0";x-internal:=true

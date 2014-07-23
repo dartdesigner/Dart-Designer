@@ -67,7 +67,7 @@ public class DartCommonToolsServices {
 			int indexOfParameterStart = label.indexOf('(');
 			int indexOfParameterStop = label.indexOf(')');
 
-			int indexOfTypeSeparator = label.indexOf(':');
+			int indexOfTypeSeparator = label.lastIndexOf(':');
 
 			// Method name
 			int indexOfEndLabel = label.length();
@@ -78,7 +78,7 @@ public class DartCommonToolsServices {
 				indexOfEndLabel = indexOfTypeSeparator;
 			}
 			if (indexOfEndLabel > 0) {
-				String name = label.substring(0, indexOfEndLabel);
+				String name = label.substring(0, indexOfEndLabel).trim();
 				if (name.length() > 0) {
 					method.setName(name);
 				}
@@ -94,7 +94,7 @@ public class DartCommonToolsServices {
 
 			// Method return type
 			if (indexOfTypeSeparator != -1) {
-				String typeName = label.substring(indexOfTypeSeparator + 1);
+				String typeName = label.substring(indexOfTypeSeparator + 1).trim();
 				Type type = this.findTypeByName(this.allRoots(method), typeName);
 				if (type != null) {
 					method.setType(type);
@@ -135,8 +135,8 @@ public class DartCommonToolsServices {
 
 			int indexOfParameterType = nextToken.indexOf(':');
 			if (indexOfParameterType != -1 && parameter != null) {
-				String parameterName = nextToken.substring(0, indexOfParameterType);
-				String parameterType = nextToken.substring(indexOfParameterType + 1);
+				String parameterName = nextToken.substring(0, indexOfParameterType).trim();
+				String parameterType = nextToken.substring(indexOfParameterType + 1).trim();
 				if (parameterName.length() > 0) {
 					parameter.setName(parameterName);
 				}
@@ -179,33 +179,31 @@ public class DartCommonToolsServices {
 				firstSeparator = indexOfValueSeparator;
 			}
 
-			if (firstSeparator != -1) {
-				String name = label.substring(0, firstSeparator);
+			if (firstSeparator >= 0) {
+				String name = label.substring(0, firstSeparator).trim();
 				if (name.length() > 0) {
 					field.setName(name);
 				}
 
 				if (indexOfTypeSeparator != -1
 						&& (indexOfValueSeparator == -1 || indexOfValueSeparator < indexOfTypeSeparator)) {
-					String typeName = label.substring(indexOfTypeSeparator + 1);
+					String typeName = label.substring(indexOfTypeSeparator + 1).trim();
 					Type type = this.findTypeByName(this.allRoots(field), typeName);
 					field.setType(type);
 				} else if (indexOfTypeSeparator != -1 && indexOfValueSeparator > indexOfTypeSeparator) {
-					String typeName = label.substring(indexOfTypeSeparator + 1, indexOfValueSeparator);
+					String typeName = label.substring(indexOfTypeSeparator + 1, indexOfValueSeparator).trim();
 					Type type = this.findTypeByName(this.allRoots(field), typeName);
 					field.setType(type);
 				}
 
 				if (indexOfValueSeparator != -1
 						&& (indexOfTypeSeparator == -1 || indexOfTypeSeparator < indexOfValueSeparator)) {
-					String value = label.substring(indexOfValueSeparator + 1);
+					String value = label.substring(indexOfValueSeparator + 1).trim();
 					field.setValue(value);
 				} else if (indexOfValueSeparator != -1 && indexOfTypeSeparator > indexOfValueSeparator) {
-					String value = label.substring(indexOfValueSeparator + 1, indexOfTypeSeparator);
+					String value = label.substring(indexOfValueSeparator + 1, indexOfTypeSeparator).trim();
 					field.setValue(value);
 				}
-			} else if (label.length() > 0) {
-				field.setName(label);
 			}
 		}
 		return eObject;

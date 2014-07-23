@@ -187,7 +187,7 @@ Contributors:
     <profile>
       <id>coverage</id>
       <activation>
-        <activeByDefault>false</activeByDefault>
+        <activeByDefault>true</activeByDefault>
       </activation>
       <modules>
         <module>org.eclemma.runtime.equinox</module>
