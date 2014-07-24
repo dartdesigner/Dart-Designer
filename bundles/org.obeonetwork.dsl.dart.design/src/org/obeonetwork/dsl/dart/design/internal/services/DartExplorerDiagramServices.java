@@ -26,6 +26,7 @@ import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Container;
 import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.IDartSpecificationConstants;
 import org.obeonetwork.dsl.dart.Package;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
@@ -37,6 +38,11 @@ import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  */
 public class DartExplorerDiagramServices {
+
+	/**
+	 * The HTML extension.
+	 */
+	private static final String HTML_EXTENSION = ".html"; //$NON-NLS-1$
 
 	/**
 	 * Returns the name of the newly created explorer diagram for the given container.
@@ -294,5 +300,56 @@ public class DartExplorerDiagramServices {
 			return label.substring(0, label.length() - ".dart".length()); //$NON-NLS-1$
 		}
 		return label;
+	}
+
+	/**
+	 * Returns the message to display in case of a HTLM page with an invalid name.
+	 *
+	 * @param eObject
+	 *            The HTML
+	 * @return The validation message
+	 */
+	public String getInvalidHtmlNameMessage(EObject eObject) {
+		return I18n.getString(I18nKeys.VALIDATION_INVALID_HTML_NAME);
+	}
+
+	/**
+	 * Indicates if the name of the HTML page is valid.
+	 *
+	 * @param eObject
+	 *            The HTML
+	 * @return <code>true</code> if the name is valid, <code>false</code> otherwise
+	 */
+	public boolean isValidHtmlName(EObject eObject) {
+		EObject target = null;
+		if (eObject instanceof DNode) {
+			target = ((DNode)eObject).getTarget();
+		}
+		if (target instanceof HTML && ((HTML)target).getName() != null
+				&& ((HTML)target).getName().endsWith(HTML_EXTENSION)) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Fix the extension of the HTML page with updating its extension.
+	 *
+	 * @param eObject
+	 *            The HTML
+	 * @return The HTML object fixed
+	 */
+	public EObject changeExtensionToHtml(EObject eObject) {
+		EObject target = null;
+		if (eObject instanceof DNode) {
+			target = ((DNode)eObject).getTarget();
+		}
+		if (target instanceof HTML) {
+			HTML html = (HTML)target;
+			if (html.getName() != null && !html.getName().endsWith(HTML_EXTENSION)) {
+				html.setName(html.getName() + HTML_EXTENSION);
+			}
+		}
+		return eObject;
 	}
 }

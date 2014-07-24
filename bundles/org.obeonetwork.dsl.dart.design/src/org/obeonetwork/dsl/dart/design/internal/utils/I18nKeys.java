@@ -130,4 +130,9 @@ public interface I18nKeys {
 	 * Link the specification...
 	 */
 	String DART_DESIGNER_PROJECT_CREATION_LINK_THE_SPECIFICATION = "DartDesignerProjectCreation.LinkTheSpecification"; //$NON-NLS-1$
+
+	/**
+	 * The name of the HTML page does not have the proper extension.
+	 */
+	String VALIDATION_INVALID_HTML_NAME = "Validation.InvalidHtmlName"; //$NON-NLS-1$
 }

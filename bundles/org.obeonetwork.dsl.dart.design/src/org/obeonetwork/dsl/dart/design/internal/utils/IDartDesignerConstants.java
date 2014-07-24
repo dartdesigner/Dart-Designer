@@ -20,4 +20,5 @@ public interface IDartDesignerConstants {
 	 * The identifier of the plugin.
 	 */
 	String PLUGIN_ID = "org.obeonetwork.dsl.dart.design"; //$NON-NLS-1$
+
 }
