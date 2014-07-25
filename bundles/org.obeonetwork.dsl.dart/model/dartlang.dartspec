@@ -7,7 +7,7 @@
     xsi:schemaLocation="http://www.obeo.fr/dsl/2014/dart dart.ecore"
     name="Dart">
   <packages
-      name="dart">
+      name="Dart Standard Library">
     <assets
         xsi:type="dart:Folder"
         name="dart:collection">
