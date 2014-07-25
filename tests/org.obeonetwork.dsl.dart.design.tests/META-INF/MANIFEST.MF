@@ -2,12 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: org.obeonetwork.dsl.dart.design.tests
-Bundle-Version: 0.2.0.qualifier
+Bundle-Version: 0.3.0.qualifier
 Bundle-Vendor: %Bundle-Vendor
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Localization: bundle
 Require-Bundle: org.junit;bundle-version="4.11.0",
- org.obeonetwork.dsl.dart;bundle-version="0.2.0",
- org.obeonetwork.dsl.dart.design;bundle-version="0.2.0"
-Export-Package: org.obeonetwork.dsl.dart.design.tests;version="0.2.0",
- org.obeonetwork.dsl.dart.design.tests.internal.services;version="0.2.0";x-internal:=true
+ org.obeonetwork.dsl.dart;bundle-version="0.3.0",
+ org.obeonetwork.dsl.dart.design;bundle-version="0.3.0"
+Export-Package: org.obeonetwork.dsl.dart.design.tests;version="0.3.0",
+ org.obeonetwork.dsl.dart.design.tests.internal.services;version="0.3.0";x-internal:=true
