@@ -855,10 +855,9 @@
   <userColorsPalettes name="Dart Designers Palette">
     <entries xsi:type="description:UserFixedColor" red="48" green="48" blue="48" name="Charcoal"/>
     <entries xsi:type="description:UserFixedColor" red="77" green="149" blue="203" name="Dart Package"/>
-    <entries xsi:type="description:UserFixedColor" red="0" green="140" blue="158" name="Dart Class"/>
-    <entries xsi:type="description:UserFixedColor" red="171" green="85" blue="107" name="Dart Abstract Class"/>
-    <entries xsi:type="description:UserFixedColor" red="59" green="129" blue="131" name="Dart Metadata"/>
-    <entries xsi:type="description:UserFixedColor" red="129" green="168" blue="184" name="Dart Library"/>
-    <entries xsi:type="description:UserFixedColor" red="156" green="221" blue="200" name="Dart Application"/>
+    <entries xsi:type="description:UserFixedColor" red="129" green="168" blue="184" name="Dart Class"/>
+    <entries xsi:type="description:UserFixedColor" red="255" green="153" blue="153" name="Dart Abstract Class"/>
+    <entries xsi:type="description:UserFixedColor" red="129" green="168" blue="184" name="Dart Metadata"/>
+    <entries xsi:type="description:UserFixedColor" red="100" green="182" blue="177" name="Dart Library"/>
   </userColorsPalettes>
 </description:Group>
