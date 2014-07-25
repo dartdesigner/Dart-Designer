@@ -32,6 +32,11 @@ public interface I18nKeys {
 	String CLASS_DIAGRAM_NEW_NAME = "ClassDiagram.NewName"; //$NON-NLS-1$
 
 	/**
+	 * {0} Library Diagram.
+	 */
+	String LIBRARY_DIAGRAM_NEW_NAME = "LibraryDiagram.NewName"; //$NON-NLS-1$
+
+	/**
 	 * New Package.
 	 */
 	String NEW_PACKAGE_NAME = "Package.NewName"; //$NON-NLS-1$
