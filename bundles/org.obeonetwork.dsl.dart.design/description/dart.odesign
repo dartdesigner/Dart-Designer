@@ -544,6 +544,24 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:OperationAction" name="CD Add Related Elements" label="Add Related Elements">
+            <view name="views">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="selected" candidatesExpression="service:getRelatedElements(views,diagram)" multiple="true"/>
+            </view>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:selected">
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isClass">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isLibrary">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isMetadata">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="CD Elements" label="Elements">
           <ownedTools xsi:type="tool_1:ContainerCreationDescription" documentation="Creates a new class." name="CD Class Creation" label="New Class" containerMappings="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" extraMappings="//@ownedViewpoints[name='Dart_Architectural_Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']">

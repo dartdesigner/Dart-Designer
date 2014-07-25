@@ -22,7 +22,10 @@ import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.obeonetwork.dsl.dart.Asset;
+import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.HTML;
+import org.obeonetwork.dsl.dart.Library;
+import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.util.DartSwitch;
 
@@ -65,6 +68,66 @@ public class RelatedElementsSwitch extends DartSwitch<List<EObject>> {
 		relatedElements.remove(null);
 
 		return ImmutableList.copyOf(this.relatedElements);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#caseClass(org.obeonetwork.dsl.dart.Class)
+	 */
+	@Override
+	public List<EObject> caseClass(Class clazz) {
+		this.relatedElements.addAll(clazz.getImplements());
+		this.relatedElements.addAll(clazz.getMixins());
+		this.relatedElements.add(clazz.getExtends());
+
+		for (Setting setting : this.crossReferences) {
+			if (setting.getEObject() instanceof Class) {
+				this.relatedElements.add(setting.getEObject());
+			} else if (setting.getEObject() instanceof Library) {
+				this.relatedElements.add(setting.getEObject());
+			} else if (setting.getEObject() instanceof Metadata) {
+				this.relatedElements.add(setting.getEObject());
+			}
+		}
+
+		return super.caseClass(clazz);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#caseLibrary(org.obeonetwork.dsl.dart.Library)
+	 */
+	@Override
+	public List<EObject> caseLibrary(Library library) {
+		this.relatedElements.addAll(library.getParts());
+
+		for (Setting setting : this.crossReferences) {
+			if (setting.getEObject() instanceof Class) {
+				this.relatedElements.add(setting.getEObject());
+			} else if (setting.getEObject() instanceof Library) {
+				this.relatedElements.add(setting.getEObject());
+			} else if (setting.getEObject() instanceof Metadata) {
+				this.relatedElements.add(setting.getEObject());
+			}
+		}
+		return super.caseLibrary(library);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#caseMetadata(org.obeonetwork.dsl.dart.Metadata)
+	 */
+	@Override
+	public List<EObject> caseMetadata(Metadata metadata) {
+		for (Setting setting : this.crossReferences) {
+			if (setting.getEObject() instanceof Library) {
+				this.relatedElements.add(setting.getEObject());
+			}
+		}
+		return super.caseMetadata(metadata);
 	}
 
 	/**
