@@ -11,3 +11,7 @@ location "http://download.eclipse.org/releases/luna" {
 	org.eclipse.sirius.runtime.ide.eef.feature.group
 	org.eclipse.sirius.runtime.ide.ui.feature.group
 }
+
+location "http://www.dartlang.org/eclipse/update/channels/dev" {
+	com.google.dart.eclipse.feature.feature.group
+}
