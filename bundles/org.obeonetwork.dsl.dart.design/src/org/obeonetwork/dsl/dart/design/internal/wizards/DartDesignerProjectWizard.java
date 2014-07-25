@@ -10,10 +10,17 @@
  *******************************************************************************/
 package org.obeonetwork.dsl.dart.design.internal.wizards;
 
+import com.google.common.collect.Lists;
+
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.ui.tools.api.wizards.page.ViewpointsSelectionWizardPage;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -31,6 +38,11 @@ import org.obeonetwork.dsl.dart.design.internal.utils.IDartDesignerIcons;
 public class DartDesignerProjectWizard extends BasicNewProjectResourceWizard {
 
 	/**
+	 * The name of the default viewpoint to activate.
+	 **/
+	private static final String DEFAULT_VIEWPOINT_NAME = "Dart Architectural Viewpoint"; //$NON-NLS-1$
+
+	/**
 	 * The page where the details of the project to create are configured.
 	 */
 	private DartDesignerProjectWizardPage projectPage;
@@ -43,7 +55,7 @@ public class DartDesignerProjectWizard extends BasicNewProjectResourceWizard {
 	/**
 	 * The page where the viewpoint to activate in the project are configured.
 	 */
-	// private DartDesignerProjectViewpointSelectionPage viewpointPage;
+	private ViewpointsSelectionWizardPage viewpointPage;
 
 	/**
 	 * The constructor.
@@ -75,11 +87,19 @@ public class DartDesignerProjectWizard extends BasicNewProjectResourceWizard {
 	public void addPages() {
 		this.projectPage = new DartDesignerProjectWizardPage();
 		// this.specificationPage = new DartDesignerProjectSpecificationConfigurationPage();
-		// this.viewpointPage = new DartDesignerProjectViewpointSelectionPage();
+		this.viewpointPage = new ViewpointsSelectionWizardPage(null, Lists
+				.newArrayList(DEFAULT_VIEWPOINT_NAME)) {
+			@Override
+			protected Collection<String> computeSemanticFileExtensions(Session session) {
+				Set<String> fileExtensions = new HashSet<String>();
+				fileExtensions.add("dartspec"); //$NON-NLS-1$
+				return fileExtensions;
+			}
+		};
 
 		this.addPage(this.projectPage);
 		// this.addPage(this.specificationPage);
-		// this.addPage(this.viewpointPage);
+		this.addPage(this.viewpointPage);
 	}
 
 	/**
@@ -95,7 +115,7 @@ public class DartDesignerProjectWizard extends BasicNewProjectResourceWizard {
 		if (!project.exists()) {
 			try {
 				WorkspaceModifyOperation projectCreationOperation = new DartDesignerProjectCreationOperation(
-						project);
+						project, this.viewpointPage.getViewpoints());
 				this.getContainer().run(true, false, projectCreationOperation);
 			} catch (InvocationTargetException e) {
 				e.printStackTrace();

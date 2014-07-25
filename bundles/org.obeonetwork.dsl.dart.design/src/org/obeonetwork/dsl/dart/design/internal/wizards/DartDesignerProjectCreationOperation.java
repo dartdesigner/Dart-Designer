@@ -12,8 +12,11 @@ package org.obeonetwork.dsl.dart.design.internal.wizards;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -35,7 +38,10 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionCreationOperation;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.tools.api.command.semantic.AddSemanticResourceCommand;
+import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
+import org.eclipse.sirius.ui.business.internal.commands.ChangeViewpointSelectionCommand;
 import org.eclipse.sirius.ui.tools.api.project.ModelingProjectManager;
+import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.IDartSpecificationConstants;
@@ -49,7 +55,14 @@ import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
  *
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  */
+// Using a non API class from Sirius
+@SuppressWarnings("restriction")
 public class DartDesignerProjectCreationOperation extends WorkspaceModifyOperation {
+
+	/**
+	 * The name of the new Dart specification file.
+	 */
+	private static final String NEW_DART_SPECIFICATION_NAME = "project"; //$NON-NLS-1$
 
 	/**
 	 * The name of the folder containing the specifications.
@@ -57,18 +70,31 @@ public class DartDesignerProjectCreationOperation extends WorkspaceModifyOperati
 	private static final String SPECIFICATIONS_FOLDER_NAME = "specifications"; //$NON-NLS-1$
 
 	/**
+	 * The name of the new Dart package.
+	 */
+	private static final String NEW_DART_PACKAGE_NAME = "Dart Package"; //$NON-NLS-1$
+
+	/**
 	 * The project to create.
 	 */
 	private IProject project;
+
+	/**
+	 * The selected viewpoints.
+	 */
+	private Set<Viewpoint> viewpoints = new LinkedHashSet<Viewpoint>();
 
 	/**
 	 * The constructor.
 	 *
 	 * @param project
 	 *            The project to create
+	 * @param viewpoints
+	 *            The viewpoints to activate
 	 */
-	public DartDesignerProjectCreationOperation(IProject project) {
+	public DartDesignerProjectCreationOperation(IProject project, List<Viewpoint> viewpoints) {
 		this.project = project;
+		this.viewpoints.addAll(viewpoints);
 	}
 
 	/**
@@ -87,8 +113,7 @@ public class DartDesignerProjectCreationOperation extends WorkspaceModifyOperati
 			folder.create(true, true, monitor);
 		}
 
-		String specificationName = "project";
-		IFile specificationFile = folder.getFile(specificationName + '.'
+		IFile specificationFile = folder.getFile(NEW_DART_SPECIFICATION_NAME + '.'
 				+ IDartSpecificationConstants.EXTENSION);
 
 		String pathName = specificationFile.getFullPath().toString();
@@ -100,7 +125,7 @@ public class DartDesignerProjectCreationOperation extends WorkspaceModifyOperati
 		Project dartProject = DartFactory.eINSTANCE.createProject();
 		dartProject.setName(project.getName());
 		Package dartPackage = DartFactory.eINSTANCE.createPackage();
-		dartPackage.setName("Dart Package");
+		dartPackage.setName(NEW_DART_PACKAGE_NAME);
 		dartProject.getPackages().add(dartPackage);
 
 		Resource dartlangResource = resourceSet.getResource(URI
@@ -127,7 +152,7 @@ public class DartDesignerProjectCreationOperation extends WorkspaceModifyOperati
 		}
 
 		try {
-			IFile sessionFile = project.getFile(specificationName + '.'
+			IFile sessionFile = project.getFile(NEW_DART_SPECIFICATION_NAME + '.'
 					+ SiriusUtil.SESSION_RESOURCE_EXTENSION);
 			URI representationsURI = URI
 					.createPlatformResourceURI(sessionFile.getFullPath().toString(), true);
@@ -137,6 +162,10 @@ public class DartDesignerProjectCreationOperation extends WorkspaceModifyOperati
 			CompoundCommand compoundCommand = new CompoundCommand(I18n
 					.getString(I18nKeys.DART_DESIGNER_PROJECT_CREATION_PREPARE_DART_DESIGNER_PROJECT));
 			compoundCommand.append(new AddSemanticResourceCommand(session, dartSpecficationURi,
+					new SubProgressMonitor(monitor, 1)));
+
+			compoundCommand.append(new ChangeViewpointSelectionCommand(session,
+					new ViewpointSelectionCallback(), this.viewpoints, Collections.<Viewpoint> emptySet(),
 					new SubProgressMonitor(monitor, 1)));
 
 			monitor.subTask(I18n.getString(I18nKeys.DART_DESIGNER_PROJECT_CREATION_LINK_THE_SPECIFICATION));
