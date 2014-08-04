@@ -12,7 +12,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="PD Package" detailDescriptions="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Create%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Class%20Diagram']/@ownedTools[name='Create%20Class%20Diagram%20from%20Container']" navigationDescriptions="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Open%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Class%20Diagram']/@ownedTools[name='Open%20Class%20Diagram%20from%20Container']" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="feature:packages" createElements="false" domainClass="dart.Package" childrenPresentation="List">
+        <containerMappings name="PD Package" detailDescriptions="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Create%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Class%20Diagram']/@ownedTools[name='Create%20Class%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Library%20Diagram']/@ownedTools[name='Create%20Library%20Diagram%20from%20Package']" navigationDescriptions="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Explorer%20Diagram']/@ownedTools[name='Open%20Explorer%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Class%20Diagram']/@ownedTools[name='Open%20Class%20Diagram%20from%20Container'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Library%20Diagram']/@ownedTools[name='Open%20Library%20Diagram%20from%20Library']" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="feature:packages" createElements="false" domainClass="dart.Package" childrenPresentation="List">
           <subNodeMappings name="PD Library" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" semanticCandidatesExpression="feature:eAllContents" domainClass="dart.Library">
             <style xsi:type="style:BundledImageDescription" labelAlignment="LEFT" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -774,29 +774,34 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Library Diagram will show the relationships between the various components used in the project." name="Library Diagram" titleExpression="service:newLibraryDiagramName" domainClass="dart.Package" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Library Diagram">
-        <edgeMappings name="LD Library Import" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']/@borderedNodeMappings[name='LD%20Library%20Export']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']/@borderedNodeMappings[name='LD%20Library%20Import']" targetFinderExpression="service:getImportsUsingExportedElement">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
+        <edgeMappings name="LD Library Import" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetFinderExpression="service:getImportedLibrary">
+          <style strokeColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Charcoal']" sourceArrow="Diamond" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;imports>">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
         <containerMappings name="LD Library" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Library">
-          <borderedNodeMappings name="LD Library Export" semanticCandidatesExpression="feature:eAllContents" synchronizationLock="true" domainClass="dart.Export">
-            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="">
+          <borderedNodeMappings name="LD Library Export" semanticCandidatesExpression="feature:exports" synchronizationLock="true" domainClass="dart.Export">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:getExportLabel" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="LD Library Import" semanticCandidatesExpression="feature:eAllContents" domainClass="dart.Import">
-            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <subContainerMappings name="LD Class Part" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" semanticCandidatesExpression="feature:parts" domainClass="dart.Class">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Charcoal']" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Class']">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
-          </borderedNodeMappings>
+            <conditionnalStyles predicateExpression="feature:abstract">
+              <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Abstract%20Class']">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </conditionnalStyles>
+          </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Charcoal']" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Library']">
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -826,6 +831,85 @@
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool:CreateInstance" typeName="dart.Library" referenceName="assets">
                   <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:getNewLibraryDefaultName"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="LD Class Part Creation" label="New Class" containerMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']/@subContainerMappings[name='LD%20Class%20Part']" extraMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']/@subContainerMappings[name='LD%20Class%20Part']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isLibrary">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="feature:eContainer">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="dart.Class" referenceName="assets" variableName="class">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:getNewClassDefaultName">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="parts" valueExpression="var:class"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isClass">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="abstract" valueExpression="false"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="LD Abstract Class Part Creation" label="New Abstract Class" containerMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']/@subContainerMappings[name='LD%20Class%20Part']" extraMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']/@subContainerMappings[name='LD%20Class%20Part']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isLibrary">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="feature:eContainer">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="dart.Class" referenceName="assets" variableName="class">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:getNewClassDefaultName">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="abstract" valueExpression="true">
+                          <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                            <subModelOperations xsi:type="tool:SetValue" featureName="parts" valueExpression="var:class"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isClass">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="abstract" valueExpression="true"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="LD Relationships" label="Relationships">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="LD Library Import Creation" label="Imports" edgeMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@edgeMappings[name='LD%20Library%20Import']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="dart.Import" referenceName="imports" variableName="import">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:import">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="dartResource" valueExpression="var:target"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="LD Library Export Creation" label="Exports" precondition="service:isLibrary" candidatesExpression="service:getExportableElements" multiple="true" iconPath="">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:element">
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isDartResource">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="dart.Export" referenceName="exports" variableName="export">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="dartResource" valueExpression="var:i"/>
+                    </subModelOperations>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -899,6 +983,18 @@
               <representationNameVariable name="diagramName"/>
             </ownedTools>
             <ownedTools xsi:type="tool_1:DiagramCreationDescription" name="Create Class Diagram from Container" label="Class Diagram" titleExpression="service:newClassDiagramName" diagramDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']">
+              <initialOperation/>
+              <containerViewVariable name="containerView"/>
+              <representationNameVariable name="diagramName"/>
+            </ownedTools>
+          </subSections>
+          <subSections name="Library Diagram">
+            <ownedTools xsi:type="tool_1:DiagramNavigationDescription" name="Open Library Diagram from Library" diagramDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']">
+              <containerViewVariable name="containerView"/>
+              <containerVariable name="container"/>
+              <representationNameVariable name="diagramName"/>
+            </ownedTools>
+            <ownedTools xsi:type="tool_1:DiagramCreationDescription" name="Create Library Diagram from Package" label="Library Diagram" diagramDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']">
               <initialOperation/>
               <containerViewVariable name="containerView"/>
               <representationNameVariable name="diagramName"/>

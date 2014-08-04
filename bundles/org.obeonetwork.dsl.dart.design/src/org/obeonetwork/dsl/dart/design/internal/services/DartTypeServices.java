@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.Container;
+import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Folder;
 import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Library;
@@ -58,6 +59,17 @@ public class DartTypeServices {
 	 */
 	public boolean isContainer(EObject eObject) {
 		return eObject instanceof Container;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart resource.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart resource
+	 */
+	public boolean isDartResource(EObject eObject) {
+		return eObject instanceof DartResource;
 	}
 
 	/**
