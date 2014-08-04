@@ -14,10 +14,14 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.DartFactory;
+import org.obeonetwork.dsl.dart.DartResource;
+import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Function;
+import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
@@ -289,5 +293,105 @@ public class DartCommonToolsServices {
 			relateds.addAll(new RelatedElementsSwitch().getRelatedElements(decorator.getTarget()));
 		}
 		return relateds;
+	}
+
+	/**
+	 * Returns the semantic source of the edge.
+	 *
+	 * @param element
+	 *            The element
+	 * @param edge
+	 *            The edge
+	 * @return The semantic source of the edge
+	 */
+	public EObject getEdgeSourceSemantic(EObject element, DEdge edge) {
+		if (edge.getSourceNode() instanceof DSemanticDecorator) {
+			return ((DSemanticDecorator)edge.getSourceNode()).getTarget();
+		}
+		return null;
+	}
+
+	/**
+	 * Returns the semantic target of the edge.
+	 *
+	 * @param element
+	 *            The element
+	 * @param edge
+	 *            The edge
+	 * @return The semantic target of the edge
+	 */
+	public EObject getEdgeTargetSemantic(EObject element, DEdge edge) {
+		if (edge.getTargetNode() instanceof DSemanticDecorator) {
+			return ((DSemanticDecorator)edge.getTargetNode()).getTarget();
+		}
+		return null;
+	}
+
+	/**
+	 * Delete the import relationship.
+	 *
+	 * @param eObject
+	 *            The context
+	 * @param edge
+	 *            The edge
+	 * @return The context
+	 */
+	public EObject deleteImport(EObject eObject, DEdge edge) {
+		EObject source = this.getEdgeSourceSemantic(eObject, edge);
+		EObject target = this.getEdgeTargetSemantic(eObject, edge);
+
+		if (source instanceof DartResource && target instanceof DartResource) {
+			DartResource sourceResource = (DartResource)source;
+			DartResource targetResource = (DartResource)target;
+
+			Import importToDelete = null;
+
+			List<Import> imports = sourceResource.getImports();
+			for (Import anImport : imports) {
+				if (targetResource.equals(anImport.getDartResource())) {
+					importToDelete = anImport;
+				}
+			}
+
+			if (importToDelete != null) {
+				sourceResource.getImports().remove(importToDelete);
+			}
+		}
+
+		return eObject;
+	}
+
+	/**
+	 * Delete the export relationship.
+	 *
+	 * @param eObject
+	 *            The context
+	 * @param edge
+	 *            The edge
+	 * @return The context
+	 */
+	public EObject deleteExport(EObject eObject, DEdge edge) {
+		EObject source = this.getEdgeSourceSemantic(eObject, edge);
+		EObject target = this.getEdgeTargetSemantic(eObject, edge);
+
+		if (source instanceof DartResource && target instanceof DartResource) {
+			DartResource sourceResource = (DartResource)source;
+			DartResource targetResource = (DartResource)target;
+
+			Export exportToDelete = null;
+
+			List<Export> exports = sourceResource.getExports();
+			for (Export anExport : exports) {
+				if (targetResource.equals(anExport.getDartResource())) {
+					exportToDelete = anExport;
+				}
+			}
+
+			if (exportToDelete != null) {
+				sourceResource.getExports().remove(exportToDelete);
+			}
+		}
+
+		return eObject;
 	}
 }

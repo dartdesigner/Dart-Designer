@@ -4,10 +4,10 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Package Diagram will show the relationships between all the Dart packages used in the project." name="Package Diagram" titleExpression="service:newPackageDiagramName" initialisation="true" showOnStartup="true" domainClass="dart.Project" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Package Diagram">
-        <edgeMappings name="PD Package Dependency" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@containerMappings[name='PD%20Package']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@containerMappings[name='PD%20Package']" targetFinderExpression="feature:dependencies">
+        <edgeMappings name="PD Package Dependency" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='ED%20Delete%20Package%20Dependency']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@containerMappings[name='PD%20Package']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@containerMappings[name='PD%20Package']" targetFinderExpression="feature:dependencies">
           <style sourceArrow="Diamond" targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
+            <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;depends>">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -51,7 +51,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="PD Relationships" label="Relationships">
-          <ownedTools xsi:type="tool_1:EdgeCreationDescription" documentation="Create a dependency from a package to another" name="PD Package Dependency" label="Package Dependency" edgeMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@edgeMappings[name='PD%20Package%20Dependency']">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" documentation="Create a dependency from a package to another" name="PD Package Dependency" label="Depends" edgeMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@edgeMappings[name='PD%20Package%20Dependency']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -59,6 +59,18 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
                 <subModelOperations xsi:type="tool:SetValue" featureName="dependencies" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="PD Delete" label="Delete">
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="ED Delete Package Dependency">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:getEdgeSourceSemantic(elementView)">
+                <subModelOperations xsi:type="tool:Unset" featureName="dependencies" elementExpression="service:getEdgeTargetSemantic(elementView)"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -384,7 +396,7 @@
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Explorer Diagram - Relationships" label="Relationships">
-        <edgeMappings name="ED HTML Uses" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20HTML']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Asset'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Folder'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Library'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Metadata'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Asset'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20HTML'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Stylesheet']" targetFinderExpression="feature:uses" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@additionalLayers[name='Explorer%20Diagram%20-%20Relationships']/@toolSections.1/@ownedTools[name='ED%20HTML%20Uses%20Reconnect']">
+        <edgeMappings name="ED HTML Uses" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@additionalLayers[name='Explorer%20Diagram%20-%20Relationships']/@toolSections.2/@ownedTools[name='ED%20Delete%20HTML%20Uses']" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20HTML']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Asset'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Folder'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Library'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Metadata'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Asset'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20HTML'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Stylesheet']" targetFinderExpression="feature:uses" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@additionalLayers[name='Explorer%20Diagram%20-%20Relationships']/@toolSections.1/@ownedTools[name='ED%20HTML%20Uses%20Reconnect']">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;uses>">
@@ -452,6 +464,28 @@
             <edgeView name="edgeView"/>
           </ownedTools>
         </toolSections>
+        <toolSections name="ED Delete" label="Delete">
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="ED Delete HTML Uses">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:getEdgeSourceSemantic(elementView)">
+                <subModelOperations xsi:type="tool:Unset" featureName="uses" elementExpression="service:getEdgeTargetSemantic(elementView)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="ED Delete Stylesheet Imports">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:getEdgeSourceSemantic(elementView)">
+                <subModelOperations xsi:type="tool:Unset" featureName="imports" elementExpression="service:getEdgeTargetSemantic(elementView)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </additionalLayers>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Class Diagram will show the logical architecture of the code." name="Class Diagram" titleExpression="service:newClassDiagramName" domainClass="dart.Container" enablePopupBars="true">
@@ -466,7 +500,7 @@
         <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']/@subNodeMappings[name='CD%20Class%20Field'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']/@subNodeMappings[name='CD%20Metadata%20Field']"/>
       </filters>
       <defaultLayer name="Class Diagram">
-        <edgeMappings name="CD Class Extends" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:extends" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CD%20Class%20Extends%20Reconnect']">
+        <edgeMappings name="CD Class Extends" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.5/@ownedTools[name='CD%20Delete%20Extends']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:extends" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CD%20Class%20Extends%20Reconnect']">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;extend>">
@@ -474,7 +508,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="CD Class Implements" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:implements" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CD%20Class%20Implements%20Reconnect']">
+        <edgeMappings name="CD Class Implements" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.5/@ownedTools[name='CD%20Delete%20Implements']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:implements" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CD%20Class%20Implements%20Reconnect']">
           <style lineStyle="dash" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;implement>">
@@ -482,7 +516,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="CD Class Mixins" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:mixins" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CD%20Class%20Mixins%20Reconnect']">
+        <edgeMappings name="CD Class Mixins" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.5/@ownedTools[name='CD%20Delete%20Mixins']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" targetFinderExpression="feature:mixins" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CD%20Class%20Mixins%20Reconnect']">
           <style lineStyle="dot" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;mixin>">
@@ -498,7 +532,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="CD Dart Resource Import" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library']" targetFinderExpression="service:getImportedResources">
+        <edgeMappings name="CD Dart Resource Import" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.5/@ownedTools[name='ED%20Delete%20Library%20Import']" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library']" targetFinderExpression="service:getImportedResources">
           <style sourceArrow="Diamond" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;import>">
@@ -506,7 +540,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="CD Dart Resource Export" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" targetFinderExpression="service:getExportedResources">
+        <edgeMappings name="CD Dart Resource Export" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.5/@ownedTools[name='ED%20Delete%20Library%20Export']" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" targetFinderExpression="service:getExportedResources">
           <style sourceArrow="Diamond" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;export>">
@@ -797,12 +831,60 @@
             <edgeView name="edgeView"/>
           </ownedTools>
         </toolSections>
+        <toolSections name="CD Delete" label="Delete">
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="CD Delete Extends">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:getEdgeSourceSemantic(elementView)">
+                <subModelOperations xsi:type="tool:Unset" featureName="extends" elementExpression="service:getEdgeTargetSemantic(elementView)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="CD Delete Implements">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:getEdgeSourceSemantic(elementView)">
+                <subModelOperations xsi:type="tool:Unset" featureName="implements" elementExpression="service:getEdgeTargetSemantic(elementView)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="CD Delete Mixins">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:getEdgeSourceSemantic(elementView)">
+                <subModelOperations xsi:type="tool:Unset" featureName="mixins" elementExpression="service:getEdgeTargetSemantic(elementView)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="ED Delete Library Import">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:deleteImport(elementView)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="ED Delete Library Export">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:deleteExport(elementView)"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Library Diagram will show the relationships between the various components used in the project." name="Library Diagram" titleExpression="service:newLibraryDiagramName" domainClass="dart.Package" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Library Diagram">
-        <edgeMappings name="LD Library Import" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetFinderExpression="service:getImportedLibrary" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='LD%20Library%20Import%20Reconnect']">
+        <edgeMappings name="LD Library Import" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='ED%20Delete%20Library%20Import']" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetFinderExpression="service:getImportedLibrary" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='LD%20Library%20Import%20Reconnect']">
           <style strokeColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Charcoal']" sourceArrow="Diamond" targetArrow="NoDecoration" sizeComputationExpression="2">
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;imports>">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -971,6 +1053,16 @@
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="LD Delete" label="Delete">
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="ED Delete Library Import">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:deleteImport(elementView)"/>
+            </initialOperation>
           </ownedTools>
         </toolSections>
       </defaultLayer>
