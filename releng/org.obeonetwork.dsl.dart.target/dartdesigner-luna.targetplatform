@@ -13,5 +13,5 @@ location "http://download.eclipse.org/releases/luna" {
 }
 
 location "http://www.dartlang.org/eclipse/update/channels/dev" {
-	com.google.dart.eclipse.feature.feature.group
+	com.google.dart.eclipse.feature.feature.group;version=lazy
 }
