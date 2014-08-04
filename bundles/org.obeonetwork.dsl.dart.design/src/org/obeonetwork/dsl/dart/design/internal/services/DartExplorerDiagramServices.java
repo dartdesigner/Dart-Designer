@@ -19,6 +19,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.diagram.DDiagramElement;
+import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
@@ -29,6 +30,7 @@ import org.obeonetwork.dsl.dart.Folder;
 import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.IDartSpecificationConstants;
 import org.obeonetwork.dsl.dart.Package;
+import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
 
@@ -351,5 +353,60 @@ public class DartExplorerDiagramServices {
 			}
 		}
 		return eObject;
+	}
+
+	/**
+	 * Reconnect the "uses" link between a HTML page and an asset.
+	 *
+	 * @param element
+	 *            The manipulated element (source or target HTML)
+	 * @param edgeAfterReconnect
+	 *            The edge after the reconnection
+	 */
+	public void reconnectUses(EObject element, DEdge edgeAfterReconnect) {
+		if (edgeAfterReconnect.getSourceNode() instanceof DSemanticDecorator
+				&& edgeAfterReconnect.getTargetNode() instanceof DSemanticDecorator) {
+
+			EObject newSource = ((DSemanticDecorator)edgeAfterReconnect.getSourceNode()).getTarget();
+			EObject newTarget = ((DSemanticDecorator)edgeAfterReconnect.getTargetNode()).getTarget();
+			if (element instanceof Asset && newSource instanceof HTML && newTarget instanceof Asset) {
+				Asset asset = (Asset)element;
+				HTML src = (HTML)newSource;
+				Asset target = (Asset)newTarget;
+
+				if (asset instanceof HTML) {
+					((HTML)asset).getUses().remove(target);
+				}
+				src.getUses().remove(asset);
+				src.getUses().add(target);
+			}
+		}
+	}
+
+	/**
+	 * Reconnect the "imports" link between two stylesheets.
+	 *
+	 * @param element
+	 *            The manipulated element (source or target stylesheet)
+	 * @param edgeAfterReconnect
+	 *            The edge after the reconnection
+	 */
+	public void reconnectStylesheetImports(EObject element, DEdge edgeAfterReconnect) {
+		if (edgeAfterReconnect.getSourceNode() instanceof DSemanticDecorator
+				&& edgeAfterReconnect.getTargetNode() instanceof DSemanticDecorator) {
+
+			EObject newSource = ((DSemanticDecorator)edgeAfterReconnect.getSourceNode()).getTarget();
+			EObject newTarget = ((DSemanticDecorator)edgeAfterReconnect.getTargetNode()).getTarget();
+			if (element instanceof Stylesheet && newSource instanceof Stylesheet
+					&& newTarget instanceof Stylesheet) {
+				Stylesheet aStylesheet = (Stylesheet)element;
+				Stylesheet srcStylesheet = (Stylesheet)newSource;
+				Stylesheet targetStylesheet = (Stylesheet)newTarget;
+
+				aStylesheet.getImports().remove(targetStylesheet);
+				srcStylesheet.getImports().remove(aStylesheet);
+				srcStylesheet.getImports().add(targetStylesheet);
+			}
+		}
 	}
 }
