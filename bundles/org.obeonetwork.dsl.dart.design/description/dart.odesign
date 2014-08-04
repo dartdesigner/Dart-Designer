@@ -774,7 +774,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Library Diagram will show the relationships between the various components used in the project." name="Library Diagram" titleExpression="service:newLibraryDiagramName" domainClass="dart.Package" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Library Diagram">
-        <edgeMappings name="LD Library Import" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetFinderExpression="service:getImportedLibrary">
+        <edgeMappings name="LD Library Import" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetFinderExpression="service:getImportedLibrary" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='LD%20Library%20Import%20Reconnect']">
           <style strokeColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Charcoal']" sourceArrow="Diamond" targetArrow="NoDecoration" sizeComputationExpression="2">
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;imports>">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -928,6 +928,21 @@
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="LD Reconnects" label="Reconnects">
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="LD Library Import Reconnect" reconnectionKind="RECONNECT_BOTH">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:reconnectImports(edgeView)"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
           </ownedTools>
         </toolSections>
       </defaultLayer>

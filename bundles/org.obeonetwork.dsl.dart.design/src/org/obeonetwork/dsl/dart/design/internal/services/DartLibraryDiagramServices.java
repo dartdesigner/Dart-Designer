@@ -19,9 +19,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.dsl.dart.Classifier;
 import org.obeonetwork.dsl.dart.Container;
+import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
@@ -149,5 +151,54 @@ public class DartLibraryDiagramServices {
 			}
 		}
 		return exportableElements;
+	}
+
+	/**
+	 * Reconnect the "imports" link between two library.
+	 *
+	 * @param element
+	 *            The manipulated element (source or target library)
+	 * @param edgeAfterReconnect
+	 *            The edge after the reconnection
+	 */
+	public void reconnectImports(EObject element, DEdge edgeAfterReconnect) {
+		if (edgeAfterReconnect.getSourceNode() instanceof DSemanticDecorator
+				&& edgeAfterReconnect.getTargetNode() instanceof DSemanticDecorator) {
+
+			EObject newSource = ((DSemanticDecorator)edgeAfterReconnect.getSourceNode()).getTarget();
+			EObject newTarget = ((DSemanticDecorator)edgeAfterReconnect.getTargetNode()).getTarget();
+			if (element instanceof Library && newSource instanceof Library && newTarget instanceof Library) {
+				Library aLibrary = (Library)element;
+				Library srcLibrary = (Library)newSource;
+				Library targetLibrary = (Library)newTarget;
+
+				Import importToRemove = null;
+				List<Import> imports = aLibrary.getImports();
+				for (Import anImport : imports) {
+					if (targetLibrary.equals(anImport.getDartResource())) {
+						importToRemove = anImport;
+					}
+				}
+
+				if (importToRemove != null) {
+					aLibrary.getImports().remove(importToRemove);
+				}
+
+				imports = srcLibrary.getImports();
+				for (Import anImport : imports) {
+					if (aLibrary.equals(anImport.getDartResource())) {
+						importToRemove = anImport;
+					}
+				}
+
+				if (importToRemove != null) {
+					srcLibrary.getImports().remove(importToRemove);
+				}
+
+				Import importToAdd = DartFactory.eINSTANCE.createImport();
+				importToAdd.setDartResource(targetLibrary);
+				srcLibrary.getImports().add(importToAdd);
+			}
+		}
 	}
 }
