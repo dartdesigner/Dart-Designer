@@ -24,7 +24,7 @@ public interface IDartSpecificationConstants {
 	/**
 	 * The name of the dartlang package.
 	 */
-	String DARTLANG_PACKAGE_NAME = "dart"; //$NON-NLS-1$
+	String DARTLANG_PACKAGE_NAME = "Dart Standard Library"; //$NON-NLS-1$
 
 	/**
 	 * The Dart specification extension.
