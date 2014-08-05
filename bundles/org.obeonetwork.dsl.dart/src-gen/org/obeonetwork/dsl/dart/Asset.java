@@ -10,6 +10,7 @@
  */
 package org.obeonetwork.dsl.dart;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Asset</b></em>'. <!-- end-user-doc -->
@@ -25,7 +26,7 @@ package org.obeonetwork.dsl.dart;
  * @model
  * @generated
  */
-public interface Asset extends Element {
+public interface Asset extends EObject {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 

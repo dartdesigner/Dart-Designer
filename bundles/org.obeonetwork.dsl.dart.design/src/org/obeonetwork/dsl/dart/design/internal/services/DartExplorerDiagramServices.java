@@ -183,6 +183,17 @@ public class DartExplorerDiagramServices {
 	}
 
 	/**
+	 * Indicates if the name of the eObject matches a javascript file.
+	 *
+	 * @param eObject
+	 *            The asset
+	 * @return <code>true</code> if it matches, <code>false</code> otherwise
+	 */
+	public boolean isJs(EObject eObject) {
+		return this.hasExtension(eObject, ".js"); //$NON-NLS-1$ 
+	}
+
+	/**
 	 * Indicates if the name of the eObject matches a less file.
 	 *
 	 * @param eObject

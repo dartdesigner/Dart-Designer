@@ -6,8 +6,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
         eType="#//Package" containment="true" eOpposite="#//Package/project"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Asset" eSuperTypes="#//Element">
+  <eClassifiers xsi:type="ecore:EClass" name="Asset">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
         eOpposite="#//Container/assets"/>
@@ -130,7 +129,7 @@
         eType="#//Metadata"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HTML" eSuperTypes="#//Asset">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Element"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Asset"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Stylesheet" eSuperTypes="#//Asset">
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
@@ -139,28 +138,27 @@
         volatile="true" unsettable="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//Part">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="types" eType="#//AngularType"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//AngularType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="routes" upperBound="-1"
         eType="#//Route" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AngularType" abstract="true" eSuperTypes="#//Element">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dartResource" eType="#//DartResource"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Directive" abstract="true" eSuperTypes="#//AngularType">
+  <eClassifiers xsi:type="ecore:EClass" name="AngularType" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Class #//AngularType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publishAs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Directive">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publishAs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Class #//AngularType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="publishAs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stylesheet" eType="#//Stylesheet"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="template" eType="#//HTML"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Decorator" eSuperTypes="#//Directive"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Formatter" eSuperTypes="#//AngularType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Decorator" eSuperTypes="#//Class #//AngularType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Formatter" eSuperTypes="#//Class #//AngularType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formatterName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Route">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

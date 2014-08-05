@@ -178,6 +178,18 @@ public class ContainerItemProvider extends ItemProviderAdapter implements IEditi
 
 		newChildDescriptors.add(createChildParameter(DartPackage.Literals.CONTAINER__ASSETS,
 				DartFactory.eINSTANCE.createModule()));
+
+		newChildDescriptors.add(createChildParameter(DartPackage.Literals.CONTAINER__ASSETS,
+				DartFactory.eINSTANCE.createController()));
+
+		newChildDescriptors.add(createChildParameter(DartPackage.Literals.CONTAINER__ASSETS,
+				DartFactory.eINSTANCE.createComponent()));
+
+		newChildDescriptors.add(createChildParameter(DartPackage.Literals.CONTAINER__ASSETS,
+				DartFactory.eINSTANCE.createDecorator()));
+
+		newChildDescriptors.add(createChildParameter(DartPackage.Literals.CONTAINER__ASSETS,
+				DartFactory.eINSTANCE.createFormatter()));
 	}
 
 	/**

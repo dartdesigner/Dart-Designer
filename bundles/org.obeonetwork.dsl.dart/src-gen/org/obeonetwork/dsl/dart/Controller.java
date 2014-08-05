@@ -17,6 +17,7 @@ package org.obeonetwork.dsl.dart;
  * The following features are supported:
  * <ul>
  * <li>{@link org.obeonetwork.dsl.dart.Controller#getPublishAs <em>Publish As</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.Controller#getSelector <em>Selector</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,7 +25,7 @@ package org.obeonetwork.dsl.dart;
  * @model
  * @generated
  */
-public interface Controller extends Directive {
+public interface Controller extends org.obeonetwork.dsl.dart.Class, AngularType {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -58,5 +59,32 @@ public interface Controller extends Directive {
 	 * @generated
 	 */
 	void setPublishAs(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Selector</b></em>' attribute. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selector</em>' attribute isn't clear, there really should be more of a
+	 * description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Selector</em>' attribute.
+	 * @see #setSelector(String)
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getController_Selector()
+	 * @model
+	 * @generated
+	 */
+	String getSelector();
+
+	/**
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Controller#getSelector <em>Selector</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Selector</em>' attribute.
+	 * @see #getSelector()
+	 * @generated
+	 */
+	void setSelector(String value);
 
 } // Controller

@@ -30,7 +30,7 @@ import org.obeonetwork.dsl.dart.Formatter;
  * 
  * @generated
  */
-public class FormatterItemProvider extends AngularTypeItemProvider {
+public class FormatterItemProvider extends ClassItemProvider {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -59,22 +59,24 @@ public class FormatterItemProvider extends AngularTypeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addFormatterNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Formatter Name feature. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addFormatterNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Formatter_name_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Formatter_name_feature",
-						"_UI_Formatter_type"), DartPackage.Literals.FORMATTER__NAME, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+				.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Formatter_formatterName_feature"), getString(
+						"_UI_PropertyDescriptor_description", "_UI_Formatter_formatterName_feature",
+						"_UI_Formatter_type"), DartPackage.Literals.FORMATTER__FORMATTER_NAME, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -111,7 +113,7 @@ public class FormatterItemProvider extends AngularTypeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Formatter.class)) {
-			case DartPackage.FORMATTER__NAME:
+			case DartPackage.FORMATTER__FORMATTER_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false,
 						true));
 				return;

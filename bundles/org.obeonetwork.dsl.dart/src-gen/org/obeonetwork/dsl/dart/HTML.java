@@ -35,7 +35,7 @@ public interface HTML extends Asset {
 
 	/**
 	 * Returns the value of the '<em><b>Uses</b></em>' reference list. The list contents are of type
-	 * {@link org.obeonetwork.dsl.dart.Element}. <!-- begin-user-doc -->
+	 * {@link org.obeonetwork.dsl.dart.Asset}. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uses</em>' reference list isn't clear, there really should be more of a
 	 * description here...
@@ -47,6 +47,6 @@ public interface HTML extends Asset {
 	 * @model
 	 * @generated
 	 */
-	EList<Element> getUses();
+	EList<Asset> getUses();
 
 } // HTML

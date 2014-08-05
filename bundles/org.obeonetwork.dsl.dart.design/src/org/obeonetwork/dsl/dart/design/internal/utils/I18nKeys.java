@@ -37,6 +37,11 @@ public interface I18nKeys {
 	String LIBRARY_DIAGRAM_NEW_NAME = "LibraryDiagram.NewName"; //$NON-NLS-1$
 
 	/**
+	 * {0} Module Diagram.
+	 */
+	String MODULE_DIAGRAM_NEW_NAME = "ModuleDiagram.NewName"; //$NON-NLS-1$
+
+	/**
 	 * New Package.
 	 */
 	String NEW_PACKAGE_NAME = "Package.NewName"; //$NON-NLS-1$
@@ -75,6 +80,31 @@ public interface I18nKeys {
 	 * newParameter.
 	 */
 	String NEW_PARAMETER_NAME = "Parameter.NewName"; //$NON-NLS-1$
+
+	/**
+	 * NewModule.
+	 */
+	String NEW_MODULE_NAME = "Module.NewName"; //$NON-NLS-1$
+
+	/**
+	 * NewController.
+	 */
+	String NEW_CONTROLLER_NAME = "Controller.NewName"; //$NON-NLS-1$
+
+	/**
+	 * NewComponent.
+	 */
+	String NEW_COMPONENT_NAME = "Component.NewName"; //$NON-NLS-1$
+
+	/**
+	 * NewDecorator.
+	 */
+	String NEW_DECORATOR_NAME = "Decorator.NewName"; //$NON-NLS-1$
+
+	/**
+	 * NewFormatter.
+	 */
+	String NEW_FORMATTER_NAME = "Formatter.NewName"; //$NON-NLS-1$
 
 	/**
 	 * Dart Designer Project.

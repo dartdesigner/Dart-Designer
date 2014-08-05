@@ -25,13 +25,13 @@ import org.obeonetwork.dsl.dart.Formatter;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.obeonetwork.dsl.dart.impl.FormatterImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.FormatterImpl#getFormatterName <em>Formatter Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FormatterImpl extends AngularTypeImpl implements Formatter {
+public class FormatterImpl extends ClassImpl implements Formatter {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -40,24 +40,24 @@ public class FormatterImpl extends AngularTypeImpl implements Formatter {
 	public static final String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The default value of the '{@link #getFormatterName() <em>Formatter Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getName()
+	 * @see #getFormatterName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String FORMATTER_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getFormatterName() <em>Formatter Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getName()
+	 * @see #getFormatterName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String formatterName = FORMATTER_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -83,8 +83,8 @@ public class FormatterImpl extends AngularTypeImpl implements Formatter {
 	 * 
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getFormatterName() {
+		return formatterName;
 	}
 
 	/**
@@ -92,11 +92,12 @@ public class FormatterImpl extends AngularTypeImpl implements Formatter {
 	 * 
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setFormatterName(String newFormatterName) {
+		String oldFormatterName = formatterName;
+		formatterName = newFormatterName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FORMATTER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.FORMATTER__FORMATTER_NAME,
+					oldFormatterName, formatterName));
 	}
 
 	/**
@@ -107,8 +108,8 @@ public class FormatterImpl extends AngularTypeImpl implements Formatter {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DartPackage.FORMATTER__NAME:
-				return getName();
+			case DartPackage.FORMATTER__FORMATTER_NAME:
+				return getFormatterName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,8 +122,8 @@ public class FormatterImpl extends AngularTypeImpl implements Formatter {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DartPackage.FORMATTER__NAME:
-				setName((String)newValue);
+			case DartPackage.FORMATTER__FORMATTER_NAME:
+				setFormatterName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,8 +137,8 @@ public class FormatterImpl extends AngularTypeImpl implements Formatter {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DartPackage.FORMATTER__NAME:
-				setName(NAME_EDEFAULT);
+			case DartPackage.FORMATTER__FORMATTER_NAME:
+				setFormatterName(FORMATTER_NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -151,8 +152,9 @@ public class FormatterImpl extends AngularTypeImpl implements Formatter {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DartPackage.FORMATTER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DartPackage.FORMATTER__FORMATTER_NAME:
+				return FORMATTER_NAME_EDEFAULT == null ? formatterName != null : !FORMATTER_NAME_EDEFAULT
+						.equals(formatterName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -168,8 +170,8 @@ public class FormatterImpl extends AngularTypeImpl implements Formatter {
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (formatterName: ");
+		result.append(formatterName);
 		result.append(')');
 		return result.toString();
 	}

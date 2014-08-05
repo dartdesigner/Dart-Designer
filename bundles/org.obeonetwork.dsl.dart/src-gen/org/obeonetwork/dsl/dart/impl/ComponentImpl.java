@@ -31,12 +31,13 @@ import org.obeonetwork.dsl.dart.Stylesheet;
  * <li>{@link org.obeonetwork.dsl.dart.impl.ComponentImpl#getPublishAs <em>Publish As</em>}</li>
  * <li>{@link org.obeonetwork.dsl.dart.impl.ComponentImpl#getStylesheet <em>Stylesheet</em>}</li>
  * <li>{@link org.obeonetwork.dsl.dart.impl.ComponentImpl#getTemplate <em>Template</em>}</li>
+ * <li>{@link org.obeonetwork.dsl.dart.impl.ComponentImpl#getSelector <em>Selector</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentImpl extends DirectiveImpl implements Component {
+public class ComponentImpl extends ClassImpl implements Component {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -83,6 +84,26 @@ public class ComponentImpl extends DirectiveImpl implements Component {
 	 * @ordered
 	 */
 	protected HTML template;
+
+	/**
+	 * The default value of the '{@link #getSelector() <em>Selector</em>}' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getSelector()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SELECTOR_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSelector() <em>Selector</em>}' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getSelector()
+	 * @generated
+	 * @ordered
+	 */
+	protected String selector = SELECTOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -210,6 +231,28 @@ public class ComponentImpl extends DirectiveImpl implements Component {
 	 * 
 	 * @generated
 	 */
+	public String getSelector() {
+		return selector;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setSelector(String newSelector) {
+		String oldSelector = selector;
+		selector = newSelector;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.COMPONENT__SELECTOR,
+					oldSelector, selector));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -223,6 +266,8 @@ public class ComponentImpl extends DirectiveImpl implements Component {
 				if (resolve)
 					return getTemplate();
 				return basicGetTemplate();
+			case DartPackage.COMPONENT__SELECTOR:
+				return getSelector();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,6 +288,9 @@ public class ComponentImpl extends DirectiveImpl implements Component {
 				return;
 			case DartPackage.COMPONENT__TEMPLATE:
 				setTemplate((HTML)newValue);
+				return;
+			case DartPackage.COMPONENT__SELECTOR:
+				setSelector((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -265,6 +313,9 @@ public class ComponentImpl extends DirectiveImpl implements Component {
 			case DartPackage.COMPONENT__TEMPLATE:
 				setTemplate((HTML)null);
 				return;
+			case DartPackage.COMPONENT__SELECTOR:
+				setSelector(SELECTOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -284,6 +335,8 @@ public class ComponentImpl extends DirectiveImpl implements Component {
 				return stylesheet != null;
 			case DartPackage.COMPONENT__TEMPLATE:
 				return template != null;
+			case DartPackage.COMPONENT__SELECTOR:
+				return SELECTOR_EDEFAULT == null ? selector != null : !SELECTOR_EDEFAULT.equals(selector);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -301,6 +354,8 @@ public class ComponentImpl extends DirectiveImpl implements Component {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (publishAs: ");
 		result.append(publishAs);
+		result.append(", selector: ");
+		result.append(selector);
 		result.append(')');
 		return result.toString();
 	}

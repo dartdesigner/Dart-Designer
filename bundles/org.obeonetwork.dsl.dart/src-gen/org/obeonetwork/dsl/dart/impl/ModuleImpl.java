@@ -11,20 +11,13 @@
 package org.obeonetwork.dsl.dart.impl;
 
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.obeonetwork.dsl.dart.AngularType;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.Module;
@@ -52,14 +45,14 @@ public class ModuleImpl extends PartImpl implements Module {
 	public static final String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
 
 	/**
-	 * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getTypes() <em>Types</em>}' reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected AngularType types;
+	protected EList<AngularType> types;
 
 	/**
 	 * The cached value of the '{@link #getRoutes() <em>Routes</em>}' containment reference list. <!--
@@ -95,49 +88,11 @@ public class ModuleImpl extends PartImpl implements Module {
 	 * 
 	 * @generated
 	 */
-	public AngularType getTypes() {
-		return types;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public NotificationChain basicSetTypes(AngularType newTypes, NotificationChain msgs) {
-		AngularType oldTypes = types;
-		types = newTypes;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DartPackage.MODULE__TYPES, oldTypes, newTypes);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<AngularType> getTypes() {
+		if (types == null) {
+			types = new EObjectResolvingEList<AngularType>(AngularType.class, this, DartPackage.MODULE__TYPES);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public void setTypes(AngularType newTypes) {
-		if (newTypes != types) {
-			NotificationChain msgs = null;
-			if (types != null)
-				msgs = ((InternalEObject)types).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- DartPackage.MODULE__TYPES, null, msgs);
-			if (newTypes != null)
-				msgs = ((InternalEObject)newTypes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- DartPackage.MODULE__TYPES, null, msgs);
-			msgs = basicSetTypes(newTypes, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.MODULE__TYPES, newTypes,
-					newTypes));
+		return types;
 	}
 
 	/**
@@ -160,8 +115,6 @@ public class ModuleImpl extends PartImpl implements Module {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DartPackage.MODULE__TYPES:
-				return basicSetTypes(null, msgs);
 			case DartPackage.MODULE__ROUTES:
 				return ((InternalEList<?>)getRoutes()).basicRemove(otherEnd, msgs);
 		}
@@ -194,7 +147,8 @@ public class ModuleImpl extends PartImpl implements Module {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DartPackage.MODULE__TYPES:
-				setTypes((AngularType)newValue);
+				getTypes().clear();
+				getTypes().addAll((Collection<? extends AngularType>)newValue);
 				return;
 			case DartPackage.MODULE__ROUTES:
 				getRoutes().clear();
@@ -213,7 +167,7 @@ public class ModuleImpl extends PartImpl implements Module {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DartPackage.MODULE__TYPES:
-				setTypes((AngularType)null);
+				getTypes().clear();
 				return;
 			case DartPackage.MODULE__ROUTES:
 				getRoutes().clear();
@@ -231,7 +185,7 @@ public class ModuleImpl extends PartImpl implements Module {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DartPackage.MODULE__TYPES:
-				return types != null;
+				return types != null && !types.isEmpty();
 			case DartPackage.MODULE__ROUTES:
 				return routes != null && !routes.isEmpty();
 		}

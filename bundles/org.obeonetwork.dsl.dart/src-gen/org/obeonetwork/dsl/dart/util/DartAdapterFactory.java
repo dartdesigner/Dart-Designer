@@ -24,8 +24,6 @@ import org.obeonetwork.dsl.dart.Controller;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Decorator;
-import org.obeonetwork.dsl.dart.Directive;
-import org.obeonetwork.dsl.dart.Element;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Folder;
 import org.obeonetwork.dsl.dart.Formatter;
@@ -106,11 +104,6 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseProject(Project object) {
 			return createProjectAdapter();
-		}
-
-		@Override
-		public Adapter caseElement(Element object) {
-			return createElementAdapter();
 		}
 
 		@Override
@@ -224,11 +217,6 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseDirective(Directive object) {
-			return createDirectiveAdapter();
-		}
-
-		@Override
 		public Adapter caseController(Controller object) {
 			return createControllerAdapter();
 		}
@@ -282,19 +270,6 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Element <em>Element</em>}
-	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
-	 * @return the new adapter.
-	 * @see org.obeonetwork.dsl.dart.Element
-	 * @generated
-	 */
-	public Adapter createElementAdapter() {
 		return null;
 	}
 
@@ -455,20 +430,6 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAngularTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Directive
-	 * <em>Directive</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the new adapter.
-	 * @see org.obeonetwork.dsl.dart.Directive
-	 * @generated
-	 */
-	public Adapter createDirectiveAdapter() {
 		return null;
 	}
 

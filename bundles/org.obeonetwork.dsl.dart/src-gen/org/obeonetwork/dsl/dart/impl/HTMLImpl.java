@@ -14,8 +14,8 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.DartPackage;
-import org.obeonetwork.dsl.dart.Element;
 import org.obeonetwork.dsl.dart.HTML;
 
 /**
@@ -45,7 +45,7 @@ public class HTMLImpl extends AssetImpl implements HTML {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Element> uses;
+	protected EList<Asset> uses;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -71,9 +71,9 @@ public class HTMLImpl extends AssetImpl implements HTML {
 	 * 
 	 * @generated
 	 */
-	public EList<Element> getUses() {
+	public EList<Asset> getUses() {
 		if (uses == null) {
-			uses = new EObjectResolvingEList<Element>(Element.class, this, DartPackage.HTML__USES);
+			uses = new EObjectResolvingEList<Asset>(Asset.class, this, DartPackage.HTML__USES);
 		}
 		return uses;
 	}
@@ -103,7 +103,7 @@ public class HTMLImpl extends AssetImpl implements HTML {
 		switch (featureID) {
 			case DartPackage.HTML__USES:
 				getUses().clear();
-				getUses().addAll((Collection<? extends Element>)newValue);
+				getUses().addAll((Collection<? extends Asset>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -30,7 +30,7 @@ import org.obeonetwork.dsl.dart.DartPackage;
  * 
  * @generated
  */
-public class ComponentItemProvider extends DirectiveItemProvider {
+public class ComponentItemProvider extends ClassItemProvider {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -62,6 +62,7 @@ public class ComponentItemProvider extends DirectiveItemProvider {
 			addPublishAsPropertyDescriptor(object);
 			addStylesheetPropertyDescriptor(object);
 			addTemplatePropertyDescriptor(object);
+			addSelectorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +110,19 @@ public class ComponentItemProvider extends DirectiveItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Selector feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addSelectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Component_selector_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Component_selector_feature",
+						"_UI_Component_type"), DartPackage.Literals.COMPONENT__SELECTOR, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns Component.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -125,7 +139,7 @@ public class ComponentItemProvider extends DirectiveItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Component)object).getSelector();
+		String label = ((Component)object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Component_type")
 				: getString("_UI_Component_type") + " " + label;
 	}
@@ -143,6 +157,7 @@ public class ComponentItemProvider extends DirectiveItemProvider {
 
 		switch (notification.getFeatureID(Component.class)) {
 			case DartPackage.COMPONENT__PUBLISH_AS:
+			case DartPackage.COMPONENT__SELECTOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false,
 						true));
 				return;

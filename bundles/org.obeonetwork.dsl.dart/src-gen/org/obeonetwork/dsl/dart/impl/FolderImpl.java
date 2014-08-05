@@ -11,17 +11,13 @@
 package org.obeonetwork.dsl.dart.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.DartPackage;
-import org.obeonetwork.dsl.dart.Element;
 import org.obeonetwork.dsl.dart.Folder;
 
 /**
@@ -270,12 +266,6 @@ public class FolderImpl extends ContainerImpl implements Folder {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Element.class) {
-			switch (derivedFeatureID) {
-				default:
-					return -1;
-			}
-		}
 		if (baseClass == Asset.class) {
 			switch (derivedFeatureID) {
 				case DartPackage.FOLDER__NAME:
@@ -296,12 +286,6 @@ public class FolderImpl extends ContainerImpl implements Folder {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Element.class) {
-			switch (baseFeatureID) {
-				default:
-					return -1;
-			}
-		}
 		if (baseClass == Asset.class) {
 			switch (baseFeatureID) {
 				case DartPackage.ASSET__NAME:

@@ -42,34 +42,34 @@
       <assets
           xsi:type="dart:Class"
           name="bool"
-          partof="//@packages.0/@assets.2/@assets.0"/>
+          partOf="//@packages.0/@assets.2/@assets.0"/>
       <assets
           xsi:type="dart:Class"
           name="double"
-          partof="//@packages.0/@assets.2/@assets.0"/>
+          partOf="//@packages.0/@assets.2/@assets.0"/>
       <assets
           xsi:type="dart:Class"
           name="Function"/>
       <assets
           xsi:type="dart:Class"
           name="int"
-          partof="//@packages.0/@assets.2/@assets.0"/>
+          partOf="//@packages.0/@assets.2/@assets.0"/>
       <assets
           xsi:type="dart:Class"
           name="List"
-          partof="//@packages.0/@assets.2/@assets.0"/>
+          partOf="//@packages.0/@assets.2/@assets.0"/>
       <assets
           xsi:type="dart:Class"
           name="map"
-          partof="//@packages.0/@assets.2/@assets.0"/>
+          partOf="//@packages.0/@assets.2/@assets.0"/>
       <assets
           xsi:type="dart:Class"
           name="Object"
-          partof="//@packages.0/@assets.2/@assets.0"/>
+          partOf="//@packages.0/@assets.2/@assets.0"/>
       <assets
           xsi:type="dart:Class"
           name="String"
-          partof="//@packages.0/@assets.2/@assets.0"/>
+          partOf="//@packages.0/@assets.2/@assets.0"/>
       <assets
           xsi:type="dart:Metadata"
           name="deprecated"/>

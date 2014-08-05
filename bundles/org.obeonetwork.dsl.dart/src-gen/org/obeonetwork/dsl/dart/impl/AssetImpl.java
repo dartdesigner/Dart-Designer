@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.DartPackage;
@@ -31,7 +32,7 @@ import org.obeonetwork.dsl.dart.DartPackage;
  *
  * @generated
  */
-public class AssetImpl extends ElementImpl implements Asset {
+public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 

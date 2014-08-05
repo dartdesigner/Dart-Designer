@@ -16,10 +16,15 @@ import com.google.common.base.Splitter;
 
 import org.eclipse.emf.ecore.EObject;
 import org.obeonetwork.dsl.dart.Class;
+import org.obeonetwork.dsl.dart.Component;
+import org.obeonetwork.dsl.dart.Controller;
+import org.obeonetwork.dsl.dart.Decorator;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Formatter;
 import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Module;
 import org.obeonetwork.dsl.dart.Package;
 import org.obeonetwork.dsl.dart.Parameter;
 import org.obeonetwork.dsl.dart.Variable;
@@ -209,6 +214,76 @@ public class DartNamingServices {
 	public String getNewParameterDefaultName(EObject eObject) {
 		if (eObject instanceof Parameter) {
 			return I18n.getString(I18nKeys.NEW_PARAMETER_NAME);
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the name of the new module.
+	 *
+	 * @param eObject
+	 *            The module
+	 * @return The name of the new module
+	 */
+	public String getNewModuleDefaultName(EObject eObject) {
+		if (eObject instanceof Module) {
+			return I18n.getString(I18nKeys.NEW_MODULE_NAME);
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the name of the new controller.
+	 *
+	 * @param eObject
+	 *            The module
+	 * @return The name of the new controller
+	 */
+	public String getNewControllerDefaultName(EObject eObject) {
+		if (eObject instanceof Controller) {
+			return I18n.getString(I18nKeys.NEW_CONTROLLER_NAME);
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the name of the new component.
+	 *
+	 * @param eObject
+	 *            The module
+	 * @return The name of the new component
+	 */
+	public String getNewComponentDefaultName(EObject eObject) {
+		if (eObject instanceof Component) {
+			return I18n.getString(I18nKeys.NEW_COMPONENT_NAME);
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the name of the new decorator.
+	 *
+	 * @param eObject
+	 *            The module
+	 * @return The name of the new decorator
+	 */
+	public String getNewDecoratorDefaultName(EObject eObject) {
+		if (eObject instanceof Decorator) {
+			return I18n.getString(I18nKeys.NEW_DECORATOR_NAME);
+		}
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns the name of the new decorator.
+	 *
+	 * @param eObject
+	 *            The module
+	 * @return The name of the new decorator
+	 */
+	public String getNewFormatterDefaultName(EObject eObject) {
+		if (eObject instanceof Formatter) {
+			return I18n.getString(I18nKeys.NEW_FORMATTER_NAME);
 		}
 		return ""; //$NON-NLS-1$
 	}

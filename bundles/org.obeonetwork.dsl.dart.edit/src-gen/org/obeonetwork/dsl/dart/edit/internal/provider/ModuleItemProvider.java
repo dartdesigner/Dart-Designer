@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -60,8 +61,24 @@ public class ModuleItemProvider extends PartItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Types feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+						getString("_UI_Module_types_feature"), getString(
+								"_UI_PropertyDescriptor_description", "_UI_Module_types_feature",
+								"_UI_Module_type"), DartPackage.Literals.MODULE__TYPES, true, false, true,
+						null, null, null));
 	}
 
 	/**
@@ -76,7 +93,6 @@ public class ModuleItemProvider extends PartItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DartPackage.Literals.MODULE__TYPES);
 			childrenFeatures.add(DartPackage.Literals.MODULE__ROUTES);
 		}
 		return childrenFeatures;
@@ -129,7 +145,6 @@ public class ModuleItemProvider extends PartItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Module.class)) {
-			case DartPackage.MODULE__TYPES:
 			case DartPackage.MODULE__ROUTES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true,
 						false));
@@ -147,18 +162,6 @@ public class ModuleItemProvider extends PartItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(DartPackage.Literals.MODULE__TYPES,
-				DartFactory.eINSTANCE.createController()));
-
-		newChildDescriptors.add(createChildParameter(DartPackage.Literals.MODULE__TYPES,
-				DartFactory.eINSTANCE.createComponent()));
-
-		newChildDescriptors.add(createChildParameter(DartPackage.Literals.MODULE__TYPES,
-				DartFactory.eINSTANCE.createDecorator()));
-
-		newChildDescriptors.add(createChildParameter(DartPackage.Literals.MODULE__TYPES,
-				DartFactory.eINSTANCE.createFormatter()));
 
 		newChildDescriptors.add(createChildParameter(DartPackage.Literals.MODULE__ROUTES,
 				DartFactory.eINSTANCE.createRoute()));

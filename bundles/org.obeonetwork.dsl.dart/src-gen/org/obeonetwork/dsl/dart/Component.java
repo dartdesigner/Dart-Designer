@@ -26,7 +26,7 @@ package org.obeonetwork.dsl.dart;
  * @model
  * @generated
  */
-public interface Component extends Directive {
+public interface Component extends org.obeonetwork.dsl.dart.Class, AngularType {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -114,5 +114,32 @@ public interface Component extends Directive {
 	 * @generated
 	 */
 	void setTemplate(HTML value);
+
+	/**
+	 * Returns the value of the '<em><b>Selector</b></em>' attribute. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selector</em>' attribute isn't clear, there really should be more of a
+	 * description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Selector</em>' attribute.
+	 * @see #setSelector(String)
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getComponent_Selector()
+	 * @model
+	 * @generated
+	 */
+	String getSelector();
+
+	/**
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Component#getSelector <em>Selector</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Selector</em>' attribute.
+	 * @see #getSelector()
+	 * @generated
+	 */
+	void setSelector(String value);
 
 } // Component

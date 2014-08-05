@@ -25,8 +25,6 @@ import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.DartResource;
 import org.obeonetwork.dsl.dart.Decorator;
-import org.obeonetwork.dsl.dart.Directive;
-import org.obeonetwork.dsl.dart.Element;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Folder;
 import org.obeonetwork.dsl.dart.Formatter;
@@ -63,13 +61,6 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * @generated
 	 */
 	private EClass projectEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass elementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -154,13 +145,6 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * @generated
 	 */
 	private EClass angularTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private EClass directiveEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -354,15 +338,6 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 */
 	public EReference getProject_Packages() {
 		return (EReference)projectEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getElement() {
-		return elementEClass;
 	}
 
 	/**
@@ -739,33 +714,6 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * 
 	 * @generated
 	 */
-	public EReference getAngularType_DartResource() {
-		return (EReference)angularTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EClass getDirective() {
-		return directiveEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getDirective_Selector() {
-		return (EAttribute)directiveEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public EClass getController() {
 		return controllerEClass;
 	}
@@ -777,6 +725,15 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 */
 	public EAttribute getController_PublishAs() {
 		return (EAttribute)controllerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getController_Selector() {
+		return (EAttribute)controllerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -820,8 +777,26 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * 
 	 * @generated
 	 */
+	public EAttribute getComponent_Selector() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getDecorator() {
 		return decoratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getDecorator_Selector() {
+		return (EAttribute)decoratorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -838,7 +813,7 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getFormatter_Name() {
+	public EAttribute getFormatter_FormatterName() {
 		return (EAttribute)formatterEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1351,8 +1326,6 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		createEAttribute(projectEClass, PROJECT__NAME);
 		createEReference(projectEClass, PROJECT__PACKAGES);
 
-		elementEClass = createEClass(ELEMENT);
-
 		assetEClass = createEClass(ASSET);
 		createEAttribute(assetEClass, ASSET__NAME);
 		createEReference(assetEClass, ASSET__CONTAINER);
@@ -1463,23 +1436,22 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		createEReference(moduleEClass, MODULE__ROUTES);
 
 		angularTypeEClass = createEClass(ANGULAR_TYPE);
-		createEReference(angularTypeEClass, ANGULAR_TYPE__DART_RESOURCE);
-
-		directiveEClass = createEClass(DIRECTIVE);
-		createEAttribute(directiveEClass, DIRECTIVE__SELECTOR);
 
 		controllerEClass = createEClass(CONTROLLER);
 		createEAttribute(controllerEClass, CONTROLLER__PUBLISH_AS);
+		createEAttribute(controllerEClass, CONTROLLER__SELECTOR);
 
 		componentEClass = createEClass(COMPONENT);
 		createEAttribute(componentEClass, COMPONENT__PUBLISH_AS);
 		createEReference(componentEClass, COMPONENT__STYLESHEET);
 		createEReference(componentEClass, COMPONENT__TEMPLATE);
+		createEAttribute(componentEClass, COMPONENT__SELECTOR);
 
 		decoratorEClass = createEClass(DECORATOR);
+		createEAttribute(decoratorEClass, DECORATOR__SELECTOR);
 
 		formatterEClass = createEClass(FORMATTER);
-		createEAttribute(formatterEClass, FORMATTER__NAME);
+		createEAttribute(formatterEClass, FORMATTER__FORMATTER_NAME);
 
 		routeEClass = createEClass(ROUTE);
 		createEAttribute(routeEClass, ROUTE__NAME);
@@ -1516,7 +1488,6 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		assetEClass.getESuperTypes().add(this.getElement());
 		folderEClass.getESuperTypes().add(this.getContainer());
 		folderEClass.getESuperTypes().add(this.getAsset());
 		packageEClass.getESuperTypes().add(this.getContainer());
@@ -1531,11 +1502,13 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		htmlEClass.getESuperTypes().add(this.getAsset());
 		stylesheetEClass.getESuperTypes().add(this.getAsset());
 		moduleEClass.getESuperTypes().add(this.getPart());
-		angularTypeEClass.getESuperTypes().add(this.getElement());
-		directiveEClass.getESuperTypes().add(this.getAngularType());
-		controllerEClass.getESuperTypes().add(this.getDirective());
-		componentEClass.getESuperTypes().add(this.getDirective());
-		decoratorEClass.getESuperTypes().add(this.getDirective());
+		controllerEClass.getESuperTypes().add(this.getClass_());
+		controllerEClass.getESuperTypes().add(this.getAngularType());
+		componentEClass.getESuperTypes().add(this.getClass_());
+		componentEClass.getESuperTypes().add(this.getAngularType());
+		decoratorEClass.getESuperTypes().add(this.getClass_());
+		decoratorEClass.getESuperTypes().add(this.getAngularType());
+		formatterEClass.getESuperTypes().add(this.getClass_());
 		formatterEClass.getESuperTypes().add(this.getAngularType());
 
 		// Initialize classes, features, and operations; add parameters
@@ -1547,9 +1520,6 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		initEReference(getProject_Packages(), this.getPackage(), this.getPackage_Project(), "packages", null,
 				0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(assetEClass, Asset.class, "Asset", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1791,7 +1761,7 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 
 		initEClass(htmlEClass, org.obeonetwork.dsl.dart.HTML.class, "HTML", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHTML_Uses(), this.getElement(), null, "uses", null, 0, -1,
+		initEReference(getHTML_Uses(), this.getAsset(), null, "uses", null, 0, -1,
 				org.obeonetwork.dsl.dart.HTML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1806,28 +1776,22 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 
 		initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModule_Types(), this.getAngularType(), null, "types", null, 0, 1, Module.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getModule_Types(), this.getAngularType(), null, "types", null, 0, -1, Module.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModule_Routes(), this.getRoute(), null, "routes", null, 0, -1, Module.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(angularTypeEClass, AngularType.class, "AngularType", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(angularTypeEClass, AngularType.class, "AngularType", IS_ABSTRACT, IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAngularType_DartResource(), this.getDartResource(), null, "dartResource", null, 0,
-				1, AngularType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(directiveEClass, Directive.class, "Directive", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDirective_Selector(), ecorePackage.getEString(), "selector", null, 0, 1,
-				Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getController_PublishAs(), ecorePackage.getEString(), "publishAs", null, 0, 1,
+				Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getController_Selector(), ecorePackage.getEString(), "selector", null, 0, 1,
 				Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1842,15 +1806,21 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		initEReference(getComponent_Template(), this.getHTML(), null, "template", null, 0, 1,
 				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_Selector(), ecorePackage.getEString(), "selector", null, 0, 1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(decoratorEClass, Decorator.class, "Decorator", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDecorator_Selector(), ecorePackage.getEString(), "selector", null, 0, 1,
+				Decorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formatterEClass, Formatter.class, "Formatter", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFormatter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Formatter.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEAttribute(getFormatter_FormatterName(), ecorePackage.getEString(), "formatterName", null, 0, 1,
+				Formatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(routeEClass, Route.class, "Route", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

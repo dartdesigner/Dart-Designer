@@ -13,12 +13,17 @@ package org.obeonetwork.dsl.dart.design.internal.services;
 import org.eclipse.emf.ecore.EObject;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Class;
+import org.obeonetwork.dsl.dart.Component;
 import org.obeonetwork.dsl.dart.Container;
+import org.obeonetwork.dsl.dart.Controller;
 import org.obeonetwork.dsl.dart.DartResource;
+import org.obeonetwork.dsl.dart.Decorator;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Formatter;
 import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Module;
 import org.obeonetwork.dsl.dart.Stylesheet;
 
 /**
@@ -147,6 +152,61 @@ public class DartTypeServices {
 	 */
 	public boolean isStylesheet(EObject eObject) {
 		return eObject instanceof Stylesheet;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart module.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart module
+	 */
+	public boolean isModule(EObject eObject) {
+		return eObject instanceof Module;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart controller.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart controller
+	 */
+	public boolean isController(EObject eObject) {
+		return eObject instanceof Controller;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart component.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart component
+	 */
+	public boolean isComponent(EObject eObject) {
+		return eObject instanceof Component;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart decorator.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart decorator
+	 */
+	public boolean isDecorator(EObject eObject) {
+		return eObject instanceof Decorator;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart formatter.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart formatter
+	 */
+	public boolean isFormatter(EObject eObject) {
+		return eObject instanceof Formatter;
 	}
 
 }

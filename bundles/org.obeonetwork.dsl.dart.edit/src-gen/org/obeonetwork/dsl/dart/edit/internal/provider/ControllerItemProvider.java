@@ -30,7 +30,7 @@ import org.obeonetwork.dsl.dart.DartPackage;
  * 
  * @generated
  */
-public class ControllerItemProvider extends DirectiveItemProvider {
+public class ControllerItemProvider extends ClassItemProvider {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -60,6 +60,7 @@ public class ControllerItemProvider extends DirectiveItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPublishAsPropertyDescriptor(object);
+			addSelectorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,6 +81,19 @@ public class ControllerItemProvider extends DirectiveItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Selector feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addSelectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
+				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Controller_selector_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Controller_selector_feature",
+						"_UI_Controller_type"), DartPackage.Literals.CONTROLLER__SELECTOR, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns Controller.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -96,7 +110,7 @@ public class ControllerItemProvider extends DirectiveItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Controller)object).getSelector();
+		String label = ((Controller)object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Controller_type")
 				: getString("_UI_Controller_type") + " " + label;
 	}
@@ -114,6 +128,7 @@ public class ControllerItemProvider extends DirectiveItemProvider {
 
 		switch (notification.getFeatureID(Controller.class)) {
 			case DartPackage.CONTROLLER__PUBLISH_AS:
+			case DartPackage.CONTROLLER__SELECTOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false,
 						true));
 				return;
