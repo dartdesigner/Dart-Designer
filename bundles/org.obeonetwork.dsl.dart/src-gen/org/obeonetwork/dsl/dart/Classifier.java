@@ -20,7 +20,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  * <li>{@link org.obeonetwork.dsl.dart.Classifier#getFields <em>Fields</em>}</li>
  * <li>{@link org.obeonetwork.dsl.dart.Classifier#getMetadata <em>Metadata</em>}</li>
- * <li>{@link org.obeonetwork.dsl.dart.Classifier#getPartof <em>Partof</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface Classifier extends DartResource {
+public interface Classifier extends Part {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -67,34 +66,5 @@ public interface Classifier extends DartResource {
 	 * @generated
 	 */
 	EList<Metadata> getMetadata();
-
-	/**
-	 * Returns the value of the '<em><b>Partof</b></em>' reference. It is bidirectional and its opposite is '
-	 * {@link org.obeonetwork.dsl.dart.Library#getParts <em>Parts</em>}'. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Partof</em>' reference isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Partof</em>' reference.
-	 * @see #setPartof(Library)
-	 * @see org.obeonetwork.dsl.dart.DartPackage#getClassifier_Partof()
-	 * @see org.obeonetwork.dsl.dart.Library#getParts
-	 * @model opposite="parts"
-	 * @generated
-	 */
-	Library getPartof();
-
-	/**
-	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Classifier#getPartof <em>Partof</em>}'
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @param value
-	 *            the new value of the '<em>Partof</em>' reference.
-	 * @see #getPartof()
-	 * @generated
-	 */
-	void setPartof(Library value);
 
 } // Classifier

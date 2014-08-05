@@ -38,7 +38,8 @@ public interface Container extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Assets</b></em>' containment reference list. The list contents are of
-	 * type {@link org.obeonetwork.dsl.dart.Asset}. <!-- begin-user-doc -->
+	 * type {@link org.obeonetwork.dsl.dart.Asset}. It is bidirectional and its opposite is '
+	 * {@link org.obeonetwork.dsl.dart.Asset#getContainer <em>Container</em>}'. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Assets</em>' containment reference list isn't clear, there really should be
 	 * more of a description here...
@@ -47,7 +48,8 @@ public interface Container extends EObject {
 	 * 
 	 * @return the value of the '<em>Assets</em>' containment reference list.
 	 * @see org.obeonetwork.dsl.dart.DartPackage#getContainer_Assets()
-	 * @model containment="true"
+	 * @see org.obeonetwork.dsl.dart.Asset#getContainer
+	 * @model opposite="container" containment="true"
 	 * @generated
 	 */
 	EList<Asset> getAssets();

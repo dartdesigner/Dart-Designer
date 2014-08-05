@@ -13,21 +13,31 @@ package org.obeonetwork.dsl.dart.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.obeonetwork.dsl.dart.AngularType;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Classifier;
+import org.obeonetwork.dsl.dart.Component;
 import org.obeonetwork.dsl.dart.Constructor;
 import org.obeonetwork.dsl.dart.Container;
+import org.obeonetwork.dsl.dart.Controller;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.DartResource;
+import org.obeonetwork.dsl.dart.Decorator;
+import org.obeonetwork.dsl.dart.Directive;
+import org.obeonetwork.dsl.dart.Element;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Formatter;
 import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Module;
 import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Part;
 import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Route;
 import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
@@ -97,9 +107,18 @@ public class DartSwitch<T> extends Switch<T> {
 					result = defaultCase(theEObject);
 				return result;
 			}
+			case DartPackage.ELEMENT: {
+				Element element = (Element)theEObject;
+				T result = caseElement(element);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
 			case DartPackage.ASSET: {
 				Asset asset = (Asset)theEObject;
 				T result = caseAsset(asset);
+				if (result == null)
+					result = caseElement(asset);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -119,6 +138,8 @@ public class DartSwitch<T> extends Switch<T> {
 				if (result == null)
 					result = caseAsset(folder);
 				if (result == null)
+					result = caseElement(folder);
+				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
 			}
@@ -136,6 +157,8 @@ public class DartSwitch<T> extends Switch<T> {
 				T result = caseDartResource(dartResource);
 				if (result == null)
 					result = caseAsset(dartResource);
+				if (result == null)
+					result = caseElement(dartResource);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -169,6 +192,21 @@ public class DartSwitch<T> extends Switch<T> {
 				if (result == null)
 					result = caseAsset(library);
 				if (result == null)
+					result = caseElement(library);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.PART: {
+				Part part = (Part)theEObject;
+				T result = casePart(part);
+				if (result == null)
+					result = caseDartResource(part);
+				if (result == null)
+					result = caseAsset(part);
+				if (result == null)
+					result = caseElement(part);
+				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,9 +214,13 @@ public class DartSwitch<T> extends Switch<T> {
 				Classifier classifier = (Classifier)theEObject;
 				T result = caseClassifier(classifier);
 				if (result == null)
+					result = casePart(classifier);
+				if (result == null)
 					result = caseDartResource(classifier);
 				if (result == null)
 					result = caseAsset(classifier);
+				if (result == null)
+					result = caseElement(classifier);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -189,9 +231,13 @@ public class DartSwitch<T> extends Switch<T> {
 				if (result == null)
 					result = caseClassifier(metadata);
 				if (result == null)
+					result = casePart(metadata);
+				if (result == null)
 					result = caseDartResource(metadata);
 				if (result == null)
 					result = caseAsset(metadata);
+				if (result == null)
+					result = caseElement(metadata);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -204,9 +250,13 @@ public class DartSwitch<T> extends Switch<T> {
 				if (result == null)
 					result = caseType(class_);
 				if (result == null)
+					result = casePart(class_);
+				if (result == null)
 					result = caseDartResource(class_);
 				if (result == null)
 					result = caseAsset(class_);
+				if (result == null)
+					result = caseElement(class_);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -254,6 +304,8 @@ public class DartSwitch<T> extends Switch<T> {
 				if (result == null)
 					result = caseAsset(html);
 				if (result == null)
+					result = caseElement(html);
+				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
 			}
@@ -262,6 +314,100 @@ public class DartSwitch<T> extends Switch<T> {
 				T result = caseStylesheet(stylesheet);
 				if (result == null)
 					result = caseAsset(stylesheet);
+				if (result == null)
+					result = caseElement(stylesheet);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.MODULE: {
+				Module module = (Module)theEObject;
+				T result = caseModule(module);
+				if (result == null)
+					result = casePart(module);
+				if (result == null)
+					result = caseDartResource(module);
+				if (result == null)
+					result = caseAsset(module);
+				if (result == null)
+					result = caseElement(module);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.ANGULAR_TYPE: {
+				AngularType angularType = (AngularType)theEObject;
+				T result = caseAngularType(angularType);
+				if (result == null)
+					result = caseElement(angularType);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.DIRECTIVE: {
+				Directive directive = (Directive)theEObject;
+				T result = caseDirective(directive);
+				if (result == null)
+					result = caseAngularType(directive);
+				if (result == null)
+					result = caseElement(directive);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.CONTROLLER: {
+				Controller controller = (Controller)theEObject;
+				T result = caseController(controller);
+				if (result == null)
+					result = caseDirective(controller);
+				if (result == null)
+					result = caseAngularType(controller);
+				if (result == null)
+					result = caseElement(controller);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.COMPONENT: {
+				Component component = (Component)theEObject;
+				T result = caseComponent(component);
+				if (result == null)
+					result = caseDirective(component);
+				if (result == null)
+					result = caseAngularType(component);
+				if (result == null)
+					result = caseElement(component);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.DECORATOR: {
+				Decorator decorator = (Decorator)theEObject;
+				T result = caseDecorator(decorator);
+				if (result == null)
+					result = caseDirective(decorator);
+				if (result == null)
+					result = caseAngularType(decorator);
+				if (result == null)
+					result = caseElement(decorator);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.FORMATTER: {
+				Formatter formatter = (Formatter)theEObject;
+				T result = caseFormatter(formatter);
+				if (result == null)
+					result = caseAngularType(formatter);
+				if (result == null)
+					result = caseElement(formatter);
+				if (result == null)
+					result = defaultCase(theEObject);
+				return result;
+			}
+			case DartPackage.ROUTE: {
+				Route route = (Route)theEObject;
+				T result = caseRoute(route);
 				if (result == null)
 					result = defaultCase(theEObject);
 				return result;
@@ -283,6 +429,21 @@ public class DartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProject(Project object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElement(Element object) {
 		return null;
 	}
 
@@ -437,6 +598,126 @@ public class DartSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Module</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModule(Module object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Angular Type</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Angular Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAngularType(AngularType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Directive</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Directive</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDirective(Directive object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Controller</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Controller</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseController(Controller object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponent(Component object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Decorator</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Decorator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDecorator(Decorator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Formatter</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Formatter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFormatter(Formatter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Route</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Route</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRoute(Route object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Type</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
@@ -463,6 +744,21 @@ public class DartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLibrary(Library object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Part</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Part</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePart(Part object) {
 		return null;
 	}
 

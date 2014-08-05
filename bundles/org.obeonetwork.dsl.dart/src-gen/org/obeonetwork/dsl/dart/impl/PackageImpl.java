@@ -14,15 +14,19 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.obeonetwork.dsl.dart.DartPackage;
+import org.obeonetwork.dsl.dart.Project;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Package</b></em>'. <!-- end-user-doc
@@ -176,6 +180,96 @@ public class PackageImpl extends ContainerImpl implements org.obeonetwork.dsl.da
 	 * 
 	 * @generated
 	 */
+	public Project getProject() {
+		if (eContainerFeatureID() != DartPackage.PACKAGE__PROJECT)
+			return null;
+		return (Project)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public NotificationChain basicSetProject(Project newProject, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newProject, DartPackage.PACKAGE__PROJECT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setProject(Project newProject) {
+		if (newProject != eInternalContainer()
+				|| (eContainerFeatureID() != DartPackage.PACKAGE__PROJECT && newProject != null)) {
+			if (EcoreUtil.isAncestor(this, newProject))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newProject != null)
+				msgs = ((InternalEObject)newProject).eInverseAdd(this, DartPackage.PROJECT__PACKAGES,
+						Project.class, msgs);
+			msgs = basicSetProject(newProject, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DartPackage.PACKAGE__PROJECT, newProject,
+					newProject));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DartPackage.PACKAGE__PROJECT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetProject((Project)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DartPackage.PACKAGE__PROJECT:
+				return basicSetProject(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case DartPackage.PACKAGE__PROJECT:
+				return eInternalContainer().eInverseRemove(this, DartPackage.PROJECT__PACKAGES,
+						Project.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -185,6 +279,8 @@ public class PackageImpl extends ContainerImpl implements org.obeonetwork.dsl.da
 				return getLicense();
 			case DartPackage.PACKAGE__DEPENDENCIES:
 				return getDependencies();
+			case DartPackage.PACKAGE__PROJECT:
+				return getProject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,6 +304,9 @@ public class PackageImpl extends ContainerImpl implements org.obeonetwork.dsl.da
 				getDependencies().clear();
 				getDependencies().addAll((Collection<? extends org.obeonetwork.dsl.dart.Package>)newValue);
 				return;
+			case DartPackage.PACKAGE__PROJECT:
+				setProject((Project)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -229,6 +328,9 @@ public class PackageImpl extends ContainerImpl implements org.obeonetwork.dsl.da
 			case DartPackage.PACKAGE__DEPENDENCIES:
 				getDependencies().clear();
 				return;
+			case DartPackage.PACKAGE__PROJECT:
+				setProject((Project)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -247,6 +349,8 @@ public class PackageImpl extends ContainerImpl implements org.obeonetwork.dsl.da
 				return LICENSE_EDEFAULT == null ? license != null : !LICENSE_EDEFAULT.equals(license);
 			case DartPackage.PACKAGE__DEPENDENCIES:
 				return dependencies != null && !dependencies.isEmpty();
+			case DartPackage.PACKAGE__PROJECT:
+				return getProject() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -112,6 +112,33 @@ public interface DartPackage extends EPackage {
 	int PROJECT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ElementImpl <em>Element</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.ElementImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getElement()
+	 * @generated
+	 */
+	int ELEMENT = 1;
+
+	/**
+	 * The number of structural features of the '<em>Element</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Element</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.Asset <em>Asset</em>}' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -119,7 +146,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getAsset()
 	 * @generated
 	 */
-	int ASSET = 1;
+	int ASSET = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -127,7 +154,16 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET__NAME = 0;
+	int ASSET__NAME = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET__CONTAINER = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Asset</em>' class. <!-- begin-user-doc --> <!--
@@ -136,7 +172,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_FEATURE_COUNT = 1;
+	int ASSET_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Asset</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -144,7 +180,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_OPERATION_COUNT = 0;
+	int ASSET_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ContainerImpl <em>Container</em>}'
@@ -154,7 +190,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getContainer()
 	 * @generated
 	 */
-	int CONTAINER = 2;
+	int CONTAINER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Assets</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -191,7 +227,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getFolder()
 	 * @generated
 	 */
-	int FOLDER = 3;
+	int FOLDER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Assets</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -211,13 +247,22 @@ public interface DartPackage extends EPackage {
 	int FOLDER__NAME = CONTAINER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER__CONTAINER = CONTAINER_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Folder</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int FOLDER_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 1;
+	int FOLDER_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Folder</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -235,7 +280,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getPackage()
 	 * @generated
 	 */
-	int PACKAGE = 4;
+	int PACKAGE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Assets</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -273,13 +318,22 @@ public interface DartPackage extends EPackage {
 	int PACKAGE__DEPENDENCIES = CONTAINER_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Project</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__PROJECT = CONTAINER_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Package</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 3;
+	int PACKAGE_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Package</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -297,7 +351,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getDartResource()
 	 * @generated
 	 */
-	int DART_RESOURCE = 5;
+	int DART_RESOURCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -306,6 +360,15 @@ public interface DartPackage extends EPackage {
 	 * @ordered
 	 */
 	int DART_RESOURCE__NAME = ASSET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DART_RESOURCE__CONTAINER = ASSET__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -360,7 +423,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getImport()
 	 * @generated
 	 */
-	int IMPORT = 6;
+	int IMPORT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
@@ -431,7 +494,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getExport()
 	 * @generated
 	 */
-	int EXPORT = 7;
+	int EXPORT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
@@ -494,7 +557,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 8;
+	int TYPE = 9;
 
 	/**
 	 * The number of structural features of the '<em>Type</em>' class. <!-- begin-user-doc --> <!--
@@ -521,7 +584,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getTypedef()
 	 * @generated
 	 */
-	int TYPEDEF = 17;
+	int TYPEDEF = 19;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.LibraryImpl <em>Library</em>}' class.
@@ -531,7 +594,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getLibrary()
 	 * @generated
 	 */
-	int LIBRARY = 9;
+	int LIBRARY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -540,6 +603,15 @@ public interface DartPackage extends EPackage {
 	 * @ordered
 	 */
 	int LIBRARY__NAME = DART_RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LIBRARY__CONTAINER = DART_RESOURCE__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -631,14 +703,14 @@ public interface DartPackage extends EPackage {
 	int LIBRARY_OPERATION_COUNT = DART_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ClassifierImpl <em>Classifier</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.PartImpl <em>Part</em>}' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see org.obeonetwork.dsl.dart.impl.ClassifierImpl
-	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getClassifier()
+	 * @see org.obeonetwork.dsl.dart.impl.PartImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getPart()
 	 * @generated
 	 */
-	int CLASSIFIER = 10;
+	int PART = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -646,7 +718,16 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__NAME = DART_RESOURCE__NAME;
+	int PART__NAME = DART_RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PART__CONTAINER = DART_RESOURCE__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -655,7 +736,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__DOCUMENTATION = DART_RESOURCE__DOCUMENTATION;
+	int PART__DOCUMENTATION = DART_RESOURCE__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -664,7 +745,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__IMPORTS = DART_RESOURCE__IMPORTS;
+	int PART__IMPORTS = DART_RESOURCE__IMPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Exports</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -673,7 +754,96 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__EXPORTS = DART_RESOURCE__EXPORTS;
+	int PART__EXPORTS = DART_RESOURCE__EXPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PART__PART_OF = DART_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Part</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PART_FEATURE_COUNT = DART_RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Part</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int PART_OPERATION_COUNT = DART_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ClassifierImpl <em>Classifier</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.ClassifierImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getClassifier()
+	 * @generated
+	 */
+	int CLASSIFIER = 12;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__NAME = PART__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__CONTAINER = PART__CONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__DOCUMENTATION = PART__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__IMPORTS = PART__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Exports</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__EXPORTS = PART__EXPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__PART_OF = PART__PART_OF;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -682,7 +852,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__FIELDS = DART_RESOURCE_FEATURE_COUNT + 0;
+	int CLASSIFIER__FIELDS = PART_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Metadata</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -691,16 +861,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__METADATA = DART_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Partof</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFIER__PARTOF = DART_RESOURCE_FEATURE_COUNT + 2;
+	int CLASSIFIER__METADATA = PART_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Classifier</em>' class. <!-- begin-user-doc --> <!--
@@ -709,7 +870,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_FEATURE_COUNT = DART_RESOURCE_FEATURE_COUNT + 3;
+	int CLASSIFIER_FEATURE_COUNT = PART_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Classifier</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
@@ -718,7 +879,7 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_OPERATION_COUNT = DART_RESOURCE_OPERATION_COUNT + 0;
+	int CLASSIFIER_OPERATION_COUNT = PART_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.MetadataImpl <em>Metadata</em>}'
@@ -728,7 +889,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getMetadata()
 	 * @generated
 	 */
-	int METADATA = 11;
+	int METADATA = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -737,6 +898,15 @@ public interface DartPackage extends EPackage {
 	 * @ordered
 	 */
 	int METADATA__NAME = CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA__CONTAINER = CLASSIFIER__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -766,6 +936,15 @@ public interface DartPackage extends EPackage {
 	int METADATA__EXPORTS = CLASSIFIER__EXPORTS;
 
 	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA__PART_OF = CLASSIFIER__PART_OF;
+
+	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
@@ -782,15 +961,6 @@ public interface DartPackage extends EPackage {
 	 * @ordered
 	 */
 	int METADATA__METADATA = CLASSIFIER__METADATA;
-
-	/**
-	 * The feature id for the '<em><b>Partof</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int METADATA__PARTOF = CLASSIFIER__PARTOF;
 
 	/**
 	 * The number of structural features of the '<em>Metadata</em>' class. <!-- begin-user-doc --> <!--
@@ -818,7 +988,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 12;
+	int CLASS = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -827,6 +997,15 @@ public interface DartPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASS__NAME = CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__CONTAINER = CLASSIFIER__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -856,6 +1035,15 @@ public interface DartPackage extends EPackage {
 	int CLASS__EXPORTS = CLASSIFIER__EXPORTS;
 
 	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__PART_OF = CLASSIFIER__PART_OF;
+
+	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
@@ -872,15 +1060,6 @@ public interface DartPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASS__METADATA = CLASSIFIER__METADATA;
-
-	/**
-	 * The feature id for the '<em><b>Partof</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__PARTOF = CLASSIFIER__PARTOF;
 
 	/**
 	 * The feature id for the '<em><b>Abstract</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -961,7 +1140,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 13;
+	int VARIABLE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1057,7 +1236,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getConstructor()
 	 * @generated
 	 */
-	int CONSTRUCTOR = 14;
+	int CONSTRUCTOR = 16;
 
 	/**
 	 * The feature id for the '<em><b>Constant</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1111,7 +1290,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getFunction()
 	 * @generated
 	 */
-	int FUNCTION = 15;
+	int FUNCTION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1208,7 +1387,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 16;
+	int PARAMETER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1338,7 +1517,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getHTML()
 	 * @generated
 	 */
-	int HTML = 18;
+	int HTML = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1347,6 +1526,15 @@ public interface DartPackage extends EPackage {
 	 * @ordered
 	 */
 	int HTML__NAME = ASSET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int HTML__CONTAINER = ASSET__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Uses</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1382,7 +1570,7 @@ public interface DartPackage extends EPackage {
 	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getStylesheet()
 	 * @generated
 	 */
-	int STYLESHEET = 19;
+	int STYLESHEET = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1391,6 +1579,15 @@ public interface DartPackage extends EPackage {
 	 * @ordered
 	 */
 	int STYLESHEET__NAME = ASSET__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int STYLESHEET__CONTAINER = ASSET__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -1429,6 +1626,466 @@ public interface DartPackage extends EPackage {
 	int STYLESHEET_OPERATION_COUNT = ASSET_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ModuleImpl <em>Module</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.ModuleImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getModule()
+	 * @generated
+	 */
+	int MODULE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE__NAME = PART__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE__CONTAINER = PART__CONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE__DOCUMENTATION = PART__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE__IMPORTS = PART__IMPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Exports</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE__EXPORTS = PART__EXPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE__PART_OF = PART__PART_OF;
+
+	/**
+	 * The feature id for the '<em><b>Types</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE__TYPES = PART_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Routes</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE__ROUTES = PART_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Module</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE_FEATURE_COUNT = PART_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Module</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE_OPERATION_COUNT = PART_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.AngularTypeImpl <em>Angular Type</em>}
+	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.AngularTypeImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getAngularType()
+	 * @generated
+	 */
+	int ANGULAR_TYPE = 23;
+
+	/**
+	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ANGULAR_TYPE__DART_RESOURCE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Angular Type</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ANGULAR_TYPE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Angular Type</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ANGULAR_TYPE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.DirectiveImpl <em>Directive</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.DirectiveImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getDirective()
+	 * @generated
+	 */
+	int DIRECTIVE = 24;
+
+	/**
+	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTIVE__DART_RESOURCE = ANGULAR_TYPE__DART_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Selector</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTIVE__SELECTOR = ANGULAR_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Directive</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTIVE_FEATURE_COUNT = ANGULAR_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Directive</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTIVE_OPERATION_COUNT = ANGULAR_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ControllerImpl <em>Controller</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.ControllerImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getController()
+	 * @generated
+	 */
+	int CONTROLLER = 25;
+
+	/**
+	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__DART_RESOURCE = DIRECTIVE__DART_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Selector</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__SELECTOR = DIRECTIVE__SELECTOR;
+
+	/**
+	 * The feature id for the '<em><b>Publish As</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__PUBLISH_AS = DIRECTIVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Controller</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Controller</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER_OPERATION_COUNT = DIRECTIVE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.ComponentImpl <em>Component</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.ComponentImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getComponent()
+	 * @generated
+	 */
+	int COMPONENT = 26;
+
+	/**
+	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__DART_RESOURCE = DIRECTIVE__DART_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Selector</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__SELECTOR = DIRECTIVE__SELECTOR;
+
+	/**
+	 * The feature id for the '<em><b>Publish As</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__PUBLISH_AS = DIRECTIVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Stylesheet</b></em>' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__STYLESHEET = DIRECTIVE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Template</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__TEMPLATE = DIRECTIVE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Component</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Component</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_OPERATION_COUNT = DIRECTIVE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.DecoratorImpl <em>Decorator</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.DecoratorImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getDecorator()
+	 * @generated
+	 */
+	int DECORATOR = 27;
+
+	/**
+	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATOR__DART_RESOURCE = DIRECTIVE__DART_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Selector</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATOR__SELECTOR = DIRECTIVE__SELECTOR;
+
+	/**
+	 * The number of structural features of the '<em>Decorator</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATOR_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Decorator</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATOR_OPERATION_COUNT = DIRECTIVE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.FormatterImpl <em>Formatter</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.FormatterImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getFormatter()
+	 * @generated
+	 */
+	int FORMATTER = 28;
+
+	/**
+	 * The feature id for the '<em><b>Dart Resource</b></em>' reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int FORMATTER__DART_RESOURCE = ANGULAR_TYPE__DART_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int FORMATTER__NAME = ANGULAR_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Formatter</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int FORMATTER_FEATURE_COUNT = ANGULAR_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Formatter</em>' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int FORMATTER_OPERATION_COUNT = ANGULAR_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.dart.impl.RouteImpl <em>Route</em>}' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.obeonetwork.dsl.dart.impl.RouteImpl
+	 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getRoute()
+	 * @generated
+	 */
+	int ROUTE = 29;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE__PATH = 1;
+
+	/**
+	 * The feature id for the '<em><b>View</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE__VIEW = 2;
+
+	/**
+	 * The feature id for the '<em><b>Extends</b></em>' reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE__EXTENDS = 3;
+
+	/**
+	 * The number of structural features of the '<em>Route</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Route</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Project <em>Project</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1462,6 +2119,16 @@ public interface DartPackage extends EPackage {
 	EReference getProject_Packages();
 
 	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Element <em>Element</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Element</em>'.
+	 * @see org.obeonetwork.dsl.dart.Element
+	 * @generated
+	 */
+	EClass getElement();
+
+	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Asset <em>Asset</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1481,6 +2148,18 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAsset_Name();
+
+	/**
+	 * Returns the meta object for the container reference '
+	 * {@link org.obeonetwork.dsl.dart.Asset#getContainer <em>Container</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the container reference '<em>Container</em>'.
+	 * @see org.obeonetwork.dsl.dart.Asset#getContainer()
+	 * @see #getAsset()
+	 * @generated
+	 */
+	EReference getAsset_Container();
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Container <em>Container</em>}'. <!--
@@ -1557,6 +2236,18 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPackage_Dependencies();
+
+	/**
+	 * Returns the meta object for the container reference '
+	 * {@link org.obeonetwork.dsl.dart.Package#getProject <em>Project</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the container reference '<em>Project</em>'.
+	 * @see org.obeonetwork.dsl.dart.Package#getProject()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_Project();
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.DartResource <em>Resource</em>}'.
@@ -1843,6 +2534,230 @@ public interface DartPackage extends EPackage {
 	EAttribute getStylesheet_Partial();
 
 	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Module <em>Module</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Module</em>'.
+	 * @see org.obeonetwork.dsl.dart.Module
+	 * @generated
+	 */
+	EClass getModule();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.obeonetwork.dsl.dart.Module#getTypes
+	 * <em>Types</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference '<em>Types</em>'.
+	 * @see org.obeonetwork.dsl.dart.Module#getTypes()
+	 * @see #getModule()
+	 * @generated
+	 */
+	EReference getModule_Types();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.obeonetwork.dsl.dart.Module#getRoutes <em>Routes</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Routes</em>'.
+	 * @see org.obeonetwork.dsl.dart.Module#getRoutes()
+	 * @see #getModule()
+	 * @generated
+	 */
+	EReference getModule_Routes();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.AngularType <em>Angular Type</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Angular Type</em>'.
+	 * @see org.obeonetwork.dsl.dart.AngularType
+	 * @generated
+	 */
+	EClass getAngularType();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.AngularType#getDartResource
+	 * <em>Dart Resource</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Dart Resource</em>'.
+	 * @see org.obeonetwork.dsl.dart.AngularType#getDartResource()
+	 * @see #getAngularType()
+	 * @generated
+	 */
+	EReference getAngularType_DartResource();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Directive <em>Directive</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Directive</em>'.
+	 * @see org.obeonetwork.dsl.dart.Directive
+	 * @generated
+	 */
+	EClass getDirective();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Directive#getSelector
+	 * <em>Selector</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Selector</em>'.
+	 * @see org.obeonetwork.dsl.dart.Directive#getSelector()
+	 * @see #getDirective()
+	 * @generated
+	 */
+	EAttribute getDirective_Selector();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Controller <em>Controller</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Controller</em>'.
+	 * @see org.obeonetwork.dsl.dart.Controller
+	 * @generated
+	 */
+	EClass getController();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Controller#getPublishAs
+	 * <em>Publish As</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Publish As</em>'.
+	 * @see org.obeonetwork.dsl.dart.Controller#getPublishAs()
+	 * @see #getController()
+	 * @generated
+	 */
+	EAttribute getController_PublishAs();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Component <em>Component</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Component</em>'.
+	 * @see org.obeonetwork.dsl.dart.Component
+	 * @generated
+	 */
+	EClass getComponent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Component#getPublishAs
+	 * <em>Publish As</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Publish As</em>'.
+	 * @see org.obeonetwork.dsl.dart.Component#getPublishAs()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_PublishAs();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Component#getStylesheet
+	 * <em>Stylesheet</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Stylesheet</em>'.
+	 * @see org.obeonetwork.dsl.dart.Component#getStylesheet()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Stylesheet();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Component#getTemplate
+	 * <em>Template</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Template</em>'.
+	 * @see org.obeonetwork.dsl.dart.Component#getTemplate()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Template();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Decorator <em>Decorator</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Decorator</em>'.
+	 * @see org.obeonetwork.dsl.dart.Decorator
+	 * @generated
+	 */
+	EClass getDecorator();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Formatter <em>Formatter</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Formatter</em>'.
+	 * @see org.obeonetwork.dsl.dart.Formatter
+	 * @generated
+	 */
+	EClass getFormatter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Formatter#getName
+	 * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.obeonetwork.dsl.dart.Formatter#getName()
+	 * @see #getFormatter()
+	 * @generated
+	 */
+	EAttribute getFormatter_Name();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Route <em>Route</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Route</em>'.
+	 * @see org.obeonetwork.dsl.dart.Route
+	 * @generated
+	 */
+	EClass getRoute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Route#getName <em>Name</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.obeonetwork.dsl.dart.Route#getName()
+	 * @see #getRoute()
+	 * @generated
+	 */
+	EAttribute getRoute_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.dart.Route#getPath <em>Path</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see org.obeonetwork.dsl.dart.Route#getPath()
+	 * @see #getRoute()
+	 * @generated
+	 */
+	EAttribute getRoute_Path();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Route#getView <em>View</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>View</em>'.
+	 * @see org.obeonetwork.dsl.dart.Route#getView()
+	 * @see #getRoute()
+	 * @generated
+	 */
+	EReference getRoute_View();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Route#getExtends
+	 * <em>Extends</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Extends</em>'.
+	 * @see org.obeonetwork.dsl.dart.Route#getExtends()
+	 * @see #getRoute()
+	 * @generated
+	 */
+	EReference getRoute_Extends();
+
+	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Type <em>Type</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1921,6 +2836,27 @@ public interface DartPackage extends EPackage {
 	EReference getLibrary_Functions();
 
 	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Part <em>Part</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Part</em>'.
+	 * @see org.obeonetwork.dsl.dart.Part
+	 * @generated
+	 */
+	EClass getPart();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Part#getPartOf
+	 * <em>Part Of</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Part Of</em>'.
+	 * @see org.obeonetwork.dsl.dart.Part#getPartOf()
+	 * @see #getPart()
+	 * @generated
+	 */
+	EReference getPart_PartOf();
+
+	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Classifier <em>Classifier</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1952,17 +2888,6 @@ public interface DartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getClassifier_Metadata();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.dart.Classifier#getPartof
-	 * <em>Partof</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the reference '<em>Partof</em>'.
-	 * @see org.obeonetwork.dsl.dart.Classifier#getPartof()
-	 * @see #getClassifier()
-	 * @generated
-	 */
-	EReference getClassifier_Partof();
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.dart.Metadata <em>Metadata</em>}'. <!--
@@ -2408,6 +3333,16 @@ public interface DartPackage extends EPackage {
 		EReference PROJECT__PACKAGES = eINSTANCE.getProject_Packages();
 
 		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ElementImpl <em>Element</em>}
+		 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.ElementImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getElement()
+		 * @generated
+		 */
+		EClass ELEMENT = eINSTANCE.getElement();
+
+		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.Asset <em>Asset</em>}' class. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -2424,6 +3359,14 @@ public interface DartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ASSET__NAME = eINSTANCE.getAsset_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Container</b></em>' container reference feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference ASSET__CONTAINER = eINSTANCE.getAsset_Container();
 
 		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ContainerImpl
@@ -2486,6 +3429,14 @@ public interface DartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PACKAGE__DEPENDENCIES = eINSTANCE.getPackage_Dependencies();
+
+		/**
+		 * The meta object literal for the '<em><b>Project</b></em>' container reference feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference PACKAGE__PROJECT = eINSTANCE.getPackage_Project();
 
 		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.DartResourceImpl
@@ -2708,6 +3659,190 @@ public interface DartPackage extends EPackage {
 		EAttribute STYLESHEET__PARTIAL = eINSTANCE.getStylesheet_Partial();
 
 		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ModuleImpl <em>Module</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.ModuleImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getModule()
+		 * @generated
+		 */
+		EClass MODULE = eINSTANCE.getModule();
+
+		/**
+		 * The meta object literal for the '<em><b>Types</b></em>' containment reference feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference MODULE__TYPES = eINSTANCE.getModule_Types();
+
+		/**
+		 * The meta object literal for the '<em><b>Routes</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference MODULE__ROUTES = eINSTANCE.getModule_Routes();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.AngularTypeImpl
+		 * <em>Angular Type</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.AngularTypeImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getAngularType()
+		 * @generated
+		 */
+		EClass ANGULAR_TYPE = eINSTANCE.getAngularType();
+
+		/**
+		 * The meta object literal for the '<em><b>Dart Resource</b></em>' reference feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference ANGULAR_TYPE__DART_RESOURCE = eINSTANCE.getAngularType_DartResource();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.DirectiveImpl
+		 * <em>Directive</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.DirectiveImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getDirective()
+		 * @generated
+		 */
+		EClass DIRECTIVE = eINSTANCE.getDirective();
+
+		/**
+		 * The meta object literal for the '<em><b>Selector</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute DIRECTIVE__SELECTOR = eINSTANCE.getDirective_Selector();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ControllerImpl
+		 * <em>Controller</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.ControllerImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getController()
+		 * @generated
+		 */
+		EClass CONTROLLER = eINSTANCE.getController();
+
+		/**
+		 * The meta object literal for the '<em><b>Publish As</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute CONTROLLER__PUBLISH_AS = eINSTANCE.getController_PublishAs();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ComponentImpl
+		 * <em>Component</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.ComponentImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getComponent()
+		 * @generated
+		 */
+		EClass COMPONENT = eINSTANCE.getComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Publish As</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute COMPONENT__PUBLISH_AS = eINSTANCE.getComponent_PublishAs();
+
+		/**
+		 * The meta object literal for the '<em><b>Stylesheet</b></em>' reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference COMPONENT__STYLESHEET = eINSTANCE.getComponent_Stylesheet();
+
+		/**
+		 * The meta object literal for the '<em><b>Template</b></em>' reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference COMPONENT__TEMPLATE = eINSTANCE.getComponent_Template();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.DecoratorImpl
+		 * <em>Decorator</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.DecoratorImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getDecorator()
+		 * @generated
+		 */
+		EClass DECORATOR = eINSTANCE.getDecorator();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.FormatterImpl
+		 * <em>Formatter</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.FormatterImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getFormatter()
+		 * @generated
+		 */
+		EClass FORMATTER = eINSTANCE.getFormatter();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute FORMATTER__NAME = eINSTANCE.getFormatter_Name();
+
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.RouteImpl <em>Route</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.RouteImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getRoute()
+		 * @generated
+		 */
+		EClass ROUTE = eINSTANCE.getRoute();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute ROUTE__NAME = eINSTANCE.getRoute_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute ROUTE__PATH = eINSTANCE.getRoute_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>View</b></em>' reference feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference ROUTE__VIEW = eINSTANCE.getRoute_View();
+
+		/**
+		 * The meta object literal for the '<em><b>Extends</b></em>' reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference ROUTE__EXTENDS = eINSTANCE.getRoute_Extends();
+
+		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.Type <em>Type</em>}' class. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -2768,6 +3903,24 @@ public interface DartPackage extends EPackage {
 		EReference LIBRARY__FUNCTIONS = eINSTANCE.getLibrary_Functions();
 
 		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.PartImpl <em>Part</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.obeonetwork.dsl.dart.impl.PartImpl
+		 * @see org.obeonetwork.dsl.dart.impl.DartPackageImpl#getPart()
+		 * @generated
+		 */
+		EClass PART = eINSTANCE.getPart();
+
+		/**
+		 * The meta object literal for the '<em><b>Part Of</b></em>' reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference PART__PART_OF = eINSTANCE.getPart_PartOf();
+
+		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.ClassifierImpl
 		 * <em>Classifier</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
@@ -2792,14 +3945,6 @@ public interface DartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CLASSIFIER__METADATA = eINSTANCE.getClassifier_Metadata();
-
-		/**
-		 * The meta object literal for the '<em><b>Partof</b></em>' reference feature. <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EReference CLASSIFIER__PARTOF = eINSTANCE.getClassifier_Partof();
 
 		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.dart.impl.MetadataImpl

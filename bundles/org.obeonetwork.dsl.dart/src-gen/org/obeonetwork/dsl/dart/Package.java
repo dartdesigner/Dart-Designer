@@ -107,4 +107,34 @@ public interface Package extends Container {
 	 */
 	EList<Package> getDependencies();
 
+	/**
+	 * Returns the value of the '<em><b>Project</b></em>' container reference. It is bidirectional and its
+	 * opposite is '{@link org.obeonetwork.dsl.dart.Project#getPackages <em>Packages</em>}'. <!--
+	 * begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Project</em>' container reference isn't clear, there really should be more
+	 * of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Project</em>' container reference.
+	 * @see #setProject(Project)
+	 * @see org.obeonetwork.dsl.dart.DartPackage#getPackage_Project()
+	 * @see org.obeonetwork.dsl.dart.Project#getPackages
+	 * @model opposite="packages" transient="false"
+	 * @generated
+	 */
+	Project getProject();
+
+	/**
+	 * Sets the value of the '{@link org.obeonetwork.dsl.dart.Package#getProject <em>Project</em>}' container
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Project</em>' container reference.
+	 * @see #getProject()
+	 * @generated
+	 */
+	void setProject(Project value);
+
 } // Package

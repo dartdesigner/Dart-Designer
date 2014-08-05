@@ -23,11 +23,11 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Class;
-import org.obeonetwork.dsl.dart.Classifier;
 import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Part;
 import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.util.DartSwitch;
 
@@ -115,9 +115,9 @@ public class RelatedElementsSwitch extends DartSwitch<List<EObject>> {
 			}
 		}
 
-		List<Classifier> parts = library.getParts();
-		for (Classifier classifier : parts) {
-			this.relatedElements.add(classifier);
+		List<Part> parts = library.getParts();
+		for (Part part : parts) {
+			this.relatedElements.add(part);
 		}
 
 		List<Import> imports = library.getImports();

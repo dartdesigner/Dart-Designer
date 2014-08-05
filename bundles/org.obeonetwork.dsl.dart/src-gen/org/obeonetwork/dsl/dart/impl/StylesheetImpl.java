@@ -34,7 +34,7 @@ import org.obeonetwork.dsl.dart.Stylesheet;
 public class StylesheetImpl extends AssetImpl implements Stylesheet {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final String copyright = " Copyright (c) 2014 Obeo.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n \r\n Contributors:\r\n     Obeo - initial API and implementation";
@@ -42,7 +42,7 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 	/**
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' reference list. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getImports()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 	/**
 	 * The default value of the '{@link #isPartial() <em>Partial</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isPartial()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected StylesheetImpl() {
@@ -70,7 +70,7 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EList<Stylesheet> getImports() {
@@ -111,11 +111,13 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void unsetPartial() {
-		// do nothing
+		// TODO: implement this method to unset the 'Partial' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -129,7 +131,7 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -145,7 +147,7 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -165,7 +167,7 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -183,7 +185,7 @@ public class StylesheetImpl extends AssetImpl implements Stylesheet {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

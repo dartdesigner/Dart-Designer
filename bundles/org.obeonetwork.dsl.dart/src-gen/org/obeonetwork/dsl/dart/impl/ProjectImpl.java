@@ -11,21 +11,15 @@
 package org.obeonetwork.dsl.dart.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.Project;
 
@@ -127,10 +121,27 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	 */
 	public EList<org.obeonetwork.dsl.dart.Package> getPackages() {
 		if (packages == null) {
-			packages = new EObjectContainmentEList<org.obeonetwork.dsl.dart.Package>(
-					org.obeonetwork.dsl.dart.Package.class, this, DartPackage.PROJECT__PACKAGES);
+			packages = new EObjectContainmentWithInverseEList<org.obeonetwork.dsl.dart.Package>(
+					org.obeonetwork.dsl.dart.Package.class, this, DartPackage.PROJECT__PACKAGES,
+					DartPackage.PACKAGE__PROJECT);
 		}
 		return packages;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DartPackage.PROJECT__PACKAGES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPackages()).basicAdd(otherEnd,
+						msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

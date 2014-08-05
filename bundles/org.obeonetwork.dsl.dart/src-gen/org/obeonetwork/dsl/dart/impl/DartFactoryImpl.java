@@ -16,18 +16,25 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.obeonetwork.dsl.dart.Asset;
+import org.obeonetwork.dsl.dart.Component;
 import org.obeonetwork.dsl.dart.Constructor;
+import org.obeonetwork.dsl.dart.Controller;
 import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.DartPackage;
+import org.obeonetwork.dsl.dart.Decorator;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Formatter;
 import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Module;
 import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Part;
 import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Route;
 import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.Typedef;
 import org.obeonetwork.dsl.dart.Variable;
@@ -94,6 +101,8 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 				return createExport();
 			case DartPackage.LIBRARY:
 				return createLibrary();
+			case DartPackage.PART:
+				return createPart();
 			case DartPackage.METADATA:
 				return createMetadata();
 			case DartPackage.CLASS:
@@ -112,6 +121,18 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 				return createHTML();
 			case DartPackage.STYLESHEET:
 				return createStylesheet();
+			case DartPackage.MODULE:
+				return createModule();
+			case DartPackage.CONTROLLER:
+				return createController();
+			case DartPackage.COMPONENT:
+				return createComponent();
+			case DartPackage.DECORATOR:
+				return createDecorator();
+			case DartPackage.FORMATTER:
+				return createFormatter();
+			case DartPackage.ROUTE:
+				return createRoute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName()
 						+ "' is not a valid classifier");
@@ -213,9 +234,79 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 	 * 
 	 * @generated
 	 */
+	public Module createModule() {
+		ModuleImpl module = new ModuleImpl();
+		return module;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Controller createController() {
+		ControllerImpl controller = new ControllerImpl();
+		return controller;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Component createComponent() {
+		ComponentImpl component = new ComponentImpl();
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Decorator createDecorator() {
+		DecoratorImpl decorator = new DecoratorImpl();
+		return decorator;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Formatter createFormatter() {
+		FormatterImpl formatter = new FormatterImpl();
+		return formatter;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Route createRoute() {
+		RouteImpl route = new RouteImpl();
+		return route;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public Library createLibrary() {
 		LibraryImpl library = new LibraryImpl();
 		return library;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Part createPart() {
+		PartImpl part = new PartImpl();
+		return part;
 	}
 
 	/**

@@ -29,6 +29,17 @@ import org.obeonetwork.dsl.dart.Stylesheet;
 public class DartTypeServices {
 
 	/**
+	 * Returns <code>true</code> if the EObject is a Dart package.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart package
+	 */
+	public boolean isPackage(EObject eObject) {
+		return eObject instanceof Package;
+	}
+
+	/**
 	 * Returns <code>true</code> if the EObject is a Dart class.
 	 *
 	 * @param eObject

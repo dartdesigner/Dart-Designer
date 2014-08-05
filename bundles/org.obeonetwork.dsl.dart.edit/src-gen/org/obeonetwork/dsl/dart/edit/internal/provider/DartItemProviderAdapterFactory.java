@@ -292,6 +292,144 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Module} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ModuleItemProvider moduleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Module}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createModuleAdapter() {
+		if (moduleItemProvider == null) {
+			moduleItemProvider = new ModuleItemProvider(this);
+		}
+
+		return moduleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Controller} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ControllerItemProvider controllerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Controller}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createControllerAdapter() {
+		if (controllerItemProvider == null) {
+			controllerItemProvider = new ControllerItemProvider(this);
+		}
+
+		return controllerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Component} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ComponentItemProvider componentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Component}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentAdapter() {
+		if (componentItemProvider == null) {
+			componentItemProvider = new ComponentItemProvider(this);
+		}
+
+		return componentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Decorator} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected DecoratorItemProvider decoratorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Decorator}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createDecoratorAdapter() {
+		if (decoratorItemProvider == null) {
+			decoratorItemProvider = new DecoratorItemProvider(this);
+		}
+
+		return decoratorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Formatter} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected FormatterItemProvider formatterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Formatter}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createFormatterAdapter() {
+		if (formatterItemProvider == null) {
+			formatterItemProvider = new FormatterItemProvider(this);
+		}
+
+		return formatterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Route} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected RouteItemProvider routeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Route}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createRouteAdapter() {
+		if (routeItemProvider == null) {
+			routeItemProvider = new RouteItemProvider(this);
+		}
+
+		return routeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Library} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -312,6 +450,29 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 		}
 
 		return libraryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Part} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected PartItemProvider partItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Part}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createPartAdapter() {
+		if (partItemProvider == null) {
+			partItemProvider = new PartItemProvider(this);
+		}
+
+		return partItemProvider;
 	}
 
 	/**
@@ -563,6 +724,8 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 			exportItemProvider.dispose();
 		if (libraryItemProvider != null)
 			libraryItemProvider.dispose();
+		if (partItemProvider != null)
+			partItemProvider.dispose();
 		if (metadataItemProvider != null)
 			metadataItemProvider.dispose();
 		if (classItemProvider != null)
@@ -581,6 +744,18 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 			htmlItemProvider.dispose();
 		if (stylesheetItemProvider != null)
 			stylesheetItemProvider.dispose();
+		if (moduleItemProvider != null)
+			moduleItemProvider.dispose();
+		if (controllerItemProvider != null)
+			controllerItemProvider.dispose();
+		if (componentItemProvider != null)
+			componentItemProvider.dispose();
+		if (decoratorItemProvider != null)
+			decoratorItemProvider.dispose();
+		if (formatterItemProvider != null)
+			formatterItemProvider.dispose();
+		if (routeItemProvider != null)
+			routeItemProvider.dispose();
 	}
 
 }

@@ -11,24 +11,19 @@
 package org.obeonetwork.dsl.dart.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.obeonetwork.dsl.dart.Classifier;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Part;
 import org.obeonetwork.dsl.dart.Typedef;
 import org.obeonetwork.dsl.dart.Variable;
 
@@ -62,7 +57,7 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Classifier> parts;
+	protected EList<Part> parts;
 
 	/**
 	 * The cached value of the '{@link #getTypedefs() <em>Typedefs</em>}' containment reference list. <!--
@@ -128,10 +123,10 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 	 * 
 	 * @generated
 	 */
-	public EList<Classifier> getParts() {
+	public EList<Part> getParts() {
 		if (parts == null) {
-			parts = new EObjectWithInverseResolvingEList<Classifier>(Classifier.class, this,
-					DartPackage.LIBRARY__PARTS, DartPackage.CLASSIFIER__PARTOF);
+			parts = new EObjectWithInverseResolvingEList<Part>(Part.class, this, DartPackage.LIBRARY__PARTS,
+					DartPackage.PART__PART_OF);
 		}
 		return parts;
 	}
@@ -257,7 +252,7 @@ public class LibraryImpl extends DartResourceImpl implements Library {
 		switch (featureID) {
 			case DartPackage.LIBRARY__PARTS:
 				getParts().clear();
-				getParts().addAll((Collection<? extends Classifier>)newValue);
+				getParts().addAll((Collection<? extends Part>)newValue);
 				return;
 			case DartPackage.LIBRARY__TYPEDEFS:
 				getTypedefs().clear();

@@ -32,7 +32,7 @@ import org.obeonetwork.dsl.dart.DartPackage;
  * 
  * @generated
  */
-public class ClassifierItemProvider extends DartResourceItemProvider {
+public class ClassifierItemProvider extends PartItemProvider {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -62,7 +62,6 @@ public class ClassifierItemProvider extends DartResourceItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addMetadataPropertyDescriptor(object);
-			addPartofPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,19 +76,6 @@ public class ClassifierItemProvider extends DartResourceItemProvider {
 				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Classifier_metadata_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_Classifier_metadata_feature",
 						"_UI_Classifier_type"), DartPackage.Literals.CLASSIFIER__METADATA, true, false, true,
-				null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Partof feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addPartofPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory)
-				.getRootAdapterFactory(), getResourceLocator(), getString("_UI_Classifier_partof_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Classifier_partof_feature",
-						"_UI_Classifier_type"), DartPackage.Literals.CLASSIFIER__PARTOF, true, false, true,
 				null, null, null));
 	}
 

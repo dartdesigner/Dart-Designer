@@ -28,6 +28,7 @@ import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Package;
+import org.obeonetwork.dsl.dart.Part;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18n;
 import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
 
@@ -138,16 +139,16 @@ public class DartLibraryDiagramServices {
 					exportableElements.add(anImport.getDartResource());
 				} else if (anImport.getDartResource() instanceof Library) {
 					Library importedLibrary = (Library)anImport.getDartResource();
-					List<Classifier> parts = importedLibrary.getParts();
-					for (Classifier classifier : parts) {
-						exportableElements.add(classifier);
+					List<Part> parts = importedLibrary.getParts();
+					for (Part part : parts) {
+						exportableElements.add(part);
 					}
 				}
 			}
 
-			List<Classifier> parts = library.getParts();
-			for (Classifier classifier : parts) {
-				exportableElements.add(classifier);
+			List<Part> parts = library.getParts();
+			for (Part part : parts) {
+				exportableElements.add(part);
 			}
 		}
 		return exportableElements;

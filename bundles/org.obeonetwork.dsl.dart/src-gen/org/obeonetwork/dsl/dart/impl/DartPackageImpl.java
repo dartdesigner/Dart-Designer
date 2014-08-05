@@ -15,20 +15,30 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.obeonetwork.dsl.dart.AngularType;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Classifier;
+import org.obeonetwork.dsl.dart.Component;
 import org.obeonetwork.dsl.dart.Constructor;
+import org.obeonetwork.dsl.dart.Controller;
 import org.obeonetwork.dsl.dart.DartFactory;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.DartResource;
+import org.obeonetwork.dsl.dart.Decorator;
+import org.obeonetwork.dsl.dart.Directive;
+import org.obeonetwork.dsl.dart.Element;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Formatter;
 import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Module;
 import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Part;
 import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Route;
 import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
@@ -53,6 +63,13 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * @generated
 	 */
 	private EClass projectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass elementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -129,6 +146,62 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * 
 	 * @generated
 	 */
+	private EClass moduleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass angularTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass directiveEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass controllerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass componentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass decoratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass formatterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass routeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	private EClass typeEClass = null;
 
 	/**
@@ -137,6 +210,13 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * @generated
 	 */
 	private EClass libraryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass partEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -281,6 +361,15 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * 
 	 * @generated
 	 */
+	public EClass getElement() {
+		return elementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getAsset() {
 		return assetEClass;
 	}
@@ -292,6 +381,15 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 */
 	public EAttribute getAsset_Name() {
 		return (EAttribute)assetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getAsset_Container() {
+		return (EReference)assetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -355,6 +453,15 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 */
 	public EReference getPackage_Dependencies() {
 		return (EReference)packageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getPackage_Project() {
+		return (EReference)packageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -596,6 +703,195 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * 
 	 * @generated
 	 */
+	public EClass getModule() {
+		return moduleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getModule_Types() {
+		return (EReference)moduleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getModule_Routes() {
+		return (EReference)moduleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getAngularType() {
+		return angularTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getAngularType_DartResource() {
+		return (EReference)angularTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getDirective() {
+		return directiveEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getDirective_Selector() {
+		return (EAttribute)directiveEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getController() {
+		return controllerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getController_PublishAs() {
+		return (EAttribute)controllerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getComponent() {
+		return componentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getComponent_PublishAs() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getComponent_Stylesheet() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getComponent_Template() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getDecorator() {
+		return decoratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getFormatter() {
+		return formatterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getFormatter_Name() {
+		return (EAttribute)formatterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRoute() {
+		return routeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRoute_Name() {
+		return (EAttribute)routeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRoute_Path() {
+		return (EAttribute)routeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRoute_View() {
+		return (EReference)routeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRoute_Extends() {
+		return (EReference)routeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getType() {
 		return typeEClass;
 	}
@@ -659,6 +955,24 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 * 
 	 * @generated
 	 */
+	public EClass getPart() {
+		return partEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getPart_PartOf() {
+		return (EReference)partEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getClassifier() {
 		return classifierEClass;
 	}
@@ -679,15 +993,6 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 	 */
 	public EReference getClassifier_Metadata() {
 		return (EReference)classifierEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EReference getClassifier_Partof() {
-		return (EReference)classifierEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1046,8 +1351,11 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		createEAttribute(projectEClass, PROJECT__NAME);
 		createEReference(projectEClass, PROJECT__PACKAGES);
 
+		elementEClass = createEClass(ELEMENT);
+
 		assetEClass = createEClass(ASSET);
 		createEAttribute(assetEClass, ASSET__NAME);
+		createEReference(assetEClass, ASSET__CONTAINER);
 
 		containerEClass = createEClass(CONTAINER);
 		createEReference(containerEClass, CONTAINER__ASSETS);
@@ -1058,6 +1366,7 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		createEAttribute(packageEClass, PACKAGE__NAME);
 		createEAttribute(packageEClass, PACKAGE__LICENSE);
 		createEReference(packageEClass, PACKAGE__DEPENDENCIES);
+		createEReference(packageEClass, PACKAGE__PROJECT);
 
 		dartResourceEClass = createEClass(DART_RESOURCE);
 		createEAttribute(dartResourceEClass, DART_RESOURCE__DOCUMENTATION);
@@ -1086,10 +1395,12 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		createEReference(libraryEClass, LIBRARY__VARIABLES);
 		createEReference(libraryEClass, LIBRARY__FUNCTIONS);
 
+		partEClass = createEClass(PART);
+		createEReference(partEClass, PART__PART_OF);
+
 		classifierEClass = createEClass(CLASSIFIER);
 		createEReference(classifierEClass, CLASSIFIER__FIELDS);
 		createEReference(classifierEClass, CLASSIFIER__METADATA);
-		createEReference(classifierEClass, CLASSIFIER__PARTOF);
 
 		metadataEClass = createEClass(METADATA);
 
@@ -1146,6 +1457,35 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		stylesheetEClass = createEClass(STYLESHEET);
 		createEReference(stylesheetEClass, STYLESHEET__IMPORTS);
 		createEAttribute(stylesheetEClass, STYLESHEET__PARTIAL);
+
+		moduleEClass = createEClass(MODULE);
+		createEReference(moduleEClass, MODULE__TYPES);
+		createEReference(moduleEClass, MODULE__ROUTES);
+
+		angularTypeEClass = createEClass(ANGULAR_TYPE);
+		createEReference(angularTypeEClass, ANGULAR_TYPE__DART_RESOURCE);
+
+		directiveEClass = createEClass(DIRECTIVE);
+		createEAttribute(directiveEClass, DIRECTIVE__SELECTOR);
+
+		controllerEClass = createEClass(CONTROLLER);
+		createEAttribute(controllerEClass, CONTROLLER__PUBLISH_AS);
+
+		componentEClass = createEClass(COMPONENT);
+		createEAttribute(componentEClass, COMPONENT__PUBLISH_AS);
+		createEReference(componentEClass, COMPONENT__STYLESHEET);
+		createEReference(componentEClass, COMPONENT__TEMPLATE);
+
+		decoratorEClass = createEClass(DECORATOR);
+
+		formatterEClass = createEClass(FORMATTER);
+		createEAttribute(formatterEClass, FORMATTER__NAME);
+
+		routeEClass = createEClass(ROUTE);
+		createEAttribute(routeEClass, ROUTE__NAME);
+		createEAttribute(routeEClass, ROUTE__PATH);
+		createEReference(routeEClass, ROUTE__VIEW);
+		createEReference(routeEClass, ROUTE__EXTENDS);
 	}
 
 	/**
@@ -1176,18 +1516,27 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		assetEClass.getESuperTypes().add(this.getElement());
 		folderEClass.getESuperTypes().add(this.getContainer());
 		folderEClass.getESuperTypes().add(this.getAsset());
 		packageEClass.getESuperTypes().add(this.getContainer());
 		dartResourceEClass.getESuperTypes().add(this.getAsset());
 		libraryEClass.getESuperTypes().add(this.getDartResource());
-		classifierEClass.getESuperTypes().add(this.getDartResource());
+		partEClass.getESuperTypes().add(this.getDartResource());
+		classifierEClass.getESuperTypes().add(this.getPart());
 		metadataEClass.getESuperTypes().add(this.getClassifier());
 		classEClass.getESuperTypes().add(this.getClassifier());
 		classEClass.getESuperTypes().add(this.getType());
 		typedefEClass.getESuperTypes().add(this.getType());
 		htmlEClass.getESuperTypes().add(this.getAsset());
 		stylesheetEClass.getESuperTypes().add(this.getAsset());
+		moduleEClass.getESuperTypes().add(this.getPart());
+		angularTypeEClass.getESuperTypes().add(this.getElement());
+		directiveEClass.getESuperTypes().add(this.getAngularType());
+		controllerEClass.getESuperTypes().add(this.getDirective());
+		componentEClass.getESuperTypes().add(this.getDirective());
+		decoratorEClass.getESuperTypes().add(this.getDirective());
+		formatterEClass.getESuperTypes().add(this.getAngularType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1195,20 +1544,26 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		initEAttribute(getProject_Name(), ecorePackage.getEString(), "name", null, 0, 1, Project.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getProject_Packages(), this.getPackage(), null, "packages", null, 0, -1,
-				Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_Packages(), this.getPackage(), this.getPackage_Project(), "packages", null,
+				0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(assetEClass, Asset.class, "Asset", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAsset_Name(), ecorePackage.getEString(), "name", null, 0, 1, Asset.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getAsset_Container(), this.getContainer(), this.getContainer_Assets(), "container",
+				null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(containerEClass, org.obeonetwork.dsl.dart.Container.class, "Container", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContainer_Assets(), this.getAsset(), null, "assets", null, 0, -1,
-				org.obeonetwork.dsl.dart.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getContainer_Assets(), this.getAsset(), this.getAsset_Container(), "assets", null, 0,
+				-1, org.obeonetwork.dsl.dart.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(folderEClass, Folder.class, "Folder", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1225,6 +1580,9 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		initEReference(getPackage_Dependencies(), this.getPackage(), null, "dependencies", null, 0, -1,
 				org.obeonetwork.dsl.dart.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Project(), this.getProject(), this.getProject_Packages(), "project", null,
+				0, 1, org.obeonetwork.dsl.dart.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dartResourceEClass, DartResource.class, "DartResource", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1275,9 +1633,9 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 
 		initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLibrary_Parts(), this.getClassifier(), this.getClassifier_Partof(), "parts", null,
-				0, -1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLibrary_Parts(), this.getPart(), this.getPart_PartOf(), "parts", null, 0, -1,
+				Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLibrary_Typedefs(), this.getTypedef(), null, "typedefs", null, 0, -1,
 				Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1291,6 +1649,11 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 				Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(partEClass, Part.class, "Part", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPart_PartOf(), this.getLibrary(), this.getLibrary_Parts(), "partOf", null, 0, 1,
+				Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(classifierEClass, Classifier.class, "Classifier", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClassifier_Fields(), this.getVariable(), null, "fields", null, 0, -1,
@@ -1298,9 +1661,6 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClassifier_Metadata(), this.getMetadata(), null, "metadata", null, 0, -1,
 				Classifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getClassifier_Partof(), this.getLibrary(), this.getLibrary_Parts(), "partof", null, 0,
-				1, Classifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(metadataEClass, Metadata.class, "Metadata", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1431,7 +1791,7 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 
 		initEClass(htmlEClass, org.obeonetwork.dsl.dart.HTML.class, "HTML", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHTML_Uses(), this.getAsset(), null, "uses", null, 0, -1,
+		initEReference(getHTML_Uses(), this.getElement(), null, "uses", null, 0, -1,
 				org.obeonetwork.dsl.dart.HTML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1443,6 +1803,69 @@ public class DartPackageImpl extends EPackageImpl implements DartPackage {
 		initEAttribute(getStylesheet_Partial(), ecorePackage.getEBoolean(), "partial", null, 0, 1,
 				Stylesheet.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModule_Types(), this.getAngularType(), null, "types", null, 0, 1, Module.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModule_Routes(), this.getRoute(), null, "routes", null, 0, -1, Module.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(angularTypeEClass, AngularType.class, "AngularType", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAngularType_DartResource(), this.getDartResource(), null, "dartResource", null, 0,
+				1, AngularType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(directiveEClass, Directive.class, "Directive", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDirective_Selector(), ecorePackage.getEString(), "selector", null, 0, 1,
+				Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getController_PublishAs(), ecorePackage.getEString(), "publishAs", null, 0, 1,
+				Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponent_PublishAs(), ecorePackage.getEString(), "publishAs", null, 0, 1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Stylesheet(), this.getStylesheet(), null, "stylesheet", null, 0, 1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Template(), this.getHTML(), null, "template", null, 0, 1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(decoratorEClass, Decorator.class, "Decorator", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(formatterEClass, Formatter.class, "Formatter", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFormatter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Formatter.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(routeEClass, Route.class, "Route", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRoute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Route.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getRoute_Path(), ecorePackage.getEString(), "path", null, 0, 1, Route.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getRoute_View(), this.getHTML(), null, "view", null, 0, 1, Route.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getRoute_Extends(), this.getRoute(), null, "extends", null, 0, 1, Route.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

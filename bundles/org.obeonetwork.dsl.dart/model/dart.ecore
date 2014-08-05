@@ -4,14 +4,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="Project">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
-        eType="#//Package" containment="true"/>
+        eType="#//Package" containment="true" eOpposite="#//Package/project"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Asset">
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Asset" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
+        eOpposite="#//Container/assets"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assets" upperBound="-1"
-        eType="#//Asset" containment="true"/>
+        eType="#//Asset" containment="true" eOpposite="#//Asset/container"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Folder" eSuperTypes="#//Container #//Asset"/>
   <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Container">
@@ -19,6 +22,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="license" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" eType="#//Project"
+        eOpposite="#//Project/packages"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DartResource" abstract="true" eSuperTypes="#//Asset">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -45,7 +50,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="#//DartResource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
-        eType="#//Classifier" eOpposite="#//Classifier/partof"/>
+        eType="#//Part" eOpposite="#//Part/partOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typedefs" upperBound="-1"
         eType="#//Typedef" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" upperBound="-1"
@@ -55,13 +60,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="functions" upperBound="-1"
         eType="#//Function" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" eSuperTypes="#//DartResource">
+  <eClassifiers xsi:type="ecore:EClass" name="Part" eSuperTypes="#//DartResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" eType="#//Library"
+        eOpposite="#//Library/parts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" eSuperTypes="#//Part">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//Variable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" upperBound="-1"
         eType="#//Metadata"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="partof" eType="#//Library"
-        eOpposite="#//Library/parts"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metadata" eSuperTypes="#//Classifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//Classifier #//Type">
@@ -123,12 +130,42 @@
         eType="#//Metadata"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HTML" eSuperTypes="#//Asset">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Asset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Element"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Stylesheet" eSuperTypes="#//Asset">
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//Stylesheet"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="partial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         volatile="true" unsettable="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//Part">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" eType="#//AngularType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="routes" upperBound="-1"
+        eType="#//Route" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AngularType" abstract="true" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dartResource" eType="#//DartResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Directive" abstract="true" eSuperTypes="#//AngularType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Directive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publishAs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Directive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publishAs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stylesheet" eType="#//Stylesheet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="template" eType="#//HTML"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Decorator" eSuperTypes="#//Directive"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Formatter" eSuperTypes="#//AngularType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Route">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="view" eType="#//HTML"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//Route"/>
   </eClassifiers>
 </ecore:EPackage>

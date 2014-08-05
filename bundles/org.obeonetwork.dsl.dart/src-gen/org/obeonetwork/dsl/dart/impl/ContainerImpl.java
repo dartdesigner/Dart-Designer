@@ -11,19 +11,13 @@
 package org.obeonetwork.dsl.dart.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.DartPackage;
 
@@ -83,9 +77,26 @@ public abstract class ContainerImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<Asset> getAssets() {
 		if (assets == null) {
-			assets = new EObjectContainmentEList<Asset>(Asset.class, this, DartPackage.CONTAINER__ASSETS);
+			assets = new EObjectContainmentWithInverseEList<Asset>(Asset.class, this,
+					DartPackage.CONTAINER__ASSETS, DartPackage.ASSET__CONTAINER);
 		}
 		return assets;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DartPackage.CONTAINER__ASSETS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAssets()).basicAdd(otherEnd,
+						msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

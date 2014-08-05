@@ -38,8 +38,8 @@ public interface Library extends DartResource {
 
 	/**
 	 * Returns the value of the '<em><b>Parts</b></em>' reference list. The list contents are of type
-	 * {@link org.obeonetwork.dsl.dart.Classifier}. It is bidirectional and its opposite is '
-	 * {@link org.obeonetwork.dsl.dart.Classifier#getPartof <em>Partof</em>}'. <!-- begin-user-doc -->
+	 * {@link org.obeonetwork.dsl.dart.Part}. It is bidirectional and its opposite is '
+	 * {@link org.obeonetwork.dsl.dart.Part#getPartOf <em>Part Of</em>}'. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parts</em>' reference list isn't clear, there really should be more of a
 	 * description here...
@@ -48,11 +48,11 @@ public interface Library extends DartResource {
 	 * 
 	 * @return the value of the '<em>Parts</em>' reference list.
 	 * @see org.obeonetwork.dsl.dart.DartPackage#getLibrary_Parts()
-	 * @see org.obeonetwork.dsl.dart.Classifier#getPartof
-	 * @model opposite="partof"
+	 * @see org.obeonetwork.dsl.dart.Part#getPartOf
+	 * @model opposite="partOf"
 	 * @generated
 	 */
-	EList<Classifier> getParts();
+	EList<Part> getParts();
 
 	/**
 	 * Returns the value of the '<em><b>Typedefs</b></em>' containment reference list. The list contents are

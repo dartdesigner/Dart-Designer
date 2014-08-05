@@ -66,7 +66,8 @@ public interface Project extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Packages</b></em>' containment reference list. The list contents are
-	 * of type {@link org.obeonetwork.dsl.dart.Package}. <!-- begin-user-doc -->
+	 * of type {@link org.obeonetwork.dsl.dart.Package}. It is bidirectional and its opposite is '
+	 * {@link org.obeonetwork.dsl.dart.Package#getProject <em>Project</em>}'. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Packages</em>' containment reference list isn't clear, there really should
 	 * be more of a description here...
@@ -75,7 +76,8 @@ public interface Project extends EObject {
 	 * 
 	 * @return the value of the '<em>Packages</em>' containment reference list.
 	 * @see org.obeonetwork.dsl.dart.DartPackage#getProject_Packages()
-	 * @model containment="true"
+	 * @see org.obeonetwork.dsl.dart.Package#getProject
+	 * @model opposite="project" containment="true"
 	 * @generated
 	 */
 	EList<org.obeonetwork.dsl.dart.Package> getPackages();

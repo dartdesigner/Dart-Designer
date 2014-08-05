@@ -107,12 +107,68 @@ public interface DartFactory extends EFactory {
 	Stylesheet createStylesheet();
 
 	/**
+	 * Returns a new object of class '<em>Module</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Module</em>'.
+	 * @generated
+	 */
+	Module createModule();
+
+	/**
+	 * Returns a new object of class '<em>Controller</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Controller</em>'.
+	 * @generated
+	 */
+	Controller createController();
+
+	/**
+	 * Returns a new object of class '<em>Component</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Component</em>'.
+	 * @generated
+	 */
+	Component createComponent();
+
+	/**
+	 * Returns a new object of class '<em>Decorator</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Decorator</em>'.
+	 * @generated
+	 */
+	Decorator createDecorator();
+
+	/**
+	 * Returns a new object of class '<em>Formatter</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Formatter</em>'.
+	 * @generated
+	 */
+	Formatter createFormatter();
+
+	/**
+	 * Returns a new object of class '<em>Route</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Route</em>'.
+	 * @generated
+	 */
+	Route createRoute();
+
+	/**
 	 * Returns a new object of class '<em>Library</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Library</em>'.
 	 * @generated
 	 */
 	Library createLibrary();
+
+	/**
+	 * Returns a new object of class '<em>Part</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Part</em>'.
+	 * @generated
+	 */
+	Part createPart();
 
 	/**
 	 * Returns a new object of class '<em>Metadata</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->

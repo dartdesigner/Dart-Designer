@@ -14,21 +14,31 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.obeonetwork.dsl.dart.AngularType;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Classifier;
+import org.obeonetwork.dsl.dart.Component;
 import org.obeonetwork.dsl.dart.Constructor;
 import org.obeonetwork.dsl.dart.Container;
+import org.obeonetwork.dsl.dart.Controller;
 import org.obeonetwork.dsl.dart.DartPackage;
 import org.obeonetwork.dsl.dart.DartResource;
+import org.obeonetwork.dsl.dart.Decorator;
+import org.obeonetwork.dsl.dart.Directive;
+import org.obeonetwork.dsl.dart.Element;
 import org.obeonetwork.dsl.dart.Export;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Formatter;
 import org.obeonetwork.dsl.dart.Function;
 import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Module;
 import org.obeonetwork.dsl.dart.Parameter;
+import org.obeonetwork.dsl.dart.Part;
 import org.obeonetwork.dsl.dart.Project;
+import org.obeonetwork.dsl.dart.Route;
 import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.Type;
 import org.obeonetwork.dsl.dart.Typedef;
@@ -99,6 +109,11 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseElement(Element object) {
+			return createElementAdapter();
+		}
+
+		@Override
 		public Adapter caseAsset(Asset object) {
 			return createAssetAdapter();
 		}
@@ -141,6 +156,11 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseLibrary(Library object) {
 			return createLibraryAdapter();
+		}
+
+		@Override
+		public Adapter casePart(Part object) {
+			return createPartAdapter();
 		}
 
 		@Override
@@ -194,6 +214,46 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseModule(Module object) {
+			return createModuleAdapter();
+		}
+
+		@Override
+		public Adapter caseAngularType(AngularType object) {
+			return createAngularTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseDirective(Directive object) {
+			return createDirectiveAdapter();
+		}
+
+		@Override
+		public Adapter caseController(Controller object) {
+			return createControllerAdapter();
+		}
+
+		@Override
+		public Adapter caseComponent(Component object) {
+			return createComponentAdapter();
+		}
+
+		@Override
+		public Adapter caseDecorator(Decorator object) {
+			return createDecoratorAdapter();
+		}
+
+		@Override
+		public Adapter caseFormatter(Formatter object) {
+			return createFormatterAdapter();
+		}
+
+		@Override
+		public Adapter caseRoute(Route object) {
+			return createRouteAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -222,6 +282,19 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Element <em>Element</em>}
+	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Element
+	 * @generated
+	 */
+	public Adapter createElementAdapter() {
 		return null;
 	}
 
@@ -359,6 +432,116 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Module <em>Module</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Module
+	 * @generated
+	 */
+	public Adapter createModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.AngularType
+	 * <em>Angular Type</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.AngularType
+	 * @generated
+	 */
+	public Adapter createAngularTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Directive
+	 * <em>Directive</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Directive
+	 * @generated
+	 */
+	public Adapter createDirectiveAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Controller
+	 * <em>Controller</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Controller
+	 * @generated
+	 */
+	public Adapter createControllerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Component
+	 * <em>Component</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Component
+	 * @generated
+	 */
+	public Adapter createComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Decorator
+	 * <em>Decorator</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Decorator
+	 * @generated
+	 */
+	public Adapter createDecoratorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Formatter
+	 * <em>Formatter</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Formatter
+	 * @generated
+	 */
+	public Adapter createFormatterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Route <em>Route</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Route
+	 * @generated
+	 */
+	public Adapter createRouteAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
@@ -381,6 +564,19 @@ public class DartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLibraryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.dart.Part <em>Part</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.dart.Part
+	 * @generated
+	 */
+	public Adapter createPartAdapter() {
 		return null;
 	}
 
