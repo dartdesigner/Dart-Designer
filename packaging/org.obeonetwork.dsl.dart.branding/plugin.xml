@@ -40,7 +40,7 @@
          </property>
          <property
                name="aboutText"
-               value="Dart Designer Confidential Cruise v0.3&#x0A;&#x0A;A development workbench for Dart developers powered by Sirius.&#x0A;&#x0A;For more information, visit http://dartdesigner.github.io and http://www.twitter.com/dartdesigner&#x0A;&#x0A;Copyright (c) 2014 Obeo. All Rights Reserved.&#x0A;&#x0A;Folder icons by Bogdan Mihaiciuc: http://bogo-d.deviantart.com">
+               value="Dart Designer Shielded Arrow&#x0A;&#x0A;A development workbench for Dart developers powered by Sirius.&#x0A;&#x0A;For more information, visit http://dartdesigner.github.io and http://www.twitter.com/dartdesigner&#x0A;&#x0A;Copyright (c) 2014 Obeo. All Rights Reserved.&#x0A;&#x0A;Folder icons by Bogdan Mihaiciuc: http://bogo-d.deviantart.com&#x0A;&#x0A;AngularJS Logo by the AngularJS project: https://docs.angularjs.org">
          </property>
          <property
                name="aboutImage"

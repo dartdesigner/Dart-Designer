@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Dart Designer" uid="org.obeonetwork.dsl.dart.branding.product" id="org.obeonetwork.dsl.dart.branding.product" application="org.eclipse.ui.ide.workbench" version="0.3.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Dart Designer" uid="org.obeonetwork.dsl.dart.branding.product" id="org.obeonetwork.dsl.dart.branding.product" application="org.eclipse.ui.ide.workbench" version="0.4.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="icons/about.png"/>
       <text>
-         Dart Designer Confidential Cruise v0.3
+         Dart Designer Shielded Arrow
 
 A development workbench for Dart developers powered by Sirius.
 
@@ -79,7 +79,7 @@ http://www.eclipse.org/legal/epl-v10.html
    <features>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.epp.mpc"/>
-      <feature id="org.obeonetwork.dsl.dart.feature" version="0.3.0.qualifier"/>
+      <feature id="org.obeonetwork.dsl.dart.feature" version="0.4.0.qualifier"/>
       <feature id="com.google.dart.eclipse.feature"/>
    </features>
 
@@ -94,7 +94,7 @@ http://www.eclipse.org/legal/epl-v10.html
    </configurations>
 
    <repositories>
-      <repository location="http://dartdesigner.github.io/p2" enabled="true" />
+      <repository location="http://dartdesigner.github.io/p2/releases/v0.4.0" enabled="true" />
    </repositories>
 
 </product>
