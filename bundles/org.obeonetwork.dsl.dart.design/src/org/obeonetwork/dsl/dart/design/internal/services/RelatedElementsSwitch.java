@@ -32,6 +32,7 @@ import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Module;
+import org.obeonetwork.dsl.dart.Package;
 import org.obeonetwork.dsl.dart.Part;
 import org.obeonetwork.dsl.dart.Route;
 import org.obeonetwork.dsl.dart.Stylesheet;
@@ -76,6 +77,17 @@ public class RelatedElementsSwitch extends DartSwitch<List<EObject>> {
 		relatedElements.remove(null);
 
 		return ImmutableList.copyOf(this.relatedElements);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#casePackage(org.obeonetwork.dsl.dart.Package)
+	 */
+	@Override
+	public List<EObject> casePackage(Package aPackage) {
+		this.relatedElements.addAll(aPackage.getDependencies());
+		return super.casePackage(aPackage);
 	}
 
 	/**

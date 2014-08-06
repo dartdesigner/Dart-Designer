@@ -24,6 +24,7 @@ import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Module;
+import org.obeonetwork.dsl.dart.Package;
 import org.obeonetwork.dsl.dart.Route;
 import org.obeonetwork.dsl.dart.Stylesheet;
 
