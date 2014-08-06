@@ -12,6 +12,7 @@ package org.obeonetwork.dsl.dart.design.internal.services;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.TreeIterator;
@@ -77,5 +78,53 @@ public class DartRouteDiagramServices {
 			}
 		}
 		return result;
+	}
+
+	/**
+	 * Returns the label of the route.
+	 *
+	 * @param eObject
+	 *            The route
+	 * @return The label of the route
+	 */
+	public String getRouteLabel(EObject eObject) {
+		final String slash = "/"; //$NON-NLS-1$
+
+		if (eObject instanceof Route) {
+			Route route = (Route)eObject;
+			String routePath = route.getPath();
+			if (routePath.startsWith(slash)) {
+				routePath = routePath.substring(1);
+			}
+			if (routePath.endsWith(slash)) {
+				routePath = routePath.substring(0, routePath.length() - 1);
+			}
+
+			List<Route> parents = new ArrayList<Route>();
+			while (route.getExtends() != null) {
+				parents.add(route.getExtends());
+				route = route.getExtends();
+			}
+
+			Collections.reverse(parents);
+
+			StringBuilder builder = new StringBuilder();
+			builder.append(slash);
+			for (Route parent : parents) {
+				String parentRoute = parent.getPath().trim();
+				if (parentRoute.startsWith(slash)) {
+					parentRoute = parentRoute.substring(1);
+				}
+				if (parentRoute.endsWith(slash)) {
+					parentRoute = parentRoute.substring(0, parentRoute.length() - 1);
+				}
+				builder.append(parentRoute);
+				builder.append(slash);
+			}
+
+			builder.append(routePath);
+			return builder.toString();
+		}
+		return ""; //$NON-NLS-1$
 	}
 }

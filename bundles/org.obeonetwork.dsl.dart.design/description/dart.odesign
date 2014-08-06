@@ -1353,8 +1353,8 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="RD Route" createElements="false" domainClass="dart.Route" childrenPresentation="List">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='AngularDart%20Route%20Border']" labelExpression="feature:path" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='AngularDart%20Route']">
+        <containerMappings name="RD Route" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='RD%20Route%20Edit%20Path']" createElements="false" domainClass="dart.Route" childrenPresentation="List">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='AngularDart%20Route%20Border']" labelExpression="service:getRouteLabel" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='AngularDart%20Route']">
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
@@ -1425,6 +1425,14 @@
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
                 <subModelOperations xsi:type="tool:SetValue" featureName="view" valueExpression="var:target"/>
               </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="ED Direct Edit" label="Direct Edit">
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="RD Route Edit Path">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="path" valueExpression="service:toPath(arg0)"/>
             </initialOperation>
           </ownedTools>
         </toolSections>

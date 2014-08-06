@@ -93,6 +93,29 @@ public class DartNamingServices {
 	}
 
 	/**
+	 * Returns the new path of the given route.
+	 *
+	 * @param eObject
+	 *            The route
+	 * @param path
+	 *            The path to use
+	 * @return The new path of the given route
+	 */
+	public String toPath(EObject eObject, String path) {
+		String newPath = path;
+
+		final String slash = "/"; //$NON-NLS-1$
+		if (newPath.startsWith(slash)) {
+			newPath = newPath.substring(1);
+		}
+		if (newPath.endsWith(slash)) {
+			newPath = newPath.substring(0, newPath.length() - 1);
+		}
+
+		return newPath;
+	}
+
+	/**
 	 * Returns the name of the new folder.
 	 *
 	 * @param eObject
