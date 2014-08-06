@@ -19,6 +19,7 @@
     </genClasses>
     <genClasses ecoreClass="dart.ecore#//Asset">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Asset/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dart.ecore#//Asset/container"/>
     </genClasses>
     <genClasses image="false" ecoreClass="dart.ecore#//Container">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Container/assets"/>
@@ -28,6 +29,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Package/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Package/license"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Package/dependencies"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dart.ecore#//Package/project"/>
     </genClasses>
     <genClasses image="false" ecoreClass="dart.ecore#//DartResource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//DartResource/documentation"/>
@@ -55,10 +57,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Library/variables"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Library/functions"/>
     </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Part">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Part/partOf"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="dart.ecore#//Classifier">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Classifier/fields"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Classifier/metadata"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Classifier/partof"/>
     </genClasses>
     <genClasses ecoreClass="dart.ecore#//Metadata"/>
     <genClasses ecoreClass="dart.ecore#//Class">
@@ -114,6 +118,33 @@
     <genClasses ecoreClass="dart.ecore#//Stylesheet">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Stylesheet/imports"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Stylesheet/partial"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Module">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Module/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Module/routes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dart.ecore#//AngularType"/>
+    <genClasses ecoreClass="dart.ecore#//Controller">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Controller/publishAs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Controller/selector"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Component/publishAs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Component/stylesheet"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Component/template"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Component/selector"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Decorator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Decorator/selector"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Formatter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Formatter/formatterName"/>
+    </genClasses>
+    <genClasses ecoreClass="dart.ecore#//Route" labelFeature="#//dart/Route/path">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Route/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dart.ecore#//Route/path"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Route/view"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Route/extends"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

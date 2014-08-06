@@ -155,7 +155,7 @@ public class RouteItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Route)object).getName();
+		String label = ((Route)object).getPath();
 		return label == null || label.length() == 0 ? getString("_UI_Route_type")
 				: getString("_UI_Route_type") + " " + label;
 	}
