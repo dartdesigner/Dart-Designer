@@ -453,29 +453,6 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Part} instances. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected PartItemProvider partItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.obeonetwork.dsl.dart.Part}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createPartAdapter() {
-		if (partItemProvider == null) {
-			partItemProvider = new PartItemProvider(this);
-		}
-
-		return partItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.dart.Metadata} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -724,8 +701,6 @@ public class DartItemProviderAdapterFactory extends DartAdapterFactory implement
 			exportItemProvider.dispose();
 		if (libraryItemProvider != null)
 			libraryItemProvider.dispose();
-		if (partItemProvider != null)
-			partItemProvider.dispose();
 		if (metadataItemProvider != null)
 			metadataItemProvider.dispose();
 		if (classItemProvider != null)

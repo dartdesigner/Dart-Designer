@@ -39,25 +39,6 @@ import org.obeonetwork.dsl.dart.design.internal.utils.I18nKeys;
 public class DartNamingServices {
 
 	/**
-	 * Convert the given name to the name of a metadata.
-	 *
-	 * @param any
-	 *            The current EObject
-	 * @param name
-	 *            The name
-	 * @return The metadata name
-	 */
-	public String toMetadataName(EObject any, String name) {
-		if (name != null) {
-			String newName = this.toCamelCase(any, name);
-			if (!newName.startsWith("@")) { //$NON-NLS-1$
-				return "@" + newName; //$NON-NLS-1$
-			}
-		}
-		return name;
-	}
-
-	/**
 	 * Return a camel case version of the given word.
 	 *
 	 * @param any

@@ -20,7 +20,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Package%20Border']" showIcon="false" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Package']">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Package%20Border']" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Package']">
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
@@ -559,7 +559,7 @@
             </style>
           </conditionnalStyles>
         </containerMappings>
-        <containerMappings name="CD Metadata" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Metadata%20Name']" createElements="false" domainClass="dart.Metadata" childrenPresentation="List">
+        <containerMappings name="CD Metadata" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name']" createElements="false" domainClass="dart.Metadata" childrenPresentation="List">
           <subNodeMappings name="CD Metadata Field" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Field']" semanticCandidatesExpression="feature:fields" synchronizationLock="true" domainClass="dart.Variable">
             <style xsi:type="style:SquareDescription" labelExpression="service:getFieldLabel" labelAlignment="LEFT" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1392,12 +1392,6 @@
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:toCamelCase(arg0)"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Metadata Name">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="service:toMetadataName(arg0)"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Field">

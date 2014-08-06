@@ -57,7 +57,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Library/variables"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dart.ecore#//Library/functions"/>
     </genClasses>
-    <genClasses ecoreClass="dart.ecore#//Part">
+    <genClasses image="false" ecoreClass="dart.ecore#//Part">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dart.ecore#//Part/partOf"/>
     </genClasses>
     <genClasses image="false" ecoreClass="dart.ecore#//Classifier">

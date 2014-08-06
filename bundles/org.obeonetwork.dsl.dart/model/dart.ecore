@@ -59,7 +59,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="functions" upperBound="-1"
         eType="#//Function" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Part" eSuperTypes="#//DartResource">
+  <eClassifiers xsi:type="ecore:EClass" name="Part" abstract="true" eSuperTypes="#//DartResource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" eType="#//Library"
         eOpposite="#//Library/parts"/>
   </eClassifiers>

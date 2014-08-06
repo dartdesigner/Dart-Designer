@@ -32,7 +32,6 @@ import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Module;
 import org.obeonetwork.dsl.dart.Parameter;
-import org.obeonetwork.dsl.dart.Part;
 import org.obeonetwork.dsl.dart.Project;
 import org.obeonetwork.dsl.dart.Route;
 import org.obeonetwork.dsl.dart.Stylesheet;
@@ -101,8 +100,6 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 				return createExport();
 			case DartPackage.LIBRARY:
 				return createLibrary();
-			case DartPackage.PART:
-				return createPart();
 			case DartPackage.METADATA:
 				return createMetadata();
 			case DartPackage.CLASS:
@@ -297,16 +294,6 @@ public class DartFactoryImpl extends EFactoryImpl implements DartFactory {
 	public Library createLibrary() {
 		LibraryImpl library = new LibraryImpl();
 		return library;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public Part createPart() {
-		PartImpl part = new PartImpl();
-		return part;
 	}
 
 	/**

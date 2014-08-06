@@ -20,7 +20,7 @@ package org.obeonetwork.dsl.dart;
  * </p>
  *
  * @see org.obeonetwork.dsl.dart.DartPackage#getPart()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Part extends DartResource {

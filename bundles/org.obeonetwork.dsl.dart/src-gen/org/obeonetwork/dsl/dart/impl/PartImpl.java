@@ -33,7 +33,7 @@ import org.obeonetwork.dsl.dart.Part;
  *
  * @generated
  */
-public class PartImpl extends DartResourceImpl implements Part {
+public abstract class PartImpl extends DartResourceImpl implements Part {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 

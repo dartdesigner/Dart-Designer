@@ -163,14 +163,6 @@ public interface DartFactory extends EFactory {
 	Library createLibrary();
 
 	/**
-	 * Returns a new object of class '<em>Part</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return a new object of class '<em>Part</em>'.
-	 * @generated
-	 */
-	Part createPart();
-
-	/**
 	 * Returns a new object of class '<em>Metadata</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return a new object of class '<em>Metadata</em>'.
