@@ -15,9 +15,14 @@ import com.google.common.collect.Lists;
 import java.io.File;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.DNode;
@@ -75,8 +80,20 @@ public class DartExplorerDiagramServices {
 	public List<Asset> getAddableExplorerDiagramElements(EObject eObject, DSemanticDecorator containerView) {
 		List<Asset> result = new ArrayList<Asset>();
 
-		if (eObject instanceof Container) {
-			result.addAll(((Container)eObject).getAssets());
+		Session session = SessionManager.INSTANCE.getSession(eObject);
+		if (session != null) {
+			Collection<Resource> semanticResources = session.getSemanticResources();
+			for (Resource resource : semanticResources) {
+				if (resource.getURI().isPlatformPlugin() || resource.getURI().isPlatformResource()) {
+					TreeIterator<EObject> allContents = resource.getAllContents();
+					while (allContents.hasNext()) {
+						EObject containedEObject = allContents.next();
+						if (containedEObject instanceof Asset) {
+							result.add((Asset)containedEObject);
+						}
+					}
+				}
+			}
 		}
 
 		return result;
@@ -190,7 +207,7 @@ public class DartExplorerDiagramServices {
 	 * @return <code>true</code> if it matches, <code>false</code> otherwise
 	 */
 	public boolean isJs(EObject eObject) {
-		return this.hasExtension(eObject, ".js"); //$NON-NLS-1$ 
+		return this.hasExtension(eObject, ".js"); //$NON-NLS-1$
 	}
 
 	/**
@@ -263,13 +280,18 @@ public class DartExplorerDiagramServices {
 
 					URI baseURI = new File(containerFullPath).toURI();
 					URI assetURI = new File(assetFullPath).toURI();
-					String relatedPath = "./" + baseURI.relativize(assetURI).getPath(); //$NON-NLS-1$
+					String relatedPath = baseURI.relativize(assetURI).getPath();
 
 					return relatedPath;
 				}
 			}
 		}
-		return ""; //$NON-NLS-1$
+
+		String label = ""; //$NON-NLS-1$
+		if (eObject instanceof Asset) {
+			label = ((Asset)eObject).getName();
+		}
+		return label;
 	}
 
 	/**
