@@ -23,11 +23,17 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.obeonetwork.dsl.dart.Asset;
 import org.obeonetwork.dsl.dart.Class;
+import org.obeonetwork.dsl.dart.Component;
+import org.obeonetwork.dsl.dart.Controller;
+import org.obeonetwork.dsl.dart.Decorator;
+import org.obeonetwork.dsl.dart.Formatter;
 import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Import;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
+import org.obeonetwork.dsl.dart.Module;
 import org.obeonetwork.dsl.dart.Part;
+import org.obeonetwork.dsl.dart.Route;
 import org.obeonetwork.dsl.dart.Stylesheet;
 import org.obeonetwork.dsl.dart.util.DartSwitch;
 
@@ -180,6 +186,80 @@ public class RelatedElementsSwitch extends DartSwitch<List<EObject>> {
 	public List<EObject> caseStylesheet(Stylesheet stylesheet) {
 		this.relatedElements.addAll(stylesheet.getImports());
 		return super.caseStylesheet(stylesheet);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#caseRoute(org.obeonetwork.dsl.dart.Route)
+	 */
+	@Override
+	public List<EObject> caseRoute(Route route) {
+		this.relatedElements.add(route.getExtends());
+		this.relatedElements.add(route.getView());
+
+		for (Setting setting : this.crossReferences) {
+			if (setting.getEObject() instanceof Route) {
+				this.relatedElements.add(setting.getEObject());
+			} else if (setting.getEObject() instanceof HTML) {
+				this.relatedElements.add(setting.getEObject());
+			}
+		}
+
+		return super.caseRoute(route);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#caseModule(org.obeonetwork.dsl.dart.Module)
+	 */
+	@Override
+	public List<EObject> caseModule(Module module) {
+		this.relatedElements.addAll(module.getTypes());
+		return super.caseModule(module);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#caseController(org.obeonetwork.dsl.dart.Controller)
+	 */
+	@Override
+	public List<EObject> caseController(Controller controller) {
+		return super.caseController(controller);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#caseComponent(org.obeonetwork.dsl.dart.Component)
+	 */
+	@Override
+	public List<EObject> caseComponent(Component component) {
+		this.relatedElements.add(component.getStylesheet());
+		this.relatedElements.add(component.getTemplate());
+		return super.caseComponent(component);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#caseDecorator(org.obeonetwork.dsl.dart.Decorator)
+	 */
+	@Override
+	public List<EObject> caseDecorator(Decorator decorator) {
+		return super.caseDecorator(decorator);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.obeonetwork.dsl.dart.util.DartSwitch#caseFormatter(org.obeonetwork.dsl.dart.Formatter)
+	 */
+	@Override
+	public List<EObject> caseFormatter(Formatter formatter) {
+		return super.caseFormatter(formatter);
 	}
 
 }

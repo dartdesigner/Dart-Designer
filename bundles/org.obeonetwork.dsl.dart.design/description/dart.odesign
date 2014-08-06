@@ -292,25 +292,25 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:For" expression="var:selected">
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isClass">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Class']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Class']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isFolder">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Folder']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Folder']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isLibrary">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Library']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Library']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isMetadata">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Metadata']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Metadata']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isStrictlyAsset">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Asset']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Asset']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isHtml">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20HTML']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20HTML']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isStylesheet">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Stylesheet']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Imported%20Stylesheet']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -661,18 +661,18 @@
           </ownedTools>
           <ownedTools xsi:type="tool:OperationAction" name="CD Add Related Elements" label="Add Related Elements">
             <view name="containerView">
-              <subVariables xsi:type="tool:SelectModelElementVariable" name="selected" candidatesExpression="service:getRelatedElements(views,diagram)" multiple="true"/>
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="selected" candidatesExpression="service:getRelatedElements(containerView,diagram)" multiple="true"/>
             </view>
             <initialOperation>
               <firstModelOperations xsi:type="tool:For" expression="var:selected">
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isClass">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isLibrary">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Library']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isMetadata">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Metadata']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -978,15 +978,15 @@
           </ownedTools>
           <ownedTools xsi:type="tool:OperationAction" name="LD Add Related Elements" label="Add Related Elements">
             <view name="containerView">
-              <subVariables xsi:type="tool:SelectModelElementVariable" name="selected" candidatesExpression="service:getRelatedElements(views,diagram)" multiple="true"/>
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="selected" candidatesExpression="service:getRelatedElements(containerView,diagram)" multiple="true"/>
             </view>
             <initialOperation>
               <firstModelOperations xsi:type="tool:For" expression="var:selected">
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isClass">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']/@subContainerMappings[name='LD%20Class%20Part']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']/@subContainerMappings[name='LD%20Class%20Part']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:If" conditionExpression="service:isLibrary">
-                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" containerViewExpression="var:containerView"/>
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1138,7 +1138,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="MD Module" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Module" childrenPresentation="List">
+        <containerMappings name="MD Module" detailDescriptions="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Route%20Diagram']/@ownedTools[name='Create%20Route%20Diagram%20from%20Container']" navigationDescriptions="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.2/@subSections[name='Route%20Diagram']/@ownedTools[name='Open%20Route%20Diagram%20from%20Container']" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.1/@ownedTools[name='Edit%20Name%20With%20CamelCase']" createElements="false" domainClass="dart.Module" childrenPresentation="List">
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='AngularDart%20Module']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1202,6 +1202,36 @@
                   <subModelOperations xsi:type="tool:If" conditionExpression="service:isStylesheet">
                     <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet']" containerViewExpression="var:containerView"/>
                   </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:OperationAction" name="MD Add Related Elements" label="Add Related Elements">
+            <view name="containerView">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="selected" candidatesExpression="service:getRelatedElements(containerView,diagram)" multiple="true"/>
+            </view>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:selected">
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isModule">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Module%20Diagram']/@defaultLayer/@containerMappings[name='MD%20Module']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isController">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Module%20Diagram']/@defaultLayer/@containerMappings[name='MD%20Controller']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isComponent">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Module%20Diagram']/@defaultLayer/@containerMappings[name='MD%20Component']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isDecorator">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Module%20Diagram']/@defaultLayer/@containerMappings[name='MD%20Decorator']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isFormatter">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Module%20Diagram']/@defaultLayer/@containerMappings[name='MD%20Formatter']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isHtml">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isStylesheet">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet']" containerViewExpression="var:diagram"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1302,6 +1332,102 @@
         </toolSections>
         <toolSections name="MD Reconnect" label="Reconnect" reusedTools="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@additionalLayers[name='Explorer%20Diagram%20-%20Relationships']/@toolSections.1/@ownedTools[name='ED%20HTML%20Uses%20Reconnect'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@additionalLayers[name='Explorer%20Diagram%20-%20Relationships']/@toolSections.1/@ownedTools[name='ED%20Stylesheets%20Import%20Reconnect']"/>
         <toolSections name="MD Delete" label="Delete" reusedTools="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@additionalLayers[name='Explorer%20Diagram%20-%20Relationships']/@toolSections.2/@ownedTools[name='ED%20Delete%20HTML%20Uses'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@additionalLayers[name='Explorer%20Diagram%20-%20Relationships']/@toolSections.2/@ownedTools[name='ED%20Delete%20Stylesheet%20Imports']"/>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Route Diagram will let you organize the routes of your Dart application." name="Route Diagram" titleExpression="service:newRouteDiagramName" domainClass="dart.Module" enablePopupBars="true">
+      <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
+      <defaultLayer name="Route Diagram" reusedMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML']">
+        <edgeMappings name="RD Route Extends" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@containerMappings[name='RD%20Route']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@containerMappings[name='RD%20Route']" targetFinderExpression="feature:extends">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="1">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RD Route View" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@containerMappings[name='RD%20Route']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML']" targetFinderExpression="feature:view">
+          <style targetArrow="NoDecoration" sizeComputationExpression="1">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;view>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="RD Route" createElements="false" domainClass="dart.Route" childrenPresentation="List">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='AngularDart%20Route%20Border']" labelExpression="feature:path" roundedCorner="true" widthComputationExpression="15" heightComputationExpression="12" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='AngularDart%20Route']">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="RD Existing Elements" label="Existing Elements" reusedTools="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Common%20Elements']/@defaultLayer/@toolSections.0/@ownedTools[name='Remove%20Existing%20Elements']">
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="RD Add Existing Elements" label="Add" forceRefresh="true" candidatesExpression="service:getAddableRouteDiagramElements(containerView)" multiple="true" iconPath="">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:For" expression="var:element">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="service:isRoute">
+                    <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@containerMappings[name='RD%20Route']" containerViewExpression="var:containerView"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="service:isHtml">
+                    <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML']" containerViewExpression="var:containerView"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:OperationAction" name="RD Add Related Elements" label="Add Related Elements">
+            <view name="containerView">
+              <subVariables xsi:type="tool:SelectModelElementVariable" name="selected" candidatesExpression="service:getRelatedElements(containerView,diagram)" multiple="true"/>
+            </view>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:selected">
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isRoute">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@containerMappings[name='RD%20Route']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:isHtml">
+                  <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML']" containerViewExpression="var:diagram"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="RD Elements" label="Elements">
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="RD Route Creation" label="New Route" containerMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@containerMappings[name='RD%20Route']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="dart.Route" referenceName="routes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="RD Relationships" label="Relationships">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="RD Route Extends Creation" label="Extends" edgeMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@edgeMappings[name='RD%20Route%20Extends']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:SetValue" featureName="extends" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="RD Route View Creation" label="View" edgeMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@edgeMappings[name='RD%20Route%20View']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:SetValue" featureName="view" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" documentation="This i a fake representation that will only be used to store common elements for other representations." name="Common Elements" domainClass="dart.Parameter" preconditionExpression="service:inactive">
@@ -1407,6 +1533,20 @@
               <representationNameVariable name="diagramName"/>
             </ownedTools>
           </subSections>
+          <subSections name="Route Diagram">
+            <ownedTools xsi:type="tool_1:DiagramNavigationDescription" name="Open Route Diagram from Container" diagramDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']">
+              <containerViewVariable name="containerView"/>
+              <containerVariable name="container"/>
+              <representationNameVariable name="diagramName"/>
+            </ownedTools>
+            <ownedTools xsi:type="tool_1:DiagramCreationDescription" name="Create Route Diagram from Container" label="Module Diagram" titleExpression="service:newRouteDiagramName" diagramDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:containerView"/>
+              </initialOperation>
+              <containerViewVariable name="containerView"/>
+              <representationNameVariable name="diagramName"/>
+            </ownedTools>
+          </subSections>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
@@ -1417,6 +1557,7 @@
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.dart.design.internal.services.DartModuleDiagramServices"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.dart.design.internal.services.DartNamingServices"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.dart.design.internal.services.DartPackageDiagramServices"/>
+    <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.dart.design.internal.services.DartRouteDiagramServices"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.dart.design.internal.services.DartTypeServices"/>
   </ownedViewpoints>
   <userColorsPalettes name="Dart Designers Palette">
@@ -1431,6 +1572,7 @@
     <entries xsi:type="description:UserFixedColor" red="255" green="153" blue="153" name="AngularDart Component"/>
     <entries xsi:type="description:UserFixedColor" red="255" green="153" blue="153" name="AngularDart Decorator"/>
     <entries xsi:type="description:UserFixedColor" red="255" green="153" blue="153" name="AngularDart Formatter"/>
-    <entries xsi:type="description:UserFixedColor" red="255" green="153" blue="153" name="AngularDart Route"/>
+    <entries xsi:type="description:UserFixedColor" red="232" green="239" blue="247" name="AngularDart Route"/>
+    <entries xsi:type="description:UserFixedColor" red="110" green="132" blue="132" name="AngularDart Route Border"/>
   </userColorsPalettes>
 </description:Group>

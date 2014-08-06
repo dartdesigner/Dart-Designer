@@ -24,6 +24,7 @@ import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Library;
 import org.obeonetwork.dsl.dart.Metadata;
 import org.obeonetwork.dsl.dart.Module;
+import org.obeonetwork.dsl.dart.Route;
 import org.obeonetwork.dsl.dart.Stylesheet;
 
 /**
@@ -207,6 +208,17 @@ public class DartTypeServices {
 	 */
 	public boolean isFormatter(EObject eObject) {
 		return eObject instanceof Formatter;
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a Dart route.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart route
+	 */
+	public boolean isRoute(EObject eObject) {
+		return eObject instanceof Route;
 	}
 
 }

@@ -42,6 +42,11 @@ public interface I18nKeys {
 	String MODULE_DIAGRAM_NEW_NAME = "ModuleDiagram.NewName"; //$NON-NLS-1$
 
 	/**
+	 * {0} Route Diagram.
+	 */
+	String ROUTE_DIAGRAM_NEW_NAME = "RouteDiagram.NewName"; //$NON-NLS-1$
+
+	/**
 	 * New Package.
 	 */
 	String NEW_PACKAGE_NAME = "Package.NewName"; //$NON-NLS-1$
