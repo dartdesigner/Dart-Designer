@@ -23,7 +23,9 @@ import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.dsl.dart.Component;
 import org.obeonetwork.dsl.dart.Container;
 import org.obeonetwork.dsl.dart.Controller;
+import org.obeonetwork.dsl.dart.Decorator;
 import org.obeonetwork.dsl.dart.Folder;
+import org.obeonetwork.dsl.dart.Formatter;
 import org.obeonetwork.dsl.dart.HTML;
 import org.obeonetwork.dsl.dart.Module;
 import org.obeonetwork.dsl.dart.Package;
@@ -79,6 +81,10 @@ public class DartModuleDiagramServices {
 						} else if (containedEObject instanceof Controller) {
 							result.add(containedEObject);
 						} else if (containedEObject instanceof Component) {
+							result.add(containedEObject);
+						} else if (containedEObject instanceof Decorator) {
+							result.add(containedEObject);
+						} else if (containedEObject instanceof Formatter) {
 							result.add(containedEObject);
 						} else if (containedEObject instanceof HTML) {
 							result.add(containedEObject);

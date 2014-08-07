@@ -207,7 +207,7 @@ public class DartExplorerDiagramServices {
 	 * @return <code>true</code> if it matches, <code>false</code> otherwise
 	 */
 	public boolean isJs(EObject eObject) {
-		return this.hasExtension(eObject, ".js"); //$NON-NLS-1$
+		return this.hasExtension(eObject, ".js") && !this.isGrunt(eObject) && !this.isGulp(eObject) && !this.isKarma(eObject); //$NON-NLS-1$
 	}
 
 	/**
@@ -230,6 +230,63 @@ public class DartExplorerDiagramServices {
 	 */
 	public boolean isCss(EObject eObject) {
 		return this.hasExtension(eObject, ".css"); //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a bower file.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a bower file
+	 */
+	public boolean isBower(EObject eObject) {
+		return eObject instanceof Asset
+				&& ("bower.json".equals(((Asset)eObject).getName()) || ".bowerrc".equals(((Asset)eObject) //$NON-NLS-1$ //$NON-NLS-2$
+						.getName()));
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a grunt file.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a grunt file
+	 */
+	public boolean isGrunt(EObject eObject) {
+		return eObject instanceof Asset && "Gruntfile.js".equals(((Asset)eObject).getName()); //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a gulp file.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a gulp file
+	 */
+	public boolean isGulp(EObject eObject) {
+		return eObject instanceof Asset && "Gulpfile.js".equals(((Asset)eObject).getName()); //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a karma file.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a karma file
+	 */
+	public boolean isKarma(EObject eObject) {
+		return eObject instanceof Asset && "karma.conf.js".equals(((Asset)eObject).getName()); //$NON-NLS-1$
+	}
+
+	/**
+	 * Returns <code>true</code> if the EObject is a npm file.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a npm file
+	 */
+	public boolean isNpm(EObject eObject) {
+		return eObject instanceof Asset && "package.json".equals(((Asset)eObject).getName()); //$NON-NLS-1$
 	}
 
 	/**

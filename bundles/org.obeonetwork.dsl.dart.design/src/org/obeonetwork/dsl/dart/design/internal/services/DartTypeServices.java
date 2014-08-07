@@ -58,6 +58,17 @@ public class DartTypeServices {
 	}
 
 	/**
+	 * Returns <code>true</code> if the EObject is a Dart class.
+	 *
+	 * @param eObject
+	 *            The EObject
+	 * @return <code>true</code> if the EObject is a Dart class
+	 */
+	public boolean isStrictlyClass(EObject eObject) {
+		return eObject instanceof Class && "ClassImpl".equals(eObject.getClass().getName()); //$NON-NLS-1$
+	}
+
+	/**
 	 * Returns <code>true</code> if the EObject is a Dart folder.
 	 *
 	 * @param eObject
@@ -131,7 +142,7 @@ public class DartTypeServices {
 	 * @return <code>true</code> if the EObject is a Dart asset
 	 */
 	public boolean isStrictlyAsset(EObject eObject) {
-		return eObject instanceof Asset && !(eObject instanceof HTML) && !(eObject instanceof Stylesheet);
+		return eObject instanceof Asset && "AssetImpl".equals(eObject.getClass().getName()); //$NON-NLS-1$
 	}
 
 	/**
@@ -221,5 +232,4 @@ public class DartTypeServices {
 	public boolean isRoute(EObject eObject) {
 		return eObject instanceof Route;
 	}
-
 }
