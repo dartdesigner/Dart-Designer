@@ -10,7 +10,8 @@
 The Dart Designer is available under the Eclipse Public License v1.0. It includes components from the Eclipse Foundation, the Apache Foundation and components from the Dart Editor.
 
 ## Copyright
-Copyright (c) 2014 Obeo.\n\
+Copyright (c) 2014 Obeo.
+
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License
 v1.0 which accompanies this distribution, and is available at
