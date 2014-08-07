@@ -2,7 +2,7 @@
 [Dart Designer](http://dartdesigner.github.io) provides a complete workbench to build Dart applications.
 
 [![Build Status](https://travis-ci.org/dartdesigner/Dart-Designer.svg?branch=master)](https://travis-ci.org/dartdesigner/Dart-Designer)
-[![Stories in Ready](https://badge.waffle.io/dartdesigner/dart-designer.png)](http://waffle.io/dartdesigner/dart-designer)
+[![Stories in Ready](https://badge.waffle.io/dartdesigner/dart-designer.svg?label=ready&title=Ready)](http://waffle.io/dartdesigner/dart-designer)
 
 [Dart Programming Language Specification](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-408.pdf)
 
