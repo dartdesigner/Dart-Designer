@@ -14,7 +14,9 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.dsl.dart.Class;
 import org.obeonetwork.dsl.dart.DartFactory;
@@ -33,6 +35,27 @@ import org.obeonetwork.dsl.dart.Variable;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  */
 public class DartCommonToolsServices {
+	/**
+	 * Indicates if the diagram can be considered empty.
+	 *
+	 * @param eObject
+	 *            The context
+	 * @param containerView
+	 *            The diagram
+	 * @return <code>true</code> if it can be considered empty, <code>false</code> otherwise
+	 */
+	public boolean isConsideredEmpty(EObject eObject, DSemanticDecorator containerView) {
+		if (containerView instanceof DSemanticDiagram) {
+			DSemanticDiagram diagram = (DSemanticDiagram)containerView;
+			List<DDiagramElement> ownedDiagramElements = diagram.getOwnedDiagramElements();
+			if (ownedDiagramElements.size() == 0 || ownedDiagramElements.size() == 1
+					&& ownedDiagramElements.get(0).getTarget().equals(diagram.getTarget())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	/**
 	 * This operation will always return false.
 	 *

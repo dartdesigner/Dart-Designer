@@ -4,6 +4,12 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Package diagram will show the relationships between all the Dart packages used in the project." name="Package Diagram" titleExpression="service:newPackageDiagramName" initialisation="true" showOnStartup="true" domainClass="dart.Project" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Package Diagram">
+        <nodeMappings name="PD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Project">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
         <edgeMappings name="PD Package Dependency" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='ED%20Delete%20Package%20Dependency']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@containerMappings[name='PD%20Package']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Package%20Diagram']/@defaultLayer/@containerMappings[name='PD%20Package']" targetFinderExpression="feature:dependencies">
           <style sourceArrow="Diamond" targetArrow="NoDecoration" sizeComputationExpression="1">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
@@ -262,6 +268,12 @@
         </nodeMappings>
         <nodeMappings name="ED Formatter" labelDirectEdit="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@toolSections.6/@ownedTools[name='Edit%20Dart%20Resource%20Name']" createElements="false" domainClass="dart.Formatter">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="service:getDartResourceFileName" sizeComputationExpression="15" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/explorer/formatter_512x512.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ED Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Container">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -687,6 +699,12 @@
         <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class']/@subNodeMappings[name='CD%20Class%20Method'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Component']/@subNodeMappings[name='CD%20Component%20Method'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Controller']/@subNodeMappings[name='CD%20Controller%20Method'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Decorator']/@subNodeMappings[name='CD%20Decorator%20Method'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Formatter']/@subNodeMappings[name='CD%20Formatter%20Method']"/>
       </filters>
       <defaultLayer name="Class Diagram">
+        <nodeMappings name="CD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Container">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
         <edgeMappings name="CD Class Extends" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.6/@ownedTools[name='CD%20Delete%20Extends']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Component'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Controller'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Decorator'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Formatter']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Class'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Component'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Controller'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Decorator'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Formatter']" targetFinderExpression="feature:extends" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.5/@ownedTools[name='CD%20Class%20Extends%20Reconnect']">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="1">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
@@ -1212,6 +1230,12 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Library diagram will show the relationships between the various components used in the project." name="Library Diagram" titleExpression="service:newLibraryDiagramName" domainClass="dart.Package" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Library Diagram">
+        <nodeMappings name="LD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Package">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
         <edgeMappings name="LD Library Import" deletionDescription="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='ED%20Delete%20Library%20Import']" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@containerMappings[name='LD%20Library']" targetFinderExpression="service:getImportedLibrary" reconnections="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Library%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='LD%20Library%20Import%20Reconnect']">
           <style strokeColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Library%20Border']" targetArrow="InputClosedArrow" sizeComputationExpression="1">
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;imports>" labelColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Library%20Border']"/>
@@ -1395,6 +1419,12 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Module diagram will show all the AngularDart elements of the Dart application." name="Module Diagram" titleExpression="service:newModuleDiagramName" domainClass="dart.Container" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Module Diagram" reusedMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@additionalLayers[name='Explorer%20Diagram%20-%20Relationships']/@edgeMappings[name='ED%20Stylesheet%20Import'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Component'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Controller'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Decorator'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Formatter']">
+        <nodeMappings name="MD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Container">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
         <edgeMappings name="MD Component Template" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Component']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML']" targetFinderExpression="feature:template">
           <style strokeColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Metadata%20Border']" lineStyle="dash" sizeComputationExpression="1">
             <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="&lt;template>" labelColor="//@userColorsPalettes[name='Dart%20Designers%20Palette']/@entries[name='Dart%20Metadata%20Border']"/>
@@ -1587,6 +1617,12 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="The Route Diagram will let you organize the routes of your Dart application." name="Route Diagram" titleExpression="service:newRouteDiagramName" domainClass="dart.Module" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Route Diagram" reusedMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML']">
+        <nodeMappings name="RD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Module">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
         <edgeMappings name="RD Route Extends" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@containerMappings[name='RD%20Route']" targetMapping="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Route%20Diagram']/@defaultLayer/@containerMappings[name='RD%20Route']" targetFinderExpression="feature:extends">
           <style targetArrow="InputClosedArrow" sizeComputationExpression="1">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
