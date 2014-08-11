@@ -65,7 +65,7 @@ public class DartTypeServices {
 	 * @return <code>true</code> if the EObject is a Dart class
 	 */
 	public boolean isStrictlyClass(EObject eObject) {
-		return eObject instanceof Class && "ClassImpl".equals(eObject.getClass().getName()); //$NON-NLS-1$
+		return eObject instanceof Class && "ClassImpl".equals(eObject.getClass().getSimpleName()); //$NON-NLS-1$
 	}
 
 	/**
