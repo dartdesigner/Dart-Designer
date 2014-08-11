@@ -29,3 +29,4 @@ deploy:
   on:
     tags: true
     repo: dartdesigner/Dart-Designer
+    all_branches: true
