@@ -5,7 +5,7 @@
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Package Diagram">
         <nodeMappings name="PD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Project">
-          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -273,7 +273,7 @@
           </style>
         </nodeMappings>
         <nodeMappings name="ED Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Container">
-          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -700,7 +700,7 @@
       </filters>
       <defaultLayer name="Class Diagram">
         <nodeMappings name="CD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Container">
-          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -1231,7 +1231,7 @@
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Library Diagram">
         <nodeMappings name="LD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Package">
-          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -1420,7 +1420,7 @@
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Module Diagram" reusedMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20Stylesheet'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@additionalLayers[name='Explorer%20Diagram%20-%20Relationships']/@edgeMappings[name='ED%20Stylesheet%20Import'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Component'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Controller'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Decorator'] //@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD%20Formatter']">
         <nodeMappings name="MD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Container">
-          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -1618,7 +1618,7 @@
       <metamodel href="../../org.obeonetwork.dsl.dart/model/dart.ecore#/"/>
       <defaultLayer name="Route Diagram" reusedMappings="//@ownedViewpoints[name='Dart%20Architectural%20Viewpoint']/@ownedRepresentations[name='Explorer%20Diagram']/@defaultLayer/@nodeMappings[name='ED%20HTML']">
         <nodeMappings name="RD Empty Diagram" preconditionExpression="service:isConsideredEmpty(containerView)" semanticCandidatesExpression="var:self" domainClass="dart.Module">
-          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.svg">
+          <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.obeonetwork.dsl.dart.design/icons/common/empty.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
